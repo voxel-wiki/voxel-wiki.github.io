@@ -58,11 +58,17 @@ section = "wiki"
 url = "/wiki/"
 weight = 10
 
+#[[extra.menu.main]]
+#name = "Blog"
+#section = "blog"
+#url = "/blog/"
+#weight = 20
+
 [[extra.menu.main]]
-name = "Blog"
-section = "blog"
-url = "/blog/"
-weight = 20
+name = "Projects"
+section = "wiki"
+url = "/wiki/projects"
+weight = 30
 
 [[extra.menu.social]]
 name = "GitHub"
