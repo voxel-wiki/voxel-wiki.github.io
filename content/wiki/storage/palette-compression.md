@@ -20,6 +20,7 @@ Think of it like a GIF image: By limiting ourselves to a small set of colors and
 |:-:|:-:|
 | ![Image of a Parrot](https://upload.wikimedia.org/wikipedia/commons/d/d7/RGB_24bits_palette_sample_image.jpg) | ![Color Palette of the Image](https://upload.wikimedia.org/wikipedia/commons/0/05/Sample_Image_RGB_Cube.gif) |
 
+> [https://en.wikipedia.org/wiki/Palette_(computing)](https://en.wikipedia.org/wiki/Palette_(computing))
 > **Image Source:** [https://en.wikipedia.org/wiki/Palette_(computing)](https://en.wikipedia.org/wiki/Palette_(computing))  
 > **Image Credits:** [Ricardo Cancho Niemietz](https://en.wikipedia.org/wiki/User:Ricardo_Cancho_Niemietz) & [Kjerisch](https://commons.wikimedia.org/wiki/User:Kjerish)
 
@@ -50,3 +51,13 @@ By using palette compression for voxel data, we gain numerous advantages, like..
 The palette is a dynamic structure, that grows and shrinks with the number of differing types/states contained within it, which can be a problem in memory or allocation constrained environments. There are some optimizations that mitigate this, allowing one to amortize the read-write-performance to effectively `O(1)` in the majority of cases.
 
 Also, if one doesn't pay close attention to the layout of data in memory, it is *very* easy to simultanously cause pointer chasing and utterly trash CPU caches, which is... *bad*.
+
+## Optimizations
+
+There are a variety of optimizations that can be applied to make palette compression *even better*...
+
+- **TODO**: volume as bitbuffer optimization
+- **TODO**: struct/value optimization
+- **TODO**: area allocation
+- **TODO**: singular block
+- **TODO**: run-length encoding and morton-ordering
