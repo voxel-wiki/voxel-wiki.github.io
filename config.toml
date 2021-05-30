@@ -11,7 +11,7 @@ compile_sass = true
 
 generate_feed = true
 
-minify_html = true
+#minify_html = true # Currently broken due to https://github.com/getzola/zola/issues/1300
 
 taxonomies = [
 	{name = "tags", feed = true},
@@ -22,8 +22,6 @@ taxonomies = [
 build_search_index = true
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
 [search]
