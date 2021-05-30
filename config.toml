@@ -78,6 +78,9 @@ url = "http://voxelgamedev.com/"
 post = "v0.1.0"
 weight = 20
 
+[extra.footer]
+info = 'Powered by <a href="https://pages.github.com/">GitHub Pages</a>, <a href="https://www.getzola.org/">Zola</a> and <a href="https://github.com/aaranxu/adidoks">AdiDoks</a>'
+
 [[extra.footer.nav]]
 name = "Privacy"
 url = "/privacy-policy"
