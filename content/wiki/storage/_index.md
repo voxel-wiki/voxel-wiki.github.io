@@ -2,6 +2,8 @@
 title = "Storage"
 +++
 
+> Note: This section generally covers *runtime* storage, not [serialization](/wiki/serialization).
+
 The simplest way to store voxels, is to define a three-dimensional array of elements (be it `struct`s or `integer`s), where each element represents a single voxel:
 
 ```c#
