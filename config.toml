@@ -57,7 +57,7 @@ og_locale = "en_US"
 [[extra.menu.main]]
 name = "Wiki"
 section = "wiki"
-url = "/wiki/introduction"
+url = "/wiki/"
 weight = 10
 
 [[extra.menu.main]]
