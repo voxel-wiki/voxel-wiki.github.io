@@ -45,7 +45,7 @@ edit_page = true
 docs_repo = "https://github.com/voxel-wiki/voxel-wiki.github.io"
 repo_branch = "main"
 
-math = false
+math = true
 library = "katex"
 
 [extra.open]
