@@ -29,6 +29,14 @@ If you're a maintainer (eg: you are part of the `voxel-wiki` organisation), you 
 
 ## License
 
-By contributing to this repository, the copyright covering your submitted work **is transferred to the `voxel-wiki` organisation** and thus **perpetually licensed under `The Unlicense`**. This is to prevent people from taking down content once submitted.
+By contributing to this repository, your submitted work will be **perpetually licensed under the MIT-License**. This is to prevent people from taking down content once submitted. If this seems unreasonable, please open an issue, as none of us are lawyers!
 
-If this seems unreasonable, please open an issue, as none of us are lawyers!
+---
+
+Copyright © 2021 - The voxel-wiki organisation.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
