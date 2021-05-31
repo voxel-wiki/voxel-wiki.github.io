@@ -10,11 +10,11 @@ Feel free to contribute! :)
 
 ## Contributing
 
-1. [Install Zola](https://www.getzola.org/documentation/getting-started/installation/), such that it is on your `PATH`.  
-   (Zola is a *single* executable file, so there shouldn't be any issues with this. Else, open an issue!)
 3. Fork the project.
 4. Clone the project: `git clone https://github.com/YOUR-USERNAME-HERE/voxel-wiki.github.io.git`
 5. Open a console/terminal in the cloned projects directory.
+1. [Install Zola](https://www.getzola.org/documentation/getting-started/installation/), such that it is on your `PATH` or put it right in the projects directory.  
+   (Zola is a *single* executable file, so there shouldn't be any issues with this. Else, open an issue!)
 6. Run `zola serve`.
 7. Make your changes to the content.
 8. Check the life-preview in your browser.
