@@ -1,11 +1,11 @@
 base_url = "https://voxel.wiki/"
 
 title = "Voxel.Wiki"
-description = "A wiki that is all about samples in uniform grids."
+description = "A wiki that is all about values in regular grids."
 
 default_language = "en"
 
-theme = "adidoks"
+theme = "adidoks" # we actually use a forked version of this theme!
 
 compile_sass = true
 
@@ -13,6 +13,7 @@ generate_feed = true
 
 #minify_html = true # Currently broken due to https://github.com/getzola/zola/issues/1300
 
+# TODO: Make use of this...
 taxonomies = [
 	{name = "tags", feed = true},
 	{name = "categories", paginate_by = 25},
