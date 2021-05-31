@@ -8,12 +8,6 @@ There are many ways of rendering voxels, depending on the way they should look l
 
 ## General Rendering Methods
 
-### Raytracing
-
-*Walk trough voxels for every pixel on the screen.*
-
-**In general:** Shooting rays out of a camera into a scene made of voxels, sampling color values for every voxel hit, it is possible to produce a high degree of photorealism and/or complex lighting effects, that are otherwise extremely hard to produce with rasterization.
-
 ### Rasterization
 
 **In general:** Converting voxels into meshes, then using the rasterizer built into GPU's (or in software) to render them.
@@ -21,6 +15,23 @@ There are many ways of rendering voxels, depending on the way they should look l
 - Meshing
 - Splatting
 
+### Raytracing
+
+**In general:** Shooting rays out of a camera into a scene made of voxels, sampling color values for every voxel hit, it is possible to produce a high degree of photorealism and/or complex lighting effects, that are otherwise extremely hard to produce with rasterization.
+
+### Raymarching
+
+**In general:** Shooting rays out of a camera into a scene made of voxels, sampling color values for every voxel while *marching* along the ray, until some exit condition is met.
+
 ### Raycasting
 
 *...?*
+
+## General Lighting Methods
+
+**TODO**
+
+- Global Illumination?
+- Ambient occlusion?
+- Flood-Fill Lighting?
+- ...?
