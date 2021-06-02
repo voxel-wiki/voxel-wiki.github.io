@@ -22,7 +22,11 @@ That's a voxel!
 
 Now, you *might* be asking „*What kind of value?*‟, but sadly the answer to that depends *entirely* on what you wish to do with voxels! It might be colors, directions, states, 'types', etc. etc.; anything that can be meaningfully arranged in a grid, really.
 
-Interestingly, the grid in question may have holes, be stretched, have multiple sizes... The only real requirement is that every `x,y,z`-coordinate consistently leads to one individual voxel value or an [up/down-sampled](/wiki/rendering/sampling) variant of it.
+Interestingly, the grid in question may have holes, be stretched, have multiple sizes... really, the only requirement is that every `x,y,z`-coordinate consistently leads to an individual voxel or an [up/down-sampled](/wiki/rendering/sampling) variant of it.
+
+### What is *not* a voxel?
+
+If, for example, your values are generated in a *two*-dimensional grid and then 'expanded' into a *third* dimension during rendering, you are ***not*** using voxels. It's just a plain old [heightmap](https://en.wikipedia.org/wiki/Heightmap) pretending to be voxels.
 
 ## What are voxels used for?
 
