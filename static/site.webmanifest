@@ -1,1 +1,30 @@
-{"name":"Voxel.Wiki","short_name":"Voxel.Wiki","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"theme_color":"#ffffff","background_color":"#ffffff","display":"standalone"}
+{
+	"name": "Voxel.Wiki",
+	"short_name": "Voxel Wiki",
+    "start_url": "/",
+    "scope": "/",
+	"display": "minimal-ui",
+	"icons": [
+		{ "src": "/favicon-16x16.png", "sizes": "16x16", "type": "image/png" },
+		{ "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+		{ "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+		{ "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" },
+		{ "src": "/favicon.png", "sizes": "800x800", "type": "image/png" }
+	],
+	"theme_color": "#ffffff",
+	"background_color": "#ffffff",
+    "shortcuts": [
+      {
+        "name": "Goto Wiki Index",
+        "short_name": "Wiki",
+        "description": "Go directly to the wiki index.",
+        "url": "/wiki"
+      },
+      {
+        "name": "Goto Projects Page",
+        "short_name": "Projects",
+        "description": "Go directly to the projects page.",
+        "url": "/wiki/projects"
+      }
+    ]
+}
