@@ -2,7 +2,7 @@
 
 ![gh-pages](https://github.com/voxel-wiki/voxel-wiki.github.io/actions/workflows/gh-pages.yml/badge.svg)
 
-[Voxel.Wiki](https://voxel.wiki/) is a website that is all about voxels: Values on regular grids in three-dimensional space!
+[Voxel.Wiki](https://voxel.wiki/) is a website that is all about [voxels](https://en.wikipedia.org/wiki/Voxel): Values on regular grids in three-dimensional space!
 
 This repository holds the contents of the website in the form of a [Zola](https://www.getzola.org/) project.
 
