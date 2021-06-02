@@ -17,3 +17,8 @@
 article img {
 	border-radius: 3px;
 }
+
+pre code {
+	scrollbar-width: initial !important;
+	scrollbar-color: #e9ecef transparent !important;
+}
