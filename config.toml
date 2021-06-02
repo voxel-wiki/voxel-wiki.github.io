@@ -31,7 +31,10 @@ include_description = false
 include_content = true
 
 [extra]
+author = "Voxel-Wiki"
 github = "https://github.com/voxel-wiki/voxel-wiki.github.io"
+
+is_netlify = false
 
 language_code = "en-US"
 
@@ -52,6 +55,15 @@ library = "katex"
 enable = false
 image = "static/social-card-bg.png"
 og_locale = "en_US"
+
+[extra.schema]
+type = "Organization"
+logo = "favicon.png"
+twitter = ""
+linked_in = ""
+github = "https://github.com/voxel-wiki"
+section = "wiki"
+#site_links_search_box = false
 
 [[extra.menu.main]]
 name = "Wiki"
