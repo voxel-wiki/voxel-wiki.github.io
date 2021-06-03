@@ -1,5 +1,6 @@
 +++
 title = "Chunking"
+description = "Dividing the grid into finite sub-grids."
 path = "/wiki/storage/chunking"
 +++
 

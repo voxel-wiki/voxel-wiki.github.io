@@ -1,5 +1,6 @@
 +++
 title = "Types of Noise"
+description = "Types of noise commonly used for procedural generation."
 +++
 
 There are many types of noise one can use for procedural generation.

@@ -1,5 +1,6 @@
 +++
 title = "Wiki"
+description = "Index of the various categories of the voxel-wiki."
 +++
 
 Categories:

@@ -1,5 +1,6 @@
 +++
 title = "Palette Compression"
+description = "Compressing voxels like one would a GIF-image."
 +++
 
 > This is a rewrite; the original article can be found here: [https://www.longor.net/articles/voxel-palette-compression-reddit](https://www.longor.net/articles/voxel-palette-compression-reddit)

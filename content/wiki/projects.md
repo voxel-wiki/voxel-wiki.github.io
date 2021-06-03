@@ -1,5 +1,6 @@
 +++
 title = "Projects"
+description = "Known projects that prominently use voxels."
 path = "wiki/projects"
 +++
 
