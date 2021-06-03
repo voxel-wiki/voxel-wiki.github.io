@@ -8,7 +8,7 @@ description = "The many ways to manage voxels in memory."
 The simplest way to store voxels, is to define a three-dimensional array of elements (be it `struct`s or `integer`s), where each element represents a single voxel:
 
 ```c#
-var voxels = new ELEMENT[width][height][depth];
+var voxels = new VOXEL[width][height][depth];
 
 // Set a voxel:
 voxels[x][y][z] = voxel;
@@ -18,6 +18,8 @@ var voxel = voxels[x][y][z];
 ```
 
 However, that is far from the only way to store voxels...
+
+> **Note:** These techniques can be combined in arbitrary ways.
 
 - [Chunking](/wiki/storage/chunking)
 - [Multi-Level Grids](/wiki/storage/multi-level-grid)
