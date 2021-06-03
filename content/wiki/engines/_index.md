@@ -6,6 +6,7 @@ description = "Using an existing engine or writing a new one is a hard question;
 > **TODO**
 > - Add more engines to the list below.
 > - Create one article for each engine.
+> - Add reasoning for creating engines.
 
 Commonly used game engines:
 
