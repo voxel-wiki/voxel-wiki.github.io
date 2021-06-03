@@ -20,6 +20,8 @@ var voxel = voxels[x][y][z];
 However, that is far from the only way to store voxels...
 
 - [Chunking](/wiki/storage/chunking)
+- [Multi-Level Grids](/wiki/storage/multi-level-grid)
+- [Sparse Voxel Octree (SVO)](/wiki/storage/sparse-voxel-octree)
 
 ## Compression
 
