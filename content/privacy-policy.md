@@ -1,5 +1,6 @@
 +++
-title = "Privacy"
+title = "Privacy Policy"
+description = "Privacy-Policy of the voxel.wiki website."
 +++
 
 We do not collect *any* data from our visitors.

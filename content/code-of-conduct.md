@@ -1,5 +1,6 @@
 +++
 title = "Code Of Conduct"
+description = "Code Of Conduct of the voxel-wiki organisation."
 +++
 
 **TODO**

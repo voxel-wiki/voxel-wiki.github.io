@@ -1,5 +1,6 @@
 +++
 title = "Introduction"
+description = "A general introduction to the concept of voxels."
 path = "wiki/introduction"
 +++
 
