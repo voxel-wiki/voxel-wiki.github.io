@@ -1,5 +1,6 @@
 +++
 title = "Coordinate Systems"
+path = "wiki/coordinates"
 +++
 
 ## Motivation
