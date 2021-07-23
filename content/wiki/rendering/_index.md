@@ -36,3 +36,12 @@ There are many ways of rendering voxels, depending on the way they should look l
 - Ambient occlusion?
 - Flood-Fill Lighting?
 - ...?
+
+## General Culling Methods
+
+Depending on the method you choose to render voxels, you might have to [cull the voxel data](/wiki/rendering/culling), so as to not overload your GPU with draw-calls and/or geometry.
+
+- Distance Culling: Only use the voxels closest to the player.
+- Frustum Culling: Only use the voxels within the players camera view.
+- Cave Culling: Only use the voxels the player can heuristically see.
+- Occlusion Culling: Only use the voxels the player can actually see.
