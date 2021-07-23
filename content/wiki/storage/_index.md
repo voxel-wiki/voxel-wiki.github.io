@@ -1,6 +1,6 @@
 +++
 title = "Storage"
-description = "The many ways to manage voxels in memory."
+description = "The many ways to structure and manage voxels in memory."
 +++
 
 > Note: This section generally covers *runtime* storage, not [serialization](/wiki/serialization).
