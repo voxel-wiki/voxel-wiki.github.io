@@ -57,8 +57,33 @@ Also, if one doesn't pay close attention to the layout of data in memory, it is 
 
 There are a variety of optimizations that can be applied to make palette compression *even better*...
 
-- **TODO**: volume as bitbuffer optimization
-- **TODO**: struct/value optimization
 - **TODO**: area allocation
-- **TODO**: singular block
 - **TODO**: run-length encoding and morton-ordering
+
+### Bit-Buffer
+
+The first (and most impactful) optimization to implement for palettes is the use of bit-buffers.
+
+That is, by reducing the bit-size of the voxels to the minimum amount of bits needed (eg: the amount of unique indices, which equates to the amount of palette entries), the amount of memory needed to store large low-entropy voxel volumes is *massively* reduced.
+
+> **TODO**: Implementation?
+
+### One Single Type
+
+When you think about it, a palette with only a single entry, doesn't have to have a voxel volume allocated for it... which leads to a simple, but impactful, optimization for when there are a lot of chunks filled with only air!
+
+> **TODO**: Implementation?
+
+### Tagged-Pointer Palette Entries
+
+Here's a question: How many bits does a single type of voxel (eg: a palette entry) take?
+
+With palettes, it doesn't really matter! Every palette entry represents all instances of a type in the associated voxel volume and is stored in a heap-allocated object... but, what if you wanted to *not* incur the cost of a heap allocation and the pointer-access?
+
+The solution is to use [tagged pointers](https://en.wikipedia.org/wiki/Tagged_pointer)! A single bit can be used to indicate if a palette entries information is either **A)** stored on the heap as object or **B)** stored right in the pointer.
+
+Given a 32-bit architecture which aligns allocations on 32-bit words/4 bytes (basically *all* 32-bit CPU's!), the two lowest bits will always be zero (on 64-bit arch's it'll be the last three bits), meaning we can store whatever we want in these bits, as long as we mask them out when actually using the pointer as a pointer!
+
+This gives you ***31 bits*** to encode a voxel type in (*63* bits on a 64-bit CPU!), which should be *way* more than enough for terrain (which tends to make up the majority of a voxel world by sheer volume), thus eliminating a *ton* of allocations and pointers!
+
+> **TODO**: Implementation?
