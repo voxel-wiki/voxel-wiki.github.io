@@ -1,5 +1,6 @@
 +++
 title = "Coordinate Systems"
+description = "The importance of correct coordinate systems cannot be understated."
 path = "wiki/coordinates"
 +++
 

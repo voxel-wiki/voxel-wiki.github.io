@@ -1,6 +1,6 @@
 +++
 title = "Sparse Voxel Octree"
-description = "A tree of grids with holes."
+description = "A tree of chunks with holes."
 +++
 
 **TODO**
