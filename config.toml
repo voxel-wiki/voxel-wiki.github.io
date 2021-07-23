@@ -10,7 +10,7 @@ theme = "adidoks" # we actually use a forked version of this theme!
 compile_sass = true
 
 generate_feed = true
-feed_filename  = "rss.xml"
+#feed_filename  = "rss.xml"
 
 #minify_html = true # Currently broken due to https://github.com/getzola/zola/issues/1300
 
