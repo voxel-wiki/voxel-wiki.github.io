@@ -27,6 +27,7 @@ However, that is far from the only way to store voxels...
 
 ## Compression
 
+- [Lossy Compression](/wiki/storage/lossy-compression)
 - [Palette Compression](/wiki/storage/palette-compression)
 - [Run-Length Encoding](/wiki/storage/run-length-encoding)
 
