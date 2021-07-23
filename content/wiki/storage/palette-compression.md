@@ -78,7 +78,7 @@ When you think about it, a palette with only a single entry, doesn't have to hav
 
 Here's a question: How many bits does a single type of voxel (eg: a palette entry) take?
 
-With palettes, it doesn't really matter! Every palette entry represents all instances of a type in the associated voxel volume and is stored in a heap-allocated object... but, what if you wanted to *not* incur the cost of a heap allocation and the pointer-access?
+With palettes, it doesn't really matter! Since every palette entry represents all instances of a type in the associated voxel volume, it's perfectly fine to put them on the heap as their own objects... but, what if you wanted to *not* incur the cost of a heap allocation and the pointer-access?
 
 The solution is to use [tagged pointers](https://en.wikipedia.org/wiki/Tagged_pointer)! A single bit can be used to indicate if a palette entries information is either **A)** stored on the heap as object or **B)** stored right in the pointer.
 
