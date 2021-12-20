@@ -22,3 +22,7 @@ pre code {
 	scrollbar-width: initial !important;
 	scrollbar-color: #e9ecef transparent !important;
 }
+
+body:not(.dark) a {
+	color: rgb(80, 31, 255);
+}
