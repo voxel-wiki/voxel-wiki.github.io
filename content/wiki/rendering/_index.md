@@ -34,7 +34,7 @@ There are many ways of rendering voxels, depending on the way they should look l
 
 - Global Illumination?
 - Ambient occlusion?
-- Flood-Fill Lighting?
+- [Flood-Fill Lighting](https://web.archive.org/web/20210429192404/https://www.seedofandromeda.com/blogs/29-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-1)
 - ...?
 
 ## General Culling Methods
