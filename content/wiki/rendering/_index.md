@@ -7,6 +7,13 @@ There are many ways of rendering voxels, depending on the way they should look l
 
 > **Note:** When we say that there are many ways of rendering voxels, we of course mean there's an *infinite amount* of ways. Seriously, we couldn't list them all, even if we tried! As such, this article will *never* be complete...
 
+## Graphics Programming APIs
+
+When writing a program that renders something to the screen, you will usually want to make your code work across many platforms. For that, there are two main API's you might use: [OpenGL](/wiki/rendering/opengl) and [Vulkan](/wiki/rendering/vulkan).
+
+- If you want to get started as fast as possible, with no regard to how modern graphics cards work, use OpenGL.
+- If you want your program to be future-proof and as high-performing as possible, use Vulkan.
+
 ## General Rendering Methods
 
 ### Rasterization
