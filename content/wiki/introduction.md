@@ -27,9 +27,7 @@ Interestingly, the grid in question may have holes, be stretched, have multiple 
 
 ### What is *not* a voxel?
 
-If, for example, your values are generated in a *two*-dimensional grid and then 'expanded' into a *third* dimension during rendering, you are ***not*** using voxels. That's just a plain old [heightmap](https://en.wikipedia.org/wiki/Heightmap) *pretending* to be voxels.
-
-In prehistoric times, voxels tended to be stored as [run-length encoded](/wiki/storage/run-length-encoding) columns in a two-dimensional grid (because memory was *not* cheap!), making them *2.5 dimensional*... so even though the terminology *today* says 'regular grid of values', this *still* counts as voxels; they are merely compressed at all times!
+If, for example, your values are generated in a *two*-dimensional grid and then 'expanded' into a *third* dimension during rendering, you are ***not*** using voxels. That's just a plain old [heightmap](https://en.wikipedia.org/wiki/Heightmap) *pretending* to be voxels! The exception to this are [run-length encoded](/wiki/storage/run-length-encoding) *columns* of voxels.
 
 ## What are voxels used for?
 
