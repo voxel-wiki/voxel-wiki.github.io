@@ -38,5 +38,6 @@ link = "/wiki/engines"
 [[extra.list]]
 title = "Community"
 content = "Want to talk with people that love voxels?<br>Well, visit us <a href='http://voxelgamedev.com/'>on discord</a> or <a href='http://reddit.com/r/voxelgamedev/'>reddit</a>!"
+link = "/wiki/community"
 
 +++
