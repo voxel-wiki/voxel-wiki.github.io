@@ -9,7 +9,7 @@ Links for communities centered around **voxels**:
 - [Alternate Subreddit](https://www.reddit.com/r/VolumeRendering)
 - [Voxel Art Subreddit](https://www.reddit.com/r/VoxelArt)
 - [Official Discord Server](https://voxelgamedev.com/)
-- [Alternative Discord](https://discord.gg/keqQPqzuzE)
+- [Alternative Discord](https://discord.com/invite/aegudcbYhr)
 
 Links for communities related to **graphics programming**:
 - [Graphics Programming Discord](https://discord.gg/6mgNGk7)
