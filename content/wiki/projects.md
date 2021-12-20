@@ -12,3 +12,4 @@ On this page anybody can add projects involving voxels (even their own!), as lon
 | [Magica Voxel](https://ephtracy.github.io/index.html?page=mv_main) | *custom* | *unknown* | *unknown* | *none* |
 | [Terasology](https://terasology.org/) | *custom* | Bloxel Rasterization | [Multi-Level Grid](/wiki/storage/multi-level-grid) of [Chunks](/wiki/storage/chunking) | *custom* |
 | [Minetest](http://minetest.net/) | [Fork of Irrlicht](https://github.com/minetest/irrlicht) | Naive Bloxel Rasterization | Grid of [Chunks](/wiki/storage/chunking) | *custom* |
+| [Veloren](https://veloren.net/) | *custom* | *unknown* Rasterization | *unknown* | *custom* |
