@@ -29,9 +29,9 @@ Following is a list of things you must keep in mind and be aware of *before* you
 
 1. You must have the concrete want (motivation) and will (displicine) to do so.
 2. It is a massive amount of work, potentially spanning over years of your life.
-3. Having several years of programming experience is a must; nobody will hold your hand in this endavour.
+3. Having several years of programming experience is a must; nobody will hold your hand in this endavor.
 4. All the tooling for asset-, level- and gameplay-creation? You'll have to write *all of that* too.
-5. Running into driver bugs will eat a lot of time and make want to rip your hair out.
+5. Running into driver bugs will eat a lot of time and make you want to rip your hair out.
 
 The above list might make you question *"Why would anyone do this?!"*, to which most of us will say... because it's fun! :D
 
