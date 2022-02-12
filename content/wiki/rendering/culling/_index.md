@@ -1,11 +1,13 @@
 +++
 title = "Rendering: Culling"
-description = "Culling is the process of limiting the amount of data to process to manageable levels."
+description = "Limiting the amount of voxels rendered to manageable levels."
 +++
 
-Types of culling:
+In general, culling is the process of limiting the amount of things rendered to manageable levels, so the GPU doesn't go up in flames.
 
-- Distance Culling: Only use the voxels closest to the player.
-- Frustum Culling: Only use the voxels within the players camera view.
-- Cave Culling: Only use the voxels the player can heuristically see.
-- Occlusion Culling: Only use the voxels the player can actually see.
+So, here are the ~4 families of culling, in increasing algorithmic- and/or time-complexity:
+
+1. Distance Culling: Don't render what is too far away.
+2. Frustum Culling: Don't render what falls outside the cameras view.
+3. Portal Culling: Don't render what is in another room.
+4. Occlusion Culling: Don't render what cannot *actually* be seen.
