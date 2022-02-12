@@ -23,17 +23,9 @@ When writing a program that renders something to the screen, you will usually wa
 - Meshing
 - Splatting
 
-### Raytracing
-
-**In general:** Shooting rays out of a camera into a scene made of voxels, sampling color values for every voxel hit, it is possible to produce a high degree of photorealism and/or complex lighting effects, that are otherwise extremely hard to produce with rasterization.
-
 ### Raymarching
 
-**In general:** Shooting rays out of a camera into a scene made of voxels, sampling color values for every voxel while *marching* along the ray, until some exit condition is met.
-
-### Raycasting
-
-*...?*
+**In general:** Shooting rays out of a camera into a scene made of voxels, sampling color values for every voxel hit, it is possible to produce a high degree of photorealism and/or complex lighting effects, that are otherwise extremely hard to produce with rasterization.
 
 ## General Lighting Methods
 
