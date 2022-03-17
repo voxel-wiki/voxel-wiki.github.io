@@ -75,4 +75,3 @@ language = ["Javascript"]
 source = "https://github.com/Permille/Permille.io"
 license = "CC BY-NC-SA 4.0"
 rendering = "Raytracing"
-storage = "Not applicable"
