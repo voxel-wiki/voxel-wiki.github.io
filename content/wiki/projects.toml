@@ -75,3 +75,52 @@ language = ["Javascript"]
 source = "https://github.com/Permille/Permille.io"
 license = "CC BY-NC-SA 4.0"
 rendering = "Raytracing"
+
+[[projects]]
+name = "Gnome Tower"
+url = "https://www.youtube.com/channel/UC6qe1IBLMBi0jqaec-Msxlw"
+state = "Active Dev."
+language = ["C++"]
+rendering = "Rasterization"
+
+[[projects]]
+name = "Voxelman"
+url = "https://github.com/MrSmith33/voxelman2"
+state = "Active Dev."
+language = ["D", "Vox using Vulkan"]
+source = "https://github.com/MrSmith33/voxelman2"
+license = "Boost"
+
+[[projects]]
+name = "Dream Settler"
+url = "dreamsettler.com"
+state = "Active Dev."
+language = ["Unreal"]
+
+[[projects]]
+name = "vengi - voxel tools"
+url = "https://mgerhardy.github.io/vengi"
+state = "Active Dev."
+language = ["C++"]
+source = "https://mgerhardy.github.io/vengi"
+license = "MIT"
+
+[[projects]]
+name = "Colony Survival"
+url = "https://store.steampowered.com/app/366090/Colony_Survival/"
+state = "Early Access"
+language = ["Unity3d", "C#"]
+
+[[projects]]
+name = "Sector's Edge"
+url = "https://sectorsedge.com/s/i2s2"
+state = "Early Access"
+language = ["C#"]
+
+[[projects]]
+name = "Simple Voxel Raycaster"
+url = "https://github.com/clemdemort/simple-voxel-raycaster"
+state = "Released"
+language = ["C++", "GLSL"]
+source = "https://github.com/clemdemort/simple-voxel-raycaster"
+
