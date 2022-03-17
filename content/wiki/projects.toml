@@ -66,3 +66,13 @@ source = "https://github.com/minetest/minetest/"
 license = "LGPL v2.1+"
 rendering = "Naive Bloxel Mesh Rasterization"
 storage = "Grid of [Chunks](/wiki/storage/chunking) stored in SQLite"
+
+[[projects]]
+name = "Permille.io"
+url = "https://permille.io/Voxels/Latest/"
+state = "Active Dev."
+language = ["Javascript"]
+source = "https://github.com/Permille/Permille.io"
+license = "CC BY-NC-SA 4.0"
+rendering = "Raytracing"
+storage = "Not applicable"
