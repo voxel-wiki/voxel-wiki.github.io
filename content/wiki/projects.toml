@@ -87,7 +87,8 @@ rendering = "Rasterization"
 name = "Voxelman"
 url = "https://github.com/MrSmith33/voxelman2"
 state = "Active Dev."
-language = ["D", "Vox using Vulkan"]
+engine = "Vox"
+language = ["D"]
 source = "https://github.com/MrSmith33/voxelman2"
 license = "Boost"
 
@@ -95,7 +96,7 @@ license = "Boost"
 name = "Dream Settler"
 url = "dreamsettler.com"
 state = "Active Dev."
-language = ["Unreal"]
+engine = "Unreal"
 
 [[projects]]
 name = "vengi - voxel tools"
@@ -109,7 +110,8 @@ license = "MIT"
 name = "Colony Survival"
 url = "https://store.steampowered.com/app/366090/Colony_Survival/"
 state = "Early Access"
-language = ["Unity3d", "C#"]
+engine = "Unity3d"
+language = ["C#"]
 
 [[projects]]
 name = "Sector's Edge"
