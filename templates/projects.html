@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block body %}{% set page_class="projects" %}{% endblock body %}
+{% block content %}
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xl-8">
+        <article>
+          <div class="page-header">
+            <h1>{{ page.title }}</h1>
+          </div>
+          {% if page.extra.lead %}<p class="lead">{{ page.extra.lead }}</p>{% endif %}
+          {{ page.content | safe }}
+          
+          {% set pdata = load_data(path="content/wiki/projects.toml", format="toml") %}
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>State</th>
+                <th>Engine &amp;<br/>Language</th>
+                <th>Source &amp;<br/>License</th>
+                <!--
+                <th>Properties</th>
+                  Rendering    Storage    Physics
+                -->
+              </tr>
+            </thead>
+            <tbody>
+            {% for project in pdata.projects %}
+              <tr>
+                <td>
+                  <a target="_blank" href="{{project.url}}">{{project.name}}</a>
+                </td>
+                <td>
+                  {% if project.state %}
+                    {{project.state}}
+                  {% else %}
+                    &mdash;
+                  {% endif %}
+                </td>
+                <td>
+                  {% if project.language %}
+                    {{project.language | join(sep=" & ")}}
+                    {% if project.engine %}
+                      <br/>{{project.engine | markdown(inline=true) | safe}}
+                    {% endif %}
+                  {% else %}
+                    {% if project.engine %}
+                      {{project.engine | markdown(inline=true) | safe}}
+                    {% else %}
+                      &mdash;
+                    {% endif %}
+                  {% endif %}
+                </td>
+                <td>
+                  {% if project.source %}
+                    <a target="_blank" href="{{project.source}}">
+                      {% if project.license %}
+                        {{project.license}}
+                      {% else %}
+                        Available
+                      {% endif %}
+                    </a>
+                  {% else %}
+                    &mdash;
+                  {% endif %}
+                </td>
+              </tr>
+            {% else %}
+              <!-- Projects list is empty?! -->
+            {% endfor %}
+            </tbody>
+          </table>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
