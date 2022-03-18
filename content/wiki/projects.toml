@@ -102,10 +102,10 @@ license = "Boost"
 name = "Dream Settler"
 url = "dreamsettler.com"
 state = "Active Dev."
-engine = "Unreal"
+engine = "Unreal Engine 4"
 
 [[projects]]
-name = "vengi - voxel tools"
+name = "vengi"
 url = "https://mgerhardy.github.io/vengi"
 state = "Active Dev."
 language = ["C++"]
@@ -162,6 +162,13 @@ state = "Released"
 name = "BLOCKPOST"
 url = "https://store.steampowered.com/app/706990/BLOCKPOST/"
 state = "Released"
+
+[[projects]]
+name = "Obsidian Prince"
+url = "https://store.steampowered.com/app/1373260/Obsidian_Prince/"
+state = "Early Access"
+engine = "Unity3D"
+language = ["C#"]
 
 [[projects]]
 name = "Boundless"
