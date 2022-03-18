@@ -4,28 +4,31 @@ on:
       - main 
   pull_request:
   workflow_dispatch:
+
 jobs:
   build:
+    name: 'Build Site'
     runs-on: ubuntu-latest
     if: github.ref != 'refs/heads/main'
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-      - name: 'Build only' 
-        uses: shalzz/zola-deploy-action@b486d705b0f6e8fde8378844bcaa3ff889f2e2d3
+      - name: 'Build' 
+        uses: shalzz/zola-deploy-action@580bfc55c7f573f4b6c596ba322613b5aec8de87
         env:
           BUILD_DIR: .
-          TOKEN: ${{ secrets.VOXEL_WIKI }}
+          GITHUB_TOKEN: ${{ secrets.VOXEL_WIKI }}
           BUILD_ONLY: true
   build_and_deploy:
+    name: 'Build & Deploy Site'
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-      - name: 'Build and deploy'
-        uses: shalzz/zola-deploy-action@b486d705b0f6e8fde8378844bcaa3ff889f2e2d3
+      - name: 'Build & Deploy'
+        uses: shalzz/zola-deploy-action@580bfc55c7f573f4b6c596ba322613b5aec8de87
         env:
           PAGES_BRANCH: gh-pages
           BUILD_DIR: .
-          TOKEN: ${{ secrets.VOXEL_WIKI }}
+          GITHUB_TOKEN: ${{ secrets.VOXEL_WIKI }}
