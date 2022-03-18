@@ -12,6 +12,12 @@
 # - license
 
 [[projects]]
+name = "Infiniminer"
+url = "http://thesiteformerlyknownas.zachtronicsindustries.com/infiniminer/"
+state = "Released"
+note = "The game that (re)started it all."
+
+[[projects]]
 name = "Minecraft"
 url = "https://www.minecraft.net/"
 state = "Released"
@@ -126,3 +132,191 @@ state = "Released"
 language = ["C++", "GLSL"]
 source = "https://github.com/clemdemort/simple-voxel-raycaster"
 
+[[projects]]
+name = "3079"
+url = "https://sites.google.com/site/3079game/"
+state = "Released"
+language = ["Java"]
+engine = "jMonkeyEngine"
+
+[[projects]]
+name = "Avoyd"
+url = "https://www.avoyd.com/"
+state = "Early Access"
+language = ["C++"]
+source = "https://www.enkisoftware.com/faq#engine"
+
+[[projects]]
+name = "Blackvoxel"
+url = "https://www.blackvoxel.com/"
+language = ["C++"]
+license = "LGPL v3+"
+source = "https://github.com/Blackvoxel/Blackvoxel"
+
+[[projects]]
+name = "Block Fortress: Empires"
+url = "https://play.google.com/store/apps/details?id=com.foursakenmedia.blockfortressempires"
+state = "Released"
+
+[[projects]]
+name = "BLOCKPOST"
+url = "https://store.steampowered.com/app/706990/BLOCKPOST/"
+state = "Released"
+
+[[projects]]
+name = "Boundless"
+url = "https://playboundless.com/"
+state = "Released"
+
+[[projects]]
+name = "Brutal nature"
+url = "https://www.brutalnature.com/"
+state = "Early Access"
+
+[[projects]]
+name = "Build A World EDU"
+url = "https://edu.buildaworld.net/"
+state = "Released"
+
+[[projects]]
+name = "Build & Shoot"
+url = "https://www.buildandshoot.com/"
+state = "Released"
+
+[[projects]]
+name = "Creativerse"
+url = "https://creativersegame.com/"
+state = "Released"
+
+[[projects]]
+name = "Cube"
+url = "http://cubeengine.com/"
+state = "Released"
+
+[[projects]]
+name = "Cube 2: Sauerbraten"
+url = "http://sauerbraten.org/"
+state = "Released"
+
+[[projects]]
+name = "Deep Rock Galactic"
+url = "https://www.deeprockgalactic.com/"
+state = "Released"
+
+[[projects]]
+name = "Dual Universe"
+url = "https://www.dualuniverse.game/"
+state = "Beta"
+
+[[projects]]
+name = "Eco"
+url = "https://play.eco/"
+state = "Released"
+
+[[projects]]
+name = "Empyrion"
+url = "http://empyriongame.com/"
+state = "Early Access"
+
+[[projects]]
+name = "Exotic Matter"
+url = "https://exoticmatter.io/"
+state = "Early Access"
+
+[[projects]]
+name = "FortressCraft Evolved"
+url = "https://store.steampowered.com/app/254200/FortressCraft_Evolved/"
+state = "Early Access"
+
+[[projects]]
+name = "Lego Worlds"
+url = "https://store.steampowered.com/app/332310/LEGO_Worlds/"
+state = "Released"
+
+[[projects]]
+name = "No Man's Sky"
+url = "https://www.nomanssky.com/"
+state = "Released"
+
+[[projects]]
+name = "Rising World"
+url = "https://www.rising-world.net/"
+state = "Early Access"
+
+[[projects]]
+name = "Space Engineers"
+url = "https://www.spaceengineersgame.com/"
+state = "Released"
+
+[[projects]]
+name = "StarMade"
+url = "https://www.star-made.org/"
+state = "Early Access"
+
+[[projects]]
+name = "Synthetic World"
+url = "https://www.staudsoft.com/"
+state = "Released"
+
+[[projects]]
+name = "Staxel"
+url = "https://playstaxel.com/"
+state = "Released"
+
+[[projects]]
+name = "Super Voxel World"
+url = "https://svw.itch.io/super-voxel-world"
+state = "Active Dev."
+engine = "Unity3D"
+language = ["C#"]
+
+[[projects]]
+name = "Trove"
+url = "https://www.trionworlds.com/trove/en/"
+state = "Released"
+
+[[projects]]
+name = "Voxel Farm"
+url = "https://www.voxelfarm.com/index.html"
+
+[[projects]]
+name = "FreeMiner"
+url = "https://github.com/freeminer/freeminer"
+source = "https://github.com/freeminer/freeminer"
+license = "LGPL"
+language = ["C++"]
+engine = "Minetest"
+
+[[projects]]
+name = "Voxel Planet"
+url = "https://www.youtube.com/user/voxelplanet/videos"
+
+[[projects]]
+name = "UpvoidMiner"
+url = "https://upvoid.com/miner/about/"
+state = "Beta"
+
+[[projects]]
+name = "StoneQuest"
+url = "https://www.stonequest.de/"
+
+[[projects]]
+name = "StarForge"
+url = "http://www.starforge.com/"
+
+[[projects]]
+name = "Murder Miners"
+url = "http://jforcegames.com/"
+state = "Released"
+
+[[projects]]
+name = "Guncraft"
+url = "https://www.exatogames.com/"
+
+[[projects]]
+name = "Kopatel Online"
+url = "https://kopatel-online.tumblr.com/"
+
+[[projects]]
+name = "FinityWorlds"
+url = "https://www.youtube.com/channel/UCw6nMILS3QcJRHTHCuZuchg"
