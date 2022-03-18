@@ -100,7 +100,7 @@ license = "Boost"
 
 [[projects]]
 name = "Dream Settler"
-url = "dreamsettler.com"
+url = "http://dreamsettler.com/"
 state = "Active Dev."
 engine = "Unreal Engine 4"
 
