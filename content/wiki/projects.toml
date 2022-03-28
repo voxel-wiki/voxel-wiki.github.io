@@ -38,6 +38,11 @@ url = "https://7daystodie.com/"
 state = "Early Access"
 
 [[projects]]
+name = "Astroneer"
+url = "https://astroneer.space/"
+state = "Released"
+
+[[projects]]
 name = "Magica Voxel"
 url = "https://ephtracy.github.io/"
 
