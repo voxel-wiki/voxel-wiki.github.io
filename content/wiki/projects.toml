@@ -33,6 +33,11 @@ state = "Early Access"
 rendering = "Raytracing"
 
 [[projects]]
+name = "7 Days To Die"
+url = "https://7daystodie.com/"
+state = "Early Access"
+
+[[projects]]
 name = "Magica Voxel"
 url = "https://ephtracy.github.io/"
 
