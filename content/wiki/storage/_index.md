@@ -5,7 +5,7 @@ description = "The many ways to structure and manage voxels in memory."
 
 > Note: This section generally covers *runtime* storage, not [serialization](/wiki/serialization).
 
-The simplest way to store voxels, is to define a three-dimensional array of elements (be it `struct`s or `integer`s), where each element represents a single voxel:
+The simplest way to store voxels is to define a three-dimensional array of elements (be it `struct`s or `integer`s), where each element represents a single voxel:
 
 ```c#
 int width = ...;
@@ -20,7 +20,7 @@ voxels[x][y][z] = voxel;
 var voxel = voxels[x][y][z];
 ```
 
-However, because storing arrays within arrays means having pointers pointing at pointers (which ain't good for various reasons we won't get into here), it is generally recommended to use a one-dimensional array with a clearly defined *spatial indexing scheme*.
+However, because storing *arrays within arrays* often means having *pointers pointing at pointers* (which ain't good for [various reasons](/wiki/optimization) we won't get into here), it is generally recommended to use a one-dimensional array with a clearly defined *spatial indexing scheme*.
 
 Here's an example:
 
@@ -34,6 +34,7 @@ var voxels = new VOXEL[height * depth * width];
 // with the components being multiplied subsequently:
 //     x + z*width + y*width*depth
 
+// So let's define a function (here a lambda) for it:
 var idx = (int x, int y, int z) => (x + z*width + y*width*depth);
 // ^ NOTE: You may want to throw an error right here
 //         if the coordinate components are out of bounds.
@@ -45,9 +46,9 @@ voxels[idx(x,y,z)] = voxel;
 var voxel = voxels[idx(x,y,z)];
 ```
 
-Now, storing voxels in a good old array like this is perfectly fine for small scenes...
+Now, storing voxels in a plain array like this is perfectly fine for small scenes...
 
-However, for larger scenes, we'll have to use a data-structure that allows both loading and purging parts of our volume (called [Chunks](/wiki/storage/chunking)) from memory, nearly in realtime, without slowing down *accessing* our voxel data.
+However, for larger scenes, we'll have to use a data-structure that allows both loading and purging *parts of our volume* (called [Chunks](/wiki/storage/chunking)) from memory, nearly in realtime, without slowing down *accessing* our voxel data.
 
 > **Note:** These techniques can often be combined.
 
@@ -60,9 +61,9 @@ Even with a nice data-structure in place, we might still want (or outright *need
 
 - It might seem like we have a lot of memory (gigabytes, in fact!), but voxel volume data is *big* (`n³`) and our users may have other things running, like a web browser!
 
-- The bandwith between working memory (RAM) and our processor (CPU) is *limited* and *shared* with other processes, thus being highly contended!
+- The bandwidth between working memory (RAM) and our processor (CPU) is *limited* and *shared* with other processes, thus being highly contended!
 
-To remedy these issues, we'll have to *compress* our voxels...
+To remedy these issues, we'll have to *compress* our voxels, for which there are many methods...
 
 - [Lossy Compression](/wiki/storage/lossy-compression)
 - [Palette Compression](/wiki/storage/palette-compression)
