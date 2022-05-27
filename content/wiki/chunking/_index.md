@@ -96,4 +96,4 @@ chunk.set_from_world(x, y, z, voxel);
 var voxel = chunk.get_from_world(x, y, z);
 ```
 
-In all of the above code, you might have noticed that nearly all coordinate variables have prefixes: There is a [good reason for that](/wiki/coordinate-systems).
+In all of the above code, you might have noticed that nearly all coordinate variables have prefixes: There is a [good reason for that](/wiki/coordinate-systems/).
