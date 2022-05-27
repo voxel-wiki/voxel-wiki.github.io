@@ -25,6 +25,15 @@ article > .notice {
 	border-radius: 3px;
 	background: rgb(80, 31, 255);
 	color: white;
+	
+	&.stub {
+		/* <div class="notice stub"></div> */
+		&::before {
+			content: "This article is a stub. Perhaps help us expand it?";
+		}
+		background: rgb(255, 203, 31);
+		color: rgb(29, 45, 53);
+	}
 }
 
 pre code {
