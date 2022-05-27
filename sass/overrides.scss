@@ -18,6 +18,15 @@ article img {
 	border-radius: 3px;
 }
 
+article > .notice {
+	/* <div class="notice"></div> */
+	padding: 1rem;
+	font-weight: bold;
+	border-radius: 3px;
+	background: rgb(80, 31, 255);
+	color: white;
+}
+
 pre code {
 	scrollbar-width: initial !important;
 	scrollbar-color: #e9ecef transparent !important;
