@@ -23,6 +23,6 @@ pre code {
 	scrollbar-color: #e9ecef transparent !important;
 }
 
-body:not(.dark) :not(.btn-primary) a {
+body:not(.dark) a:not(.btn-primary) {
 	color: rgb(80, 31, 255);
 }
