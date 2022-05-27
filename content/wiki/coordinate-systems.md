@@ -28,7 +28,7 @@ The global coordinate system that is the entire scene.
 ### Chunk Space
 
 <img src="/favicon-32x32.png" width=32></img>
-The local coordinate system of an [individual chunk](/wiki/datastructures/chunking) or object.
+The local coordinate system of an [individual chunk](/wiki/chunking) or object.
 
 ### Voxel Space
 
