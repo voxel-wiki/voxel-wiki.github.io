@@ -1,3 +1,5 @@
+name: Voxel.Wiki Site Generation
+
 on:
   push:
     branches:
@@ -14,11 +16,11 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@master
       - name: 'Build' 
-        uses: shalzz/zola-deploy-action@580bfc55c7f573f4b6c596ba322613b5aec8de87
+        uses: shalzz/zola-deploy-action@37076cb04a796fdfbb66182375fd8b41a7f3a0e0
         env:
           BUILD_DIR: .
-          GITHUB_TOKEN: ${{ secrets.VOXEL_WIKI }}
           BUILD_ONLY: true
+          GITHUB_TOKEN: ${{ secrets.VOXEL_WIKI }}
   build_and_deploy:
     name: 'Build & Deploy Site'
     runs-on: ubuntu-latest
@@ -27,7 +29,7 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@master
       - name: 'Build & Deploy'
-        uses: shalzz/zola-deploy-action@580bfc55c7f573f4b6c596ba322613b5aec8de87
+        uses: shalzz/zola-deploy-action@37076cb04a796fdfbb66182375fd8b41a7f3a0e0
         env:
           PAGES_BRANCH: gh-pages
           BUILD_DIR: .
