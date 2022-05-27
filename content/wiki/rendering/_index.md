@@ -3,7 +3,7 @@ title = "Rendering"
 description = "How to turn voxels into pixels?"
 +++
 
-There are many ways of rendering voxels, depending on the way they should look like, the underlying storage, performance and resource considerations, general method used, etc. etc. ... It all depends on what ***you*** ultimatively want to *do*.
+There are many ways of rendering voxels, depending on the way they should look like, the underlying storage, performance and resource considerations, general method used, etc. etc. ... It all depends on what ***you*** ultimately want to *do*.
 
 > **Note:**
 > When we say that there are many ways of rendering voxels, we of course mean there is an *infinite amount* of ways.

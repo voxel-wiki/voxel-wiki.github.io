@@ -49,9 +49,9 @@ By using palette compression for voxel data, we gain numerous advantages, like..
 
 **As for disadvantages...**
 
-The palette is a dynamic structure, that grows and shrinks with the number of differing types/states contained within it, which can be a problem in memory or allocation constrained environments. There are some optimizations that mitigate this, allowing one to amortize the read-write-performance to effectively `O(1)` in the majority of cases.
+The palette is a dynamic structure, that grows and shrinks with the number of differing types/states contained within it, which can be a problem in memory or allocation constrained environments (like say, the GPU). There are some optimizations that mitigate this, allowing one to amortize the read-write-performance to effectively `O(1)` in the majority of cases.
 
-Also, if one doesn't pay close attention to the layout of data in memory, it is *very* easy to simultanously cause pointer chasing and utterly trash CPU caches, which is... *bad*.
+Also, if one doesn't pay close attention to the layout of data in memory, it is *very* easy to simultaneously cause pointer chasing and utterly trash CPU caches, which is... *bad*.
 
 ## Optimizations
 
@@ -70,7 +70,7 @@ That is, by reducing the bit-size of the voxels to the minimum amount of bits ne
 
 ### One Single Type
 
-When you think about it, a palette with only a single entry, doesn't have to have a voxel volume allocated for it... which leads to a simple, but impactful, optimization for when there are a lot of chunks filled with only air!
+When you think about it, a palette with only a single entry, doesn't need to have a voxel volume allocated for it... which leads to a rather simple optimization, for when there are a lot of chunks filled with, say, only air!
 
 > **TODO**: Implementation?
 
@@ -82,8 +82,8 @@ With palettes, it doesn't really matter! Since every palette entry represents al
 
 The solution is to use [tagged pointers](https://en.wikipedia.org/wiki/Tagged_pointer)! A single bit can be used to indicate if a palette entries information is either **A)** stored on the heap as object or **B)** stored right in the pointer.
 
-Given a 32-bit architecture which aligns allocations on 32-bit words/4 bytes (basically *all* 32-bit CPU's!), the two lowest bits will always be zero (on 64-bit arch's it'll be the last three bits), meaning we can store whatever we want in these bits, as long as we mask them out when actually using the pointer as a pointer!
+Given a 32-bit architecture which aligns allocations on 32-bit/4-byte boundaries (basically *all* 32-bit CPU's!), the two lowest bits in a pointer will always be zero (on 64-bit arch's it'll be the last three bits), meaning we can store whatever we want in these bits, as long as we mask them out when actually using the pointer as a pointer!
 
-This gives you ***31 bits*** to encode a voxel type in (*63* bits on a 64-bit CPU!), which should be *way* more than enough for terrain (which tends to make up the majority of a voxel world by sheer volume), thus eliminating a *ton* of allocations and pointers!
+This gives you at minimum ***31 bits*** to encode a voxel type in (*63* bits on a 64-bit CPU!), which should be *way* more than enough for terrain (which tends to make up the majority of a voxel world by sheer volume), thus eliminating a *ton* of allocations and pointers!
 
 > **TODO**: Implementation?

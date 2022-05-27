@@ -6,7 +6,7 @@ path = "wiki/coordinates"
 
 ## Motivation
 
-When dealing with voxels, it's extremely important to get your coordinate systems and the conversions between them right. Even slightly wrong conversions can (and will) lead to *massive* headaches and absolutely horrible debugging sessions.
+When dealing with voxels (and math in three-dimensional space in general), it is extremely important to get your coordinate systems and the conversions between them right. Even slightly wrong conversions can (and will) lead to *massive* headaches and horrible debugging sessions.
 
 As such, it is a good idea to do one or more of these:
 
@@ -28,7 +28,7 @@ The global coordinate system that is the entire scene.
 ### Chunk Space
 
 <img src="/favicon-32x32.png" width=32></img>
-The local coordinate system of an [individual chunk](/wiki/storage/chunking).
+The local coordinate system of an [individual chunk](/wiki/storage/chunking) or object.
 
 ### Voxel Space
 

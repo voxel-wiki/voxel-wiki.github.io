@@ -41,9 +41,10 @@ Want to create a videogame using voxels?
 
 Then you'll have to first decide whether you want to start [from scratch](/wiki/engines/from-scratch) or use a [game-engine](/wiki/engines/).
 
-> **Note:** Starting from scratch requires *quite a bit* of knowledge about *many* different areas of programming. If you don't have *any* experience with 3D computer-graphics, or simply don't want to invest *literal years of your [very finite life](https://www.youtube.com/watch?v=JXeJANDKwDc)*, it might be best to start with a game engine instead.
+> **Note:**  
+> Starting from scratch requires knowledge about *many* different areas of programming. If you don't have *any* experience with 3D computer-graphics, or simply don't want to invest *literal years* of your *[very finite life](https://www.youtube.com/watch?v=JXeJANDKwDc)*, it might be best to start with a game engine instead.
 
-Also, you *should* decide early on if you want your voxels to be destructible and/or editable at runtime (or not), very early on, as making the switch later is quite annoying.
+Also, you *should* decide early on if you want your voxels to be destructible and/or editable at runtime (or not), very early on, since many optimizations depend on knowing this fact; making the switch later is *very* annoying.
 
 #### Minecraft Clone?
 
