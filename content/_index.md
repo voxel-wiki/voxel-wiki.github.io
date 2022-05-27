@@ -16,9 +16,9 @@ content = "How to turn voxels into pixels?<br> The <a href='wiki/rendering/'>cho
 link = "/wiki/rendering"
 
 [[extra.list]]
-title = "Storage"
-content = "There are many ways to store voxels, all have their pros and cons, but <a href='wiki/storage/'>which one should you use</a>?"
-link = "/wiki/storage"
+title = "Data Structures"
+content = "There are many ways to store voxels, all have their pros and cons, but <a href='wiki/datastructures/'>which one should you use</a>?"
+link = "/wiki/datastructures"
 
 [[extra.list]]
 title = "Physics"
