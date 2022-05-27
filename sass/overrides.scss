@@ -44,3 +44,8 @@ pre code {
 body:not(.dark) a:not(.btn-primary) {
 	color: rgb(80, 31, 255);
 }
+
+a > code {
+	font-size: inherit;
+	padding: 0 0.125rem;
+}
