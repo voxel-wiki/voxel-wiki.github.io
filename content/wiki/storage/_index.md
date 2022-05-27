@@ -69,7 +69,7 @@ To remedy these issues, we'll have to *compress* our voxels, for which there are
 - [Palette Compression](/wiki/storage/palette-compression)
 - [Run-Length Encoding](/wiki/storage/run-length-encoding)
 
-> **NOTE:** Compressing voxels is also great for persistence and networking.
+> **Note:** Compressing voxels is also great for persistence and networking.
 
 ## References
 
