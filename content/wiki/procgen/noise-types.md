@@ -21,6 +21,7 @@ Using a single type of noise might be a bit *boring* so, usually, one combines m
 
 Common ways to modify noise are:
 
+- **Spline Mapping**, wherein the noise is passed trough a non-constant curve function.
 - **Ridged Noise**, which is the flipped absolute value of noise (`1 - abs(v)`).
 - **Billow Noise**, which is simply the absolute value (`abs(v)`) of the output.
 - **Flat Middle Noise**; `smoothstep( ℝ>0 , ℝ<1 , v)`.
@@ -31,5 +32,6 @@ Common ways to modify noise are:
 
 - [https://thebookofshaders.com/11/](https://thebookofshaders.com/11/)
 - [https://www.bit-101.com/blog/2021/07/perlin-vs-simplex/](https://www.bit-101.com/blog/2021/07/perlin-vs-simplex/)
-- [https://github.com/KdotJPG/OpenSimplex2](https://github.com/KdotJPG/OpenSimplex2)
-- [https://github.com/Auburn/FastNoise2](https://github.com/Auburn/FastNoise2)
+- [OpenSimplex2](https://github.com/KdotJPG/OpenSimplex2) Library
+- [FastNoise2 (`C++`)](https://github.com/Auburn/FastNoise2) Library
+- [psrdnoise (`GLSL`)](https://github.com/stegu/psrdnoise/) Library
