@@ -1,7 +1,7 @@
 +++
 title = "Coordinate Systems"
 description = "The importance of correct coordinate systems cannot be understated."
-path = "wiki/coordinates"
+path = "wiki/coordinate-systems"
 +++
 
 ## Motivation
@@ -18,14 +18,20 @@ As such, it is a good idea to do one or more of these:
 
 Now then, let's get to the various coordinate systems!
 
-**TODO:** Add descriptive diagrams to the space definitions.
+**TODO:** Add descriptive diagrams to all definitions.
 
 ### World Space
 
-<img src="/favicon-32x32.png" width=32></img>
-The global coordinate system that is the entire scene.
+The global coordinate system that is the entire scene. This is where almost all the (gameplay-related) math will occur.
 
-### Chunk Space
+Depending on the software you are using, this can vary *wildly*...
+
+![World-Space Coordinate Systems by Freya Holmér](coordinate-systems.png)
+> Cheat Sheet made by [Freya Holmér](https://twitter.com/FreyaHolmer/status/1325556229410861056) © 2020  
+> Wiki license exception: Copyright belongs to artist.  
+> Copy embedded here [with permission](https://twitter.com/FreyaHolmer/status/1530167901436649472).
+
+### Chunk/Object Space
 
 <img src="/favicon-32x32.png" width=32></img>
 The local coordinate system of an [individual chunk](/wiki/chunking) or object.
@@ -34,3 +40,14 @@ The local coordinate system of an [individual chunk](/wiki/chunking) or object.
 
 <img src="/favicon-32x32.png" width=32></img>
 The inner coordinate system of an *individual voxel*.
+
+### NDC Space
+
+<img src="/favicon-32x32.png" width=32></img>
+The global coordinate system, as seen by a camera with some projection applied.
+
+### View Space
+
+<img src="/favicon-32x32.png" width=32></img>
+The global coordinate system, as seen by a camera, with *no* projection applied.
+
