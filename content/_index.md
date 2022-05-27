@@ -17,7 +17,7 @@ link = "/wiki/rendering"
 
 [[extra.list]]
 title = "Data Structures"
-content = "There are many ways to store voxels, all have their pros and cons, but <a href='wiki/datastructures/'>which one should you use</a>?"
+content = "There are many ways to <a href='wiki/datastructures/'>store</a>, <a href='wiki/serialization/'>serialize</a> and <a href='wiki/compression/'>compress</a> voxels, all have their pros and cons, but <a href='wiki/datastructures/'>which one should you use</a>?"
 link = "/wiki/datastructures"
 
 [[extra.list]]
