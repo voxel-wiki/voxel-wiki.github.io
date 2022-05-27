@@ -39,18 +39,18 @@ Since you are visiting this wiki, you might already know *what* you want to use 
 
 Want to create a videogame using voxels?
 
-Then you'll have to first decide whether you want to start [from scratch](/wiki/engines/from-scratch) or use a [game-engine](/wiki/engines/).
+Then you'll have to first decide whether you want to start [from scratch](/wiki/engines/from-scratch) or use an existing [game-engine](/wiki/engines/).
 
 > **Note:**  
 > Starting from scratch requires knowledge about *many* different areas of programming. If you don't have *any* experience with 3D computer-graphics, or simply don't want to invest *literal years* of your *[very finite life](https://www.youtube.com/watch?v=JXeJANDKwDc)*, it might be best to start with a game engine instead.
 
-Also, you *should* decide early on if you want your voxels to be destructible and/or editable at runtime (or not), very early on, since many optimizations depend on knowing this fact; making the switch later is *very* annoying.
+Also, you *should* decide early on if you want your voxels to be (or not be) destructible/editable by the user/player at runtime, very early on, since many optimizations depend on knowing this fact; making the switch later is *very* annoying.
 
 #### Minecraft Clone?
 
 If you *do* intend to create a voxel-based videogame, there is something **you should be immediately and acutely aware of**:
 
-No matter what you do, your game *will* inevitably be compared to Minecraft... and that's okay! Copying other peoples ideas has been happening for quite literally thousands of years (basically forever), across all creative disciplines! Nothing these days is truly original, so don't worry about it and just create what *you* like!
+No matter what you do, your game *will* inevitably be compared to Minecraft... and that's okay! Copying and [remixing](https://www.youtube.com/watch?v=MZ2GuvUWaP8) other peoples ideas has been happening for quite literally thousands of years (basically forever), across *all* creative disciplines! Nothing these days is truly original, so don't worry about it and just create what *you* like!
 
 ### Modeling
 
