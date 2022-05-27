@@ -24,7 +24,7 @@ state = "Released"
 source = "https://minecraft.fandom.com/wiki/Obfuscation_map"
 language = ["Java"]
 rendering = "Naive Baked Bloxel Mesh Rasterization"
-storage = "[Multi-Level Grid](/wiki/datastructures/multi-level-grid) with Columns of [Chunks](/wiki/datastructures/chunking)"
+storage = "[Multi-Level Grid](/wiki/datastructures/multi-level-grid) with Columns of [Chunks](/wiki/chunking)"
 
 [[projects]]
 name = "Teardown"
@@ -61,7 +61,7 @@ license = "Apache 2.0"
 source = "https://github.com/MovingBlocks/Terasology"
 language = ["Java"]
 rendering = "Greedy Bloxel Mesh Rasterization"
-storage = "[Multi-Level Grid](/wiki/datastructures/multi-level-grid) of [Chunks](/wiki/datastructures/chunking)"
+storage = "[Multi-Level Grid](/wiki/datastructures/multi-level-grid) of [Chunks](/wiki/chunking)"
 
 [[projects]]
 name = "Veloren"
@@ -81,7 +81,7 @@ language = ["C++", "Lua"]
 source = "https://github.com/minetest/minetest/"
 license = "LGPL v2.1+"
 rendering = "Naive Bloxel Mesh Rasterization"
-storage = "Grid of [Chunks](/wiki/datastructures/chunking) stored in SQLite"
+storage = "Grid of [Chunks](/wiki/chunking) stored in SQLite"
 
 [[projects]]
 name = "Permille.io"

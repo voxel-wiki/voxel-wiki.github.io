@@ -49,7 +49,7 @@ var voxel = voxels[idx(x,y,z)];
 
 Now, storing voxels in a plain array like this is perfectly fine for small scenes...
 
-However, for larger scenes, we'll have to use a data-structure that allows both loading and purging *parts of our volume* (called [Chunks](/wiki/datastructures/chunking)) from memory, nearly in realtime, without slowing down *accessing* our voxel data.
+However, for larger scenes, we'll have to use a data-structure that allows both loading and purging *parts of our volume* (called [Chunks](/wiki/chunking)) from memory, nearly in realtime, without slowing down *accessing* our voxel data.
 
 > **Note:** These techniques can often be combined.
 
