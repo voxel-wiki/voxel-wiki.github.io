@@ -1,7 +1,7 @@
 +++
 title = "Chunking"
 description = "Dividing the grid into finite sub-grids."
-path = "/wiki/storage/chunking"
+path = "/wiki/datastructures/chunking"
 +++
 
 The first and possibly most important step when dealing with voxels, is to divide the voxel grid into **chunks**. Regardless of what kind of data-structure one ultimatively ends up using, at the bottom of it there will likely be *chunks* containing *voxels* (when using a tree-like structure, chunks may be called *bricks*).

@@ -1,6 +1,7 @@
 +++
 title = "Storage"
 description = "The many ways to structure and manage voxels in memory."
+path = "wiki/datastructures"
 +++
 
 > Note: This section generally covers *runtime* storage, not [serialization](/wiki/serialization).
@@ -48,12 +49,12 @@ var voxel = voxels[idx(x,y,z)];
 
 Now, storing voxels in a plain array like this is perfectly fine for small scenes...
 
-However, for larger scenes, we'll have to use a data-structure that allows both loading and purging *parts of our volume* (called [Chunks](/wiki/storage/chunking)) from memory, nearly in realtime, without slowing down *accessing* our voxel data.
+However, for larger scenes, we'll have to use a data-structure that allows both loading and purging *parts of our volume* (called [Chunks](/wiki/datastructures/chunking)) from memory, nearly in realtime, without slowing down *accessing* our voxel data.
 
 > **Note:** These techniques can often be combined.
 
-- [Multi-Level Grids](/wiki/storage/multi-level-grid)
-- [Sparse Voxel Octree (SVO)](/wiki/storage/sparse-voxel-octree)
+- [Multi-Level Grids](/wiki/datastructures/multi-level-grid)
+- [Sparse Voxel Octree (SVO)](/wiki/datastructures/sparse-voxel-octree)
 
 ## Compression
 
@@ -65,9 +66,9 @@ Even with a nice data-structure in place, we might still want (or outright *need
 
 To remedy these issues, we'll have to *compress* our voxels, for which there are many methods...
 
-- [Lossy Compression](/wiki/storage/lossy-compression)
-- [Palette Compression](/wiki/storage/palette-compression)
-- [Run-Length Encoding](/wiki/storage/run-length-encoding)
+- [Lossy Compression](/wiki/datastructures/lossy-compression)
+- [Palette Compression](/wiki/datastructures/palette-compression)
+- [Run-Length Encoding](/wiki/datastructures/run-length-encoding)
 
 > **Note:** Compressing voxels is also great for persistence and networking.
 
