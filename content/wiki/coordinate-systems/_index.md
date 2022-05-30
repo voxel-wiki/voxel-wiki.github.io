@@ -31,7 +31,7 @@ Depending on the software you are using, this can vary *wildly*...
 > Wiki license exception: Copyright belongs to artist.  
 > Copy embedded here [with permission](https://twitter.com/FreyaHolmer/status/1530167901436649472).
 
-### Chunk/Object Space
+### Chunk/Object/Local Space
 
 <img src="/favicon-32x32.png" width=32></img>
 The local coordinate system of an [individual chunk](/wiki/chunking) or object.
@@ -51,3 +51,9 @@ The global coordinate system, as seen by a camera with some projection applied.
 <img src="/favicon-32x32.png" width=32></img>
 The global coordinate system, as seen by a camera, with *no* projection applied.
 
+## References
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Coordinate_system)
+- [Learn OpenGL](https://learnopengl.com/Getting-started/Coordinate-Systems)
+- [Freya Holmér's Cheat Sheet](https://twitter.com/FreyaHolmer/status/1325556229410861056)
+- [WebGPU Specification](https://gpuweb.github.io/gpuweb/#coordinate-systems)
