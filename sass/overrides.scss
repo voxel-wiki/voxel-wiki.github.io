@@ -46,8 +46,11 @@ body:not(.dark) a:not(.btn-primary) {
 	color: rgb(80, 31, 255);
 }
 
-a > code {
+code {
 	font-size: inherit;
+}
+
+a > code {
 	padding: 0 0.125rem;
 }
 
