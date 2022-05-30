@@ -28,6 +28,6 @@ large swathes of the hierarchy, reducing the amount of work to be done.
 
 ## References
 
-- [Learn OpenGL: Face Cullling](https://learnopengl.com/Advanced-OpenGL/Face-culling)
-- [Learn OpenGL: Frustum Cullling](https://learnopengl.com/Guest-Articles/2021/Scene/Frustum-Culling)
+- [Learn OpenGL: Face Culling](https://learnopengl.com/Advanced-OpenGL/Face-culling)
+- [Learn OpenGL: Frustum Culling](https://learnopengl.com/Guest-Articles/2021/Scene/Frustum-Culling)
 - Paper: [Multiresolution structures for interactive visualization of very large 3D datasets (2008)](https://d-nb.info/997062789/34) by Federico Ponchio
