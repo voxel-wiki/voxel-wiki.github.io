@@ -2,6 +2,8 @@
 title = "Community"
 description = "Communities that love voxels!"
 path = "wiki/community"
+[taxonomies]
+categories = ["community"]
 +++
 
 Links for communities centered around **voxels**:

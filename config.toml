@@ -17,7 +17,7 @@ feed_filename  = "rss.xml"
 # TODO: Make use of this...
 taxonomies = [
 	{name = "tags", feed = true},
-	{name = "categories", paginate_by = 25},
+	{name = "categories"},
 	{name = "authors"},
 ]
 
@@ -28,8 +28,8 @@ highlight_code = true
 
 [search]
 include_title = true
-include_description = false
-include_content = true
+include_description = true
+include_content = false
 
 [extra]
 author = "Voxel-Wiki"
@@ -67,9 +67,9 @@ section = "wiki"
 #site_links_search_box = false
 
 [[extra.menu.main]]
-name = "Wiki"
-section = "wiki"
-url = "/wiki/"
+name = "Categories"
+section = "categories"
+url = "/categories/"
 weight = 10
 
 #[[extra.menu.main]]
