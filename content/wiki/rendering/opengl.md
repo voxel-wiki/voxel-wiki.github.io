@@ -1,6 +1,9 @@
 +++
 title = "OpenGL API"
 description = "Classic hardware accelerated rendering API."
+[taxonomies]
+categories = ["rendering"]
+tags = ["rendering", "api"]
 +++
 
 <div class="notice stub"></div>

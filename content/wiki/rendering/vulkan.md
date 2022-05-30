@@ -1,6 +1,9 @@
 +++
 title = "Vulkan API"
 description = "Modern hardware accelerated rendering API."
+[taxonomies]
+categories = ["rendering"]
+tags = ["rendering", "api"]
 +++
 
 <div class="notice stub"></div>

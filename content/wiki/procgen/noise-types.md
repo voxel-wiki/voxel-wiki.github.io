@@ -1,6 +1,9 @@
 +++
 title = "Types of Noise"
 description = "Types of noise commonly used for procedural generation."
+[taxonomies]
+categories = ["procgen"]
+tags = ["math", "noise", "sampling"]
 +++
 
 There are many types of noise one can use for procedural generation.

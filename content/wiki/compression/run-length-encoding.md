@@ -1,6 +1,9 @@
 +++
 title = "Run-Length Encoding"
 description = "Storing runs of voxels instead of individual values."
+[taxonomies]
+categories = ["compression"]
+tags = ["compression", "optimization"]
 +++
 
 [Run-Length Encoding](https://en.wikipedia.org/wiki/Run-length_encoding) (or **RLE** for short) is a type of compression that encodes sequences of repeating values in just a few bytes!
