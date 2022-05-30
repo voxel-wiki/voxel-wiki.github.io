@@ -1,5 +1,5 @@
 +++
-title = "Storage"
+title = "Data Structures"
 description = "The many ways to structure and manage voxels in memory."
 path = "wiki/datastructures"
 +++
