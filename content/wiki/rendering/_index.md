@@ -36,17 +36,21 @@ built on top of these API's:
 
 ### Rasterization
 
-Converting voxels into meshes, then using a hardware-accelerated [rasterizer](https://en.wikipedia.org/wiki/Rasterisation) to render a whole lot of triangles.
+Converting voxels into meshes, then using a hardware-accelerated [rasterizer](https://en.wikipedia.org/wiki/Rasterisation)
+to render a whole lot of triangles.
 
 ### Splatting
 
-Converting voxels into tightly-fitting screen-aligned quadliterals, rasterizing them, then performing a Ray-AABB intersection test in the fragment shader to get cubes.
+Converting voxels into tightly-fitting screen-aligned quadliterals, rasterizing them,
+then performing a Ray-AABB intersection test in the fragment shader to get cubes.
 
 ### Raytracing
 
-Send rays out of a camera into a volume of voxels, marching along them until voxels are hit, calculating a color based on the hit voxels and additional rays sent out from there.
+Send rays out of a camera into a volume of voxels, marching along them until voxels are hit,
+calculating a color based on the hit voxels and additional rays sent out from there.
 
-This method makes it possible to achieve a high degree of photorealism and/or complex lighting effects, that are otherwise extremely hard to produce with other methods.
+This method makes it possible to achieve a high degree of photorealism and/or complex lighting effects,
+that are otherwise extremely hard to produce with other methods.
 
 ## General Lighting Methods
 
