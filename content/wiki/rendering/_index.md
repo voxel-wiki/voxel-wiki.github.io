@@ -3,44 +3,57 @@ title = "Rendering"
 description = "How to turn voxels into pixels?"
 +++
 
-There are many ways of rendering voxels, depending on the way they should look like, the underlying storage, performance and resource considerations, general method used, etc. etc. ... It all depends on what ***you*** ultimately want to *do*.
+There are many ways of rendering voxels (an infinite number, in fact!), depending on the way they should look like,
+the underlying storage, performance and resource considerations, general method used, *etc. etc.* ...
 
-> **Note:**
-> When we say that there are many ways of rendering voxels, we of course mean there is an *infinite amount* of ways.
-> Seriously, we couldn't list them all, even if we tried! As such, this article will *never* be complete...
+It all depends on what ***you*** ultimately want to *do*.
 
 ## Graphics Programming APIs
 
 When writing a program that renders something to the screen,
 you will usually want to make your code work across many platforms.
 For that, there are two main API's you might use:
-[OpenGL](/wiki/rendering/opengl) and [Vulkan](/wiki/rendering/vulkan).
 
-- If you want to get started as fast as possible, with no regard as to how modern graphics cards work, use OpenGL.
-- If you want your program to be future-proof and as high-performing as possible, use Vulkan.
+- To get started *as fast as possible*, with no regard as to how modern graphics co-processors work,
+  use [OpenGL](/wiki/rendering/opengl).
+- To be future-proof and get as much performance as possible out of your graphics co-processor,
+  use [Vulkan](/wiki/rendering/vulkan).
+
+There are also rendering abstraction libraries,
+depending on the language you are using,
+built on top of these API's:
+
+- `C++` [bgfx](https://github.com/bkaradzic/bgfx)
+- `C++` [OGRE](https://ogrecave.github.io/ogre/)
+- `Rust` [wgpu](https://wgpu.rs/)
+- `Java` [libGDX](https://libgdx.com/)
+
+> **Note**:  
+> Some of these libraries have bindings for other languages,
+> so check their documentation before rejecting any!
 
 ## General Rendering Methods
 
-### Meshing
+### Rasterization
 
-Converting voxels into meshes, then using the rasterizer built into GPU's (or in software) to render a whole lot of triangles.
+Converting voxels into meshes, then using a hardware-accelerated [rasterizer](https://en.wikipedia.org/wiki/Rasterisation) to render a whole lot of triangles.
 
 ### Splatting
 
-Converting voxels into screen-aligned quadliterals, rasterizing these, but then performing a Ray-AABB intersection test in the fragment shader to get cubes.
+Converting voxels into tightly-fitting screen-aligned quadliterals, rasterizing them, then performing a Ray-AABB intersection test in the fragment shader to get cubes.
 
-### Tracing
+### Raytracing
 
-Send rays out of a camera into a volume of voxels, marching along them until voxels are hit, calculating a color based on the voxel-samples and hit-information.
+Send rays out of a camera into a volume of voxels, marching along them until voxels are hit, calculating a color based on the hit voxels and additional rays sent out from there.
 
-This method makes it possible to achieve a high degree of photorealism and/or complex lighting effects, that are otherwise extremely hard to produce with rasterization.
+This method makes it possible to achieve a high degree of photorealism and/or complex lighting effects, that are otherwise extremely hard to produce with other methods.
 
 ## General Lighting Methods
 
 **TODO**
 
 - Global Illumination?
-- Ambient occlusion?
+- [Ambient Occlusion](https://0fps.net/2013/07/03/ambient-occlusion-for-minecraft-like-worlds/)
 - [Flood-Fill Lighting](https://web.archive.org/web/20210429192404/https://www.seedofandromeda.com/blogs/29-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-1)
 - ...?
 
@@ -48,4 +61,4 @@ This method makes it possible to achieve a high degree of photorealism and/or co
 
 Depending on the method you choose to render voxels,
 you may have to [cull your geometry](/wiki/rendering/culling),
-so as to not overload your GPU with draw-calls and/or geometry.
+so as to not overload your GPU with drawcalls & geometry.
