@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 
 {% block seo %}
-  {% set title = taxonomy.name | capitalize %}
-  {{ macros_head::seo(title=title) }}
+  {{ super() }}
+  {% set taxonomy_name = taxonomy.name | capitalize %}
+  {% set title = taxonomy_name %}
+  {% set title_addition = "" %}
+  {% if config.title %}
+    {% set title_addition = title_separator ~ config.title %}
+  {% endif %}
+  {{ macros_head::seo(title=title, title_addition=title_addition) }}
 {% endblock seo %}
 
 {% block body %}{% set page_class="taxonomy" %}{% endblock body %}
@@ -14,7 +20,7 @@
       <div class="col-md-12 col-lg-10 col-xl-8">
         <article>
           <div class="page-header">
-            <h1> {{ taxonomy.name | capitalize }} </h1>
+            <h1> {{ taxonomy_name }} </h1>
           </div>
           <ul>
             {% for term in terms %}
