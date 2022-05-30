@@ -3,7 +3,7 @@ title = "OpenGL API"
 description = "Classic hardware accelerated rendering API."
 +++
 
-**TODO**
+<div class="notice stub"></div>
 
 ## References
 

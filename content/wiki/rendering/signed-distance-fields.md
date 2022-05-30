@@ -3,7 +3,7 @@ title = "Signed Distance Fields"
 description = "A N-dimensional field where at every point the distance to the closest surface is known."
 +++
 
-**TODO**
+<div class="notice stub"></div>
 
 ## References
 
