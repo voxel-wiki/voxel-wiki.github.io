@@ -24,8 +24,10 @@
           </div>
           <ul>
             {% for term in terms %}
+              {% set page_count = term.pages | length %}
                 <li>
-                    <a href="{{ term.permalink }}"> {{ term.name | capitalize }} </a>
+                    <a href="{{ term.permalink }}">{{ term.name | capitalize }}</a>:
+                    <code>{{ page_count }}</code> Page{% if page_count != 1 %}s{% endif %}
                 </li>
             {% endfor %}
           </ul>
