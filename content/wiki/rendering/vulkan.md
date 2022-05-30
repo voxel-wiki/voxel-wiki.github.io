@@ -3,7 +3,7 @@ title = "Vulkan API"
 description = "Modern hardware accelerated rendering API."
 +++
 
-**TODO**
+<div class="notice stub"></div>
 
 ## References
 
