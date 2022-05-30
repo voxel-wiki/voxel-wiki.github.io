@@ -50,3 +50,8 @@ a > code {
 	font-size: inherit;
 	padding: 0 0.125rem;
 }
+
+a[href*="//"]:not([href*="voxel.wiki"]):not([href*="127.0.0.1"]) {
+	/* external links */
+	color: rgb(51, 133, 255) !important;
+}
