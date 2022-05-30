@@ -1,6 +1,6 @@
 +++
 title = "3D Raycasting"
-description = "Traveling trough 3D grids in a straight line."
+description = "Traveling through 3D grids in a straight line."
 path = "/wiki/raycasting"
 [taxonomies]
 categories = ["algorithms"]

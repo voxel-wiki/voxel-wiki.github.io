@@ -3,7 +3,7 @@ title = "Voxel.Wiki"
 description = "A collection of information (a wiki) dealing with all things voxel: The voxel-wiki."
 
 [extra]
-lead = "This website is a collection of information dealing with all things voxel. To quote <a href='https://en.wikipedia.org/wiki/Voxel'>Wikipedia</a>:&nbsp;<i>„[...] a voxel represents a value on a <a href='https://en.wikipedia.org/wiki/Regular_grid'>regular grid</a> in three-dimensional space.‟</i> <br><br><b>Currently under construction.</b><br><br>"
+lead = "This website is a collection of information dealing with all things voxel. To quote <a href='https://en.wikipedia.org/wiki/Voxel'>Wikipedia</a>:&nbsp;<i>„[...] a voxel represents a value on a <a href='https://en.wikipedia.org/wiki/Regular_grid'>regular grid</a> in three-dimensional space.‟</i> <br><br><b>Currently under construction.</b> <br><br>"
 repo_url = "https://github.com/voxel-wiki/voxel-wiki.github.io/blob/main/LICENSE.md"
 repo_version = "License"
 
@@ -16,23 +16,23 @@ content = "How to turn voxels into pixels?<br> The <a href='wiki/rendering/'>cho
 link = "/wiki/rendering"
 
 [[extra.list]]
-title = "Data Structures"
-content = "There are many ways to <a href='wiki/datastructures/'>store</a>, <a href='wiki/serialization/'>serialize</a> and <a href='wiki/compression/'>compress</a> voxels, all have their pros and cons, but <a href='wiki/datastructures/'>which one should you use</a>?"
-link = "/wiki/datastructures"
+title = "Data Management"
+content = "There are many ways to <a href='wiki/datastructures/'>structure</a>, <a href='wiki/serialization/'>serialize</a> and <a href='wiki/compression/'>compress</a> voxels, all with their own pros and cons..."
+#link = "/wiki/datastructures"
 
 [[extra.list]]
-title = "Physics"
-content = "Want to make voxels interact with each other or have entities roaming around? Then you'll have to deal with <a href='wiki/physics/'>physics</a>."
-link = "/wiki/physics"
+title = "Interactivity"
+content = "Want to make voxels interact with each other or have entities roaming around? Then you'll have to deal with <a href='wiki/physics/'>physics</a>..."
+#link = "/wiki/interactivity"
 
 [[extra.list]]
 title = "Procedural Generation"
-content = "Creating worlds from nothing, the art of <a href='wiki/procgen/'>procedural generation</a>..."
+content = "Creating worlds from nothing but math, the art of <a href='wiki/procgen/'>procedural generation</a>..."
 link = "/wiki/procgen"
 
 [[extra.list]]
 title = "Engines"
-content = "Don't want to start entirely from scratch? Fear not! There are many <a href='wiki/engines/'>Game Engines</a> you can use as a basis for your project..."
+content = "Don't want to start entirely from scratch? Fear not! There are various <a href='wiki/engines/'>Game Engines</a> you can use as a basis for your project..."
 link = "/wiki/engines"
 
 [[extra.list]]
