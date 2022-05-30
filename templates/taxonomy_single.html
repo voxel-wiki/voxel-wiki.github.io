@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block seo %}
+  {% set name = term.name | capitalize %}
+  {% set title = "Category: " ~ name %}
+  {{ macros_head::seo(title=title) }}
+{% endblock seo %}
+
+{% block body %}{% set page_class="taxonomy" %}{% endblock body %}
+
+{% block content %}
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xl-8">
+        <article>
+          <div class="page-header">
+            <h1> {{ term.name | capitalize }} </h1>
+          </div>
+          <p><a href="/categories/">⇐ Go Back</a></p>
+          <ul>
+            {% for page in term.pages %}
+                <li>
+                    <a href="{{ page.permalink }}"> {{ page.title }} </a>
+                </li>
+            {% endfor %}
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

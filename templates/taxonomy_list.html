@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block seo %}
+  {% set title = taxonomy.name | capitalize %}
+  {{ macros_head::seo(title=title) }}
+{% endblock seo %}
+
+{% block body %}{% set page_class="taxonomy" %}{% endblock body %}
+
+{% block content %}
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xl-8">
+        <article>
+          <div class="page-header">
+            <h1> {{ taxonomy.name | capitalize }} </h1>
+          </div>
+          <ul>
+            {% for term in terms %}
+                <li>
+                    <a href="{{ term.permalink }}"> {{ term.name | capitalize }} </a>
+                </li>
+            {% endfor %}
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
