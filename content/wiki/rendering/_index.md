@@ -47,10 +47,5 @@ This method makes it possible to achieve a high degree of photorealism and/or co
 ## General Culling Methods
 
 Depending on the method you choose to render voxels,
-you might have to [cull the voxel data](/wiki/rendering/culling),
+you may have to [cull your geometry](/wiki/rendering/culling),
 so as to not overload your GPU with draw-calls and/or geometry.
-
-- Distance Culling: Only use the voxels closest to the player.
-- Frustum Culling: Only use the voxels within the players camera view.
-- Cave Culling: Only use the voxels the player can heuristically see.
-- Occlusion Culling: Only use the voxels the player can actually see.
