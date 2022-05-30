@@ -46,7 +46,7 @@ then performing a Ray-AABB intersection test in the fragment shader to get cubes
 
 ### Raytracing
 
-Send rays out of a camera into a volume of voxels, marching along them until voxels are hit,
+Send rays out of a camera into a volume of voxels, [marching along them](/wiki/raycasting) until voxels are hit,
 calculating a color based on the hit voxels and additional rays sent out from there.
 
 This method makes it possible to achieve a high degree of photorealism and/or complex lighting effects,
