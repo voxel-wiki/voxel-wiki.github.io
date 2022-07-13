@@ -10,6 +10,7 @@ tags = ["rendering", "api"]
 
 ## References
 
+- [Vulkan Guide](https://vkguide.dev/)
 - [Vulkan Tutorial](https://vulkan-tutorial.com/)
 - [Vulkan in 30 minutes](https://renderdoc.org/vulkan-in-30-minutes.html)
 - [Vulkan Registry](https://www.khronos.org/registry/vulkan/)
