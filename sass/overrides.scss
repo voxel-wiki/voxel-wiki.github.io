@@ -45,7 +45,6 @@ article > .notice {
 	border-radius: 5px;
 	
 	@mixin notice-color($color) {
-		@debug $color;
 		border-left: 0.25rem solid rgba($color, 1);
 		background: rgba($color, 0.2);
 	}
