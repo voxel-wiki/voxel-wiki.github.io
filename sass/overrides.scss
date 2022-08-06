@@ -37,6 +37,10 @@ img {
 	border-bottom-width: 0.125rem;
 }
 
+article *:last-child {
+	margin-bottom: 0;
+}
+
 article img {
 	border-radius: 3px;
 	max-width: 100%;
@@ -46,6 +50,7 @@ article blockquote {
 	border-radius: 0.125rem;
 	border-left: 0.25rem solid rgb(222, 226, 230);
 	background: rgba(222, 226, 230, 0.2);
+	padding: 0.25rem;
 	padding-left: 0.333rem;
 }
 
