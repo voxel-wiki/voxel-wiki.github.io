@@ -14,6 +14,25 @@
 	background-position: center;
 }
 
+img {
+	display: inline-block;
+	position: relative;
+	min-width:  2rem;
+	min-height: 1rem;
+	
+	/*
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0; left: 0;
+		right: 0; bottom: 0;
+		
+		background-color: #fcc;
+		border-radius: 5px;
+	}
+	*/
+}
+
 article img {
 	border-radius: 3px;
 	max-width: 100%;
@@ -21,41 +40,39 @@ article img {
 
 article > .notice {
 	/* <div class="notice"></div> */
-	margin-bottom: 0.25rem;
-	padding: 1rem;
-	border-radius: 3px;
-	background: rgb(80, 31, 255);
-	color: white;
+	margin-bottom: 1rem;
+	padding: 0.25rem 0.5rem;
+	border-radius: 5px;
+	
+	@mixin notice-color($color) {
+		@debug $color;
+		border-left: 0.25rem solid rgba($color, 1);
+		background: rgba($color, 0.2);
+	}
+	
+	@include notice-color(rgb(29, 45, 53));
 	
 	&.stub {
 		/* {{ stub_notice() }} */
-		&:empty::before {
-			content: "This article is a stub. Perhaps help us expand it?";
-			font-weight: bold;
-		}
-		background: rgb(255, 203, 31);
-		color: rgb(29, 45, 53);
+		font-weight: bold;
+		@include notice-color(rgb(220, 180, 0));
+	}
+	
+	&.info {
+		/* {% info_notice() %} ... {% end %} */
+		@include notice-color(rgb(50, 200, 255));
 	}
 	
 	&.todo {
 		/* {% todo_notice() %} ... {% end %} */
 		font-size: 0.8em;
 		padding: 0.5rem;
-		background: rgb(0, 150, 170);
-		color: white;
+		@include notice-color(rgb(255, 200, 0));
 	}
 	
 	&.warning {
-		/* <div class="notice warning"></div> */
 		/* {% warn_notice() %} ... {% end %} */
-		background: rgb(224, 34, 0);
-		color: white;
-	}
-	
-	a {
-		padding: 0 0.125em;
-		border-radius: 0.5em;
-		background: rgb(29, 45, 53);
+		@include notice-color(rgb(255, 20, 20));
 	}
 	
 	:last-child {
@@ -87,4 +104,10 @@ a > code {
 a[href*="//"]:not([href*="voxel.wiki"]):not([href*="127.0.0.1"]) {
 	/* external links */
 	color: rgb(51, 133, 255) !important;
+}
+
+@media (prefers-contrast: more) {
+	a {
+		text-decoration: underline;
+	}
 }
