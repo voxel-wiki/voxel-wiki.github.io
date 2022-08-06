@@ -30,3 +30,4 @@ but should be simple enough to be ported to any language may choose...
 - [`C` Implementation](https://webdocs.cs.ualberta.ca/~graphics/books/GraphicsGems/gemsiv/vox_traverse.c)
 - [`C++` Implementation](https://gist.github.com/garymacindoe/895430c1e53a6e50cb35)
 - [`GLSL` Implementation](https://www.shadertoy.com/view/XddcWn)
+- [`GLSL` Implementation](https://www.shadertoy.com/view/4sVfWw) (Octree Variant)

@@ -74,6 +74,10 @@ body:not(.dark) a:not(.btn-primary) {
 
 code {
 	font-size: inherit;
+	
+	& > table {
+		margin: 0;
+	}
 }
 
 a > code {

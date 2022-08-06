@@ -9,7 +9,7 @@ This article is split into two sections, one for using an existing game engine, 
 
 ## Using an existing Game Engine
 
-If you want to make a game, and get something playable & distributable within a... reasonable time-frame, using an existing game engine is *strongly recommended*.
+If you want to make a game and get something playable & distributable within a... *reasonable* time-frame... using an existing game engine is *strongly recommended*.
 
 The most commonly used game engines are as follows:
 
