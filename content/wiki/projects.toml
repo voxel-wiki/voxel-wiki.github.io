@@ -337,3 +337,10 @@ url = "https://kopatel-online.tumblr.com/"
 [[projects]]
 name = "FinityWorlds"
 url = "https://www.youtube.com/channel/UCw6nMILS3QcJRHTHCuZuchg"
+
+[[projects]]
+name = "Sjoerd's Voxel Engine"
+url = "https://github.com/sjoerd-code/voxel-engine"
+source = "https://github.com/sjoerd-code/voxel-engine"
+language = ["C#"]
+license = "MIT"
