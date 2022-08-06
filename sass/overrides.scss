@@ -45,6 +45,19 @@ article > .notice {
 		color: white;
 	}
 	
+	&.warning {
+		/* <div class="notice warning"></div> */
+		/* {% warn_notice() %} ... {% end %} */
+		background: rgb(224, 34, 0);
+		color: white;
+	}
+	
+	a {
+		padding: 0 0.125em;
+		border-radius: 0.5em;
+		background: rgb(29, 45, 53);
+	}
+	
 	:last-child {
 		margin-bottom: 0;
 	}
