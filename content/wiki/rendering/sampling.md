@@ -6,4 +6,4 @@ categories = ["rendering"]
 tags = ["math", "sampling"]
 +++
 
-<div class="notice stub"></div>
+{{ stub_notice() }}

@@ -6,4 +6,4 @@ categories = ["datastructures"]
 tags = ["datastructures", "spatial-hierarchy"]
 +++
 
-<div class="notice stub"></div>
+{{ stub_notice() }}

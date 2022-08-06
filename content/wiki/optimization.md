@@ -7,7 +7,7 @@ categories = ["optimization"]
 tags = ["optimization"]
 +++
 
-<div class="notice stub"></div>
+{{ stub_notice() }}
 
 ## References
 
