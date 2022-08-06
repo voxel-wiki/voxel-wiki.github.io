@@ -54,9 +54,12 @@ ___Bold-Italic Text___
 
 `Inline Code`  
 
-```
-Code Section
-```
+    Code Section
+
+{% info_notice() %}
+  You can also create a code section by using three `  
+  before and after the code.
+{% end %}
 
 ---
 
