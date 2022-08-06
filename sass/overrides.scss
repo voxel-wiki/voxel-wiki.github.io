@@ -33,9 +33,20 @@ img {
 	*/
 }
 
+.table > :not(:last-child) > :last-child > *, table > :not(:last-child) > :last-child > * {
+	border-bottom-width: 0.125rem;
+}
+
 article img {
 	border-radius: 3px;
 	max-width: 100%;
+}
+
+article blockquote {
+	border-radius: 0.125rem;
+	border-left: 0.25rem solid rgb(222, 226, 230);
+	background: rgba(222, 226, 230, 0.2);
+	padding-left: 0.333rem;
 }
 
 article > .notice {
@@ -64,8 +75,6 @@ article > .notice {
 	
 	&.todo {
 		/* {% todo_notice() %} ... {% end %} */
-		font-size: 0.8em;
-		padding: 0.5rem;
 		@include notice-color(rgb(255, 200, 0));
 	}
 	
@@ -74,15 +83,56 @@ article > .notice {
 		@include notice-color(rgb(255, 20, 20));
 	}
 	
+	:first-child {
+		margin-top: 0;
+	}
+	
 	:last-child {
 		margin-bottom: 0;
 	}
 }
 
+pre {
+	margin: 0;
+	margin-bottom: 1rem;
+	padding: 0;
+}
+
 pre code {
+	padding: 0.5rem;
+	overflow: auto;
 	scrollbar-width: initial !important;
 	scrollbar-color: #e9ecef transparent !important;
 }
+
+pre mark {
+	// If you want your highlights to take the full width.
+	display: block;
+	// The default background colour of a mark is bright yellow
+	background-color: rgba(254, 252, 232, 0.9);
+}
+
+pre table {
+	width: 100%;
+	border-collapse: collapse;
+	color: white;
+	
+	tr,td,th {
+		border: none;
+	}
+	
+	td {
+		padding: 0;
+	}
+	
+	td:nth-of-type(1) {
+		text-align: center;
+		user-select: none;
+		color: grey;
+	}
+}
+
+
 
 body:not(.dark) a:not(.btn-primary) {
 	color: rgb(80, 31, 255);
