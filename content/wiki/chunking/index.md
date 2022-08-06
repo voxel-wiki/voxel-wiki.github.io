@@ -13,7 +13,7 @@ The first and possibly most important step when dealing with voxels, is to divid
 
 ## Motivation
 
-**TODO**
+{% todo_notice() %} Explain the reasoning behind chunking. {% end %}
 
 ## Code Example
 

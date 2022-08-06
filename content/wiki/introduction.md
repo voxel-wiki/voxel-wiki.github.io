@@ -80,4 +80,4 @@ which is currently considered to be *the* best voxel-editor you can get; it's co
 
 ### Medicine
 
-**TODO**
+{% todo_notice() %} …? {% end %}

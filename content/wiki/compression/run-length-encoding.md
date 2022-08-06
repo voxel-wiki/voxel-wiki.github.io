@@ -12,5 +12,5 @@ In our case, we want to use RLE to compress voxel volumes, so we first have to m
 
 One rather simple way to do RLE is to write a number indicating repetitions, followed by the thing to repeat...
 
-> **TODO:** Write example code for encoding/decoding.
-> **TODO:** Extend example code with read-only decoding.
+{% todo_notice() %} Write example code for encoding/decoding. {% end %}
+{% todo_notice() %} Extend example code with read-only decoding. {% end %}

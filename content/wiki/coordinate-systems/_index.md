@@ -18,7 +18,7 @@ As such, it is a good idea to do one or more of these:
 
 Now then, let's get to the various coordinate systems!
 
-**TODO:** Add descriptive diagrams to all definitions.
+{% todo_notice() %} Add descriptive diagrams to all definitions. {% end %}
 
 ### World Space
 

@@ -54,7 +54,7 @@ that are otherwise extremely hard to produce with other methods.
 
 ## General Lighting Methods
 
-**TODO**
+{% todo_notice() %} Create article just for lighting? {% end %}
 
 - Global Illumination?
 - [Ambient Occlusion](https://0fps.net/2013/07/03/ambient-occlusion-for-minecraft-like-worlds/)
