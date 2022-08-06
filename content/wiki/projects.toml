@@ -103,8 +103,7 @@ rendering = "Rasterization"
 name = "Voxelman"
 url = "https://github.com/MrSmith33/voxelman2"
 state = "Active Dev."
-engine = "Vox"
-language = ["D"]
+language = ["D", "Vox"]
 source = "https://github.com/MrSmith33/voxelman2"
 license = "Boost"
 
@@ -141,6 +140,7 @@ url = "https://github.com/clemdemort/simple-voxel-raycaster"
 state = "Released"
 language = ["C++", "GLSL"]
 source = "https://github.com/clemdemort/simple-voxel-raycaster"
+license = "GPL-3.0"
 
 [[projects]]
 name = "3079"
