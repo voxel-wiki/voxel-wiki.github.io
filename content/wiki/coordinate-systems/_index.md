@@ -2,6 +2,9 @@
 title = "Coordinate Systems"
 description = "The importance of correct coordinate systems cannot be understated."
 path = "wiki/coordinate-systems"
+[taxonomies]
+categories = ["math"]
+tags = ["math"]
 +++
 
 ## Motivation

@@ -32,9 +32,9 @@ Interestingly, the grid in question may have holes, be stretched, have multiple 
 the only requirement being that every `x,y,z`-coordinate consistently leads to either
 an individual voxel or an [up/down-sampled](/wiki/rendering/sampling) variant of it.
 
-### What is *not* a voxel?
+###### What is *not* a voxel?
 
-If your values are generated in a *two*-dimensional grid and then 'expanded' into a *third* dimension during rendering,
+If your values are generated in a *two*-dimensional grid and then 'expanded' into a *third* dimension *during rendering*,
 you are ***not*** using voxels. That's just a plain old [heightmap](https://en.wikipedia.org/wiki/Heightmap) *pretending*
 to be voxels! The exception to this are [run-length encoded](/wiki/compression/run-length-encoding) *columns* of voxels.
 
@@ -61,18 +61,20 @@ or use an existing [game-engine](/wiki/engines/).
     it might be best to start with a game engine instead.
 {% end %}
 
-Also, decide early on if you want your voxels to be destructible/editable by the user/player during play,
-since many optimizations depend on knowing this fact; making the switch later is *very* annoying.
+Also, you *should* decide early on, whether or not you want your voxels to be destructible/editable by the user/player. Some optimizations can only be done during development-time, instead of runtime, due to the soft realtime constraints of videogames; making the switch later is *very* annoying.
 
-#### Minecraft Clone?
+###### Minecraft Clone?
 
 If you *do* intend to create a voxel-based videogame,
 there is something **you should be immediately and acutely aware of**:
 
 No matter what you do, your game *will* inevitably be compared to Minecraft... and that's okay!
-Copying and [remixing](https://www.youtube.com/watch?v=MZ2GuvUWaP8) other peoples ideas,
-has been happening for quite literally *thousands of years*, across *all* creative disciplines!
-Nothing these days is truly original, so don't worry about it and just create what *you* like!
+Copying and [remixing](https://www.youtube.com/watch?v=MZ2GuvUWaP8) other peoples ideas
+has been happening for, quite literally, *thousands of years* across ***all*** creative disciplines!
+
+*Nothing* these days is truly original, so don't worry about it and just create what *you* like!
+
+Also, as a matter of fact, Minecraft is strongly inspired (read: a 'clone') of an earlier game: [Infiniminer](https://en.wikipedia.org/wiki/Zachtronics#Infiniminer).
 
 ### Modeling
 
