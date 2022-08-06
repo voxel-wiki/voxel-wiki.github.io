@@ -12,10 +12,11 @@ Well, you've come to the right place!
 
 To quote Wikipedia:
 
-> In [3D computer graphics](https://en.wikipedia.org/wiki/3D_computer_graphics),
-> a voxel represents a value on a [regular grid](https://en.wikipedia.org/wiki/Regular_grid)
-> in [three-dimensional space](https://en.wikipedia.org/wiki/Three-dimensional_space).
-> <br>&mdash; *Wikipedia [on Voxels](https://en.wikipedia.org/wiki/Voxel)*
+{% quote(author="*Wikipedia [on Voxels](https://en.wikipedia.org/wiki/Voxel)*") %}
+  In [3D computer graphics](https://en.wikipedia.org/wiki/3D_computer_graphics),
+  a voxel represents a value on a [regular grid](https://en.wikipedia.org/wiki/Regular_grid)
+  in [three-dimensional space](https://en.wikipedia.org/wiki/Three-dimensional_space).
+{% end %}
 
 That is... quite a mouthful, so let us simplify:
 
