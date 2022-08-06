@@ -37,6 +37,14 @@ article > .notice {
 		color: rgb(29, 45, 53);
 	}
 	
+	&.todo {
+		/* {% todo_notice() %} ... {% end %} */
+		font-size: 0.8em;
+		padding: 0.5rem;
+		background: rgb(0, 150, 170);
+		color: white;
+	}
+	
 	:last-child {
 		margin-bottom: 0;
 	}

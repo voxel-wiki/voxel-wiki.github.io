@@ -4,6 +4,4 @@ description = "Code Of Conduct of the voxel-wiki organisation."
 path = "wiki/code-of-conduct"
 +++
 
-**TODO**
-
-> Creating one of these is such a can of worms...
+{% todo_notice() %} Creating one of these is such a can of worms... {% end %}

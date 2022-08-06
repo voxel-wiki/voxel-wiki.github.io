@@ -60,8 +60,9 @@ Also, if one doesn't pay close attention to the layout of data in memory, it is 
 
 There are a variety of optimizations that can be applied to make palette compression *even better*...
 
-- **TODO**: area allocation
-- **TODO**: run-length encoding and morton-ordering
+{% todo_notice() %} Arena Allocation {% end %}
+{% todo_notice() %} Run-Length Encoding {% end %}
+{% todo_notice() %} Morton-Ordering {% end %}
 
 ### Bit-Buffer
 
@@ -69,13 +70,13 @@ The first (and most impactful) optimization to implement for palettes is the use
 
 That is, by reducing the bit-size of the voxels to the minimum amount of bits needed (eg: the amount of unique indices, which equates to the amount of palette entries), the amount of memory needed to store large low-entropy voxel volumes is *massively* reduced.
 
-> **TODO**: Implementation?
+{% todo_notice() %} Implementation? {% end %}
 
 ### One Single Type
 
 When you think about it, a palette with only a single entry, doesn't need to have a voxel volume allocated for it... which leads to a rather simple optimization, for when there are a lot of chunks filled with, say, only air!
 
-> **TODO**: Implementation?
+{% todo_notice() %} Implementation? {% end %}
 
 ### Tagged-Pointer Palette Entries
 
@@ -89,4 +90,4 @@ Given a 32-bit architecture which aligns allocations on 32-bit/4-byte boundaries
 
 This gives you at minimum ***31 bits*** to encode a voxel type in (*63* bits on a 64-bit CPU!), which should be *way* more than enough for terrain (which tends to make up the majority of a voxel world by sheer volume), thus eliminating a *ton* of allocations and pointers!
 
-> **TODO**: Implementation?
+{% todo_notice() %} Implementation? {% end %}
