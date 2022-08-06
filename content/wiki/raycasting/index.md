@@ -7,7 +7,7 @@ categories = ["algorithms"]
 tags = ["algorithm", "math", "raycasting", "raytracing"]
 +++
 
-<div class="notice stub"></div>
+{{ stub_notice() }}
 
 ## Introduction
 

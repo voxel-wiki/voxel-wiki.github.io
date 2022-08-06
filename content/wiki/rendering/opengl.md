@@ -6,7 +6,7 @@ categories = ["rendering"]
 tags = ["rendering", "api"]
 +++
 
-<div class="notice stub"></div>
+{{ stub_notice() }}
 
 ## References
 

@@ -5,7 +5,7 @@ description = "A N-dimensional field where at every point the distance to the cl
 categories = ["rendering"]
 +++
 
-<div class="notice stub"></div>
+{{ stub_notice() }}
 
 ## References
 
