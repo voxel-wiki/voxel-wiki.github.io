@@ -20,7 +20,10 @@ To quote Wikipedia:
 
 That is... quite a mouthful, so let us simplify:
 
-> A voxel is a value in a three-dimensional grid, like a pixel/texel is a value in a two-dimensional grid.
+{% info_notice() %}
+  A voxel is a value in a three-dimensional grid,
+  like a pixel/texel is a value in a two-dimensional grid.
+{% end %}
 
 That's a voxel!
 
