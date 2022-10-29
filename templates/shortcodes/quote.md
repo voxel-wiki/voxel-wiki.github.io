@@ -1,4 +1,4 @@
 <blockquote>
 {{ body | markdown }}
-{% if author %} {{ "&mdash; " ~ author | markdown }} {% endif %}
+{% if author %}<em title="Author and/or source of this quote">{{ "&mdash; " ~ author | markdown }}</em>{% endif %}
 </blockquote>
