@@ -52,6 +52,12 @@ ___Bold-Italic Text___
 
 ---
 
+{% figure(class="float", clear=true, caption="This is the *caption text*.") %}
+[![Image alt text.](https://voxel.wiki/favicon.png)](https://voxel.wiki/)
+{% end %}
+
+---
+
 `Inline Code`  
 
     Code Section
