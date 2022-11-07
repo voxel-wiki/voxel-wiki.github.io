@@ -12,27 +12,27 @@ url_button = "Getting Started"
 
 [[extra.list]]
 title = "Rendering"
-content = "How to turn voxels into pixels?<br> The <a href='wiki/rendering/'>choice is yours</a>..."
+content = "How to turn voxels into pixels?<br> The <a href='wiki/rendering'>choice is yours</a>..."
 link = "/wiki/rendering"
 
 [[extra.list]]
 title = "Data Management"
-content = "There are many ways to <a href='wiki/datastructures/'>structure</a>, <a href='wiki/serialization/'>serialize</a> and <a href='wiki/compression/'>compress</a> voxels, all with their own pros and cons..."
+content = "There are many ways to <a href='wiki/datastructures'>structure</a>, <a href='wiki/serialization'>serialize</a> and <a href='wiki/compression'>compress</a> voxels, all with their own pros and cons..."
 #link = "/wiki/datastructures"
 
 [[extra.list]]
 title = "Interactivity"
-content = "Want to make voxels interact with each other or have entities roaming around? Then you'll have to deal with <a href='wiki/physics/'>physics</a>..."
+content = "Want to make voxels interact with each other or have entities roaming around? Then you'll have to deal with physics and things like navigation meshes..."
 #link = "/wiki/interactivity"
 
 [[extra.list]]
 title = "Procedural Generation"
-content = "Creating worlds from nothing but math, the art of <a href='wiki/procgen/'>procedural generation</a>..."
-link = "/wiki/procgen"
+content = "Creating worlds from nothing but math, the art of <a href='wiki/procedural-generation'>procedural generation</a>..."
+link = "/wiki/procedural-generation"
 
 [[extra.list]]
 title = "Engines"
-content = "Don't want to start entirely from scratch? Fear not! There are various <a href='wiki/engines/'>Game Engines</a> you can use as a basis for your project..."
+content = "Don't want to start entirely from scratch? Fear not! There are various <a href='wiki/engines'>Game Engines</a> you can use as a basis for your project..."
 link = "/wiki/engines"
 
 [[extra.list]]

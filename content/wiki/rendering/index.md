@@ -1,9 +1,14 @@
 +++
 title = "Rendering"
 description = "How to turn voxels into pixels?"
+[taxonomies]
+categories = ["rendering"]
+tags = ["rendering"]
 +++
 
-There are many ways of rendering voxels (an infinite number, in fact!), depending on the way they should look like,
+Drawing voxels seems easy at a glance, they're just cubes after all!
+
+However, there's actually an infinite amount of ways to render voxels, depending on the way they should look like,
 the underlying storage, performance and resource considerations, general method used, *etc. etc.* ...
 
 It all depends on what ***you*** ultimately want to *do*.
@@ -15,9 +20,9 @@ you will usually want to make your code work across many platforms.
 For that, there are two main API's you might use:
 
 - To get started *as fast as possible*, with no regard as to how modern graphics co-processors work,
-  use [OpenGL](/wiki/rendering/opengl).
+  use [OpenGL](/wiki/opengl).
 - To be future-proof and get as much performance as possible out of your graphics co-processor,
-  use [Vulkan](/wiki/rendering/vulkan).
+  use [Vulkan](/wiki/vulkan).
 
 There are also rendering abstraction libraries,
 depending on the language you are using,
@@ -64,5 +69,5 @@ that are otherwise extremely hard to produce with other methods.
 ## General Culling Methods
 
 Depending on the method you choose to render voxels,
-you may have to [cull your geometry](/wiki/rendering/culling),
+you may have to [cull your geometry](/wiki/culling),
 so as to not overload your GPU with drawcalls & geometry.

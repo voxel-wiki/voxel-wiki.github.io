@@ -1,6 +1,7 @@
 +++
 title = "Portal Culling"
 description = "Removal of geometry that is not in the same 'room'."
+aliases = ["/wiki/cave-culling"]
 [taxonomies]
 categories = ["culling"]
 tags = ["rendering", "culling", "optimization"]
