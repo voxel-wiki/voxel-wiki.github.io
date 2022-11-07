@@ -76,6 +76,10 @@ ___Bold-Italic Text___
 
 ---
 
+Math: \\( f_n(\vec{p}) \to [-1, +1] = \enspace ? \\)
+
+---
+
 {% info_notice() %} Info Notice <br> [Link](/typography) {% end %}
 {% warn_notice() %} Warn Notice <br> [Link](/typography) {% end %}
 {% todo_notice() %} Notice <br> [Link](/typography) {% end %}
