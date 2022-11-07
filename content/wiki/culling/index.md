@@ -1,6 +1,9 @@
 +++
 title = "Rendering: Culling"
 description = "Limiting the amount of voxels rendered to manageable levels."
+[taxonomies]
+categories = ["culling"]
+tags = ["rendering", "culling", "optimization"]
 +++
 
 ## Introduction
@@ -10,13 +13,13 @@ In general, (visibility-) culling is the process of limiting the amount of thing
 
 So, here are ~6 kinds of culling, in no particular order:
 
-1. [Back Face Culling](/wiki/rendering/culling/back-face): Don't render what is facing away from the camera.
-2. [Interior Culling](/wiki/rendering/culling/interior): Don't render what is inside of objects.
-3. [Distance Culling](/wiki/rendering/culling/distance): Don't render what is too far away.
-4. [Frustum Culling](/wiki/rendering/culling/frustum): Don't render what falls outside the cameras view.
-5. [Portal Culling](/wiki/rendering/culling/portal): Don't render what is in another room.
-6. [Cluster Culling](/wiki/rendering/culling/cluster): Don't render what is too small to see.
-7. [Occlusion Culling](/wiki/rendering/culling/occlusion): Don't render what is hidden.
+1. [Back Face Culling](/wiki/backface-culling): Don't render what is facing away from the camera.
+2. [Interior Culling](/wiki/interior-culling): Don't render what is inside of objects.
+3. [Distance Culling](/wiki/distance-culling): Don't render what is too far away.
+4. [Frustum Culling](/wiki/frustum-culling): Don't render what falls outside the cameras view.
+5. [Portal Culling](/wiki/portal-culling): Don't render what is in another room.
+6. [Cluster Culling](/wiki/cluster-culling): Don't render what is too small to see.
+7. [Occlusion Culling](/wiki/occlusion-culling): Don't render what is hidden.
 
 Optimizing culling is generally done by creating *spatial hierarchies*,
 whereby testing nodes on higher levels allows rejecting (or including)

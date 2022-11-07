@@ -1,7 +1,7 @@
 +++
 title = "Optimization"
 description = "General advice on how to optimize games"
-path = "wiki/optimization"
+path = "/wiki/optimization"
 [taxonomies]
 categories = ["optimization"]
 tags = ["optimization"]

@@ -1,7 +1,8 @@
 +++
 title = "Coordinate Systems"
 description = "The importance of correct coordinate systems cannot be understated."
-path = "wiki/coordinate-systems"
+path = "/wiki/coordinate-systems"
+aliases = ["/wiki/coordinates"]
 [taxonomies]
 categories = ["math"]
 tags = ["math"]

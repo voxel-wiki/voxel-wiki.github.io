@@ -26,7 +26,7 @@
           <ul>
             {% for page in term.pages %}
                 <li>
-                    <a href="{{ page.permalink }}"> {{ page.title }} </a>
+                    <a href="{{ page.permalink | trim_end_matches(pat='/') }}"> {{ page.title }} </a>
                 </li>
             {% endfor %}
           </ul>
