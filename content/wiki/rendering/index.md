@@ -71,3 +71,9 @@ that are otherwise extremely hard to produce with other methods.
 Depending on the method you choose to render voxels,
 you may have to [cull your geometry](/wiki/culling),
 so as to not overload your GPU with drawcalls & geometry.
+
+## References
+
+- [GigaVoxels: Ray-Guided Streaming for Efficient and Detailed Voxel Rendering](https://artis.inrialpes.fr/Publications/2009/CNLE09/)
+- <http://jojendersie.de/rendering-huge-amounts-of-voxels/>
+- <http://jojendersie.de/rendering-huge-amounts-of-voxels-2/>
