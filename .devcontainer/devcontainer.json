@@ -1,0 +1,22 @@
+{
+	"name": "Voxel.Wiki",
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:1": {},
+		"ghcr.io/guiyomh/features/just:0": {}
+	},
+	
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.vscode-pull-request-github"
+			]
+		}
+	},
+  
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [8080]
+}
