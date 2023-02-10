@@ -13,12 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref != 'refs/heads/main'
     steps:
-      - name: 'disable-git-safety'
+      - name: 'Checkout'
+        uses: actions/checkout@master
+      - name: 'Disable Git Safety'
         run: |
           git config --global safe.directory '*'
           git config --global --add safe.directory /__w/{repo_name}/{repo_name}
-      - name: 'Checkout'
-        uses: actions/checkout@master
+          git config --global --add safe.directory /github/workspace
       - name: 'Build' 
         uses: shalzz/zola-deploy-action@37076cb04a796fdfbb66182375fd8b41a7f3a0e0
         env:
@@ -32,6 +33,11 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
+      - name: 'Disable Git Safety'
+        run: |
+          git config --global safe.directory '*'
+          git config --global --add safe.directory /__w/{repo_name}/{repo_name}
+          git config --global --add safe.directory /github/workspace
       - name: 'Build & Deploy'
         uses: shalzz/zola-deploy-action@37076cb04a796fdfbb66182375fd8b41a7f3a0e0
         env:
