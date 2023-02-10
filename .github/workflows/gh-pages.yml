@@ -16,7 +16,7 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@master
       - name: 'Build' 
-        uses: shalzz/zola-deploy-action@37076cb04a796fdfbb66182375fd8b41a7f3a0e0
+        uses: shalzz/zola-deploy-action@186b5039430ab38781dde8feaf0861bcc017413f
         env:
           BUILD_DIR: .
           BUILD_ONLY: true
@@ -29,7 +29,7 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@master
       - name: 'Build & Deploy'
-        uses: shalzz/zola-deploy-action@37076cb04a796fdfbb66182375fd8b41a7f3a0e0
+        uses: shalzz/zola-deploy-action@186b5039430ab38781dde8feaf0861bcc017413f
         env:
           PAGES_BRANCH: gh-pages
           BUILD_DIR: .
