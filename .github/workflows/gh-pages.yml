@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@master
       - name: 'Disable Git Safety'
         run: |
-          git config --global safe.directory '*'
+          git config --global --add safe.directory '*'
           git config --global --add safe.directory /__w/{repo_name}/{repo_name}
           git config --global --add safe.directory /github/workspace
       - name: 'Build' 
@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@master
       - name: 'Disable Git Safety'
         run: |
-          git config --global safe.directory '*'
+          git config --global --add safe.directory '*'
           git config --global --add safe.directory /__w/{repo_name}/{repo_name}
           git config --global --add safe.directory /github/workspace
       - name: 'Build & Deploy'
