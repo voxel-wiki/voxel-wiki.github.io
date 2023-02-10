@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref != 'refs/heads/main'
     steps:
+      - name: 'disable-git-safety'
+        run: |
+          git config --global safe.directory '*'
+          git config --global --add safe.directory /__w/{repo_name}/{repo_name}
       - name: 'Checkout'
         uses: actions/checkout@master
       - name: 'Build' 
