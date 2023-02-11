@@ -93,6 +93,16 @@ license = "CC BY-NC-SA 4.0"
 rendering = "Raytracing"
 
 [[projects]]
+name = "Gvox Engine"
+url = "https://www.gaberundlett.com"
+state = "Active Dev."
+engine = "https://github.com/GabeRundlett/gvox_engine"
+language = ["GLSL", "C++"]
+license = "MIT"
+rendering = "Raytracing"
+storage = "[Gvox meta-format library](https://github.com/GabeRundlett/gvox)"
+
+[[projects]]
 name = "Gnome Tower"
 url = "https://www.youtube.com/channel/UC6qe1IBLMBi0jqaec-Msxlw"
 state = "Active Dev."
