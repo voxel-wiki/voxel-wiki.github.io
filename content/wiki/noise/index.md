@@ -222,7 +222,7 @@ You *might* notice that we did not define what the sample position `p` is, or wh
 
 Modifiers are *independent* of each other, so you can mix-and-match them however you like, there are no limits to your creativity here!
 
-{{ stub_notice() }}
+{{ stub_notice(body="This section is a stub. Perhaps help us expand it?") }}
 
 ### Combiner Operations
 <!-- Binary operation: Noise can be combined with other noise, in a binary operation, like addition, subtraction, multiplication etc. -->
