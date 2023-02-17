@@ -56,6 +56,7 @@ article blockquote {
 
 article > .notice {
 	/* <div class="notice"></div> */
+	display: flow-root;
 	margin-bottom: 1rem;
 	padding: 0.25rem 0.5rem;
 	border-radius: 5px;
