@@ -46,6 +46,48 @@ article img {
 	max-width: 100%;
 }
 
+
+article .exclusive-choice-set {
+	margin-bottom: 1rem;
+	
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	gap: 0.25rem;
+	
+	padding-left: 0;
+	padding: 0.25rem;
+	
+	border-radius: 0.75rem;
+	
+	background: rgba(222, 226, 230, 0.25);
+	body.dark & {
+		background: rgba(0, 0, 0, 0.25);
+	}
+	
+	li {
+		display: flex;
+		flex: 1 0 auto;
+	}
+	
+	a {
+		flex: 1 0 auto;
+		padding: 0.5em;
+		text-align: center;
+		
+		border-radius: 0.5rem;
+		border: 1px solid transparent;
+		
+		background: rgba(0, 0, 0, 0.075);
+		body.dark & {
+			background: rgba(0, 0, 0, 0.25);
+			border-color: rgba(222, 226, 230, 0.25);
+		}
+		
+		&:only-child {font-weight: bold;}
+	}
+}
+
 article blockquote {
 	border-radius: 0.125rem;
 	border-left: 0.25rem solid rgb(222, 226, 230);

@@ -24,6 +24,8 @@ __Bold Text__
 ***Bold-Italic Text***  
 ___Bold-Italic Text___  
 
+Non-breaking space: <https://symbl.cc/en/00A0/>
+
 ---
 
 * List per Star
@@ -91,3 +93,13 @@ Math: \\( f_n(\vec{p}) \to [-1, +1] = \enspace ? \\)
 {% todo_notice() %} Notice <br> [Link](/typography) {% end %}
 {% stub_notice() %} Stub Notice <br> [Link](/typography) {% end %}
 {{ stub_notice() }}
+
+---
+
+Exclusive Choice Set:
+
+<ul class="exclusive-choice-set" aria-label="example">
+  <li><a href="#">A</a></li>
+  <li><a href="#">B</a></li>
+  <li><a href="#" class=missing>C</a></li>
+</ul>
