@@ -138,12 +138,6 @@ pre table {
 	}
 }
 
-
-
-body:not(.dark) a:not(.btn-primary) {
-	color: rgb(80, 31, 255);
-}
-
 code {
 	font-size: inherit;
 	
@@ -191,13 +185,23 @@ figure {
 	}
 }
 
-a > code {
-	padding: 0 0.125rem;
-}
-
-a[href*="//"]:not([href*="voxel.wiki"]):not([href*="127.0.0.1"]) {
-	/* external links */
-	color: rgb(51, 133, 255) !important;
+a {
+	body:not(.dark) &:not(.btn-primary) {
+		color: rgb(80, 31, 255);
+	}
+	
+	& > code {
+		padding: 0 0.125rem;
+	}
+	
+	&[href*="//"]:not([href*="voxel.wiki"]):not([href*="127.0.0.1"]) {
+		/* external links */
+		color: rgb(51, 133, 255) !important;
+	}
+	
+	&.missing {
+		color: rgb(255, 100, 50) !important;
+	}
 }
 
 @media (prefers-contrast: more) {
