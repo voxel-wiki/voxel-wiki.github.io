@@ -53,112 +53,55 @@ It might be...
   an [item](https://en.wikipedia.org/wiki/Item_(game_terminology)),
   or some other [object](https://en.wikipedia.org/wiki/Object_(computer_science)).
 
+...and this is *without* taking the encoding, be it in-memory or on-disk, into account!
+
 ##### Voxel Grids
 
-It should be noted that a voxel grid may have holes, be stretched, have multiple sizes...
+It should be noted that a voxel grid may have holes, be stretched, have multiple sizes, etc. ...
 the only requirement is that the grid is *indexable*:
 
-Every coordinate in the grid, i.e.: `x, y, z`, should consistently lead to either
-an individual voxels value or an [up/down-sampled](/wiki/rendering/sampling) variant of it.
+> Every coordinate in the grid, that is all possible `x, y, z`-trios, should consistently lead to either
+an individual voxel *or* an up/down-sampled variant of it.
 
 #### What is *not* a voxel?
 
-If values are generated in a *two*-dimensional grid and *expanded* into a *third* dimension on-demand, such as *during rendering*,
-you are ***not*** using voxels. That's just a plain old [heightmap](https://en.wikipedia.org/wiki/Heightmap) *pretending*
-to be voxels!
+If values are generated in a *two*-dimensional grid and *expanded* into a *third* dimension on-demand,
+such as *during rendering*, you are ***not*** using voxels.
 
+That's just a plain old [heightmap](https://en.wikipedia.org/wiki/Heightmap) *pretending* to be voxels!
+
+{% info_notice() %}
 **Important:**  
 This does **not** mean that *columns* of values arranged in a grid, like [run-length encoded](/wiki/compression/run-length-encoding) data might be, are not voxels!
 The way that voxels are [*stored*](/wiki/datastructures) does not matter as long as the grid is indexable.
+{% end %}
+
+
+
+
+
+
+
+
+
+---
 
 ## What are voxels used for?
 
-Many things, but three of them stick out: **Videogames**, **3D Modeling**, **Simulation** and **Medicine**!
+*Many* things, but three of them stick out:
 
-Since you are visiting this wiki, you might already know *what* you want to use voxels for;
-if not, please take some time to think about it, or just read on ahead.
+<ul class="exclusive-choice-set" aria-label="uses of voxels">
+  <li><a href="/wiki/intro-to-videogames">Videogames</a></li>
+  <li><a href="/wiki/intro-to-simulation" class=missing>Simulation</a></li>
+  <li><a href="/wiki/intro-to-medicine" class=missing>Medicine</a></li>
+</ul>
 
-### Videogames
-
-Want to create a videogame using voxels?
-
-Then you'll have to first decide whether you want to start [from scratch](/wiki/engines/from-scratch)
-or use an existing [game-engine](/wiki/engines/).
-
-{% warn_notice() %}
-    **Warning:**  
-    Starting from scratch requires knowledge about *many* different areas of programming.
-    If you don't have *any* experience with 3D computer-graphics,
-    or simply don't want to invest *literal years* of your
-    [*very finite life*](https://www.youtube.com/watch?v=JXeJANDKwDc),
-    it might be best to start with a [game engine](/wiki/engines) instead.
+{% info_notice() %}
+Since you are visiting this wiki, you might already know what you intend to use voxels for;
+if not, please take some time to think about it, otherwise just read on ahead! :)
 {% end %}
 
-Here are some questions you should ask yourself from the get-go...
-
-&mdash; What should your voxels **look like** to the player?
-
-- Plain coloured cubes?
-- Textured cubes?
-- Smooth terrain?
-- Realistic?
-
-&mdash; **How big** will the **individual voxels** be, in relation to the player?
-
-Too small, you loose the ability to easily build stuff;
-too big, there won't be enough detail for the mind to fill in.
-
-Note that this directly plays into what your voxels look like!
-
-&mdash; **How big** do you want **the world**, that the player exists in, to be?
-
-Keep in mind that, even if you procedurally generate an *entire* planet,
-you will *still* have to fill it with interesting content; best start small!
-
-&mdash; Will players be able to **play together**?
-
-If you start with just singleplayer and then try to add multiplayer on top... you will be in for a *colossal* world of pain.
-
-&mdash; Do you want your voxels to be **destructible** by the player?
-
-Some optimizations can only be done during development-time, instead of runtime,
-due to the soft realtime constraints of videogames;
-making the switch later is *very* annoying.
-
-###### Minecraft Clone?
-
-If you *do* intend to create a voxel-based videogame,
-there is something you should be *immediately* and *acutely* aware of:
-
-No matter what you do, your game **will** inevitably be compared to Minecraft... and that's okay!
-
-Copying and [remixing](https://www.youtube.com/watch?v=MZ2GuvUWaP8) other peoples ideas
-has been happening for, quite literally, *thousands of years* across ***all*** creative disciplines!
-
-*Nothing* these days is truly original, so don't worry about it and just create what *you* like!
-
-As a matter of fact, Minecraft is strongly inspired (read: a 'clone') of an earlier game: [Infiniminer](https://en.wikipedia.org/wiki/Zachtronics#Infiniminer).
-
-{% warn_notice() %}
-*Having said that*, **Copyrights** and **Trademarks** are very real things,
-so don't go using assets from Minecraft, or other games for that matter, in your own project... unless you want to get sued.
-
-Always check that the things you use have the [proper](https://choosealicense.com/) [license](https://tldrlegal.com/).
-
-You have been warned!
-{% end %}
-
-### 3D Modeling
-
-Want to create 3D-models made out of voxels?
-
-In this case, we highly recommend checking out [MagicaVoxel](https://ephtracy.github.io/index.html?page=mv_main),
-which is currently considered to be *the* best voxel-editor you can get; it's completely free!
-
-### Simulation
-
-{% todo_notice() %} Simulation…? {% end %}
-
-### Medicine
-
-{% todo_notice() %} Medicine…? {% end %}
+For making **art** made of voxels,
+we highly recommend checking out [MagicaVoxel](https://ephtracy.github.io/index.html?page=mv_main),
+which is currently considered to be *the* best voxel-editor you can get; it's completely free!  
+Perhaps [share](/wiki/community) your creation?
