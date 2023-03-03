@@ -12,25 +12,11 @@
 # - license
 
 [[projects]]
-name = "Infiniminer"
-url = "http://thesiteformerlyknownas.zachtronicsindustries.com/infiniminer/"
+name = "3079"
+url = "https://sites.google.com/site/3079game/"
 state = "Released"
-note = "The game that (re)started it all."
-
-[[projects]]
-name = "Minecraft"
-url = "https://www.minecraft.net/"
-state = "Released"
-source = "https://minecraft.fandom.com/wiki/Obfuscation_map"
 language = ["Java"]
-rendering = "Naive Baked Bloxel Mesh Rasterization"
-storage = "[Multi-Level Grid](/wiki/datastructures/multi-level-grid) with Columns of [Chunks](/wiki/chunking)"
-
-[[projects]]
-name = "Teardown"
-url = "https://www.teardowngame.com/"
-state = "Early Access"
-rendering = "Raytracing"
+engine = "jMonkeyEngine"
 
 [[projects]]
 name = "7 Days To Die"
@@ -41,123 +27,6 @@ state = "Early Access"
 name = "Astroneer"
 url = "https://astroneer.space/"
 state = "Released"
-
-[[projects]]
-name = "Magica Voxel"
-url = "https://ephtracy.github.io/"
-
-[[projects]]
-name = "Vintage Story"
-url = "https://www.vintagestory.at/"
-state = "Early Access"
-language = ["C#"]
-source = "https://github.com/anegostudios"
-
-[[projects]]
-name = "Terasology"
-url = "https://terasology.org/"
-state = "Active Dev."
-license = "Apache 2.0"
-source = "https://github.com/MovingBlocks/Terasology"
-language = ["Java"]
-rendering = "Greedy Bloxel Mesh Rasterization"
-storage = "[Multi-Level Grid](/wiki/datastructures/multi-level-grid) of [Chunks](/wiki/chunking)"
-
-[[projects]]
-name = "Veloren"
-url = "https://veloren.net/"
-state = "Active Dev."
-source = "https://gitlab.com/veloren/veloren"
-license = "GNU GPL 3.0"
-language = ["Rust"]
-rendering = "Rasterization"
-
-[[projects]]
-name = "Minetest"
-url = "http://minetest.net/"
-state = "Released"
-engine = "Using a [Fork of Irrlicht](https://github.com/minetest/irrlicht)"
-language = ["C++", "Lua"]
-source = "https://github.com/minetest/minetest/"
-license = "LGPL v2.1+"
-rendering = "Naive Bloxel Mesh Rasterization"
-storage = "Grid of [Chunks](/wiki/chunking) stored in SQLite"
-
-[[projects]]
-name = "Permille.io"
-url = "https://permille.io/Voxels/Latest/"
-state = "Active Dev."
-language = ["Javascript"]
-source = "https://github.com/Permille/Permille.io"
-license = "CC BY-NC-SA 4.0"
-rendering = "Raytracing"
-
-[[projects]]
-name = "Gvox Engine"
-url = "https://www.gaberundlett.com"
-state = "Active Dev."
-engine = "https://github.com/GabeRundlett/gvox_engine"
-language = ["GLSL", "C++"]
-license = "MIT"
-rendering = "Raytracing"
-storage = "[Gvox meta-format library](https://github.com/GabeRundlett/gvox)"
-
-[[projects]]
-name = "Gnome Tower"
-url = "https://www.youtube.com/channel/UC6qe1IBLMBi0jqaec-Msxlw"
-state = "Active Dev."
-language = ["C++"]
-rendering = "Rasterization"
-
-[[projects]]
-name = "Voxelman"
-url = "https://github.com/MrSmith33/voxelman2"
-state = "Active Dev."
-language = ["D", "Vox"]
-source = "https://github.com/MrSmith33/voxelman2"
-license = "Boost"
-
-[[projects]]
-name = "Dream Settler"
-url = "http://dreamsettler.com/"
-state = "Active Dev."
-engine = "Unreal Engine 4"
-
-[[projects]]
-name = "vengi"
-url = "https://mgerhardy.github.io/vengi"
-state = "Active Dev."
-language = ["C++"]
-source = "https://mgerhardy.github.io/vengi"
-license = "MIT"
-
-[[projects]]
-name = "Colony Survival"
-url = "https://store.steampowered.com/app/366090/Colony_Survival/"
-state = "Early Access"
-engine = "Unity3d"
-language = ["C#"]
-
-[[projects]]
-name = "Sector's Edge"
-url = "https://sectorsedge.com/s/i2s2"
-state = "Early Access"
-language = ["C#"]
-
-[[projects]]
-name = "Simple Voxel Raycaster"
-url = "https://github.com/clemdemort/simple-voxel-raycaster"
-state = "Released"
-language = ["C++", "GLSL"]
-source = "https://github.com/clemdemort/simple-voxel-raycaster"
-license = "GPL-3.0"
-
-[[projects]]
-name = "3079"
-url = "https://sites.google.com/site/3079game/"
-state = "Released"
-language = ["Java"]
-engine = "jMonkeyEngine"
 
 [[projects]]
 name = "Avoyd"
@@ -184,13 +53,6 @@ url = "https://store.steampowered.com/app/706990/BLOCKPOST/"
 state = "Released"
 
 [[projects]]
-name = "Obsidian Prince"
-url = "https://store.steampowered.com/app/1373260/Obsidian_Prince/"
-state = "Early Access"
-engine = "Unity3D"
-language = ["C#"]
-
-[[projects]]
 name = "Boundless"
 url = "https://playboundless.com/"
 state = "Released"
@@ -201,14 +63,21 @@ url = "https://www.brutalnature.com/"
 state = "Early Access"
 
 [[projects]]
+name = "Build & Shoot"
+url = "https://www.buildandshoot.com/"
+state = "Released"
+
+[[projects]]
 name = "Build A World EDU"
 url = "https://edu.buildaworld.net/"
 state = "Released"
 
 [[projects]]
-name = "Build & Shoot"
-url = "https://www.buildandshoot.com/"
-state = "Released"
+name = "Colony Survival"
+url = "https://store.steampowered.com/app/366090/Colony_Survival/"
+state = "Early Access"
+engine = "Unity3d"
+language = ["C#"]
 
 [[projects]]
 name = "Creativerse"
@@ -231,6 +100,12 @@ url = "https://www.deeprockgalactic.com/"
 state = "Released"
 
 [[projects]]
+name = "Dream Settler"
+url = "http://dreamsettler.com/"
+state = "Active Dev."
+engine = "Unreal Engine 4"
+
+[[projects]]
 name = "Dual Universe"
 url = "https://www.dualuniverse.game/"
 state = "Beta"
@@ -251,60 +126,13 @@ url = "https://exoticmatter.io/"
 state = "Early Access"
 
 [[projects]]
+name = "FinityWorlds"
+url = "https://www.youtube.com/channel/UCw6nMILS3QcJRHTHCuZuchg"
+
+[[projects]]
 name = "FortressCraft Evolved"
 url = "https://store.steampowered.com/app/254200/FortressCraft_Evolved/"
 state = "Early Access"
-
-[[projects]]
-name = "Lego Worlds"
-url = "https://store.steampowered.com/app/332310/LEGO_Worlds/"
-state = "Released"
-
-[[projects]]
-name = "No Man's Sky"
-url = "https://www.nomanssky.com/"
-state = "Released"
-
-[[projects]]
-name = "Rising World"
-url = "https://www.rising-world.net/"
-state = "Early Access"
-
-[[projects]]
-name = "Space Engineers"
-url = "https://www.spaceengineersgame.com/"
-state = "Released"
-
-[[projects]]
-name = "StarMade"
-url = "https://www.star-made.org/"
-state = "Early Access"
-
-[[projects]]
-name = "Synthetic World"
-url = "https://www.staudsoft.com/"
-state = "Released"
-
-[[projects]]
-name = "Staxel"
-url = "https://playstaxel.com/"
-state = "Released"
-
-[[projects]]
-name = "Super Voxel World"
-url = "https://svw.itch.io/super-voxel-world"
-state = "Active Dev."
-engine = "Unity3D"
-language = ["C#"]
-
-[[projects]]
-name = "Trove"
-url = "https://www.trionworlds.com/trove/en/"
-state = "Released"
-
-[[projects]]
-name = "Voxel Farm"
-url = "https://www.voxelfarm.com/index.html"
 
 [[projects]]
 name = "FreeMiner"
@@ -315,21 +143,64 @@ language = ["C++"]
 engine = "Minetest"
 
 [[projects]]
-name = "Voxel Planet"
-url = "https://www.youtube.com/user/voxelplanet/videos"
+name = "Gnome Tower"
+url = "https://www.youtube.com/channel/UC6qe1IBLMBi0jqaec-Msxlw"
+state = "Active Dev."
+language = ["C++"]
+rendering = "Rasterization"
 
 [[projects]]
-name = "UpvoidMiner"
-url = "https://upvoid.com/miner/about/"
-state = "Beta"
+name = "Guncraft"
+url = "https://www.exatogames.com/"
 
 [[projects]]
-name = "StoneQuest"
-url = "https://www.stonequest.de/"
+name = "Gvox Engine"
+url = "https://www.gaberundlett.com"
+state = "Active Dev."
+engine = "https://github.com/GabeRundlett/gvox_engine"
+language = ["GLSL", "C++"]
+license = "MIT"
+rendering = "Raytracing"
+storage = "[Gvox meta-format library](https://github.com/GabeRundlett/gvox)"
 
 [[projects]]
-name = "StarForge"
-url = "http://www.starforge.com/"
+name = "Infiniminer"
+url = "http://thesiteformerlyknownas.zachtronicsindustries.com/infiniminer/"
+state = "Released"
+note = "The game that (re)started it all."
+
+[[projects]]
+name = "Kopatel Online"
+url = "https://kopatel-online.tumblr.com/"
+
+[[projects]]
+name = "Lego Worlds"
+url = "https://store.steampowered.com/app/332310/LEGO_Worlds/"
+state = "Released"
+
+[[projects]]
+name = "Magica Voxel"
+url = "https://ephtracy.github.io/"
+
+[[projects]]
+name = "Minecraft"
+url = "https://www.minecraft.net/"
+state = "Released"
+source = "https://minecraft.fandom.com/wiki/Obfuscation_map"
+language = ["Java"]
+rendering = "Naive Baked Bloxel Mesh Rasterization"
+storage = "[Multi-Level Grid](/wiki/datastructures/multi-level-grid) with Columns of [Chunks](/wiki/chunking)"
+
+[[projects]]
+name = "Minetest"
+url = "http://minetest.net/"
+state = "Released"
+engine = "Using a [Fork of Irrlicht](https://github.com/minetest/irrlicht)"
+language = ["C++", "Lua"]
+source = "https://github.com/minetest/minetest/"
+license = "LGPL v2.1+"
+rendering = "Naive Bloxel Mesh Rasterization"
+storage = "Grid of [Chunks](/wiki/chunking) stored in SQLite"
 
 [[projects]]
 name = "Murder Miners"
@@ -337,16 +208,44 @@ url = "http://jforcegames.com/"
 state = "Released"
 
 [[projects]]
-name = "Guncraft"
-url = "https://www.exatogames.com/"
+name = "No Man's Sky"
+url = "https://www.nomanssky.com/"
+state = "Released"
 
 [[projects]]
-name = "Kopatel Online"
-url = "https://kopatel-online.tumblr.com/"
+name = "Obsidian Prince"
+url = "https://store.steampowered.com/app/1373260/Obsidian_Prince/"
+state = "Early Access"
+engine = "Unity3D"
+language = ["C#"]
 
 [[projects]]
-name = "FinityWorlds"
-url = "https://www.youtube.com/channel/UCw6nMILS3QcJRHTHCuZuchg"
+name = "Permille.io"
+url = "https://permille.io/Voxels/Latest/"
+state = "Active Dev."
+language = ["Javascript"]
+source = "https://github.com/Permille/Permille.io"
+license = "CC BY-NC-SA 4.0"
+rendering = "Raytracing"
+
+[[projects]]
+name = "Rising World"
+url = "https://www.rising-world.net/"
+state = "Early Access"
+
+[[projects]]
+name = "Sector's Edge"
+url = "https://sectorsedge.com/s/i2s2"
+state = "Early Access"
+language = ["C#"]
+
+[[projects]]
+name = "Simple Voxel Raycaster"
+url = "https://github.com/clemdemort/simple-voxel-raycaster"
+state = "Released"
+language = ["C++", "GLSL"]
+source = "https://github.com/clemdemort/simple-voxel-raycaster"
+license = "GPL-3.0"
 
 [[projects]]
 name = "Sjoerd's Voxel Engine"
@@ -354,3 +253,111 @@ url = "https://github.com/sjoerd-code/voxel-engine"
 source = "https://github.com/sjoerd-code/voxel-engine"
 language = ["C#"]
 license = "MIT"
+
+[[projects]]
+name = "Space Engineers"
+url = "https://www.spaceengineersgame.com/"
+state = "Released"
+
+[[projects]]
+name = "Spacefarer"
+url = "https://playspacefarer.com/
+state = "Active Dev."
+engine = "Bevy"
+language = ["Rust"]
+
+[[projects]]
+name = "StarForge"
+url = "http://www.starforge.com/"
+
+[[projects]]
+name = "StarMade"
+url = "https://www.star-made.org/"
+state = "Early Access"
+
+[[projects]]
+name = "Staxel"
+url = "https://playstaxel.com/"
+state = "Released"
+
+[[projects]]
+name = "StoneQuest"
+url = "https://www.stonequest.de/"
+
+[[projects]]
+name = "Super Voxel World"
+url = "https://svw.itch.io/super-voxel-world"
+state = "Active Dev."
+engine = "Unity3D"
+language = ["C#"]
+
+[[projects]]
+name = "Synthetic World"
+url = "https://www.staudsoft.com/"
+state = "Released"
+
+[[projects]]
+name = "Teardown"
+url = "https://www.teardowngame.com/"
+state = "Early Access"
+rendering = "Raytracing"
+
+[[projects]]
+name = "Terasology"
+url = "https://terasology.org/"
+state = "Active Dev."
+license = "Apache 2.0"
+source = "https://github.com/MovingBlocks/Terasology"
+language = ["Java"]
+rendering = "Greedy Bloxel Mesh Rasterization"
+storage = "[Multi-Level Grid](/wiki/datastructures/multi-level-grid) of [Chunks](/wiki/chunking)"
+
+[[projects]]
+name = "Trove"
+url = "https://www.trionworlds.com/trove/en/"
+state = "Released"
+
+[[projects]]
+name = "UpvoidMiner"
+url = "https://upvoid.com/miner/about/"
+state = "Beta"
+
+[[projects]]
+name = "Veloren"
+url = "https://veloren.net/"
+state = "Active Dev."
+source = "https://gitlab.com/veloren/veloren"
+license = "GNU GPL 3.0"
+language = ["Rust"]
+rendering = "Rasterization"
+
+[[projects]]
+name = "vengi"
+url = "https://mgerhardy.github.io/vengi"
+state = "Active Dev."
+language = ["C++"]
+source = "https://mgerhardy.github.io/vengi"
+license = "MIT"
+
+[[projects]]
+name = "Vintage Story"
+url = "https://www.vintagestory.at/"
+state = "Early Access"
+language = ["C#"]
+source = "https://github.com/anegostudios"
+
+[[projects]]
+name = "Voxel Farm"
+url = "https://www.voxelfarm.com/index.html"
+
+[[projects]]
+name = "Voxel Planet"
+url = "https://www.youtube.com/user/voxelplanet/videos"
+
+[[projects]]
+name = "Voxelman"
+url = "https://github.com/MrSmith33/voxelman2"
+state = "Active Dev."
+language = ["D", "Vox"]
+source = "https://github.com/MrSmith33/voxelman2"
+license = "Boost"
