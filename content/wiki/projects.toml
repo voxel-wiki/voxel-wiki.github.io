@@ -125,12 +125,6 @@ source = "https://github.com/MrSmith33/voxelman2"
 license = "Boost"
 
 [[projects]]
-name = "Dream Settler"
-url = "http://dreamsettler.com/"
-state = "Active Dev."
-engine = "Unreal Engine 4"
-
-[[projects]]
 name = "vengi"
 url = "https://mgerhardy.github.io/vengi"
 state = "Active Dev."
