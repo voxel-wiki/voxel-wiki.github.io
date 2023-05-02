@@ -94,7 +94,7 @@ rendering = "Raytracing"
 
 [[projects]]
 name = "Spacefarer"
-url = "https://playspacefarer.com/
+url = "https://playspacefarer.com/"
 state = "Active Dev."
 engine = "Bevy"
 language = ["Rust"]
