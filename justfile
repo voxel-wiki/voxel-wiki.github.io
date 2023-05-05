@@ -1,9 +1,12 @@
 default: zola-serve
 
-dev:
+init:
+    git submodule update --init --recursive
+
+dev: init
     zola serve --drafts --interface 127.0.0.1 --port 8080 --base-url localhost
 
-dev-open:
+dev-open: init
     zola serve --drafts --interface 127.0.0.1 --port 8080 --base-url localhost --open
 
 zola-install:
