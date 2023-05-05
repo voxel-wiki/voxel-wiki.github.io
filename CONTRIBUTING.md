@@ -2,24 +2,33 @@
 
 There are ***four*** methods to contribute to the wiki...
 
-**Note:** Only the first two methods need proper grammar, editing and information coherency.
+> **Note:** Only the first two methods need proper grammar, editing and information coherency; i.e.: minimal quality.
 
 ## Via Fork and Pull-Request
 
 This is the only method were you have a proper preview of content as you write it.
 
+The initial setup is as follows:
+
 1. Fork the project.
 1. Clone the project: `git clone https://github.com/YOUR-USERNAME-HERE/voxel-wiki.github.io.git`
 1. Open a console/terminal in the cloned projects directory.
-1. [Install Zola](https://www.getzola.org/documentation/getting-started/installation/), such that it is on your `PATH`, or put it right in the projects directory.  
-   (Zola is a *single* executable file, so there shouldn't be any issues with this. Else, open an issue!)
-1. Run `zola serve` from the project directory.
-1. Make your changes to the content.
-1. Check the life-preview in your browser.
-1. Repeat from 6 as long as you need.
-1. Push the changes to your fork.
-1. Create a pull-request.
-1. Wait for a maintainer to review your changes.
+2. Install [Just](https://just.systems/) and [Zola](https://www.getzola.org/), so that they're on your `PATH`, *or* put them right in the projects directory. Both are self-contained executable files and *should* Just-Work™; open an issue if you're having trouble!
+   - [Just Installation](https://just.systems/man/en/chapter_3.html).
+   - [Zola Installation](https://www.getzola.org/documentation/getting-started/installation/)
+3. Run `just init` from the project directory.
+
+Then, to actually create & edit content:
+
+1. Run `just dev-open` from the project directory.
+   - Your browser of choice should open up.
+   - If not, see if the console has errors.
+2. Make your changes to the content.
+3. Check the life-preview in your browser.
+4. Repeat from 2 as long as you need.
+5. Push the changes to your fork.
+6. Create a pull-request.
+7. Wait for a maintainer to review your changes.
 
 If you're a maintainer (eg: you are part of the `voxel-wiki` organisation), you *may* directly push changes, as long as they don't affect too many pages. In the latter case, it's a better idea to do it trough a pull-request or a separate branch.
 
