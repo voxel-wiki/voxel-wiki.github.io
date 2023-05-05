@@ -120,7 +120,28 @@ in concrete terms that would be what **bits and bytes** are, **primitive types**
 Also, for the purpose of clarity, we will *not* be using pseudocode.
 {% end %}
 
-{% warn_notice() %} The following sections are a work-in-progress. {% end %}
+{% warn_notice() %} **The following sections are a work-in-progress.** {% end %}
+
+### Choosing A Language
+
+{% warn_notice() %} This sections may trigger some people; apologies in advance. {% end %}
+
+In many fields of programming, the choice of language is quite open... even interpreted languages are often acceptable!
+
+But with voxels? Yeah, no, there are some **hard requirements**:
+
+- Tightly packing data, via structs and continuous arrays.
+- Processing large arrays/lists of numbers at bare-metal speed.
+- Creation of complex, nested, but performant, data-structures.
+- No copying or cloning of data unless requested.
+- Access to graphics hardware acceleration.
+- Multithreading.
+
+This effectively cuts out *all* languages that are [interpreted](https://en.wikipedia.org/wiki/Interpreter_(computing)) instead of compiled, such as `Python`, `JavaScript`, `PHP`, `Lua`, `Perl` and `Ruby`; do not use these for voxels, you *will* regret it.
+
+Some [Just-In-Time Compiled](https://en.wikipedia.org/wiki/Just-in-time_compilation) languages *can* be used, such as `Java` and `C#`, but it's not recommended due to a variety of rather hard to explain factors; just... trust us on this one. Please.
+
+Unfortunately, all of this restricts our choice to 'system-level' languages, such as `C`, `C++`, `Rust`, `Zig` and *maybe* `Go` if you're feeling masochistic.
 
 ### Basic Storage
 
