@@ -122,13 +122,28 @@ Also, for the purpose of clarity, we will *not* be using pseudocode.
 
 {% warn_notice() %} **The following sections are a work-in-progress.** {% end %}
 
-### Choosing A Language
-
-{% warn_notice() %} This sections may trigger some people; apologies in advance. {% end %}
+### Choosing a Language
 
 In many fields of programming, the choice of language is quite open... even interpreted languages are often acceptable!
 
-But with voxels? Yeah, no, there are some **hard requirements**:
+But with voxels? Take a quick look at this table:
+
+| Size | Volume |
+|------|--------|
+| `1` | `1` |
+| `2` | `8` |
+| `4` | `64` |
+| `8` | `512` |
+| `16` | `4096` |
+| `32` | `32768` |
+| `64` | `262144` |
+| `128` | `2097152` |
+| ... | ... |
+| `1024` | `1073741824` |
+
+Unless you keep the range of the active volume *very* small (on the order of `16³` to `256³`), you will quickly realize that there is a *scaling problem*: Increasing the size of the volume will consume *exponentially* more and more memory, while making computations horrendously expensive.
+
+As such, there are some rather strong **requirements** when choosing a language:
 
 - Tightly packing data, via structs and continuous arrays.
 - Processing large arrays/lists of numbers at bare-metal speed.
@@ -137,11 +152,11 @@ But with voxels? Yeah, no, there are some **hard requirements**:
 - Access to graphics hardware acceleration.
 - Multithreading.
 
-This effectively cuts out *all* languages that are [interpreted](https://en.wikipedia.org/wiki/Interpreter_(computing)) instead of compiled, such as `Python`, `JavaScript`, `PHP`, `Lua`, `Perl` and `Ruby`; do not use these for voxels, you *will* regret it.
+This effectively cuts out *all* languages that are [interpreted](https://en.wikipedia.org/wiki/Interpreter_(computing)) instead of compiled, such as `Python`, `JavaScript`, `PHP`, `Lua`, `Perl` and `Ruby`; using these languages limits your active volume to quite a small size, which can be fine.
 
-Some [Just-In-Time Compiled](https://en.wikipedia.org/wiki/Just-in-time_compilation) languages *can* be used, such as `Java` and `C#`, but it's not recommended due to a variety of rather hard to explain factors; just... trust us on this one. Please.
+Some [Just-In-Time Compiled](https://en.wikipedia.org/wiki/Just-in-time_compilation) languages *can* be used, such as `Java` and `C#`, but it's not recommended due to some of the listed requirements and a variety of rather hard to explain factors; just... trust us on this one. Please.
 
-Unfortunately, all of this restricts our choice to 'system-level' languages, such as `C`, `C++`, `Rust`, `Zig` and *maybe* `Go` if you're feeling masochistic.
+Unfortunately, all of this restricts our choice to 'system-level' languages, such as `C`, `C++`, `Rust`, `Zig`, `Go` and so on.
 
 ### Basic Storage
 
