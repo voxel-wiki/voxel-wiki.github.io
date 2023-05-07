@@ -141,34 +141,40 @@ But with voxels? Take a quick look at this table:
 | ... | ... |
 | `1024` | `1073741824` |
 
-Unless you keep the range of the active volume *very* small (on the order of `16³` to `256³`), you will quickly realize that there is a *scaling problem*: Increasing the size of the volume will consume *exponentially* more and more memory, while making computations horrendously expensive.
+Unless you keep the range of the active volume *very* small (on the order of `16³` to `256³`), you will quickly realize that there is a *scaling problem*: Increasing the size of the volume will consume *exponentially* more and more memory, making computations *horrendously* expensive.
 
 As such, there are some rather strong **requirements** when choosing a language:
 
-- Tightly packing data, via structs and continuous arrays.
-- Processing large arrays/lists of numbers at bare-metal speed.
-- Creation of complex, nested, but performant, data-structures.
-- No copying or cloning of data unless requested.
-- Access to graphics hardware acceleration.
-- Multithreading.
+1. Tightly packing data, via structs and continuous arrays.
+2. Processing large arrays/lists of numbers at bare-metal speed.
+3. Creation of complex, nested, but performant, data-structures.
+4. No copying or cloning of data unless requested.
+5. Access to graphics hardware acceleration.
+6. Multithreading.
 
-This effectively cuts out *all* languages that are [interpreted](https://en.wikipedia.org/wiki/Interpreter_(computing)) instead of compiled, such as `Python`, `JavaScript`, `PHP`, `Lua`, `Perl` and `Ruby`; using these languages limits your active volume to quite a small size, which can be fine.
+This effectively cuts out *all* languages that are [interpreted](https://en.wikipedia.org/wiki/Interpreter_(computing)) instead of compiled, such as `Python`, `JavaScript`, `PHP`, `Lua`, `Perl` and `Ruby`; unless you are fine with a *very* small volume size, using these languages is *not* recommended.
 
-Some [Just-In-Time Compiled](https://en.wikipedia.org/wiki/Just-in-time_compilation) languages *can* be used, such as `Java` and `C#`, but it's not recommended due to some of the listed requirements and a variety of rather hard to explain factors; just... trust us on this one. Please.
+Some [Just-In-Time Compiled](https://en.wikipedia.org/wiki/Just-in-time_compilation) languages *may* be fine, such as `Java` and `C#`, but we wouldn't recommended using them: You will inevitably run into various issues, mostly related to memory management and cache coherency... forcing you to step out of their 'normal' usage, straight into unsafe and often weird, territory.
 
-Unfortunately, all of this restricts our choice to 'system-level' languages, such as `C`, `C++`, `Rust`, `Zig`, `Go` and so on.
+While [Chunking](/wiki/chunking) and various acceleration structures help to alleviate the issues posed by interpreted and JIT'd languages *somewhat*, adding more features makes memory usage and bandwidth become harder and harder to manage... you *need* the ability to manage memory on both fine and large scales.
+
+Unfortunately, all of this restricts our choice to 'system-level' languages, such as `C`, `C++`, `Rust`, `Zig`, `Go` [and so on](https://en.wikipedia.org/wiki/System_programming_language#Higher-level_languages).
+
+For this guide we will be using *basic* `Rust`; you do not need to know how lifetimes work for now.
 
 ### Basic Storage
 
 For a start, let's assume that our voxels store... nothing.
 
 ```rust
-type Voxel = ();
+/// This represents a single voxel sample/instance.
+type Voxel = (); // using the empty 'unit type' for now.
 ```
 
-Since a voxel outside a grid is (by definition) not a voxel, we will have to put it into a grid of voxels...
+Since a voxel *outside* a grid is, by [definition](#what-is-a-voxel-in-theory), *not* a voxel, we will have to put it into a grid of voxels...
 
 ```rust
+/// A finite grid of voxels.
 pub struct VoxelGrid {
   // ???
 }
@@ -179,8 +185,10 @@ pub struct VoxelGrid {
 At first, you might try to use a 3D array; let's say of size `16³`:
 
 ```rust
+/// The size of our grid along any axis.
 pub const GRID_SIZE: usize = 16;
 
+/// A finite grid of `GRID_SIZE³` voxels.
 pub struct VoxelGrid {
   values: [[[Voxel; GRID_SIZE]; GRID_SIZE]; GRID_SIZE];
   // Well ain't that nice to look at, eh?
@@ -190,11 +198,13 @@ pub struct VoxelGrid {
 Now accessing it is pretty simple:
 
 ```rust
-// Create the volume... somehow.
-let mut volume = VoxelGrid { /* ??? */ };
+// Create the volume, filled with 'nothing'...
+let mut volume = VoxelGrid {
+  values: [[[Voxel; GRID_SIZE]; GRID_SIZE]; GRID_SIZE]
+};
 
 // Have some coordinates...
-let (x,y,z) = (/**/, /**/, /**/);
+let (x,y,z) = (0, 1, 2);
 
 // Get a voxel:
 let v = volume.values[x][y][z];
