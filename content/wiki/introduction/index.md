@@ -126,20 +126,20 @@ Also, for the purpose of clarity, we will *not* be using pseudocode.
 
 In many fields of programming, the choice of language is quite open... even interpreted languages are often acceptable!
 
-But with voxels? Take a quick look at this table:
+But with voxels? Let's do a quick exercise, shall we...
 
-| Size | Volume |
-|------|--------|
-| `1` | `1` |
-| `2` | `8` |
-| `4` | `64` |
-| `8` | `512` |
-| `16` | `4096` |
-| `32` | `32768` |
-| `64` | `262144` |
-| `128` | `2097152` |
-| ... | ... |
-| `1024` | `1073741824` |
+1. Grab a calculator (we ain't monsters here)!
+2. Think of a number of meters|voxels you want to 'see' at once.
+3. Type the number into the calculator.
+4. Double the number once.
+5. Multiply the number, by *itself*, **twice**.
+6. Look at the result.
+7. Try this again, from step 2, with some other numbers...
+
+{% info_notice() %}
+Alternatively, you can use the formula `(D*2)³`,
+were `D` is the initial number from step 2.
+{% end %}
 
 Unless you keep the range of the active volume *very* small (on the order of `16³` to `256³`), you will quickly realize that there is a *scaling problem*: Increasing the size of the volume will consume *exponentially* more and more memory, making computations *horrendously* expensive.
 
