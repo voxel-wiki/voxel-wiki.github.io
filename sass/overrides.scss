@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'monofont';
+	src: local(Hack),local(sfmono-regular),local(menlo),local(monaco),local(consolas),local("Liberation Mono"),local("Courier New"),local(monospace);
+}
+
 .home > .container > .content {
 	position: relative;
 }
@@ -138,6 +143,10 @@ article > .notice {
 	:last-child {
 		margin-bottom: 0;
 	}
+}
+
+pre, code, kbd, samp {
+	font-family: 'monofont';
 }
 
 pre {
