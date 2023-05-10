@@ -253,9 +253,40 @@ a {
 		padding: 0 0.125rem;
 	}
 	
-	&[href*="//"]:not([href*="voxel.wiki"]):not([href*="127.0.0.1"]) {
-		/* external links */
+	/* external links */
+	&[href*="//"]:not(
+		[href*="voxel.wiki"], /* dont show on primary domain */
+		[href*="127.0.0.1"] /* dont show on localhost site */
+	) {
 		color: rgb(51, 133, 255) !important;
+	}
+	
+	/* external links: indicator icon */
+	article &[href*="//"]:not(
+		[href*="voxel.wiki"], /* dont show on primary domain */
+		[href*="127.0.0.1"], /* dont show on localhost site */
+		[href*="/wiki/File:"i], /* dont show on wikipedia images */
+		/* dont show on images */
+		[href*=".png"i],
+		[href*=".jpeg"i],
+		[href*=".jpg"i],
+		[href*=".svg"i]
+	)::after {
+		content: '\A0';
+		display: inline-block;
+		width: 0.75em;
+		height: 0.75em;
+		
+		/**
+			Did you know that you can abuse mask-image like this?
+			Well, me neither... but hey, it works! :'D
+		**/
+		background: currentColor;
+		--mask: url("data:image/svg+xml;utf-8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path fill=\"white\" d=\"M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z\"/></svg>");
+		mask-image: var(--mask);
+		mask-size: cover;
+		-webkit-mask-image: var(--mask);
+		-webkit-mask-size: cover;
 	}
 	
 	&.missing {
