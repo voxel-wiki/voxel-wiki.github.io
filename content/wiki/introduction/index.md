@@ -142,7 +142,7 @@ Alternatively, you can use the formula `(D*2)³`,
 were `D` is the initial number from step 2.
 {% end %}
 
-Unless you keep the range of the active volume *very* small (on the order of `16³` to `256³`), you will quickly realize that there is a *scaling problem*: Increasing the size of the volume will consume *exponentially* more and more memory, making computations *horrendously* expensive.
+Unless you keep the range of the active volume *very* small (on the order of `16³` to `256³`), you will quickly realize that there is a *scaling problem*: Increasing the size of the volume will consume *cubically* more and more memory, making computations *horrendously* expensive.
 
 As such, there are some rather strong **requirements** when choosing a language:
 
