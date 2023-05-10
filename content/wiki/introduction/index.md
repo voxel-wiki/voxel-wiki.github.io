@@ -126,11 +126,12 @@ Also, for the purpose of clarity, we will *not* be using pseudocode.
 
 In many fields of programming, the choice of language is quite open... even interpreted languages are often acceptable!
 
+<div id='the-scaling-problem'></div>
 But with voxels? Let's do a quick exercise, shall we...
 
 1. Grab a calculator (we ain't monsters here)!
-2. Think of a number of meters|voxels you want to 'see' at once.
-3. Type the number into the calculator.
+2. Think of how far into the distance you want to 'see', in meters/voxels.
+3. Type that number into the calculator.
 4. Double the number once.
 5. Multiply the number, by *itself*, **twice**.
 6. Look at the result.
