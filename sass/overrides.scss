@@ -256,7 +256,8 @@ a {
 	/* external links */
 	&[href*="//"]:not(
 		[href*="voxel.wiki"], /* dont show on primary domain */
-		[href*="127.0.0.1"] /* dont show on localhost site */
+		[href*="127.0.0.1"], /* dont show on localhost site */
+		[href*="localhost"] /* dont show on localhost site */
 	) {
 		color: rgb(51, 133, 255) !important;
 	}
@@ -265,6 +266,7 @@ a {
 	article &[href*="//"]:not(
 		[href*="voxel.wiki"], /* dont show on primary domain */
 		[href*="127.0.0.1"], /* dont show on localhost site */
+		[href*="localhost"], /* dont show on localhost site */
 		[href*="/wiki/File:"i], /* dont show on wikipedia images */
 		/* dont show on images */
 		[href*=".png"i],
