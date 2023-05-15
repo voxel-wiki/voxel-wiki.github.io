@@ -39,6 +39,11 @@ img {
 }
 
 ul {
+	&.big-gap li,
+	&.big-gap ul {
+		padding-bottom: 0.75rem;
+	}
+	
 	li.important {
 		&:first-child {margin-bottom: 0.5rem}
 		font-size: 1.2em;
