@@ -46,6 +46,16 @@ Some of these libraries have bindings for other languages,
 so check out their documentation before rejecting any!
 {% end %}
 
+## Windowing Abstractions & Libraries
+
+Creating a surface to actually draw into is, due to the many platforms that exist,
+terribly difficult, so it's best to leave it to a windowing library...
+
+- `GLFW`
+- `SDL`
+- `WINIT`
+
+
 ---
 
 ## General Rendering Methods
