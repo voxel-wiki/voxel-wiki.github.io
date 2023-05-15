@@ -46,7 +46,10 @@ ul {
 	
 	li.important {
 		&:first-child {margin-bottom: 0.5rem}
-		font-size: 1.2em;
+		& a {
+			font-weight: bold;
+			font-size: 1.25em;
+		}
 	}
 }
 
