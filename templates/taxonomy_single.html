@@ -24,6 +24,10 @@
       {{ tpage.title }}
     {% endif %}
   </a>
+  {% if tpage.summary %}
+    <br>
+    <blockquote style="font-size:0.75em">{{ tpage.summary | safe }}</blockquote>
+  {% endif %}
 </li>
 {% endmacro list_item %}
 
