@@ -6,6 +6,8 @@ path = "/wiki/introduction"
 
 This is a basic introduction to what voxels *are*, what they are *not* and their general use cases.
 
+<!-- more -->
+
 ## What is a voxel in theory?
 
 To quote Wikipedia:

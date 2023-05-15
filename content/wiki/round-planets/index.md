@@ -9,6 +9,8 @@ tags = ["planets", "math", "rendering"]
 
 Similar to the problem of map projection, creating planets shows a fundamental problem with voxels: As they are [regular grids](https://en.wikipedia.org/wiki/Regular_grid), shaping the actual grid into a planet, without distortions or discontinuities, is mathematically *impossible*. As such, we need to employ different methods depending on what we ultimately want to achieve.
 
+<!-- more -->
+
 Here are some considerations when choosing a method:
 
 1. **Perpendicularity.**  
