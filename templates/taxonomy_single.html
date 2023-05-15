@@ -41,7 +41,7 @@
             <h1> {{ title }} </h1>
           </div>
           <p><a href="/categories/">⇐ Go Back</a></p>
-          <ul>
+          <ul class=big-gap>
             {% if taxonomy_page != "" %}
               {{ self::list_item(tpage=taxonomy_page, title=taxonomy_name, important=true) }}
             {% endif %}
