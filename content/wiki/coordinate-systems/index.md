@@ -8,9 +8,9 @@ categories = ["math"]
 tags = ["math"]
 +++
 
-## Motivation
-
 When dealing with voxels (and math in three-dimensional space in general), it is extremely important to get your coordinate systems and the conversions between them right. Even slightly wrong conversions can (and will) lead to *massive* headaches and horrible debugging sessions.
+
+<!-- more -->
 
 As such, it is a good idea to do one or more of these:
 

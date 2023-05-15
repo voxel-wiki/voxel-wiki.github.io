@@ -7,12 +7,12 @@ categories = ["algorithms"]
 tags = ["algorithm", "math", "raycasting", "raytracing"]
 +++
 
-{{ stub_notice() }}
-
-## Introduction
-
 The [Digital Differential Analyzer](https://en.wikipedia.org/wiki/Digital_differential_analyzer_(graphics_algorithm)) (`DDA`) algorithm,
 adapted to 3D, is *exactly* the thing one needs to travel along a line (or a ray) through a grid of voxels.
+
+<!-- more -->
+
+{{ stub_notice() }}
 
 ## Implementation
 

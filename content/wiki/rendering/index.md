@@ -14,7 +14,7 @@ performance and resource considerations, general method used, *etc. etc.* ...
 
 It all depends on what ***you*** ultimately want to *do*.
 
----
+<!-- more --> ---
 
 ## Graphics Programming APIs
 

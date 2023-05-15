@@ -6,6 +6,8 @@ path = "/wiki/intro-to-videogames"
 
 So you want to create a videogame using voxels?
 
+<!-- more -->
+
 Then you'll have to first decide whether you want to start [from scratch](/wiki/engines/from-scratch)
 or use an existing [game-engine](/wiki/engines/).
 

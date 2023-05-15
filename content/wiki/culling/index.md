@@ -6,10 +6,10 @@ categories = ["culling"]
 tags = ["rendering", "culling", "optimization"]
 +++
 
-## Introduction
-
 In general, (visibility-) culling is the process of limiting the amount of things rendered
 (both geometry and drawcalls) to manageable levels, so the GPU doesn't go up in flames.
+
+<!-- more -->
 
 So, here are ~6 kinds of culling, in no particular order:
 
