@@ -38,6 +38,13 @@ img {
 	*/
 }
 
+ul {
+	li.important {
+		&:first-child {margin-bottom: 0.5rem}
+		font-size: 1.2em;
+	}
+}
+
 .table > :not(:last-child) > :last-child > *, table > :not(:last-child) > :last-child > * {
 	border-bottom-width: 0.125rem;
 }
