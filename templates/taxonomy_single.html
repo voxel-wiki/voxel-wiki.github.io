@@ -3,6 +3,8 @@
 {% block seo %}
   {{ super() }}
   {% set taxonomy_name = term.name | capitalize %}
+  {% set taxonomy_path = "/wiki/" ~ term.slug ~ "/" %}
+  {% set taxonomy_page = term.pages | filter(attribute="path", value=taxonomy_path) | first %}
   {% set title = "Category: " ~ taxonomy_name %}
   {% set title_addition = "" %}
   {% if config.title %}
@@ -12,6 +14,18 @@
 {% endblock seo %}
 
 {% block body %}{% set page_class="taxonomy" %}{% endblock body %}
+
+{% macro list_item(tpage, title="", important=false) %}
+{% if important == true %}<li class="important">{% else %}<li>{% endif%}
+  <a href="{{ tpage.permalink | trim_end_matches(pat='/') }}">
+    {% if title != "" %}
+      {{ title }}
+    {% else %}
+      {{ tpage.title }}
+    {% endif %}
+  </a>
+</li>
+{% endmacro list_item %}
 
 {% block content %}
 <div class="wrap container" role="document">
@@ -24,12 +38,15 @@
           </div>
           <p><a href="/categories/">⇐ Go Back</a></p>
           <ul>
-            {% for page in term.pages %}
-                <li>
-                    <a href="{{ page.permalink | trim_end_matches(pat='/') }}"> {{ page.title }} </a>
-                </li>
+            {% if taxonomy_page != "" %}
+              {{ self::list_item(tpage=taxonomy_page, title=taxonomy_name, important=true) }}
+            {% endif %}
+            {% for tpage in term.pages %}
+                {% if tpage.path == taxonomy_path %}{% continue %}{% endif %}
+                {{ self::list_item(tpage=tpage) }}
             {% endfor %}
           </ul>
+          <br>
         </article>
       </div>
     </div>
