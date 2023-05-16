@@ -38,7 +38,7 @@
           <div class="page-header">
             <h1> {{ title | safe }} </h1>
           </div>
-          <p><a href="/categories/">⇐ Go Back</a></p>
+          <p><a href="/{{ taxonomy.name }}/">⇐ Go Back</a></p>
           <ul class=big-gap>
             {% if taxonomy_page != "" %}
               {{ self::list_item(tpage=taxonomy_page, title=taxonomy_name, important=true) }}
