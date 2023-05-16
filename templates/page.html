@@ -53,7 +53,7 @@
                 <span style="flex-grow:1"></span>
                 {% set tags = page.taxonomies | get(key="tags", default=[]) %}
                 {% for tag in tags %}
-                    &emsp;<span style="opacity:0.5">#{{ tag }}</span>
+                    &emsp;<a href="/tags/{{ tag }}" style="opacity:0.5">#{{ tag }}</a>
                 {% endfor %}
             </nav>
         {% endif %}
