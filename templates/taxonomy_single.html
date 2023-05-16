@@ -5,7 +5,7 @@
   {% set taxonomy_name = term.name | capitalize %}
   {% set taxonomy_path = "/wiki/" ~ term.slug ~ "/" %}
   {% set taxonomy_page = term.pages | filter(attribute="path", value=taxonomy_path) | first %}
-  {% set title = "Pages in <em>" ~ taxonomy_name ~ "</em>" %}
+  {% set title = "Pages in " ~ taxonomy_name %}
   {% set title_addition = "" %}
   {% if config.title %}
     {% set title_addition = title_separator ~ config.title %}
