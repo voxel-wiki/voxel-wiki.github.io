@@ -7,15 +7,17 @@ categories = ["gameplay"]
 tags = ["planets", "math", "rendering"]
 +++
 
-Similar to the problem of map projection, creating planets shows a fundamental problem with voxels: As they are [regular grids](https://en.wikipedia.org/wiki/Regular_grid), shaping the actual grid into a planet, without distortions or discontinuities, is mathematically *impossible*. As such, we need to employ different methods depending on what we ultimately want to achieve.
+Just as with the problem of [map projection](https://en.wikipedia.org/wiki/Map_projection), creating planets shows a fundamental fact with voxels: As they are [regular grids](https://en.wikipedia.org/wiki/Regular_grid), shaping the actual grid into a planet, without distortions or discontinuities, is *mathematically impossible*. As such, we need to employ different methods depending on what we ultimately want to achieve.
 
 <!-- more -->
 
 Here are some considerations when choosing a method:
 
-1. **Perpendicularity.**  
+1. **Perpendicularity:**  
    Whether building on the surface will be perpendicular along the voxel grid.
-2. **Distortion.**  
+2. **Continuity:**  
+   Stitching together the planets volume from multiple sub-volumes, will create *many* edge-cases all over the code/logic, no matter how well hidden from the player.
+3. **Distortion:**  
    A good approach should reduce distortion. How distortion is valued depends on the game. There are a few considerations with distortion:
     - Distortion at the centre of the planet.
     - Distortion very far away from the planet.
@@ -37,7 +39,9 @@ For cube-like voxels on the other hand, parts of the map will become jagged, due
 Example: [Creating Voxel Planet](https://hiteshkrsahu.medium.com/generating-voxel-planet-using-3d-simplex-noise-3ab011fd88ec).
 
 {% info_notice() %}
-While this method *is* called 'naïve', it is the *only* method that creates truly continuous planets, making the name quite the misnomer.
+**Note:** The term 'naïve' in computer-science means 'straightforward', as to not use any specific knowledge or assumptions; it can/should be understood as meaning 'nothing special'.
+
+Regardless, it's the *only* method that creates *truly* continuous planets.
 {% end %}
 
 ## Torus
@@ -58,7 +62,7 @@ The game [StarMade](https://www.star-made.org/) uses this method with it's unrel
 ## Inflated Cube
 The inflated cube consists of six independent voxel grids, one per face of the cube; by (visually) normalizing the planes, a very-close to sphere-like shape is created.
 
-Although this approach creates distortions near the corners, it is a good approach for cube-shaped voxels; see for example: [Seed of Andromeda](https://www.youtube.com/watch?v=bJr4QlDxEME).
+Although this approach creates distortions near the corners, it is a usable approximation of a round planet for cube-shaped voxels; see for example: [Seed of Andromeda](https://www.youtube.com/watch?v=bJr4QlDxEME).
 
 ## See also
 - [Coordinate Systems](/wiki/coordinate-systems)
