@@ -354,3 +354,9 @@ name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
 source = "https://github.com/sjoerdev/voxel-engine"
 language = ["C#"]
+
+[[projects]]
+name = "Hexane"
+url = "https://voxelphile.com"
+source = "https://github.com/voxelphile/hexane"
+language = ["Rust", "Glsl"]
