@@ -30,11 +30,11 @@ Links for the Minecraft community... in it's own section because it's the larges
 - [Official Minecraft Website](https://www.minecraft.net/)
 - [Official Minecraft Discord](https://discord.gg/minecraft)
 - [Modded Minecraft Community](https://www.reddit.com/r/feedthebeast/) ([Discord](https://discord.com/invite/moddedmc))
-- [ModRinth](https://modrinth.com/) ([Discord](https://discord.gg/EUHuJHt))
+- [Modrinth](https://modrinth.com/) ([Discord](https://discord.gg/EUHuJHt))
 - [CurseForge](https://www.curseforge.com/minecraft/) ([Discord](https://discord.com/invite/curseforge))
 - [Planet Minecraft](https://www.planetminecraft.com/) ([Discord](https://discord.gg/QQSWwyg))
 - [Forge Mod API](https://minecraftforge.net/) ([Discord](https://discord.gg/forge))
-- [Fabric Mod API](https://fabricmc.net/) ([Discord](https://discord.gg/v6v4pMv))
+- [Fabric Toolchain](https://fabricmc.net/) ([Discord](https://discord.gg/v6v4pMv))
 - [The Quilt Project](https://quiltmc.org/) ([Discord](https://discord.quiltmc.org/))
 - [Feed The Beast Wiki](https://ftb.fandom.com/wiki/FTB_Wiki) ([Discord](https://go.ftb.team/discord))
 

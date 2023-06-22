@@ -2,6 +2,8 @@
 title = "Voxels in Videogames"
 description = "A introduction to voxels in videogames."
 path = "/wiki/intro-to-videogames"
+[taxonomies]
+categories = ["introduction"]
 +++
 
 So you want to create a videogame using voxels?

@@ -32,7 +32,7 @@ For that, there are two main API's you might use:
 ## Graphics Programming Libraries
 
 If you find the previously mentioned APIs too burdensome,
-there are various rendering abstraction libraries available,
+there are various *rendering abstraction* libraries available,
 built on top of these API's:
 
 - `C++` [bgfx](https://github.com/bkaradzic/bgfx)
@@ -51,7 +51,8 @@ so check out their documentation before rejecting any!
 Creating a surface to actually draw into is, due to the many platforms that exist,
 terribly difficult, so it's best to leave it to a windowing library...
 
-- `GLFW`
+- `GLFW` (recommended)
+- `SFML`
 - `SDL`
 - `WINIT`
 

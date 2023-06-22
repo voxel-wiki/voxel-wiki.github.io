@@ -2,6 +2,8 @@
 title = "Introduction"
 description = "A general introduction to the concept of voxels."
 path = "/wiki/introduction"
+[taxonomies]
+categories = ["introduction"]
 +++
 
 This is a basic introduction to what voxels *are*, what they are *not* and their general use cases.
@@ -46,7 +48,7 @@ An individual voxel can be absolutely *anything*. Yes, **anything**.
 
 And of all this is *without* taking the encoding, be it in-memory or on-disk, into account.
 
-See the [practice section](#what-is-a-voxel-in-practice) for more details on this.
+See within the [practice section](#types-of-voxel) for more details on this.
 
 
 
@@ -304,7 +306,12 @@ volume.set(x, y, z, v).unwrap();
 Handling errors is outside the scope of this guide, so do note that the `unwrap`s in the example will,
 if the coordinates are ever out of bounds, crash our program; but at least you'll know where!
 
-But how to we fill it?
+But how to we fill it? And just what type should `Voxel` be?!
+
+### Types of Voxel
+
+
+
 
 ### Basic Generation
 
