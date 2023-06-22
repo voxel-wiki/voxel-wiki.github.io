@@ -2,6 +2,9 @@
 title = "Data Structures"
 description = "The many ways to structure and manage voxels in memory."
 path = "wiki/datastructures"
+[taxonomies]
+categories = ["datastructures"]
+tags = ["datastructures", "storage", "spatial-acceleration"]
 +++
 
 > Note: This section generally covers *runtime* storage, not [serialization](/wiki/serialization).

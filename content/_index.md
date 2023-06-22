@@ -33,7 +33,7 @@ link = "/wiki/procedural-generation"
 
 [[extra.list]]
 title = "Engines"
-content = "Don't want to start entirely from scratch? Fear not! There are various <a href='wiki/engines'>Game Engines</a> you can use as a basis for your project..."
+content = "Don't want to start entirely from scratch? Fear not! There are various <a href='wiki/engines'>Game Engines</a> you can use as basis for your project..."
 link = "/wiki/engines"
 
 [[extra.list]]
