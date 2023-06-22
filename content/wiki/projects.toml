@@ -110,6 +110,15 @@ rendering = "Raytracing"
 storage = "[Gvox meta-format library](https://github.com/GabeRundlett/gvox)"
 
 [[projects]]
+name = "Simple Voxel Tracer"
+url = "https://github.com/Ciwiel3/SimpleVoxelTracer"
+state = "Active Dev."
+source = "https://github.com/Ciwiel3/SimpleVoxelTracer"
+language = ["C", "GLSL"]
+license = "MIT"
+rendering = "Raytracing"
+
+[[projects]]
 name = "Gnome Tower"
 url = "https://www.youtube.com/channel/UC6qe1IBLMBi0jqaec-Msxlw"
 state = "Active Dev."
