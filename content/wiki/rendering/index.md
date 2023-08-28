@@ -6,32 +6,57 @@ categories = ["rendering"]
 tags = ["rendering"]
 +++
 
-Drawing voxels seems easy at a glance, they're just cubes after all!
-
-However, there's actually an *infinite* amount of ways to render voxels,
-depending on the way they should look like, the underlying storage,
-performance and resource considerations, general method used, *etc. etc.* ...
-
-It all depends on what ***you*** ultimately want to *do*.
+While rendering voxels appears easy at a glance ("they're just cubes!"),
+there are actually many, *many*, trade-offs one has to take into account,
+mainly depending on the intended visual *style* and *scale* of the individual voxels.
 
 <!-- more --> ---
 
+Ultimately it depends on what ***your*** goals are; try not to set them too lofty!
+
+Since there is no way to write about all possible methods, this article will talk about things *in general*, linking elsewhere for more details - if possible.
+
+## Hardware Acceleration
+
+Talking about rendering is impossible without talking about hardware acceleration
+and thus **GPU**s (*Graphics&nbsp;Processing&nbsp;Unit*); so let's do that real quick!
+
+The primary purpose of a GPU is to calculate/compute/solve a *massive* number of highly similar problems[^embarassinglyparallel] "all at once",
+by splitting up large sets of data into smaller groups, which are then worked thru by a large number of tiny processing units[^gpumanycores].
+
+{% info_notice() %}
+[Historically](https://en.wikipedia.org/wiki/Graphics_processing_unit#History),
+the problem in question was mainly [rasterization](https://en.wikipedia.org/wiki/Rasterisation)
+(and later fragment processing) of triangles via GPUs on dedicated [graphics cards](https://en.wikipedia.org/wiki/Graphics_card).
+
+These days GPUs are much more [general purpose](https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units)
+and are used in so many applications that we won't bother listing them here.
+{% end %}
+
+To hopefully nobodies surprise, rendering voxels *is* such a massively parallel process, that *not* using GPUs would be very (very) silly.
+
+Now, how do we gain access to the awesome processing power of GPUs...?
+
 ## Graphics Programming APIs
 
-When writing a program that renders something to the screen,
-you will usually want to **A)** draw things as fast as possible
-and **B)** do so across many platforms and hardware combinations.
+Unfortunately, directly accessing GPUs usually isn't possible, since...
 
-For that, there are two main API's you might use:
+1. Operating systems must share GPU 'resources' between multiple processes.
+2. There are a multitude of hardware vendors and thus GPUs, not to mention drivers!
 
-- To get started *as fast as possible*, with no regard as to how modern graphics co-processors work,
+As such, we are forced to use a **Graphics&nbsp;Programming&nbsp;API**... of which there are several.
+
+However, since you are most likely to want to run your program across many platforms and hardware combinations,
+we can safely ignore a whole bunch of them and choose from one of two APIs:
+
+- To get started *as fast as possible*, with no regard as to how modern GPUs and their drivers work,
   use [OpenGL](/wiki/opengl).
-- To be future-proof and get as much performance as possible out of your graphics co-processor,
+- To be future-proof and get as much performance as possible out of your GPU,
   use [Vulkan](/wiki/vulkan).
 
 ## Graphics Programming Libraries
 
-If you find the previously mentioned APIs too burdensome,
+If you find the previously mentioned APIs too burdensome or low-level,
 there are various *rendering abstraction* libraries available,
 built on top of these API's:
 
@@ -103,3 +128,9 @@ so as to not overload your GPU with drawcalls & geometry.
 - [GigaVoxels: Ray-Guided Streaming for Efficient and Detailed Voxel Rendering](https://artis.inrialpes.fr/Publications/2009/CNLE09/)
 - <http://jojendersie.de/rendering-huge-amounts-of-voxels/>
 - <http://jojendersie.de/rendering-huge-amounts-of-voxels-2/>
+
+---
+
+[^embarassinglyparallel]: Commonly referred to as [embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel).
+
+[^gpumanycores]: Modern GPU's have literally hundreds, if not *thousands*, of 'units' running in parallel; the exact mapping of 'units' to 'threads' differs per GPU vendor.
