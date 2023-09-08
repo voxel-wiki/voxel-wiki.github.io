@@ -62,10 +62,17 @@ If you find the previously mentioned APIs too burdensome or low-level,
 there are various *rendering abstraction* libraries available,
 using the lower APIs as *backends*:
 
-- `C++` [bgfx](https://github.com/bkaradzic/bgfx)
-- `C++` [OGRE](https://ogrecave.github.io/ogre/)
-- `Rust` [wgpu](https://wgpu.rs/)
-- `Java` [libGDX](https://libgdx.com/)
+{% warn_notice() %}
+Only libraries directly exposing 3D graphics are listed.
+{% end %}
+
+| Name | Language | Backend/s |
+|------|----------|-----------|
+| [wgpu](https://wgpu.rs/) | `Rust` | *various* |
+| [bgfx](https://github.com/bkaradzic/bgfx) | `C++` | *various* |
+| [OGRE](https://ogrecave.github.io/ogre/) | `C++` | OpenGL / Direct3D |
+| [raylib](https://www.raylib.com/) | `C` | OpenGL |
+| [libGDX](https://libgdx.com/) | `Java` | OpenGL(ES) |
 
 {% info_notice() %}
 **Note:**  
