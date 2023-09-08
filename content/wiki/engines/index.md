@@ -5,11 +5,12 @@ description = "Using an existing engine or writing a new one is a hard question;
 
 Using an existing engine or writing a new one is, unfortunately, a hard question depending on many factors.
 
-This article is split into two sections, one for using an existing game engine, the other for creating a new game engine from scratch, to help you decide what to do.
+This article is split into two sections, one for [using an existing game engine](#using-an-existing-game-engine),
+the other for [creating a new game engine](#creating-a-new-game-engine) from scratch, to help you decide what to do.
 
 ## Using an existing Game Engine
 
-If you want to make a game and get something playable & distributable within a... *reasonable* time-frame... using an existing game engine is *strongly recommended*.
+If you want to make a game and get something playable & distributable within a... *reasonable* time-frame... using an existing game engine is **strongly recommended**.
 
 The most commonly used game engines are as follows:
 
@@ -25,14 +26,16 @@ The most commonly used game engines are as follows:
 > If you wish to *learn* how game engines works, creating one is a good way of approaching the issue.  
 > After all, everyone has to learn to walk before they can run!
 
-Following is a list of things you must keep in mind and be aware of *before* you begin:
+Following are a few things you must keep in mind and be aware of **before** you begin:
 
 1. You must have the concrete want (motivation) and will (discipline) to do so.
-2. It is a massive amount of work, potentially spanning over years of your life.
+2. It is a *massive* amount of work, potentially spanning over years of your life.
 3. Having several years of programming experience is a must; nobody will hold your hand in this endeavour.
-4. All the tooling for asset-, level- and gameplay-creation? You'll have to write *all of that* too.
-5. Running into driver bugs will eat a lot of time and make you want to rip your hair out.
+4. All the tooling for asset-, level- and gameplay-creation? You'll have to make them.
+5. Running into driver bugs will eat a lot of time and cause premature balding.
 
 The above list might make you question *"Why would anyone do this?!"*, to which most of [us](/wiki/community) will say... because it's fun! :D
 
 A more concrete reason is that, by writing both the high- and low-level code, you can gain *a lot* of performance (that'd otherwise be left on the table) *and* the freedom to make some truly awesome things.
+
+{% todo_notice() %} Create an article for game engine creation. {% end %}
