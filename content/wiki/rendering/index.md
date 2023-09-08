@@ -58,7 +58,7 @@ we can safely ignore a whole bunch of them and choose from one of two APIs:
 
 If you find the previously mentioned APIs too burdensome or low-level,
 there are various *rendering abstraction* libraries available,
-built on top of these API's:
+using the lower APIs as *backends*:
 
 - `C++` [bgfx](https://github.com/bkaradzic/bgfx)
 - `C++` [OGRE](https://ogrecave.github.io/ogre/)
