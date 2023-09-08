@@ -183,9 +183,9 @@ They are split into these four categories:
 Even with just one noise sample, we can do *many* things... for example:
 
 - Shift it by adding/subtracting
-- Multiply it to scale it's amplitude
+- Multiply it to scale its amplitude
 - Put it through a spline or easing function
-- Change it's slope with `pow(v, …)`
+- Change its slope with `pow(v, …)`
 - Convert to other number ranges
 - etc. etc.
 
