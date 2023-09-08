@@ -53,6 +53,8 @@ we can safely ignore a whole bunch of them and choose from one of two APIs:
   use [OpenGL](/wiki/opengl).
 - To be future-proof and get as much performance as possible out of your GPU,
   use [Vulkan](/wiki/vulkan).
+- If you're okay with proprietary stuff and are targeting Microsoft Windows/Xbox,
+  you can use [Direct3D](https://en.wikipedia.org/wiki/Direct3D).
 
 ## Graphics Programming Libraries
 
