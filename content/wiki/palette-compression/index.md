@@ -16,7 +16,7 @@ All we have to do, (un)surprisingly, is look at Minecraft...
 
 ## Prior Art
 
-With the release of [Minecraft 1.13](https://minecraft.fandom.com/wiki/Java_Edition_1.13#Blocks_2), Mojang added a form of lossless compression for voxel-data to their game, based upon the basic concept of *color palettes*.
+With the release of [Minecraft 1.13](https://minecraft.wiki/w/Java_Edition_1.13#Blocks_2), Mojang added a form of lossless compression for voxel-data to their game, based upon the basic concept of *color palettes*.
 
 Think of it like a GIF image: By limiting ourselves to a small set of colors and arranging the picture elements in various patterns, we can create an image that *appears* to have more colors than it *actually* contains, but with fraction of the memory consumption!
 
