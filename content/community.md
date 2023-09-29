@@ -29,6 +29,7 @@ Links for the Minecraft community... in it's own section because it's the larges
 
 - [Official Minecraft Website](https://www.minecraft.net/)
 - [Official Minecraft Discord](https://discord.gg/minecraft)
+- [The Minecraft Wiki](https://minecraft.wiki)
 - [Modded Minecraft Community](https://www.reddit.com/r/feedthebeast/) ([Discord](https://discord.com/invite/moddedmc))
 - [Modrinth](https://modrinth.com/) ([Discord](https://discord.gg/EUHuJHt))
 - [CurseForge](https://www.curseforge.com/minecraft/) ([Discord](https://discord.com/invite/curseforge))
