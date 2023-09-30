@@ -3,6 +3,10 @@ title = "Engines"
 description = "Using an existing engine or writing a new one is a hard question; this article might help."
 +++
 
+{% quote(author="[Wikipedia](https://en.wikipedia.org/wiki/Game_engine)") %}
+A **game engine** is a software framework primarily designed for the development of video games [..]
+{% end %}
+
 Using an existing engine or writing a new one is, unfortunately, a hard question depending on many factors.
 
 This article is split into two sections, one for [using an existing game engine](#using-an-existing-game-engine),
