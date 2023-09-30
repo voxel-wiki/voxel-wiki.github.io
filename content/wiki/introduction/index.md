@@ -56,9 +56,10 @@ See within the [practice section](#types-of-voxel) for more details on this.
 
 
 ---
-> ...on a regular grid...
 
 {% figure(class="float", caption="A grid of voxels containing colours.") %}[![From Wikipedia](https://upload.wikimedia.org/wikipedia/commons/b/b4/Voxelgitter.png)](https://commons.wikimedia.org/wiki/File:Voxelgitter.png){% end %}
+
+> ...on a regular grid...
 
 Taking the definition from Wikipedia...
 
@@ -130,8 +131,9 @@ Also, for the purpose of clarity, we will *not* be using pseudocode.
 
 In many fields of programming, the choice of language is quite open... even interpreted languages are often acceptable!
 
-<div id='the-scaling-problem'></div>
 But with voxels? Let's do a quick exercise, shall we...
+
+#### The Scaling Problem
 
 1. Grab a calculator (we ain't monsters here)!
 2. Think of how far into the distance you want to 'see', in meters/voxels.
@@ -148,6 +150,8 @@ were `D` is the initial number from step 2.
 
 Unless you keep the range of the active volume *very* small (on the order of `16³` to `256³`), you will quickly realize that there is a *scaling problem*: Increasing the size of the volume will consume *cubically* more and more memory, making computations *horrendously* expensive.
 
+#### Requirements for performant Voxels
+
 As such, there are some rather strong **requirements** when choosing a language:
 
 1. Tightly packing data, via structs and continuous arrays.
@@ -157,15 +161,19 @@ As such, there are some rather strong **requirements** when choosing a language:
 5. Access to graphics hardware acceleration.
 6. Multithreading.
 
-This effectively cuts out *all* languages that are [interpreted](https://en.wikipedia.org/wiki/Interpreter_(computing)) instead of compiled, such as `Python`, `JavaScript`, `PHP`, `Lua`, `Perl` and `Ruby`; unless you are fine with a *very* small volume size, using these languages is *not* recommended.
+This effectively cuts out *all* languages that are interpreted[^interpreted] instead of compiled; unless you are fine with a *very* small volume size, using these languages is *not* recommended for anything but higher level scripts.
 
-Some [Just-In-Time Compiled](https://en.wikipedia.org/wiki/Just-in-time_compilation) languages *may* be fine, such as `Java` and `C#`, but we wouldn't recommended using them: You will inevitably run into various issues, mostly related to memory management and cache coherency... forcing you to step out of their 'normal' usage, straight into unsafe and often weird, territory.
+{% info_notice() %}
+Using JIT-compiled[^jit] languages is fine, but you'll have to be ***very*** careful with managing memory, and may be forced into non-idiomatic[^idiom] code.
+{% end %}
 
-While [Chunking](/wiki/chunking) and various acceleration structures help to alleviate the issues posed by interpreted and JIT'd languages *somewhat*, adding more features makes memory usage and bandwidth become harder and harder to manage... you *need* the ability to manage memory on both fine and large scales.
+While [Chunking](/wiki/chunking) and various acceleration structures go a long way to alleviate the issues posed by interpreted and JIT'd languages, you *will* eventually need the ability to manage memory on both fine and large scales.
 
-Unfortunately, all of this restricts our choice to 'system-level' languages, such as `C`, `C++`, `Rust`, `Zig`, `Go` [and so on](https://en.wikipedia.org/wiki/System_programming_language#Higher-level_languages).
+#### Your Choices
 
-For this guide we will be using *basic* `Rust`; you do not need to know how lifetimes work for now.
+Unfortunately, all this restricts your choices to [system-level languages](https://en.wikipedia.org/wiki/System_programming_language#Higher-level_languages), such as `C++`, `Rust`, `Zig` or `Go`.
+
+For this guide we will be using *basic* `Rust`; you do not need to know how lifetimes work, for now.
 
 ### Basic Storage
 
@@ -372,3 +380,11 @@ For making **art** made of voxels,
 we highly recommend checking out [MagicaVoxel](https://ephtracy.github.io/index.html?page=mv_main),
 which is currently considered to be *the* best voxel-editor you can get; it's completely free!  
 Perhaps [share](/wiki/community) your creation?
+
+---
+
+[^interpreted]: Languages that are executed ["from source code"](https://en.wikipedia.org/wiki/Interpreter_(computing)), such as `Python`, `JavaScript`, `PHP`, `Lua`, `Perl` and `Ruby`.
+
+[^jit]: [Just-In-Time Compiled](https://en.wikipedia.org/wiki/Just-in-time_compilation), such as `Java` and `C#`.
+
+[^idiom]: 'Normal' or 'Natural', see <https://en.wiktionary.org/wiki/idiomatic>.
