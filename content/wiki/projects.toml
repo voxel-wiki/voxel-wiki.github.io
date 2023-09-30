@@ -45,6 +45,7 @@ state = "Released"
 [[projects]]
 name = "Magica Voxel"
 url = "https://ephtracy.github.io/"
+state = "Beta"
 
 [[projects]]
 name = "Vintage Story"
