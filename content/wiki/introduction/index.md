@@ -278,7 +278,7 @@ impl VoxelGrid {
     if x < 0 || x >= GRID_SIZE {return None} // 0 ⋯ GRID_SIZE-1
     if y < 0 || y >= GRID_SIZE {return None} // 0 ⋯ GRID_SIZE-1
     if z < 0 || z >= GRID_SIZE {return None} // 0 ⋯ GRID_SIZE-1
-    Some(x + y*16 + z*16*16) // SCHEME
+    Some(x + y*GRID_SIZE + z*GRID_SIZE*GRID_SIZE) // SCHEME
   }
   
   pub fn get(&self, x: u32, y: u32, z: u32) -> Option<Voxel> {
