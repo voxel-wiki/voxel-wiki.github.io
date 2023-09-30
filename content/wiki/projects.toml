@@ -11,6 +11,10 @@
 # - source
 # - license
 
+###########################################################
+######################## Released #########################
+###########################################################
+
 [[projects]]
 name = "Infiniminer"
 url = "http://thesiteformerlyknownas.zachtronicsindustries.com/infiniminer/"
@@ -33,19 +37,129 @@ state = "Released"
 rendering = "Raytracing"
 
 [[projects]]
-name = "7 Days To Die"
-url = "https://7daystodie.com/"
-state = "Early Access"
-
-[[projects]]
 name = "Astroneer"
 url = "https://astroneer.space/"
 state = "Released"
 
 [[projects]]
-name = "Magica Voxel"
-url = "https://ephtracy.github.io/"
-state = "Beta"
+name = "Deep Rock Galactic"
+url = "https://www.deeprockgalactic.com/"
+state = "Released"
+
+[[projects]]
+name = "Eco"
+url = "https://play.eco/"
+state = "Released"
+
+[[projects]]
+name = "No Man's Sky"
+url = "https://www.nomanssky.com/"
+state = "Released"
+
+[[projects]]
+name = "Space Engineers"
+url = "https://www.spaceengineersgame.com/"
+state = "Released"
+
+[[projects]]
+name = "Trove"
+url = "https://www.trionworlds.com/trove/en/"
+state = "Released"
+
+[[projects]]
+name = "Cube"
+url = "http://cubeengine.com/"
+state = "Released"
+
+[[projects]]
+name = "Cube 2: Sauerbraten"
+url = "http://sauerbraten.org/"
+state = "Released"
+
+[[projects]]
+name = "Minetest"
+url = "http://minetest.net/"
+state = "Released"
+engine = "Using a [Fork of Irrlicht](https://github.com/minetest/irrlicht)"
+language = ["C++", "Lua"]
+source = "https://github.com/minetest/minetest/"
+license = "LGPL v2.1+"
+rendering = "Naive Bloxel Mesh Rasterization"
+storage = "Grid of [Chunks](/wiki/chunking) stored in SQLite"
+
+[[projects]]
+name = "Simple Voxel Raycaster"
+url = "https://github.com/clemdemort/simple-voxel-raycaster"
+state = "Released"
+language = ["C++", "GLSL"]
+source = "https://github.com/clemdemort/simple-voxel-raycaster"
+license = "GPL-3.0"
+
+[[projects]]
+name = "3079"
+url = "https://store.steampowered.com/app/259620/3079__Block_Action_RPG/"
+state = "Released"
+language = ["Java"]
+engine = "jMonkeyEngine"
+
+[[projects]]
+name = "Block Fortress: Empires"
+url = "https://play.google.com/store/apps/details?id=com.foursakenmedia.blockfortressempires"
+state = "Released"
+
+[[projects]]
+name = "BLOCKPOST"
+url = "https://store.steampowered.com/app/706990/BLOCKPOST/"
+state = "Released"
+
+[[projects]]
+name = "Boundless"
+url = "https://playboundless.com/"
+state = "Released"
+
+[[projects]]
+name = "Build A World EDU"
+url = "https://edu.buildaworld.net/"
+state = "Released"
+
+[[projects]]
+name = "Build & Shoot"
+url = "https://www.buildandshoot.com/"
+state = "Released"
+
+[[projects]]
+name = "Creativerse"
+url = "https://creativersegame.com/"
+state = "Released"
+
+[[projects]]
+name = "Synthetic World"
+url = "https://www.staudsoft.com/"
+state = "Released"
+
+[[projects]]
+name = "Staxel"
+url = "https://playstaxel.com/"
+state = "Released"
+
+[[projects]]
+name = "Murder Miners"
+url = "http://jforcegames.com/"
+state = "Released"
+
+[[projects]]
+name = "Lego Worlds"
+url = "https://store.steampowered.com/app/332310/LEGO_Worlds/"
+state = "Released"
+
+###########################################################
+###################### Early Access #######################
+###########################################################
+
+[[projects]]
+name = "7 Days To Die"
+url = "https://7daystodie.com/"
+state = "Early Access"
 
 [[projects]]
 name = "Vintage Story"
@@ -53,6 +167,95 @@ url = "https://www.vintagestory.at/"
 state = "Early Access"
 language = ["C#"]
 source = "https://github.com/anegostudios"
+
+[[projects]]
+name = "Colony Survival"
+url = "https://store.steampowered.com/app/366090/Colony_Survival/"
+state = "Early Access"
+engine = "Unity3d"
+language = ["C#"]
+
+[[projects]]
+name = "Sector's Edge"
+url = "https://sectorsedge.com/s/i2s2"
+state = "Early Access"
+language = ["C#"]
+
+[[projects]]
+name = "Avoyd"
+url = "https://www.avoyd.com/"
+state = "Early Access"
+language = ["C++"]
+source = "https://www.enkisoftware.com/faq#engine"
+
+[[projects]]
+name = "Obsidian Prince"
+url = "https://store.steampowered.com/app/1373260/Obsidian_Prince/"
+state = "Early Access"
+engine = "Unity3D"
+language = ["C#"]
+
+[[projects]]
+name = "Brutal nature"
+url = "https://www.brutalnature.com/"
+state = "Early Access"
+
+[[projects]]
+name = "Empyrion"
+url = "http://empyriongame.com/"
+state = "Early Access"
+
+[[projects]]
+name = "Exotic Matter"
+url = "https://exoticmatter.io/"
+state = "Early Access"
+
+[[projects]]
+name = "FortressCraft Evolved"
+url = "https://store.steampowered.com/app/254200/FortressCraft_Evolved/"
+state = "Early Access"
+
+[[projects]]
+name = "Rising World"
+url = "https://www.rising-world.net/"
+state = "Early Access"
+
+[[projects]]
+name = "StarMade"
+url = "https://www.star-made.org/"
+state = "Early Access"
+
+###########################################################
+########################### Beta ##########################
+###########################################################
+
+[[projects]]
+name = "Magica Voxel"
+url = "https://ephtracy.github.io/"
+state = "Beta"
+
+[[projects]]
+name = "Dual Universe"
+url = "https://www.dualuniverse.game/"
+state = "Beta"
+
+[[projects]]
+name = "UpvoidMiner"
+url = "https://upvoid.com/miner/about/"
+state = "Beta"
+
+###########################################################
+################### Active Development ####################
+###########################################################
+
+[[projects]]
+name = "Veloren"
+url = "https://veloren.net/"
+state = "Active Dev."
+source = "https://gitlab.com/veloren/veloren"
+license = "GNU GPL 3.0"
+language = ["Rust"]
+rendering = "Rasterization"
 
 [[projects]]
 name = "Terasology"
@@ -65,24 +268,22 @@ rendering = "Greedy Bloxel Mesh Rasterization"
 storage = "[Multi-Level Grid](/wiki/datastructures/multi-level-grid) of [Chunks](/wiki/chunking)"
 
 [[projects]]
-name = "Veloren"
-url = "https://veloren.net/"
+name = "Gvox Engine"
+url = "https://www.gaberundlett.com"
 state = "Active Dev."
-source = "https://gitlab.com/veloren/veloren"
-license = "GNU GPL 3.0"
-language = ["Rust"]
-rendering = "Rasterization"
+source = "https://github.com/GabeRundlett/gvox_engine"
+language = ["C++", "GLSL"]
+license = "MIT"
+rendering = "Raytracing"
+storage = "[Gvox meta-format library](https://github.com/GabeRundlett/gvox)"
 
 [[projects]]
-name = "Minetest"
-url = "http://minetest.net/"
-state = "Released"
-engine = "Using a [Fork of Irrlicht](https://github.com/minetest/irrlicht)"
-language = ["C++", "Lua"]
-source = "https://github.com/minetest/minetest/"
-license = "LGPL v2.1+"
-rendering = "Naive Bloxel Mesh Rasterization"
-storage = "Grid of [Chunks](/wiki/chunking) stored in SQLite"
+name = "vengi"
+url = "https://mgerhardy.github.io/vengi"
+state = "Active Dev."
+language = ["C++"]
+source = "https://mgerhardy.github.io/vengi"
+license = "MIT"
 
 [[projects]]
 name = "Permille.io"
@@ -99,16 +300,6 @@ url = "https://playspacefarer.com/"
 state = "Active Dev."
 engine = "Bevy"
 language = ["Rust"]
-
-[[projects]]
-name = "Gvox Engine"
-url = "https://www.gaberundlett.com"
-state = "Active Dev."
-source = "https://github.com/GabeRundlett/gvox_engine"
-language = ["C++", "GLSL"]
-license = "MIT"
-rendering = "Raytracing"
-storage = "[Gvox meta-format library](https://github.com/GabeRundlett/gvox)"
 
 [[projects]]
 name = "Simple Voxel Tracer"
@@ -135,183 +326,15 @@ source = "https://github.com/MrSmith33/voxelman2"
 license = "Boost"
 
 [[projects]]
-name = "vengi"
-url = "https://mgerhardy.github.io/vengi"
-state = "Active Dev."
-language = ["C++"]
-source = "https://mgerhardy.github.io/vengi"
-license = "MIT"
-
-[[projects]]
-name = "Colony Survival"
-url = "https://store.steampowered.com/app/366090/Colony_Survival/"
-state = "Early Access"
-engine = "Unity3d"
-language = ["C#"]
-
-[[projects]]
-name = "Sector's Edge"
-url = "https://sectorsedge.com/s/i2s2"
-state = "Early Access"
-language = ["C#"]
-
-[[projects]]
-name = "Simple Voxel Raycaster"
-url = "https://github.com/clemdemort/simple-voxel-raycaster"
-state = "Released"
-language = ["C++", "GLSL"]
-source = "https://github.com/clemdemort/simple-voxel-raycaster"
-license = "GPL-3.0"
-
-[[projects]]
-name = "3079"
-url = "https://sites.google.com/site/3079game/"
-state = "Released"
-language = ["Java"]
-engine = "jMonkeyEngine"
-
-[[projects]]
-name = "Avoyd"
-url = "https://www.avoyd.com/"
-state = "Early Access"
-language = ["C++"]
-source = "https://www.enkisoftware.com/faq#engine"
-
-[[projects]]
-name = "Blackvoxel"
-url = "https://www.blackvoxel.com/"
-language = ["C++"]
-license = "LGPL v3+"
-source = "https://github.com/Blackvoxel/Blackvoxel"
-
-[[projects]]
-name = "Block Fortress: Empires"
-url = "https://play.google.com/store/apps/details?id=com.foursakenmedia.blockfortressempires"
-state = "Released"
-
-[[projects]]
-name = "BLOCKPOST"
-url = "https://store.steampowered.com/app/706990/BLOCKPOST/"
-state = "Released"
-
-[[projects]]
-name = "Obsidian Prince"
-url = "https://store.steampowered.com/app/1373260/Obsidian_Prince/"
-state = "Early Access"
-engine = "Unity3D"
-language = ["C#"]
-
-[[projects]]
-name = "Boundless"
-url = "https://playboundless.com/"
-state = "Released"
-
-[[projects]]
-name = "Brutal nature"
-url = "https://www.brutalnature.com/"
-state = "Early Access"
-
-[[projects]]
-name = "Build A World EDU"
-url = "https://edu.buildaworld.net/"
-state = "Released"
-
-[[projects]]
-name = "Build & Shoot"
-url = "https://www.buildandshoot.com/"
-state = "Released"
-
-[[projects]]
-name = "Creativerse"
-url = "https://creativersegame.com/"
-state = "Released"
-
-[[projects]]
-name = "Cube"
-url = "http://cubeengine.com/"
-state = "Released"
-
-[[projects]]
-name = "Cube 2: Sauerbraten"
-url = "http://sauerbraten.org/"
-state = "Released"
-
-[[projects]]
-name = "Deep Rock Galactic"
-url = "https://www.deeprockgalactic.com/"
-state = "Released"
-
-[[projects]]
-name = "Dual Universe"
-url = "https://www.dualuniverse.game/"
-state = "Beta"
-
-[[projects]]
-name = "Eco"
-url = "https://play.eco/"
-state = "Released"
-
-[[projects]]
-name = "Empyrion"
-url = "http://empyriongame.com/"
-state = "Early Access"
-
-[[projects]]
-name = "Exotic Matter"
-url = "https://exoticmatter.io/"
-state = "Early Access"
-
-[[projects]]
-name = "FortressCraft Evolved"
-url = "https://store.steampowered.com/app/254200/FortressCraft_Evolved/"
-state = "Early Access"
-
-[[projects]]
-name = "Lego Worlds"
-url = "https://store.steampowered.com/app/332310/LEGO_Worlds/"
-state = "Released"
-
-[[projects]]
-name = "No Man's Sky"
-url = "https://www.nomanssky.com/"
-state = "Released"
-
-[[projects]]
-name = "Rising World"
-url = "https://www.rising-world.net/"
-state = "Early Access"
-
-[[projects]]
-name = "Space Engineers"
-url = "https://www.spaceengineersgame.com/"
-state = "Released"
-
-[[projects]]
-name = "StarMade"
-url = "https://www.star-made.org/"
-state = "Early Access"
-
-[[projects]]
-name = "Synthetic World"
-url = "https://www.staudsoft.com/"
-state = "Released"
-
-[[projects]]
-name = "Staxel"
-url = "https://playstaxel.com/"
-state = "Released"
-
-[[projects]]
 name = "Super Voxel World"
 url = "https://svw.itch.io/super-voxel-world"
 state = "Active Dev."
 engine = "Unity3D"
 language = ["C#"]
 
-[[projects]]
-name = "Trove"
-url = "https://www.trionworlds.com/trove/en/"
-state = "Released"
+###########################################################
+#################### Unknown Status #######################
+###########################################################
 
 [[projects]]
 name = "Voxel Farm"
@@ -330,11 +353,6 @@ name = "Voxel Planet"
 url = "https://www.youtube.com/user/voxelplanet/videos"
 
 [[projects]]
-name = "UpvoidMiner"
-url = "https://upvoid.com/miner/about/"
-state = "Beta"
-
-[[projects]]
 name = "StoneQuest"
 url = "https://www.stonequest.de/"
 
@@ -343,9 +361,11 @@ name = "StarForge"
 url = "http://www.starforge.com/"
 
 [[projects]]
-name = "Murder Miners"
-url = "http://jforcegames.com/"
-state = "Released"
+name = "Blackvoxel"
+url = "https://www.blackvoxel.com/"
+language = ["C++"]
+license = "LGPL v3+"
+source = "https://github.com/Blackvoxel/Blackvoxel"
 
 [[projects]]
 name = "Guncraft"
