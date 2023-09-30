@@ -171,6 +171,53 @@ article > .notice {
 	}
 }
 
+.chapters-nav {
+	margin-top: 1rem;
+	
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	
+	.chapters-link {
+		width: 100%;
+		max-width: 16rem;
+		flex: 1 0 auto;
+		
+		padding: 0.5rem;
+		display: inline-flex;
+		flex-flow: column nowrap;
+		
+		background: rgba(0,0,0,0.075);
+		border-radius: 0.5rem;
+		
+		.chapters--dir {
+			font-size: 0.9rem;
+		}
+		
+		.chapters--txt {
+			font-weight: bold;
+		}
+		
+		&.chapters-none {
+			align-items: center;
+			justify-content: center;
+			opacity: 0.75;
+		}
+		
+		&.chapters-prev {
+			align-items: flex-end;
+		}
+		
+		&.chapters-next {
+			align-items: flex-start;
+		}
+	}
+	
+	.chapters-split {
+		clear: both;
+	}
+}
+
 pre, code, kbd, samp {
 	font-family: 'monofont';
 }

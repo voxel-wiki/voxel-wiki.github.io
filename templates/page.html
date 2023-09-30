@@ -64,6 +64,26 @@
           {% if page.extra.lead %}<p class="lead">{{ page.extra.lead }}</p>{% endif %}
           {{ page.content | safe }}
         </article>
+        {% if page.extra.chapters is defined and page.extra.chapters == true %}
+        <nav aria-label="chapter-navigation" class="chapters-nav">
+          {% if page.extra.chapter_prev is defined and page.extra.chapter_prev != false %}
+            <a href="{{page.extra.chapter_prev.link}}" class="chapters-link chapters-prev">
+              <span class="chapters--dir">Previous Chapter:</span>
+              <span class="chapters--txt">{{page.extra.chapter_prev.text}}</span>
+            </a>
+          {% else %}
+            <span class="chapters-link chapters-none">No previous chapter.</span>
+          {% endif %}
+          {% if page.extra.chapter_next is defined and page.extra.chapter_next != false %}
+            <a href="{{page.extra.chapter_next.link}}" class="chapters-link chapters-next">
+              <span class="chapters--dir">Next Chapter:</span>
+              <span class="chapters--txt">{{page.extra.chapter_next.text}}</span>
+            </a>
+          {% else %}
+            <span class="chapters-link chapters-none">No next chapter.</span>
+          {% endif %}
+          </nav>
+        {% endif %}
       </div>
     </div>
   </div>
