@@ -24,7 +24,7 @@ but should be simple enough to be ported to any language one may choose...
 ## References
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Digital_differential_analyzer_(graphics_algorithm))
-- Paper: [A Fast Voxel Traversal Algorithm for Ray Tracing (1987)](http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.42.3443)
+- Paper: [A Fast Voxel Traversal Algorithm for Ray Tracing (1987)](http://www.cse.yorku.ca/~amana/research/grid.pdf)
 - [Voxel Rendering Using Discrete Ray Tracing](https://castingrays.blogspot.com/2014/01/voxel-rendering-using-discrete-ray.html)
 - [Cast ray to select block in voxel game](https://gamedev.stackexchange.com/a/49423)
 - [Lode's Raycasting Tutorial](https://lodev.org/cgtutor/raycasting.html)
