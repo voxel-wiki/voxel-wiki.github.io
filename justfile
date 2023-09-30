@@ -3,11 +3,11 @@ default: zola-serve
 init:
     git submodule update --init --recursive
 
-dev: init
-    zola serve --drafts --interface 127.0.0.1 --port 8080 --base-url localhost
+dev *ARGS: init
+    zola serve --drafts --interface 127.0.0.1 --port 8080 --base-url localhost {{ARGS}}
 
-dev-open: init
-    zola serve --drafts --interface 127.0.0.1 --port 8080 --base-url localhost --open
+dev-open *ARGS: init
+    zola serve --drafts --interface 127.0.0.1 --port 8080 --base-url localhost --open {{ARGS}}
 
 zola-install:
     docker pull ghcr.io/getzola/zola:v0.16.0
