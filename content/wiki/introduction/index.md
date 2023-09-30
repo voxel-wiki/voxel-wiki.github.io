@@ -4,6 +4,10 @@ description = "A general introduction to the concept of voxels."
 path = "/wiki/introduction"
 [taxonomies]
 categories = ["introduction"]
+[extra]
+chapters = true
+chapter_prev = false
+chapter_next = {text = "Choosing A Language", link = "/wiki/introduction/language"}
 +++
 
 This is a basic introduction to what voxels *are*, what they are *not* and their general use cases.
@@ -48,7 +52,6 @@ An individual voxel can be absolutely *anything*. Yes, **anything**.
 
 And of all this is *without* taking the encoding, be it in-memory or on-disk, into account.
 
-See within the [practice section](#types-of-voxel) for more details on this.
 
 
 
@@ -105,259 +108,39 @@ In practice you will usually notice this when either *rounding* or *off-by-one* 
 That is the definition of a voxel; and if that all sounded complicated... well that's because it is!
 Mathematics are like that sometimes.
 
-Let us continue with voxels in practice...
-
-
-
-
-
-
-
-
-## What is a voxel in practice?
-
-As noted in the [theory section](#what-is-a-voxel-in-theory), a voxel can be ***anything***; the only limit is your imagination... and the amount of memory and disk-space you have! Speaking of which, how *are* voxels represented in practice?
-
-{% info_notice() %}
-From this point on, we assume that you (the reader) know the basics of programming;
-in concrete terms that would be what **bits and bytes** are, **primitive types** like *integers*, the relation between **stack and heap memory** and, last of all, **pointers/references**.
-
-Also, for the purpose of clarity, we will *not* be using pseudocode.
-{% end %}
-
-{% warn_notice() %} **The following sections are a work-in-progress.** {% end %}
-
-### Choosing a Language
-
-In many fields of programming, the choice of language is quite open... even interpreted languages are often acceptable!
-
-But with voxels? Let's do a quick exercise, shall we...
-
-#### The Scaling Problem
-
-1. Grab a calculator (we ain't monsters here)!
-2. Think of how far into the distance you want to 'see', in meters/voxels.
-3. Type that number into the calculator.
-4. Double the number once.
-5. Multiply the number, by *itself*, **twice**.
-6. Look at the result.
-7. Try this again, from step 2, with some other numbers...
-
-{% info_notice() %}
-Alternatively, you can use the formula `(D*2)³`,
-were `D` is the initial number from step 2.
-{% end %}
-
-Unless you keep the range of the active volume *very* small (on the order of `16³` to `256³`), you will quickly realize that there is a *scaling problem*: Increasing the size of the volume will consume *cubically* more and more memory, making computations *horrendously* expensive.
-
-#### Requirements for performant Voxels
-
-As such, there are some rather strong **requirements** when choosing a language:
-
-1. Tightly packing data, via structs and continuous arrays.
-2. Processing large arrays/lists of numbers at bare-metal speed.
-3. Creation of complex, nested, but performant, data-structures.
-4. No copying or cloning of data unless requested.
-5. Access to graphics hardware acceleration.
-6. Multithreading.
-
-This effectively cuts out *all* languages that are interpreted[^interpreted] instead of compiled; unless you are fine with a *very* small volume size, using these languages is *not* recommended for anything but higher level scripts.
-
-{% info_notice() %}
-Using JIT-compiled[^jit] languages is fine, but you'll have to be ***very*** careful with managing memory, and may be forced into non-idiomatic[^idiom] code.
-{% end %}
-
-While [Chunking](/wiki/chunking) and various acceleration structures go a long way to alleviate the issues posed by interpreted and JIT'd languages, you *will* eventually need the ability to manage memory on both fine and large scales.
-
-#### Your Choices
-
-Unfortunately, all this restricts your choices to [system-level languages](https://en.wikipedia.org/wiki/System_programming_language#Higher-level_languages), such as `C++`, `Rust`, `Zig` or `Go`.
-
-For this guide we will be using *basic* `Rust`; you do not need to know how lifetimes work, for now.
-
-### Basic Storage
-
-For a start, let's assume that our voxels store... nothing.
-
-```rust
-/// This represents a single voxel sample/instance.
-type Voxel = (); // using the empty 'unit type' for now.
-```
-
-Since a voxel *outside* a grid is, by [definition](#what-is-a-voxel-in-theory), *not* a voxel, we will have to put it into a grid of voxels...
-
-```rust
-/// A finite grid of voxels.
-pub struct VoxelGrid {
-  // ???
-}
-```
-
-...but how exactly do we do that?
-
-At first, you might try to use a 3D array; let's say of size `16³`:
-
-```rust
-/// The size of our grid along any axis.
-pub const GRID_SIZE: usize = 16;
-
-/// A finite grid of `GRID_SIZE³` voxels.
-pub struct VoxelGrid {
-  values: [[[Voxel; GRID_SIZE]; GRID_SIZE]; GRID_SIZE];
-  // Well ain't that nice to look at, eh?
-}
-```
-
-Now accessing it is pretty simple:
-
-```rust
-// Create the volume, filled with 'nothing'...
-let mut volume = VoxelGrid {
-  values: [[[Voxel; GRID_SIZE]; GRID_SIZE]; GRID_SIZE]
-};
-
-// Have some coordinates...
-let (x,y,z) = (0, 1, 2);
-
-// Get a voxel:
-let v = volume.values[x][y][z];
-
-// Set a voxel:
-*volume.values[x][y][z] = v;
-```
-
-But what happens if `x`, `y` or `z` go *outside* the volume? We might get an error and crash!
-
-Let's prevent that by defining *accessor functions* and then ***only*** use these:
-
-```rust
-impl VoxelGrid {
-  pub fn get(&self, x: u32, y: u32, z: u32) -> Option<Voxel> {
-    self.values.get(x)?.get(y)?.get(z)
-  }
-  
-  pub fn set(&self, x: u32, y: u32, z: u32, v: Voxel) -> Option<()> {
-    *self.values.get_mut(x)?.get_mut(y)?.get_mut(z) = v;
-  }
-}
-```
-
-Alas, this shows us one of three annoyances with using 3D arrays:
-
-- Accessing elements always requires us to 'jump' trough two levels of indirection.
-- Iterating/looping over our voxels requires *three* nested loops, which is a pain to write.
-- Creating and filling a 3D array is, unsurprisingly, quite messy.
-
-As such, we will now go ahead and make our array *flat*, turning it one-dimensional!
-
-```rust
-pub struct VoxelGrid {
-  values: [Voxel; GRID_SIZE * GRID_SIZE * GRID_SIZE];
-}
-```
-
-Of course, we will now have to do the bound-checks by ourselves, but as long as we use the correct equality operators, there really is nothing to it!
-
-```rust
-impl VoxelGrid {
-  pub fn get(&self, x: u32, y: u32, z: u32) -> Option<Voxel> {
-    if x < 0 || x >= GRID_SIZE {return None}
-    if y < 0 || y >= GRID_SIZE {return None}
-    if z < 0 || z >= GRID_SIZE {return None}
-    self.values[ /* ??? */] // uuuuh...?
-  }
-}
-```
-
-I suppose a function that turns `x,y,z` into an index is also needed: an **index function**!
-Since it depends on the bounds-check to work correctly, let's move that there too.
-
-```rust
-impl VoxelGrid {
-  pub fn index(&self, x: u32, y: u32, z: u32) -> Option<usize> {
-    if x < 0 || x >= GRID_SIZE {return None} // 0 ⋯ GRID_SIZE-1
-    if y < 0 || y >= GRID_SIZE {return None} // 0 ⋯ GRID_SIZE-1
-    if z < 0 || z >= GRID_SIZE {return None} // 0 ⋯ GRID_SIZE-1
-    Some(x + y*GRID_SIZE + z*GRID_SIZE*GRID_SIZE) // SCHEME
-  }
-  
-  pub fn get(&self, x: u32, y: u32, z: u32) -> Option<Voxel> {
-    self.values[ self.index(x,y,z)? ] // yay!
-  }
-  
-  pub fn set(&self, x: u32, y: u32, z: u32, v: Voxel) -> Option<()> {
-    *self.values[ self.index(x,y,z)? ] = v;
-  }
-}
-```
-
-{% info_notice() %}
-The line marked with `SCHEME` declares a *spatial indexing scheme* for us, which defines the *order* and *importance* of the `x,y,z` axes, but also how to turn coordinates into a usable index. Neat!
-{% end %}
-
-And so our example becomes this:
-
-```rust
-// Create the volume... somehow.
-let mut volume = VoxelGrid { /* ??? */ };
-
-// Have some coordinates...
-let (x,y,z) = (/**/, /**/, /**/);
-
-// Get a voxel:
-let v = volume.get(x, y, z).unwrap();
-
-// Set a voxel:
-volume.set(x, y, z, v).unwrap();
-```
-
-Handling errors is outside the scope of this guide, so do note that the `unwrap`s in the example will,
-if the coordinates are ever out of bounds, crash our program; but at least you'll know where!
-
-But how to we fill it? And just what type should `Voxel` be?!
-
-### Types of Voxel
-
-
-
-
-### Basic Generation
-
-{% todo_notice() %} Filling a volume via [Procedural Generation](/wiki/procgen). {% end %}
-
-
-
-
-
-
-
 ## What is *not* a voxel?
+
+Every now and then, someone thinks they are dealing/working with voxels, when they're in fact **not** doing so...
+
+### Heightmaps Are Not Voxels
 
 If values are generated in a *two*-dimensional grid and *expanded* into a *third* dimension on-demand,
 such as *during rendering*, you are ***not*** using voxels.
 
 That's just a plain old [heightmap](https://en.wikipedia.org/wiki/Heightmap) *pretending* to be voxels!
 
-
-
-
-
-
-
-
 {% info_notice() %}
 **Important:**  
-This does **not** mean that *columns* of values arranged in a grid, like [run-length encoded](/wiki/compression/run-length-encoding) data might be, are not voxels!
+This does **not** mean that *columns* of values arranged in a grid, like [run-length encoded](/wiki/compression/run-length-encoding) data might be, aren't voxels!
 The way that voxels are [*stored*](/wiki/datastructures) does not matter as long as the grid is indexable.
 {% end %}
 
+### Individual Voxels Have No Position
 
+If one defines individual voxels with an *explicit* position, like...
 
+```rust
+struct Voxel {
+  position: (i32, i32, i32),
+  value: ???
+}
+```
 
+...then its *not a Voxel*, by definition.
 
+It's also really, *really* bad for performance. Don't do this.
 
-
-
+Let me repeat: <b style="color:red">Don't do this.</b>
 
 ---
 
@@ -376,15 +159,14 @@ Since you are visiting this wiki, you might already know what you intend to use 
 if not, please take some time to think about it, otherwise just read on ahead! :)
 {% end %}
 
-For making **art** made of voxels,
+For the creation of **voxel art**,
 we highly recommend checking out [MagicaVoxel](https://ephtracy.github.io/index.html?page=mv_main),
-which is currently considered to be *the* best voxel-editor you can get; it's completely free!  
+which is currently considered to be *the* best voxel-editor you can get; it's completely free!
+
 Perhaps [share](/wiki/community) your creation?
 
 ---
 
-[^interpreted]: Languages that are executed ["from source code"](https://en.wikipedia.org/wiki/Interpreter_(computing)), such as `Python`, `JavaScript`, `PHP`, `Lua`, `Perl` and `Ruby`.
+## Next
 
-[^jit]: [Just-In-Time Compiled](https://en.wikipedia.org/wiki/Just-in-time_compilation), such as `Java` and `C#`.
-
-[^idiom]: 'Normal' or 'Natural', see <https://en.wiktionary.org/wiki/idiomatic>.
+Choosing a programming language!
