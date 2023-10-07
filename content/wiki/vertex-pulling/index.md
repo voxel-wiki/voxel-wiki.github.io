@@ -4,17 +4,19 @@ description = "Manual vertex streaming for improved memory usage and bandwidth."
 aliases = ["/wiki/vertex-pulling"]
 [taxonomies]
 categories = ["rendering"]
-tags = ["rendering", "rasterization", "geometry", "vertices"]
+tags = ["rendering", "meshing", "vertices"]
+[extra]
+chapters = true
+chapter_prev = {text = "Vertex Packing", link = "/wiki/vertex-packing"}
+chapter_next = false
 +++
 
 {% todo_notice() %} This article is a work-in-progress. {% end %}
 
-- Vertex attributes cannot deal with bit-packed data.
-- Unpacking bit-packed data in vertex shader is *fast*.
+- Normal vertex-streaming does not support per-face data.
 - Pulling from a vertex-stream or SSBO/UBO is generally the same speed.
-- Normal vertex-streaming does not support per-face data. (?)
 - Vertex-shaders *only* have to emit a NDC-position; *how* they do so is undefined.
-  - 'Virtual' vertices defined as vertex- and index-array in vertex-shader.
+- Vertices can be defined via vertex- and index-array *within* a vertex-shader.
 
 ## References
 
