@@ -44,7 +44,7 @@
     <div class="row justify-content-center">
       <div class="col-md-12 col-lg-10 col-xxl-8">
         {% if page.taxonomies is defined %}
-            <nav style="display:flex;font-size:0.9rem">
+            <nav style="display:flex;flex-flow:row wrap;max-width:100%;font-size:0.9rem">
                 {% set categories = page.taxonomies | get(key="categories", default=[]) %}
                 {% for category in categories %}
                     {% if loop.index0 != 0 %}<span>,&nbsp;</span>{% endif %}
@@ -64,7 +64,7 @@
           {% if page.extra.lead %}<p class="lead">{{ page.extra.lead }}</p>{% endif %}
           {{ page.content | safe }}
         </article>
-        {% if page.extra.chapters is defined and page.extra.chapters == true %}
+        {% if page.extra.chapters is defined %}
         <nav aria-label="chapter-navigation" class="chapters-nav">
           {% if page.extra.chapter_prev is defined and page.extra.chapter_prev != false %}
             <a href="{{page.extra.chapter_prev.link}}" class="chapters-link chapters-prev">
@@ -88,4 +88,15 @@
     </div>
   </div>
 </div>
+{% if config.base_url is containing("localhost") %}
+<script type="application/json" class="hidden" id="debug_config" style="display:none">{{config | json_encode(pretty=true) | safe }}</script>
+<script type="application/json" class="hidden" id="debug_page" style="display:none">{{page | json_encode(pretty=true) | safe }}</script>
+<script>
+  let js_debug_config = JSON.parse(debug_config.innerText);
+  let js_debug_page = JSON.parse(debug_page.innerText);
+  let {content: _, ...js_debug_page_meta} = js_debug_page;
+  console.log(js_debug_config);
+  console.log(js_debug_page_meta);
+</script>
+{% endif %}
 {% endblock content %}
