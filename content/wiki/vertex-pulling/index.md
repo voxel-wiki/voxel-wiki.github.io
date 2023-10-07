@@ -24,6 +24,7 @@ chapter_next = false
 - [Programmable Vertex Pulling by *hannomalie*](https://hannomalie.github.io/posts/2019-12-01-programmable-vertex-pulling.html)
 - [Programmable Vertex Pulling by *ktstephano*](https://ktstephano.github.io/rendering/opengl/prog_vtx_pulling)
 - [Dynamic Vertex Pulling with D3D11](https://bazhenovc.github.io/blog/post/d3d11-dynamic-vertex-pulling/)
-- [WebGL Pulling Vertices](https://webglfundamentals.org/webgl/lessons/webgl-pulling-vertices.html)
+- [WebGL Pulling Vertices](https://webglfundamentals.org/webgl/lessons/webgl-pulling-vertices.html)  
+  <small>**Note:** Uses textures instead of buffers.</small>
 - [`nlguillemot/ProgrammablePulling`](https://github.com/nlguillemot/ProgrammablePulling)
 - [`superdump/bevy-vertex-pulling`](https://github.com/superdump/bevy-vertex-pulling)
