@@ -35,26 +35,23 @@ and are used in so many applications that we won't bother listing them here.
 
 To hopefully nobodies surprise, rendering voxels *is* such a massively parallel process, that *not* using GPUs would be very (very) silly.
 
-Now, how do we gain access to the awesome processing power of GPUs...?
+How do we gain access to the awesome processing power of GPUs? Well...
 
 ## Graphics Programming APIs
 
-Unfortunately, directly accessing GPUs usually isn't possible, since...
+Unfortunately, directly accessing GPUs usually isn't possible, since:
 
-1. Operating systems must share GPU 'resources' between multiple processes.
+1. Operating systems must share GPU resources between multiple processes.
 2. There are a multitude of hardware vendors and thus GPUs, not to mention drivers!
 
 As such, we are forced to use a **Graphics&nbsp;Programming&nbsp;API**... of which there are several.
 
 However, since you are most likely to want to run your program across many platforms and hardware combinations,
-we can safely ignore a whole bunch of them and choose from one of two APIs:
+we can safely ignore a whole bunch of them and choose from one of three APIs:
 
-- To get started *as fast as possible*, with no regard as to how modern GPUs and their drivers work,
-  use [OpenGL](/wiki/opengl).
-- To be future-proof and get as much performance as possible out of your GPU,
-  use [Vulkan](/wiki/vulkan).
-- If you're okay with proprietary stuff and are targeting Microsoft Windows/Xbox,
-  you can use [Direct3D](https://en.wikipedia.org/wiki/Direct3D).
+- To get started *as fast as possible*, with no regard as to how modern GPUs and their drivers work, use [OpenGL](/wiki/opengl).
+- To be future-proof and get as much performance as possible out of your GPU, use [Vulkan](/wiki/vulkan).
+- If you're okay with proprietary stuff and are targeting mainly Microsoft&nbsp;Windows & Xbox, you can use [Direct3D](https://en.wikipedia.org/wiki/Direct3D) via [DirectX](https://en.wikipedia.org/wiki/DirectX).
 
 ## Graphics Programming Libraries
 
@@ -63,13 +60,13 @@ there are various *rendering abstraction* libraries available,
 using the lower APIs as *backends*:
 
 {% warn_notice() %}
-Only libraries directly exposing 3D graphics are listed.
+Only well-known libraries directly exposing 3D graphics are listed.
 {% end %}
 
 | Name | Language | Backend/s |
 |------|----------|-----------|
-| [wgpu](https://wgpu.rs/) | `Rust` | *various* |
-| [bgfx](https://github.com/bkaradzic/bgfx) | `C++` | *various* |
+| [wgpu](https://wgpu.rs/) | `Rust` | [*various*](https://github.com/gfx-rs/wgpu#supported-platforms) |
+| [bgfx](https://github.com/bkaradzic/bgfx) | `C++` | [*various*](https://bkaradzic.github.io/bgfx/overview.html#supported-rendering-backends) |
 | [OGRE](https://ogrecave.github.io/ogre/) | `C++` | OpenGL / Direct3D |
 | [raylib](https://www.raylib.com/) | `C` | OpenGL |
 | [libGDX](https://libgdx.com/) | `Java` | OpenGL(ES) |
@@ -80,35 +77,40 @@ Some of these libraries have bindings for other languages,
 so check out their documentation before rejecting any!
 {% end %}
 
-## Windowing Abstractions & Libraries
+## Windowing Abstraction Libraries
 
 Creating a surface to actually draw into is, due to the many platforms that exist,
-terribly difficult, so it's best to leave it to a windowing library...
+terribly annoying, so it's best to leave it to a windowing library...
 
-- `GLFW` (recommended)
-- `SFML`
-- `SDL`
-- `WINIT`
+| Name | Language | Platforms |
+|------|----------|-----------|
+| [SDL](https://www.libsdl.org/)  | `C` | [*various*](https://wiki.libsdl.org/SDL2/FAQGeneral#what_platforms_are_supported) |
+| [GLFW](https://www.glfw.org/) | `C++` | [*various*](https://www.glfw.org/faq.html#14---what-platforms-are-supported-by-glfw) |
+| [SFML](https://www.sfml-dev.org/) | `C++` | [*various*](https://www.sfml-dev.org/faq.php#grl-platforms) |
+| [Winit](https://github.com/rust-windowing/winit) | `Rust` | [*various*](https://github.com/rust-windowing/winit/blob/master/FEATURES.md) |
 
 
 ---
 
 ## General Rendering Methods
 
-### Rasterization
+There are, in general, *two* families of volume rendering methods:
 
-Converting voxels into meshes, then using a hardware-accelerated [rasterizer](https://en.wikipedia.org/wiki/Rasterisation)
-to render a whole lot of triangles.
+<ul class="exclusive-choice-set" aria-label="volume rendering methods">
+  <li><a href="/wiki/surface-extraction">Surface Extraction</a></li>
+  <li><a href="/wiki/volume-marching">Volume Marching</a></li>
+</ul>
 
-### Splatting
+Within the former family of **surface extraction**,
+the volume is pre-processed into a *surface-only* representation,
+such as a **mesh** or a **point-cloud**,
+which can then be [rasterized](https://en.wikipedia.org/wiki/Rasterisation) (eg: triangles ⇒ visible pixels).
 
-Converting voxels into tightly-fitting screen-aligned quadliterals, rasterizing them,
-then performing a Ray-AABB intersection test in the fragment shader to get cubes.
+In the latter family of **volume marching**, the volume itself is marched through via [raycasting](/wiki/raycasting)/raymarching (eg: visible pixels ⇒ voxels).
 
-### Raytracing
+It is possible to combine both families for more complex techniques and effects.
 
-Send rays out of a camera into a volume of voxels, [marching along them](/wiki/raycasting) until voxels are hit,
-calculating a color based on the hit voxels and additional rays sent out from there.
+---
 
 This method makes it possible to achieve a high degree of photorealism and/or complex lighting effects,
 that are otherwise extremely hard to produce with other methods.
