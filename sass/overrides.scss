@@ -74,6 +74,12 @@ article .footnote-definition {
 	margin-bottom: 1rem;
 }
 
+article p > img:only-child {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
 article .exclusive-choice-set {
 	margin-bottom: 1rem;
 	
