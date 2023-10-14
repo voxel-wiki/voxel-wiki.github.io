@@ -5,6 +5,10 @@ path = "/wiki/raycasting"
 [taxonomies]
 categories = ["algorithms"]
 tags = ["algorithm", "math", "raycasting", "raytracing"]
+[extra]
+chapters = true
+chapter_prev = false
+chapter_next = {text = "Raytracing", link = "/wiki/raytracing"}
 +++
 
 The [Digital Differential Analyzer](https://en.wikipedia.org/wiki/Digital_differential_analyzer_(graphics_algorithm)) (`DDA`) algorithm,
