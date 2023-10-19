@@ -41,24 +41,24 @@ We will start off with an implementation of the 1-Dimensional variant to get the
 
 To begin, pretend we have an infinite array of (references to) [chunks](/wiki/chunking). We keep `5` chunks loaded at a time: a center chunk and two on either side. This is simple to lay out in our infinite array:
 
-![An infinite array of chunks, with five loaded chunks in the 'center'.](./sliding-window/image0.png)
+![An infinite array of chunks, with five loaded chunks in the 'center'.](/wiki/sliding-window/image0.png)
 
 Chunk index in world is the same as array index in memory: chunk 15 is stored at array index `15`, etc.
 
 Moving left is also simple: we unload the one chunk that's now too far away, and load one that's just come in range:
 
-![Moving the range of loaded chunks to the left.](./sliding-window/image1.png)
+![Moving the range of loaded chunks to the left.](/wiki/sliding-window/image1.png)
 
 Now, suppose we only want to use a size-5 array. We chop off the bits we're not using:
 
-![The array is now finite, so the chunk indices no longer match the array indices.](./sliding-window/image2.png)
+![The array is now finite, so the chunk indices no longer match the array indices.](/wiki/sliding-window/image2.png)
 
 Since our array is only size `5`, our indices now run from `0` to `4`, and they're not the same as chunk indices any more. I'm going to start using "position" to mean world position, and "index" to mean index in the array.
 
 If we move the player left, we need to unload the rightmost chunk and load a new one. Naively, we'd want to load the new chunk at array index `-1`, but of course that's impossible.
 Instead, we put it right where we unloaded the old chunk:
 
-![Moving the loaded range to the left, but where to?](./sliding-window/image3.png)
+![Moving the loaded range to the left, but where to?](/wiki/sliding-window/image3.png)
 
 Our "window" (lower red bracket in the picture) is now broken into two pieces, wrapping itself around the start of the array. If we wanted to list chunks from lowest world position to highest, we'd do
 
@@ -70,11 +70,11 @@ which, per the illustration, give us world positions `11, 12, 13, 14, 15` (5 chu
 
 There's one more thing that can happen. If the player is already at array index `0` and wants to move left, you've got to wrap player position around to the end of the array:
 
-![Wrapping around the offset position.](./sliding-window/image4.png)
+![Wrapping around the offset position.](/wiki/sliding-window/image4.png)
 
 Ok, so how do we implement this? There are a variety of different things you can store, but we're going to store playerPosition in the world and playerIndex in the array. In this image from above, playerPosition is `14` and playerIndex is `2`:
 
-![???](./sliding-window/image5.png)
+![???](/wiki/sliding-window/image5.png)
 
 The first thing we might want to do is retrieve a chunk from memory given only its world position. We calculate how far the world position is from the player position, and use that to get an array index:
 
