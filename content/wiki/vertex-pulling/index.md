@@ -18,6 +18,13 @@ chapter_next = {text = "Face Pulling", link = "/wiki/face-pulling"}
 - Vertex-shaders *only* have to emit a NDC-position; *how* they do so is undefined.
 - Vertices can be defined via vertex- and index-array *within* a vertex-shader.
 
+## Implementation
+
+{% todo_notice() %} Detailed implementation and/or guide? {% end %}
+
+- Upload tightly-packed vertices to a GPU-side buffer, accessible by a vertex shader.
+- Pull vertices from that buffer in the vertex-shader, based on the current vertex ID / `gl_VertexID`.
+
 ## References
 
 - [Vertex Formats Part 2: Fetch vs Pull](https://www.yosoygames.com.ar/wp/2018/03/vertex-formats-part-2-fetch-vs-pull/) (**recommended**)
