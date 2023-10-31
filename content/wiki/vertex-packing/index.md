@@ -17,6 +17,10 @@ chapter_next = {text = "Vertex Pulling", link = "/wiki/vertex-pulling"}
 - Vertex attributes can be integers, which hold bits.
 - Unpacking bit-packed data in a vertex shader is *fast*.
 
+## Implementation
+
+{{ stub_notice(kind="section") }}
+
 ## References
 
 - [Vertex Formats Part 1: Compression](https://www.yosoygames.com.ar/wp/2018/03/vertex-formats-part-1-compression/)

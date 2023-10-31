@@ -222,23 +222,23 @@ You *might* notice that we did not define what the sample position `p` is, or wh
 
 Modifiers are *independent* of each other, so you can mix-and-match them however you like, there are no limits to your creativity here!
 
-{{ stub_notice(body="This section is a stub. Perhaps help us expand it?") }}
+{{ stub_notice(kind="section") }}
 
 ### Combiner Operations
 <!-- Binary operation: Noise can be combined with other noise, in a binary operation, like addition, subtraction, multiplication etc. -->
 
-{{ stub_notice(body="This section is a stub. Perhaps help us expand it?") }}
+{{ stub_notice(kind="section") }}
 
 ### Selector Operations
 <!-- Selection: You can generate multiple noise textures of wildly different looks, and use a 3rd noise texture to select between them. For example, for each pixel in the **selector**, any noise value higher than 0, might mean to select from the first texture, and any noise value lower than 0 might mean to select from the second. -->
 
-{{ stub_notice(body="This section is a stub. Perhaps help us expand it?") }}
+{{ stub_notice(kind="section") }}
 
 ### Transformer Operations
 <!-- Noise can be zoomed in; this usually changes the **frequency** of the noise.
   * More zoom => lower frequency. Frequency here roughly means "detail". High frequency noise has a lot of sharp edges and detail. Low frequency noise is blurred, smoothly varying. -->
 
-{{ stub_notice(body="This section is a stub. Perhaps help us expand it?") }}
+{{ stub_notice(kind="section") }}
 
 <!-- 
 ### Field Operations
@@ -247,7 +247,7 @@ Operations that work on *fields* of noise samples, instead of individual samples
 - **Caching** takes the output *field* of a noise function and stores it.
 - **Subsampling** takes a cached field and samples from within it.
 
-{{ stub_notice(body="This section is a stub. Perhaps help us expand it?") }}
+{{ stub_notice(kind="section") }}
 -->
 
 
@@ -271,13 +271,15 @@ Once you've obtained a final value from your noise evaluation, you will need to 
 
 Usually this means either putting the sample through a [**transfer function**](#transfer-function), [**thresholding**](#thresholding) it or using it directly as-is.
 
-{{ stub_notice(body="This section is a stub. Perhaps help us expand it?") }}
+{{ stub_notice(kind="section") }}
 
 ### Transfer Function
-{{ stub_notice(body="This section is a stub. Perhaps help us expand it?") }}
+
+{{ stub_notice(kind="section") }}
 
 ### Thresholding
-{{ stub_notice(body="This section is a stub. Perhaps help us expand it?") }}
+
+{{ stub_notice(kind="section") }}
 
 
 
@@ -291,7 +293,7 @@ Noise is very hard to shape to the way you envision it. Therefore, it might be u
 ### Fractal Brownian Motion
 You can add an interesting amount of detail to a noise texture, by zooming into it to varying levels, and then combining the levels. Each zoomed noise texture is called an **octave**. Typically, you'd zoom in powers of 2, so 1x zoom for the original sampling of the noise function, 2x zoom-out for the second octave, 4x zoom-out for the third octave, and so on. Typically, you'd also temper the higher frequency (zoomed-out, higher detail) octaves by scaling down their values by the same amount that it was zoomed out. This technique is called fractal Brownian motion or `fBm`.
 
-{{ stub_notice(body="This section is a stub. Perhaps help us expand it?") }}
+{{ stub_notice(kind="section") }}
 
 ### Large Terrain: Use Multiple Scales of Noise
 
