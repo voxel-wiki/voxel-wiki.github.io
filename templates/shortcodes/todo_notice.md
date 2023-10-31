@@ -1,1 +1,1 @@
-<div class='notice todo'>{{ "**TODO:** " ~ body | markdown }}</div>
+<div class='notice todo'>{{ "**TODO:** " ~ body | markdown(inline=true) }}</div>
