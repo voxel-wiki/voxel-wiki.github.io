@@ -8,7 +8,7 @@ tags = ["rendering", "meshing", "vertices"]
 [extra]
 chapters = true
 chapter_prev = {text = "Vertex Packing", link = "/wiki/vertex-packing"}
-chapter_next = false
+chapter_next = {text = "Face Pulling", link = "/wiki/face-pulling"}
 +++
 
 {% todo_notice() %} This article is a work-in-progress. {% end %}
