@@ -93,6 +93,8 @@ Math: \\( f_n(\vec{p}) \to [-1, +1] = \enspace ? \\)
 {% todo_notice() %} Notice <br> [Link](/typography) {% end %}
 {% stub_notice() %} Stub Notice <br> [Link](/typography) {% end %}
 {{ stub_notice() }}
+{{ stub_notice(kind="article") }}
+{{ stub_notice(kind="section") }}
 
 ---
 
