@@ -1,0 +1,13 @@
+### A definition is formatted like this:
+# [ID_OF_DEFINITION]
+# text = "DESCRIPTION"
+# abbr = "ABBREVIATION" # Optional; Else body; Else ID.
+# link = "LINK_TO_PAGE" # Optional.
+#
+### To then include a definition, do this:
+# {{def(id="ID_OF_DEFINITION")}}
+
+[voxel]
+abbr = "Voxel"
+text = "A value in a regular grid in three-dimensional space."
+link = "/wiki/introduction"
