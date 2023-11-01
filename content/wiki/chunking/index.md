@@ -9,7 +9,7 @@ tags = ["datastructures", "storage", "spatial-acceleration"]
 
 The first and possibly most important step when dealing with voxels, is to divide the voxel grid into **chunks**. <!-- more --> Regardless of what kind of data-structure one ultimately ends up using, at the bottom of it there will likely be *chunks* containing *voxels* (when using a tree-like structure, chunks may be called *bricks*).
 
-![Chunking](chunking.png)
+{% figure(caption="Diagram of Chunking(?)",author="Lars Longor K",license="CC0",class="full") %}/wiki/chunking/chunking.png{% end %}
 
 ## Motivation
 

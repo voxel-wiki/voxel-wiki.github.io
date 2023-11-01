@@ -30,10 +30,7 @@ The global coordinate system that is the entire scene. This is where almost all 
 
 Depending on the software you are using, this can vary *wildly*...
 
-![World-Space Coordinate Systems by Freya Holmér](./coordinate-systems.png)
-> Cheat Sheet made by [Freya Holmér](https://twitter.com/FreyaHolmer/status/1325556229410861056) © 2020  
-> Wiki license exception: Copyright belongs to artist.  
-> Copy embedded here [with permission](https://twitter.com/FreyaHolmer/status/1530167901436649472).
+{% figure(caption="World-Space Coordinate Systems",author="Freya Holmér",license="[Copy embedded with permission.](https://twitter.com/FreyaHolmer/status/1530167901436649472)",class="full") %}/wiki/coordinate-systems/coordinate-systems.png{% end %}
 
 ### Chunk/Object/Local Space
 

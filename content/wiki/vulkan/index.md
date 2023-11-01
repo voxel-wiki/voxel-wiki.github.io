@@ -7,7 +7,7 @@ categories = ["rendering"]
 tags = ["rendering", "api"]
 +++
 
-{% figure(class="float", caption="Official Logo, via Wikimedia") %}[![Official Vulkan Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Vulkan_logo.svg/320px-Vulkan_logo.svg.png)](https://commons.wikimedia.org/wiki/File:Vulkan_logo.svg){% end %}
+{% figure(class="float", caption="Official Logo", author="Khronos", license="CC0") %}https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Vulkan_logo.svg/320px-Vulkan_logo.svg.png{% end %}
 
 {{ stub_notice() }}
 

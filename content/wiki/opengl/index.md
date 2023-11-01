@@ -7,7 +7,7 @@ categories = ["rendering"]
 tags = ["rendering", "api"]
 +++
 
-{% figure(class="float", caption="Official Logo, via Wikimedia") %}[![Official OpenGL Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/OpenGL_logo.svg/320px-OpenGL_logo.svg.png)](https://en.wikipedia.org/wiki/OpenGL#/media/File:OpenGL_logo.svg){% end %}
+{% figure(class="float", caption="Official Logo", author="Khronos", license="CC0") %}https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/OpenGL_logo.svg/320px-OpenGL_logo.svg.png{% end %}
 
 {{ stub_notice() }}
 

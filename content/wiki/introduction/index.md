@@ -60,7 +60,7 @@ And of all this is *without* taking the encoding, be it in-memory or on-disk, in
 
 ---
 
-{% figure(class="float", caption="A grid of voxels containing colours.") %}[![From Wikipedia](https://upload.wikimedia.org/wikipedia/commons/b/b4/Voxelgitter.png)](https://commons.wikimedia.org/wiki/File:Voxelgitter.png){% end %}
+{% figure(class="float", caption="A grid of voxels containing colours.", author="[Thetawave](https://en.wikipedia.org/wiki/de:User:Thetawave)", license="[CC-BY-3.0](https://commons.wikimedia.org/wiki/File:Voxelgitter.png)") %}https://upload.wikimedia.org/wikipedia/commons/b/b4/Voxelgitter.png{% end %}
 
 > ...on a regular grid...
 

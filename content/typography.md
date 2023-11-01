@@ -54,9 +54,7 @@ Non-breaking space: <https://symbl.cc/en/00A0/>
 
 ---
 
-{% figure(class="float", clear=true, caption="This is the *caption text*.") %}
-[![Image alt text.](https://voxel.wiki/favicon.png)](https://voxel.wiki/)
-{% end %}
+{% figure(class="float", clear=true, caption="This is the *caption text*.", author="Lars Longor K") %}/favicon.png{% end %}
 
 ---
 

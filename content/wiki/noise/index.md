@@ -7,7 +7,7 @@ categories = ["procgen", "math"]
 tags = ["procgen", "design", "math", "noise"]
 +++
 
-{% figure(class="float", caption="From Wikipedia; License is CC-BY-2.0") %}[![Pink/Red Liquid using Perlin Noise](https://upload.wikimedia.org/wikipedia/commons/9/9a/Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_%282415197699%29.png)](https://en.wikipedia.org/wiki/File:Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_(2415197699).png){% end %}
+{% figure(class="float", caption="Pink/Red Liquid using Perlin Noise", author="[Simon Strandgaard](https://www.flickr.com/people/12739382@N04)", license="[CC-BY-2.0](https://en.wikipedia.org/wiki/File:Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_(2415197699).png)") %}https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_%282415197699%29.png/240px-Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_%282415197699%29.png{% end %}
 
 The most common and useful approach when procedurally generating *anything*, is to use **noise**: randomly generated numbers.
 
@@ -77,7 +77,7 @@ Now with that preface out of the way, let's proceed to the actual **noise functi
 
 ### White Noise & Value Noise
 
-{% figure(class="float", caption="White Noise, from Wikipedia") %}[![White Noise](https://upload.wikimedia.org/wikipedia/commons/3/30/256x256_Dissolve_Noise_Texture.png)](https://commons.wikimedia.org/wiki/File:256x256_Dissolve_Noise_Texture.png){% end %}
+{% figure(class="float", caption="White Noise", author="Spamrakuen", license="[CC0](https://commons.wikimedia.org/wiki/File:256x256_Dissolve_Noise_Texture.png)") %}https://upload.wikimedia.org/wikipedia/commons/3/30/256x256_Dissolve_Noise_Texture.png{% end %}
 
 If you have ever seen a Television that receives it's video as [analog signals](https://en.wikipedia.org/wiki/Analog_signal)
 via an antenna, you *might* have seen what happens when the antenna isn't receiving anything: The screen becomes a sea of [noise](https://en.wikipedia.org/wiki/Noise_(video)); commonly referred to as **white noise**.
@@ -94,7 +94,7 @@ Unfortunately, while value noise tends to be ludicrously fast to generate, it's 
 
 ### Perlin Noise
 
-{% figure(class="float", caption="Perlin Noise, from Wikipedia") %}[![White Noise](https://upload.wikimedia.org/wikipedia/commons/8/88/Perlin_noise_example.png)](https://commons.wikimedia.org/wiki/File:Perlin_noise_example.png){% end %}
+{% figure(class="float", caption="Perlin Noise", author="[Lord Belbury](https://commons.wikimedia.org/wiki/User:Lord_Belbury)", license="[CC0](https://commons.wikimedia.org/wiki/File:Perlin_noise_example.png)") %}https://upload.wikimedia.org/wikipedia/commons/8/88/Perlin_noise_example.png{% end %}
 
 Now, again, **value noise** is extremely simple and fast to generate, but unfortunately has linear artifacts... which is where **[Perlin noise](https://en.wikipedia.org/wiki/Perlin_noise)** comes in!
 
