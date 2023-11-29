@@ -16,7 +16,7 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@master
         with:
-          lfs: true
+          lfs: false
       - name: 'Build' 
         uses: shalzz/zola-deploy-action@186b5039430ab38781dde8feaf0861bcc017413f
         env:
@@ -30,6 +30,8 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
+        with:
+          lfs: false
       - name: 'Build & Deploy'
         uses: shalzz/zola-deploy-action@186b5039430ab38781dde8feaf0861bcc017413f
         env:
