@@ -27,7 +27,7 @@ jobs:
                   BUILD_ONLY: true
                   OUT_DIR: public
             - name: "Fix Perms"
-              run: chown -R runner:runner public && ls -hal .
+              run: sudo chown -R runner:runner public && ls -hal .
             - name: "Deploy"
               uses: SamKirkland/FTP-Deploy-Action@v4.3.4
               with:
