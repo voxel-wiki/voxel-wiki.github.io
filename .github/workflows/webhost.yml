@@ -1,0 +1,37 @@
+name: Voxel.Wiki Site Generation v2
+
+on:
+    #push:
+    #  branches:
+    #    - main
+    #pull_request:
+    workflow_dispatch:
+
+jobs:
+    build:
+        name: "Build Site"
+        runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/main'
+        steps:
+            - name: "Checkout"
+              uses: actions/checkout@master
+              with:
+                  lfs: true
+                  submodules: true
+            - name: "Build"
+              uses: shalzz/zola-deploy-action@186b5039430ab38781dde8feaf0861bcc017413f
+              env:
+                  BUILD_DIR: .
+                  BUILD_ONLY: true
+                  OUT_DIR: public
+            - name: "Deploy"
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+              with:
+                  protocol: ftps
+                  port: 22
+                  dry-run: true
+                  local-dir: ./public/
+                  server-dir: ./public_html/
+                  server: ${{ secrets.ftp_hostname }}
+                  username: ${{ secrets.ftp_username }}
+                  password: ${{ secrets.ftp_password }}
