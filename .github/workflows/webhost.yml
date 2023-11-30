@@ -26,14 +26,16 @@ jobs:
                   BUILD_DIR: .
                   BUILD_ONLY: true
                   OUT_DIR: public
-            - name: "Deploy"
-              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-              with:
-                  protocol: ftps
-                  port: 22
-                  dry-run: true
-                  local-dir: ./public/
-                  server-dir: ./public_html/
-                  server: ${{ secrets.ftp_hostname }}
-                  username: ${{ secrets.ftp_username }}
-                  password: ${{ secrets.ftp_password }}
+            # - name: "Deploy"
+            #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+            #   with:
+            #       protocol: ftps
+            #       port: 22
+            #       dry-run: true
+            #       local-dir: ./public/
+            #       server-dir: ./public_html/
+            #       server: ${{ secrets.ftp_hostname }}
+            #       username: ${{ secrets.ftp_username }}
+            #       password: ${{ secrets.ftp_password }}
+            - name: "Deploy 2"
+              run: lftp ${{ secrets.ftp_hostname }} -p 22 -u ${{ secrets.ftp_username }},${{ secrets.ftp_password }} -e "set ftp:ssl-force true; set ssl:verify-certificate false; mirror --delete --no-empty-dirs --reverse --continue --dereference -x ^\.git/$ public public_html; quit"
