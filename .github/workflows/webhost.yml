@@ -33,7 +33,6 @@ jobs:
               with:
                   protocol: ftps
                   port: 21
-                  dry-run: true
                   local-dir: ./public/
                   server-dir: ./public_html/
                   server: ${{ secrets.ftp_hostname }}
