@@ -18,6 +18,8 @@ jobs:
               with:
                   lfs: true
                   submodules: true
+            - name: "Make Dir"
+              run: mkdir -p public && ls -hal .
             - name: "Build"
               uses: shalzz/zola-deploy-action@186b5039430ab38781dde8feaf0861bcc017413f
               env:
