@@ -32,7 +32,7 @@ jobs:
               uses: SamKirkland/FTP-Deploy-Action@v4.3.4
               with:
                   protocol: ftps
-                  port: 22
+                  port: 21
                   dry-run: true
                   local-dir: ./public/
                   server-dir: ./public_html/
