@@ -18,10 +18,19 @@ adapted to 3D, is *exactly* the thing one needs to travel along a line (or a ray
 
 {{ stub_notice() }}
 
-## Implementation
+## Ray Creation
+With raycasting or raytracing, we need to construct a ray for each pixel on the screen, represented by the camera. The following implementation is based on [this library](https://github.com/dps/rust-raytracer/tree/main/raytracer). It should be noted, that this is mostly for demonstration pourposes, and its probably not going to be that fast in compareison to other ray generation algorithms.
 
-The following implementation was written in `GLSL`,
-but should be simple enough to be ported to any language one may choose...
+{{ embed_text(file="ray_building.glsl", lang="glsl") }}
+
+## Intersecting Rays with Voxels
+Once the rays are generated, you need to see if each of they rays intersect with an object, in this case a voxel.
+
+Some examples of algorithms used for ray-voxel intersection include:
+- AABB (Axis Aligned Bounding Box)
+- DDA (Digital Differential Analizer)
+
+The following algorithm is a 3D implementation of the DDA algorithm published in [this paper](http://www.cse.yorku.ca/~amana/research/grid.pdf).
 
 {{ embed_text(file="dda.glsl", lang="glsl") }}
 
