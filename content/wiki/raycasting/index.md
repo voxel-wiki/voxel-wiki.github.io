@@ -17,11 +17,15 @@ adapted to 3D, is *exactly* the thing one needs to travel along a line (or a ray
 <!-- more -->
 
 {{ stub_notice() }}
+## Implementation:
+### Ray Generation
+With raycasting, we need to construct a ray for each pixel on the screen, represented by the camera. The following implementation is based on [this library](https://github.com/dps/rust-raytracer/tree/main/raytracer). It should be noted that this is mostly for demonstration pourposes, and its probably not going to be that fast in comparison to other ray generation algorithms.
 
-## Implementation
+{{ embed_text(file="ray_building.glsl", lang="glsl") }}
 
-The following implementation was written in `GLSL`,
-but should be simple enough to be ported to any language one may choose...
+### Casting Rays
+Once a ray is generated, it has to be cast into a voxel volume.
+The following algorithm is a 3D implementation of the DDA algorithm published in [this paper](http://www.cse.yorku.ca/~amana/research/grid.pdf).
 
 {{ embed_text(file="dda.glsl", lang="glsl") }}
 
