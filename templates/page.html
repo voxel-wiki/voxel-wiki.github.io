@@ -89,11 +89,11 @@
   </div>
 </div>
 {% if config.base_url is containing("localhost") %}
-<script type="application/json" class="hidden" id="debug_config" style="display:none">{{config | json_encode(pretty=true) | safe }}</script>
-<script type="application/json" class="hidden" id="debug_page" style="display:none">{{page | json_encode(pretty=true) | safe }}</script>
+<script type="application/json+base64" class="hidden" id="debug_config" style="display:none">{{config | json_encode(pretty=true) | base64_encode | safe }}</script>
+<script type="application/json+base64" class="hidden" id="debug_page" style="display:none">{{page | json_encode(pretty=true) | base64_encode | safe }}</script>
 <script>
-  let js_debug_config = JSON.parse(debug_config.innerText);
-  let js_debug_page = JSON.parse(debug_page.innerText);
+  let js_debug_config = JSON.parse(atob(debug_config.innerText));
+  let js_debug_page = JSON.parse(atob(debug_page.innerText));
   let {content: _, ...js_debug_page_meta} = js_debug_page;
   console.log(js_debug_config);
   console.log(js_debug_page_meta);
