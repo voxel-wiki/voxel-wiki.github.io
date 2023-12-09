@@ -112,10 +112,15 @@ It is possible to combine both families for more complex techniques and effects.
 
 ---
 
-This method makes it possible to achieve a high degree of photorealism and/or complex lighting effects,
-that are otherwise extremely hard to produce with other methods.
+## Aspects of Lighting
 
-## General Lighting Methods
+Lighting is commonly defined via [some variant](https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function#Models) of the [**Bidirectional Reflectance Distribution Function**](https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function)...
+
+<ul class="exclusive-choice-set" aria-label="brdf aspects">
+  <li><a href="#aspects-of-lighting">Diffuse</a></li>
+  <li><a href="#aspects-of-lighting">Glossy</a></li>
+  <li><a href="#aspects-of-lighting">Mirror</a></li>
+</ul>
 
 {% todo_notice() %} Create article just for lighting? {% end %}
 
