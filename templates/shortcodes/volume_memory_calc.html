@@ -1,0 +1,39 @@
+
+<div id='{{id}}' class='notice info' style='display:none'>
+    <div style="text-align:center">Interactive <b>Distance ⇒ Memory</b> Calculator</div>
+    <div style="display:flex;justify-content:center;align-items:center;padding:0.5rem">
+        <div>(<input type=number required min=16 max=65536 step=16 value=16 style='width:5em;text-align:end;border-radius:5px;border:1px solid grey;font-family:monofont' title='View Distance'>&hairsp;m * 2)³ * 8</div>
+        <div>&nbsp;=&nbsp;</div>
+        <code style='font-weight:bold;text-align:end;min-width:7em;background:#0000007a' title='Memory Usage'>0 kB</code>
+    </div>
+</div>
+<script async defer style='display:none'>
+(function() {
+    // Yes, this code is sinfully ugly.
+    // No, I will not use a framework.
+    // No, I give not a singular fuck.
+    var calculator = document.getElementById('{{id}}');
+    var calc_input = calculator.querySelector('input');
+    var calc_output = calculator.querySelector('code');
+    calc_input.oninput = function() {
+        var D = null;
+        try {
+            D = Number.parseInt(calc_input.value);
+            if (!D) throw "invalid";
+        } catch(e) {
+            calc_output.value = '';
+            return;
+        }
+        function put(b, u) {calc_output.innerHTML = b.toFixed(2) + '&hairsp;' + u}
+        var V = Math.pow(D*2, 3), K = 1024;
+        var bytes = V * 8, kilobytes = bytes / K, megabytes = kilobytes / K, gigabytes = megabytes / K, terabytes = gigabytes / K;
+        if(terabytes >= K) {return put(terabytes / K, 'PiB')}
+        if(gigabytes >= K) {return put(terabytes, 'TiB')}
+        if(megabytes >= K) {return put(gigabytes, 'GiB')}
+        if(kilobytes >= K) {return put(megabytes, 'MiB')}
+        put(kilobytes, 'KiB')
+    };
+    calc_input.oninput();
+    calculator.style = '';
+}) ();
+</script>
