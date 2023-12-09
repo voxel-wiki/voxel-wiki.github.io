@@ -1,18 +1,15 @@
-struct Camera
-{
+struct Camera {
     vec3 eye;
     vec3 target;
     float fov;
-};
+}
 
-struct Ray 
-{
+struct Ray {
     vec3 origin;
     vec3 dir;
-};
+}
 
-Ray create_ray(uint x, uint y, uint width, uint height, Camera camera)
-{
+Ray create_ray(uint x, uint y, uint width, uint height, Camera camera) {
     float aspect = float(width) / float(height); // get the aspect ratio of the image
     float theta = radians(camera.fov);
     float half_height = tan(theta / 2.0);
