@@ -18,7 +18,7 @@ adapted to 3D, is *exactly* the thing one needs to travel along a line (or a ray
 
 {{ stub_notice() }}
 ## Implementation:
-## Ray Generation
+### Ray Generation
 With raycasting or raytracing, we need to construct a ray for each pixel on the screen, represented by the camera. The following implementation is based on [this library](https://github.com/dps/rust-raytracer/tree/main/raytracer). It should be noted, that this is mostly for demonstration pourposes, and its probably not going to be that fast in compareison to other ray generation algorithms.
 
 {{ embed_text(file="ray_building.glsl", lang="glsl") }}
