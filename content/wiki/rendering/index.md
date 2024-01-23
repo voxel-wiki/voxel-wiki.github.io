@@ -127,6 +127,7 @@ Lighting is commonly defined via [some variant](https://en.wikipedia.org/wiki/Bi
 - Global Illumination
 - [Ambient Occlusion](https://0fps.net/2013/07/03/ambient-occlusion-for-minecraft-like-worlds/)
 - [Flood-Fill Lighting](https://web.archive.org/web/20210429192404/https://www.seedofandromeda.com/blogs/29-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-1)
+- [Shadow Mapping](https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping)
 - ...?
 
 ---
