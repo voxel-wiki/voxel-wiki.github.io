@@ -332,6 +332,14 @@ state = "Active Dev."
 engine = "Unity3D"
 language = ["C#"]
 
+[[projects]]
+name = "Qwy3"
+url = "https://github.com/anima-libera/qwy3"
+state = "Active Dev."
+language = ["Rust", "WGSL"]
+source = "https://github.com/anima-libera/qwy3"
+license = "Apache-2.0"
+
 ###########################################################
 #################### Unknown Status #######################
 ###########################################################
