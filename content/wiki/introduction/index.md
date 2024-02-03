@@ -14,6 +14,8 @@ This is a basic introduction to what voxels *are*, what they are *not* and their
 
 <!-- more -->
 
+If you wish to know the history of voxels, see [here](https://web.archive.org/web/20141226072148/http://projectorgames.net/blog/?p=168).
+
 ## What is a voxel in theory?
 
 To quote Wikipedia:
