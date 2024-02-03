@@ -54,7 +54,7 @@ While [Chunking](/wiki/chunking) and various acceleration structures go a long w
 
 ## Your Choices
 
-Unfortunately, all this restricts your choices to [system-level languages](https://en.wikipedia.org/wiki/System_programming_language#Higher-level_languages), such as `C++`, `Rust`, `Zig` or `Go`.
+Unfortunately, all this restricts your choices to [system-level languages](https://en.wikipedia.org/wiki/System_programming_language#Higher-level_languages) such as `C++`, `Rust`, `Zig`, `Go` and (on the JIT side) `C# 7.2+`.
 
 For this guide we will be using *basic* `Rust`; you do not need to know how lifetimes work, for now.
 
