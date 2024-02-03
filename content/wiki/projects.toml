@@ -332,6 +332,20 @@ state = "Active Dev."
 engine = "Unity3D"
 language = ["C#"]
 
+[[projects]]
+name = "Qwy3"
+url = "https://github.com/anima-libera/qwy3"
+state = "Active Dev."
+language = ["Rust", "WGSL"]
+source = "https://github.com/anima-libera/qwy3"
+license = "Apache-2.0"
+
+[[projects]]
+name = "Polygon Hell 4D"
+url = "https://store.steampowered.com/app/2765940/Polygon_Hell_4D/"
+state = "Active Dev."
+language = ["C", "HLSL"]
+
 ###########################################################
 #################### Unknown Status #######################
 ###########################################################
