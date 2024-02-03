@@ -504,6 +504,12 @@ license = "GPL-3.0"
 language = ["C#"]
 
 [[projects]]
+name = "CraftMania"
+url = "https://github.com/mcourteaux/CraftMania/"
+source = "https://github.com/mcourteaux/CraftMania/"
+language = ["Java"]
+
+[[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
 source = "https://github.com/sjoerdev/voxel-engine"
