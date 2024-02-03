@@ -411,6 +411,13 @@ name = "Voxeliq"
 url = "https://github.com/bonesoul/voxeliq"
 license = "MS-PL"
 source = "https://github.com/bonesoul/voxeliq"
+
+[[projects]]
+name = "Chunk Stories"
+url = "http://chunkstories.xyz/"
+license = "LGPL"
+language = ["Kotlin"]
+source = "https://github.com/Hugobros3/chunkstories"
 [[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
