@@ -400,6 +400,12 @@ license = "ZLIB"
 source = "https://bitbucket.org/volumesoffun/polyvox/src/develop/"
 
 [[projects]]
+name = "Noa"
+url = "https://github.com/fenomas/noa"
+license = "MIT"
+language = ["JS"]
+source = "https://github.com/fenomas/noa"
+[[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
 source = "https://github.com/sjoerdev/voxel-engine"
