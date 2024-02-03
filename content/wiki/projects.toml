@@ -451,6 +451,14 @@ name = "MineHack"
 url = "https://github.com/mikolalysenko/MineHack"
 language = ["C++", "C", "JS", "F#"]
 source = "https://github.com/mikolalysenko/MineHack"
+
+[[projects]]
+name = "Playform"
+url = "http://playformdev.blogspot.com/"
+license = "MIT"
+language = ["Rust", "GLSL"]
+source = "https://github.com/bfops/playform/"
+
 [[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
