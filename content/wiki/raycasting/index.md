@@ -44,6 +44,7 @@ The following implementation is based on the algorithm published in [the origina
 - Various Implementations:
   - For [`C`](https://webdocs.cs.ualberta.ca/~graphics/books/GraphicsGems/gemsiv/vox_traverse.c)
   - For [`C++`](https://gist.github.com/garymacindoe/895430c1e53a6e50cb35)
+  - For [`C#`](https://web.archive.org/web/20121024081332/www.xnawiki.com/index.php?title=Voxel_traversal)
   - For [`GLSL`](https://www.shadertoy.com/view/XddcWn):
     - [Branchless](https://www.shadertoy.com/view/4dX3zl)
     - [Branchless & Textured](https://www.shadertoy.com/view/7dK3D3)
