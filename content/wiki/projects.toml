@@ -445,6 +445,12 @@ url = "https://github.com/RileyA/VoxelsAndPortals"
 license = "GPL-3.0"
 language = ["C++", "C"]
 source = "https://github.com/RileyA/VoxelsAndPortals"
+
+[[projects]]
+name = "MineHack"
+url = "https://github.com/mikolalysenko/MineHack"
+language = ["C++", "C", "JS", "F#"]
+source = "https://github.com/mikolalysenko/MineHack"
 [[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
