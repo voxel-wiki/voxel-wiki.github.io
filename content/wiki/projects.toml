@@ -460,6 +460,11 @@ language = ["Rust", "GLSL"]
 source = "https://github.com/bfops/playform/"
 
 [[projects]]
+name = "BlokWorld"
+url = "http://blokworld.forumotion.co.uk/"
+language = ["VB.NET"]
+
+[[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
 source = "https://github.com/sjoerdev/voxel-engine"
