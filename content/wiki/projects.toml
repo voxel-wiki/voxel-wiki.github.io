@@ -497,6 +497,13 @@ source = "https://code.google.com/archive/p/minecraft-plus-plus/source"
 language = ["C++"]
 
 [[projects]]
+name = "mineworld2"
+url = "https://code.google.com/archive/p/mineworld2/"
+source = "https://code.google.com/archive/p/mineworld2/source"
+license = "GPL-3.0"
+language = ["C#"]
+
+[[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
 source = "https://github.com/sjoerdev/voxel-engine"
