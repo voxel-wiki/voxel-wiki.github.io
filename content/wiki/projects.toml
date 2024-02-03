@@ -431,6 +431,13 @@ name = "Sea Of Memes"
 url = "https://github.com/mgoodfel/SeaOfMemes"
 language = ["C"]
 source = "https://github.com/mgoodfel/SeaOfMemes"
+
+[[projects]]
+name = "Voxelman"
+url = "https://www.youtube.com/@andreypenechko5283"
+license = "BSL-1.0"
+language = ["D"]
+source = "https://github.com/MrSmith33/voxelman"
 [[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
