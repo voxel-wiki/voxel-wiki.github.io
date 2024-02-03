@@ -491,6 +491,12 @@ url = "http://craftinspace.blogspot.com/"
 language = ["C#"]
 
 [[projects]]
+name = "Minecraft-Plus-Plus"
+url = "https://code.google.com/archive/p/minecraft-plus-plus/"
+source = "https://code.google.com/archive/p/minecraft-plus-plus/source"
+language = ["C++"]
+
+[[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
 source = "https://github.com/sjoerdev/voxel-engine"
