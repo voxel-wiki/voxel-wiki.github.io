@@ -534,6 +534,12 @@ source = "https://github.com/sjoerdev/voxel-engine"
 language = ["C#"]
 
 [[projects]]
+name = "sproxel"
+url = "http://sproxel.blogspot.com/"
+source = "https://code.google.com/archive/p/sproxel/"
+license = "BSD-3.0"
+
+[[projects]]
 name = "Hexane"
 url = "https://voxelphile.com"
 source = "https://github.com/voxelphile/hexane"
