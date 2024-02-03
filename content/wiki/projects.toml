@@ -405,6 +405,12 @@ url = "https://github.com/fenomas/noa"
 license = "MIT"
 language = ["JS"]
 source = "https://github.com/fenomas/noa"
+
+[[projects]]
+name = "Voxeliq"
+url = "https://github.com/bonesoul/voxeliq"
+license = "MS-PL"
+source = "https://github.com/bonesoul/voxeliq"
 [[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
