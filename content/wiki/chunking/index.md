@@ -100,3 +100,7 @@ var voxel = chunk.get_from_world(x, y, z);
 ```
 
 In all of the above code, you might have noticed that nearly all coordinate variables have prefixes: There is a [good reason for that](/wiki/coordinate-systems).
+
+## References
+
+- <https://web.archive.org/web/20171121221839/https://www.blockstory.net/node/58>
