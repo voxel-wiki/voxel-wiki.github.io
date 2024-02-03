@@ -486,6 +486,11 @@ source = "https://github.com/Bunkerbewohner/Mathcraft"
 language = ["C#"]
 
 [[projects]]
+name = "Craft In Space"
+url = "http://craftinspace.blogspot.com/"
+language = ["C#"]
+
+[[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
 source = "https://github.com/sjoerdev/voxel-engine"
