@@ -113,6 +113,11 @@ url = "https://store.steampowered.com/app/706990/BLOCKPOST/"
 state = "Released"
 
 [[projects]]
+name = "Qubicle"
+url = "https://store.steampowered.com/app/454550/Qubicle_Voxel_Editor/"
+state = "Released"
+
+[[projects]]
 name = "Boundless"
 url = "https://playboundless.com/"
 state = "Released"
