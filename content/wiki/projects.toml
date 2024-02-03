@@ -425,6 +425,12 @@ url = "https://sourceforge.net/projects/manicdigger/"
 license = "CC0"
 language = ["C#"]
 source = "https://github.com/manicdigger/manicdigger"
+
+[[projects]]
+name = "Sea Of Memes"
+url = "https://github.com/mgoodfel/SeaOfMemes"
+language = ["C"]
+source = "https://github.com/mgoodfel/SeaOfMemes"
 [[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
