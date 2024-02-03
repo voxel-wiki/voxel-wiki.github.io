@@ -518,6 +518,11 @@ name = "PetraVis"
 url = "http://steinkraft.net/"
 
 [[projects]]
+name = "Scrumbleship"
+url = "https://scrumbleship.com/"
+language = ["C"]
+
+[[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
 source = "https://github.com/sjoerdev/voxel-engine"
