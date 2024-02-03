@@ -474,6 +474,11 @@ source = "https://code.google.com/archive/p/umbratech/source"
 name = "CraftStudio"
 url = "https://sparklinlabs.itch.io/craftstudio"
 language = ["C#"]
+
+[[projects]]
+name = "Voxies"
+url = "https://www.voxies.io/"
+
 [[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
