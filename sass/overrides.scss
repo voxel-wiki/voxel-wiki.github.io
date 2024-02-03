@@ -326,6 +326,8 @@ figure {
 }
 
 a {
+	word-wrap: break-word;
+	
 	body:not(.dark) &:not(.btn-primary) {
 		color: rgb(80, 31, 255);
 	}
