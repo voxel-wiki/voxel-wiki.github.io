@@ -145,6 +145,13 @@ so as to not overload your GPU with drawcalls & geometry.
 - [GigaVoxels: Ray-Guided Streaming for Efficient and Detailed Voxel Rendering](https://artis.inrialpes.fr/Publications/2009/CNLE09/)
 - <http://jojendersie.de/rendering-huge-amounts-of-voxels/>
 - <http://jojendersie.de/rendering-huge-amounts-of-voxels-2/>
+- <https://swiftcoder.wordpress.com/planets/isosurface-extraction/>
+- <https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/>
+- <http://procworld.blogspot.com/2010/11/from-voxels-to-polygons.html>
+- <http://ngildea.blogspot.com/2014/09/dual-contouring-chunked-terrain.html>
+- <http://ngildea.blogspot.com/2015/06/dual-contouring-with-opencl.html>
+- <https://web.archive.org/web/20200718072744/https://codeflow.org/entries/2010/dec/09/minecraft-like-rendering-experiments-in-opengl-4/>
+- <https://gamedev.stackexchange.com/questions/22664/how-can-i-improve-rendering-speeds-of-a-voxel-minecraft-type-game>
 
 ---
 
