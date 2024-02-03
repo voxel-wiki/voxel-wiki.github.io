@@ -333,6 +333,11 @@ You can on a first pass, generate some kind of coarse regular or irregular grid 
 {{ todo_notice(body="Add more references.") }}
 
 - [Terrain from Noise](https://www.redblobgames.com/maps/terrain-from-noise/)
+- [3D Cube World Level Generation](https://accidentalnoise.sourceforge.net/minecraftworlds.html)
+- [C# Perlin Noise](http://lotsacode.wordpress.com/2010/02/24/perlin-noise-in-c/)
+- [Simplex Noise Demystified (PDF)](https://web.archive.org/web/20230310204125if_/https://webstaff.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf)
+- [Goodbye Perlin noise in 2D, hello Perlin noise in 3D!](https://web.archive.org/web/20151122204631/https://blog.movingblocks.net/2011/06/11/goodbye-perlin-noise-2d-perlin-noise-3d/)
+- [Voxel Terrain](http://www.terathon.com/lengyel/Lengyel-VoxelTerrain.pdf)
 
 ### Noise Libraries
 
@@ -341,6 +346,7 @@ Writing correct noise-generating code can be quite hard, so it is generally reco
 * **[libnoise](https://libnoise.sourceforge.net)**  
   [Great documentation](https://libnoise.sourceforge.net/glossary/index.html), but quite old, slow and licensed under LGPL, which is a no-go for most projects.
   Notable because it has the best documentation for organizing/conceptualizing noise primitives and various operations on noise, so it's a good idea to browse through the [various modules](https://libnoise.sourceforge.net/docs/modules.html).
+  * [Java Implementation](https://github.com/Sleaker/jlibnoise)
 * **[OpenSimplex2](https://github.com/KdotJPG/OpenSimplex2)**  
   Various improvements over Perlin Noise and under a CC0 license.
 * **[FastNoiseLite](https://github.com/Auburn/FastNoiseLite)**  
