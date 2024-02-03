@@ -7,7 +7,7 @@ template = "projects.html"
 categories = ["community"]
 +++
 
-On this page anybody can add projects involving voxels (even their own!), as long as *at least* two contributors *or* a [maintainer](https://github.com/orgs/voxel-wiki/people) upvote the [pull-request/issue](https://github.com/voxel-wiki/voxel-wiki.github.io/issues).
+On this page anybody can add projects involving voxels (even their own!), just edit the [`projects.toml` file](https://github.com/voxel-wiki/voxel-wiki.github.io/blob/main/content/wiki/projects.toml) and create a [pull-request/issue](https://github.com/voxel-wiki/voxel-wiki.github.io/issues)!
 
 **Note:** Unless a project is `Released`, it's state may not be accurate.
 
