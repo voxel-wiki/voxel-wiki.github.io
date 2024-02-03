@@ -23,3 +23,6 @@ To quote Wikipedia:
 ## References
 
 {{ todo_notice(body="Add more references.") }}
+
+- <http://pcg.wikidot.com/category-pcg-algorithms>
+- <https://web.archive.org/web/20180126135353/http://ltrees.codeplex.com/>
