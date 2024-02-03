@@ -394,6 +394,12 @@ name = "FinityWorlds"
 url = "https://www.youtube.com/channel/UCw6nMILS3QcJRHTHCuZuchg"
 
 [[projects]]
+name = "Polyvox"
+url = "http://www.volumesoffun.com/polyvox-about/"
+license = "ZLIB"
+source = "https://bitbucket.org/volumesoffun/polyvox/src/develop/"
+
+[[projects]]
 name = "Sjoerd's Voxel Engine"
 url = "https://github.com/sjoerdev/voxel-engine"
 source = "https://github.com/sjoerdev/voxel-engine"
