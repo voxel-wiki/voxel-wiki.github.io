@@ -128,7 +128,7 @@ void main()
   vec3 position = vec3(x, y, z);
   
   // Apply the offsets for our face so we can form the 2 triangles
-  position += facePositions[currVertexID];
+  position += facePositions[indices[currVertexID]];
 
   // Output our position
   gl_Position = vec4(position, 1.0);
