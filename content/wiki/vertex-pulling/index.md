@@ -11,15 +11,16 @@ chapter_prev = {text = "Vertex Packing", link = "/wiki/vertex-packing"}
 chapter_next = {text = "Face Pulling", link = "/wiki/face-pulling"}
 +++
 
-{% todo_notice() %} This article is a work-in-progress. {% end %}
+#### Note - this article will use OpenGL nomenclature, but the same vertex pulling techniques can be applied in various ways in Vulkan, DirectX, and other APIs as well.
 
-Traditionally, when uploading and fetching data to draw in a vertex shader, you would use a Vertex Buffer Object (VBO) linked to a Vertex Attribute Object (VAO). Optionally, an Index Buffer Object (EBO/IBO) could be attached to reuse identical vertices that overlap. For instance, on the face of a cube rendered with triangles, there are 2 triangles with 6 vertices. 2 of the vertices overlap across triangles. Hence, an index buffer can render the face with 4 indices, reusing 2 out of the 6 identical vertices.
+Traditionally, when uploading and fetching data to draw in a vertex shader in OpenGL, you use a Vertex Buffer Object (VBO) linked to a Vertex Attribute Object (VAO). Optionally, an Index Buffer Object (EBO/IBO) could be attached to reuse identical vertices that overlap. For instance, on the face of a cube rendered with triangles, there are 2 triangles with 6 vertices. 2 of the vertices overlap across triangles. Hence, an index buffer can render the face with 4 indices, reusing 2 out of the 6 identical vertices.
 
 In modern programming, this same idea can be used with Vertex Pulling for an even more beneficial memory gain. With a VBO and EBO, you are required to have minimum 4 indices at 16 bytes (4 bytes an integer with 4 integers) stored to draw a face. However, with Vertex Pulling, you can have as little memory as 4 bytes per face if the data is repeated across the face. This works by storing your data inside of a Shader Storage Buffer Object (SSBO) instead of a VBO. 
 
 ## Key Notes
 
 - Pulling from a vertex-stream or SSBO/UBO is generally the same speed as from a VBO/EBO
+- Normal vertex-streaming does not support per-face data.
 - Vertex pulling is especially effective when there is identical data across vertices
 - Mesh/Vertex data is put inside of a SSBO instead of a VBO, and a custom index created with gl_VertexID inside of the vertex shader is used to pull the data.
 - Vertex-shaders only have to emit a NDC-position; how they do so is undefined.
