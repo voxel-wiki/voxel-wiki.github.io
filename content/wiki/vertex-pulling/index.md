@@ -11,7 +11,9 @@ chapter_prev = {text = "Vertex Packing", link = "/wiki/vertex-packing"}
 chapter_next = {text = "Face Pulling", link = "/wiki/face-pulling"}
 +++
 
-#### Note - this article will use OpenGL nomenclature, but the same vertex pulling techniques can be applied in various ways in Vulkan, DirectX, and other APIs as well.
+{% info_notice() %}
+**Note:** While this article uses OpenGL nomenclature, the same vertex pulling techniques can be applied in various ways in Vulkan, DirectX, and other APIs as well.
+{% end %}
 
 Traditionally, when uploading and fetching data to draw in a vertex shader in OpenGL, you use a Vertex Buffer Object (VBO) linked to a Vertex Attribute Object (VAO). Optionally, an Index Buffer Object (EBO/IBO) could be attached to reuse identical vertices that overlap. For instance, on the face of a cube rendered with triangles, there are 2 triangles with 6 vertices. 2 of the vertices overlap across triangles. Hence, an index buffer can render the face with 4 indices, reusing 2 out of the 6 identical vertices.
 
@@ -19,28 +21,31 @@ In modern programming, this same idea can be used with Vertex Pulling for an eve
 
 ## Key Notes
 
-- Pulling from a vertex-stream or SSBO/UBO is generally the same speed as from a VBO/EBO
-- Normal vertex-streaming does not support per-face data.
-- Vertex pulling is especially effective when there is identical data across vertices
-- Mesh/Vertex data is put inside of a SSBO instead of a VBO, and a custom index created with gl_VertexID inside of the vertex shader is used to pull the data.
+- Pulling from a vertex-stream or SSBO/UBO is generally the same speed as from a VBO/EBO.
+- Normal vertex-streaming does not support per-face data, while vertex-pulling can.
+- Vertex pulling is especially effective when there is identical data across vertices.
+- Mesh/Vertex data is put inside of a SSBO instead of a VBO, and a custom index created with `gl_VertexID` inside of the vertex shader is used to pull the data.
 - Vertex-shaders only have to emit a NDC-position; how they do so is undefined.
 
 ## Implementation
 
 1. First, let's create a SSBO to hold our mesh data, and a VAO so we can issue a draw command later. Additionally, you will want to create a shader program - which we will not review in this article.
+
 ```cpp
 unsigned int ssbo, vao, shaderProgram;
 glCreateBuffers(1, &ssbo);
 glCreateBuffers(1, &vao);
 ```
 
-2. To use our SSBO, first we need to create some mesh data. Let's create a vector to store our vertices, and put some basic mesh data in to draw a face of a cube. We will pack our data inside of a single vertex for efficiency using bit manipulation. 
+2. To use our SSBO, first we need to create some mesh data. Let's create a vector to store our vertices, and put some basic mesh data in to draw a face of a cube. We will pack our data inside of a single vertex for efficiency using bit manipulation.
+
 ```cpp
 // Vector to hold our mesh data
 std::vector<int> ssboVertices; 
 
 // The position of our face
 vec3 position = vec3(5, 5, 5); 
+
 // Pack the position of our face into a singular integer
 int vertex = (position.x | position.y << 10 | position.z << 20); 
 
@@ -49,17 +54,21 @@ ssboVertices.push_back(vertex);
 ```
 
 3. Now that we have some mesh data, lets put it inside of the SSBO and send it off to the Vertex Shader. Note the 2nd parameter of glBindBufferBase - the 0. This parameter is referred to as the "binding point" and will come back next step as it needs to match the SSBO in the vertex shader, which is how they are linked.
+
 ```cpp
 // Bind our shader program (created on your own)  
 glUseProgram(shaderProgram);
+
 // Using DSA, put the data inside of the SSBO. Non-DSA equivalent is glBufferData
 glNamedBufferStorage(ssbo, ssbo.size() * sizeof(int), ssbo.data(), NULL);
 glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 0, ssbo);
+
 // Unbind our shader program
 glUseProgram(0);
 ```
 
 4. Inside of your Vertex Shader, let's create the actual SSBO so the data from the previous step is sent inside. Note the line `binding = 0`. This is the binding point referred to in the previous step, and must match the 2nd parameter of glBindBufferBase.
+
 ```glsl
 layout(std430, binding = 0) readonly buffer vertexPullBuffer 
 {
@@ -67,21 +76,24 @@ layout(std430, binding = 0) readonly buffer vertexPullBuffer
 };
 ```
 
-5. Now, let's actually draw our mesh. We currently have 1 vertex per face in our mesh data since we are using vertex pulling, but 6 vertices are needed to draw a face since it uses 2 triangles, so the 3rd parameter of glDrawArrays is the size of our vertices multiplied by six. This basically means we will draw 6 vertices in our vertex shader, even though we have only supplied 1 vertice's worth of data
+5. Now, let's actually draw our mesh. We currently have 1 vertex per face in our mesh data since we are using vertex pulling, but 6 vertices are needed to draw a face since it uses 2 triangles, so the 3rd parameter of glDrawArrays is the size of our vertices multiplied by six. This basically means we will draw 6 vertices in our vertex shader, even though we have only supplied 1 vertice's worth of data.
+
 ```cpp
 // Bind our vertex array. This is needed even though we have no VBO
 glBindVertexArray(vao);
+
 // Issue the draw command
 glDrawArrays(GL_TRIANGLES, 0, ssboVertices.size()*6);
+
 // Unbind our vertex array
 glBindVertexArray(0);
 ```
 
-6. Finally, let's actually use the data from the SSBO to draw our face! First, we will retrieve the data from the SSBO using a custom index. Since we have 6 vertices on a face, and gl_VertexID is equal to the current vertex being drawn, we will do gl_VertexID / 6.
+6. Finally, let's actually use the data from the SSBO to draw our face! First, we will retrieve the data from the SSBO using a custom index. Since we have 6 vertices on a face, and `gl_VertexID` is equal to the current vertex being drawn, we will do `gl_VertexID / 6`.
 
-- Next, we unpack the data using standard bit manipulation to get the position (5, 5, 5) for x, y, and z we packed in step 2.
+- Next, we unpack the data using standard bit manipulation to get the position `(5, 5, 5)` for x, y, and z we packed in step 2.
 
-- Lastly, we must move our vertices by an amount so they can form the actual face. By default, all of our vertices will be at the position (5, 5, 5) without this. However in reality, to make the face, we need our vertices at corners to make the triangles - for instance one triangle would have vertices at (5, 5, 5), (6, 5, 5), and (6, 5, 6) which would make one of the 2 triangles in a face. That is what is happening when we are doing `position += facePositions[currVertexID]` - we are offsetting our 6 vertices in a custom order defined by our indices[6] array to create the 2 triangles.
+- Lastly, we must move our vertices by an amount so they can form the actual face. By default, all of our vertices will be at the position `(5, 5, 5)` without this. However in reality, to make the face, we need our vertices at corners to make the triangles - for instance one triangle would have vertices at `(5, 5, 5)`, `(6, 5, 5)`, and `(6, 5, 6)` which would make one of the 2 triangles in a face. That is what is happening when we are doing `position += facePositions[currVertexID]` - we are offsetting our 6 vertices in a custom order defined by our `indices[6]` array to create the 2 triangles.
 
 ```glsl
 // Our SSBO added in step 4
