@@ -254,6 +254,15 @@ state = "Beta"
 ###########################################################
 
 [[projects]]
+name = "Polaron World Engine"
+url = "https://polaronworldengine.com/"
+state = "Active Dev."
+source = "https://gitlab.com/veloren/veloren"
+license = "Commercial"
+language = ["C++"]
+rendering = "Ray Marching, Ray Casting"
+
+[[projects]]
 name = "Veloren"
 url = "https://veloren.net/"
 state = "Active Dev."
