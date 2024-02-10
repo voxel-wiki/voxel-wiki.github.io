@@ -351,6 +351,13 @@ url = "https://store.steampowered.com/app/2765940/Polygon_Hell_4D/"
 state = "Active Dev."
 language = ["C", "HLSL"]
 
+[[projects]]
+name = "Polaron World Engine"
+url = "https://www.PolaronWorldEngine.com"
+state = "Active Dev."
+language = ["C++""]
+license = "Commercial"
+
 ###########################################################
 #################### Unknown Status #######################
 ###########################################################
