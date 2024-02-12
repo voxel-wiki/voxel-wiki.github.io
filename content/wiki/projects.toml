@@ -355,7 +355,7 @@ language = ["C", "HLSL"]
 name = "Polaron World Engine"
 url = "https://www.PolaronWorldEngine.com"
 state = "Active Dev."
-language = ["C++""]
+language = ["C++"]
 license = "Commercial"
 
 ###########################################################
