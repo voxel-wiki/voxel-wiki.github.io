@@ -13,10 +13,9 @@
           {{ page.content | safe }}
           
           {% set references = load_data(path="content/wiki/references.toml", format="toml") %}
-          <small>
-            There are currently {{ references | length }} references;
-            the raw list can <a href="https://github.com/voxel-wiki/voxel-wiki.github.io/blob/main/content/wiki/references.toml">be found here</a>.
-          </small>
+          <p style="text-align: center">
+            The source for this list can <a href="https://github.com/voxel-wiki/voxel-wiki.github.io/blob/main/content/wiki/references.toml">be found here</a>.
+          </p>
           <style>
             #references {
               display: flex;
@@ -24,7 +23,29 @@
               gap: 1.5rem;
               margin: 1rem 0;
             }
-            
+            #references .card-header {
+              padding: 0.5rem;
+            }
+            #references .card-header svg {
+              float: right;
+              height: 2rem;
+              margin-left: 0.5rem;
+            }
+            #references .card-title {
+              margin-top: 0.25rem;
+            }
+            #references .card-subtitle {
+              font-size: 0.75rem;
+              user-select: all;
+              opacity: 0.75;
+              clear: both;
+            }
+            #references .tag {
+              padding: 0.25rem;
+              font-size: 0.75rem;
+              user-select: all;
+              color: #FF3385;
+            }
             body.dark #references .card {
               background: rgba(0,0,0,0.25);
             }
@@ -32,29 +53,61 @@
               border-bottom-color: #333;
             }
           </style>
-          <div id="references" class="">{% for refname, reference in references %}
-            <!--
+          
+          <!-- Structure of references.*:
             [SLUG]
             title = "TITLE"
             url = "URL"
-            -->
-            <section class="card">
-              <header class="card-header">
-                <h5 class="card-title" style="margin-top:0.5rem">
-                  <a class="card-link" target="_blank" href="{{reference.url}}" id="{{refname}}">
+            tags = [ TAGS ]
+            type? = "TYPE"
+          -->
+          <div id=references>{% for refname, reference in references %}
+            {% set reftype = reference | get(key="type", default="") %}
+            <section class=card
+              data-type='{{reftype}}'
+              data-slug='{{refname}}'
+              data-tags='{{ reference | get(key="tags", default=[]) | join(sep=",") }}'
+            >
+              <header class=card-header>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <title>{{reftype}}</title>
+                  {% if reftype == "paper" %}
+                  <!--<span class=tag>{{reftype}}</span>-->
+                  <path fill="currentColor" d="M6,2A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6M6,4H13V9H18V20H6V4M8,12V14H16V12H8M8,16V18H13V16H8Z" />
+                  {% elif reftype == "video" %}
+                  <path fill="currentColor" d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M10,16.5L16,12L10,7.5V16.5Z" />
+                  {% elif reftype == "video-list" %}
+                  <path fill="currentColor" d="M4 6H2V20C2 21.1 2.9 22 4 22H18V20H4V6M20 4V16H8V4H20M20 2H8C6.9 2 6 2.9 6 4V16C6 17.1 6.9 18 8 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M12 14.5V5.5L18 10L12 14.5Z" />
+                  {% elif reftype == "user" %}
+                  <path fill="currentColor" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z" />
+                  {% elif reftype == "repository" %}
+                  <path fill="currentColor" d="M6,2H18A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2M12.75,13.5C15.5,13.5 16.24,11.47 16.43,10.4C17.34,10.11 18,9.26 18,8.25C18,7 17,6 15.75,6C14.5,6 13.5,7 13.5,8.25C13.5,9.19 14.07,10 14.89,10.33C14.67,11 14,12 12,12C10.62,12 9.66,12.35 9,12.84V8.87C9.87,8.56 10.5,7.73 10.5,6.75C10.5,5.5 9.5,4.5 8.25,4.5C7,4.5 6,5.5 6,6.75C6,7.73 6.63,8.56 7.5,8.87V15.13C6.63,15.44 6,16.27 6,17.25C6,18.5 7,19.5 8.25,19.5C9.5,19.5 10.5,18.5 10.5,17.25C10.5,16.32 9.94,15.5 9.13,15.18C9.41,14.5 10.23,13.5 12.75,13.5M8.25,16.5A0.75,0.75 0 0,1 9,17.25A0.75,0.75 0 0,1 8.25,18A0.75,0.75 0 0,1 7.5,17.25A0.75,0.75 0 0,1 8.25,16.5M8.25,6A0.75,0.75 0 0,1 9,6.75A0.75,0.75 0 0,1 8.25,7.5A0.75,0.75 0 0,1 7.5,6.75A0.75,0.75 0 0,1 8.25,6M15.75,7.5A0.75,0.75 0 0,1 16.5,8.25A0.75,0.75 0 0,1 15.75,9A0.75,0.75 0 0,1 15,8.25A0.75,0.75 0 0,1 15.75,7.5Z" />
+                  {% elif reftype == "presentation" %}
+                  <path fill="currentColor" d="M2,3H10A2,2 0 0,1 12,1A2,2 0 0,1 14,3H22V5H21V16H15.25L17,22H15L13.25,16H10.75L9,22H7L8.75,16H3V5H2V3M5,5V14H19V5H5M11.85,11.85C11.76,11.94 11.64,12 11.5,12A0.5,0.5 0 0,1 11,11.5V7.5A0.5,0.5 0 0,1 11.5,7C11.64,7 11.76,7.06 11.85,7.15L13.25,8.54C13.57,8.86 13.89,9.18 13.89,9.5C13.89,9.82 13.57,10.14 13.25,10.46L11.85,11.85Z" />
+                  {% else %}
+                  <!-- no icon for u -->
+                  {% endif %}
+                </svg>
+                {% for tag in reference | get(key="tags", default=[]) %}
+                  <span class=tag>#{{tag}}</span>
+                {% endfor %}
+                <h5 class=card-title>
+                  <a class=card-link target="_blank" href="{{reference.url}}" id="{{refname}}">
                     {% if reference.title %}
-                      {{reference.title}}
+                    {{reference.title}}
                     {% else %}
-                      REF_TITLE_MISSING
+                    REF_TITLE_MISSING
                     {% endif %}
                   </a>
                 </h5>
-                <small class="card-subtitle"><code style="user-select: all">{{refname}}</code></small>
+                <code class=card-subtitle>{{refname}}</code>
               </header>
-              <!--
-              <main class="card-body">
-                ?
+              {% if reference.description %}
+              <main class=card-body>
+                {{ reference | get(key="description", default="") | markdown }}
               </main>
+              {% endif %}
+              <!--
                 <footer></footer>
               -->
             </section>
