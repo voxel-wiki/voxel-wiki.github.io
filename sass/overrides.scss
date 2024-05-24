@@ -347,6 +347,7 @@ a {
 	
 	/* external links: indicator icon */
 	article &[href*="//"]:not(
+		.card-link,
 		[href*="voxel.wiki"], /* dont show on primary domain */
 		[href*="127.0.0.1"], /* dont show on localhost site */
 		[href*="localhost"], /* dont show on localhost site */

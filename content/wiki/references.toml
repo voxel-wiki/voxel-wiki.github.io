@@ -110,6 +110,18 @@ url = "https://github.com/xpansive/ExpansiveTerrain/tree/1.0/src/main/java/com/x
 title = "Understanding Minecraft Performance"
 url = "http://optifog.blogspot.com/2011/08/understanding-minecraft-performance.html"
 
+[minecraft-resourcepack-js]
+title = "@xmcl/resourcepack - npm"
+url = "https://www.npmjs.com/package/@xmcl/resourcepack?ref=morioh.com&utm_source=morioh.com"
+
+[minecraft-resourcepack-rs]
+title = "Parsing Minecraft asset files and resource packs in Rust."
+url = "https://github.com/BGR360/minecraft-assets-rs"
+
+[minecraft-mca-parser-rs]
+title = "mca-parser:  A library for parsing Minecraft's region files"
+url = "https://crates.io/crates/mca-parser"
+
 [planetminecraft]
 title = "Planet Minecraft"
 url = "https://www.planetminecraft.com/"
@@ -1230,18 +1242,6 @@ url = "https://www.redblobgames.com/x/1938-square-tiling-of-sphere/"
 [intel-path-tracing-workshop]
 title = "Path-Tracing Workshop Part 1: Learn to Write a Path Tracer in GLSL"
 url = "https://www.intel.com/content/www/us/en/developer/videos/path-tracing-workshop-part-1.html#gs.5etor7"
-
-[minecraft-resourcepack-js]
-title = "@xmcl/resourcepack - npm"
-url = "https://www.npmjs.com/package/@xmcl/resourcepack?ref=morioh.com&utm_source=morioh.com"
-
-[minecraft-resourcepack-rs]
-title = "Parsing Minecraft asset files and resource packs in Rust."
-url = "https://github.com/BGR360/minecraft-assets-rs"
-
-[minecraft-mca-parser-rs]
-title = "mca-parser:  A library for parsing Minecraft's region files"
-url = "https://crates.io/crates/mca-parser"
 
 [rbs-preprint]
 title = "Fast Sorting for Exact OIT of Complex Scenes"

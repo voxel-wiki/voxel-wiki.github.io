@@ -17,3 +17,6 @@ zola-serve: zola-install
 
 line-count:
     tokei . -e themes/ -e public/
+
+link-grep:
+    rg "(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})" ./content/ -g '*.md' -o --trim -I --pcre2 | sort -u > links.log

@@ -72,11 +72,11 @@ section = "categories"
 url = "/categories/"
 weight = 10
 
-#[[extra.menu.main]]
-#name = "Blog"
-#section = "blog"
-#url = "/blog/"
-#weight = 20
+[[extra.menu.main]]
+name = "References"
+section = "references"
+url = "/wiki/references"
+weight = 20
 
 [[extra.menu.main]]
 name = "Projects"
