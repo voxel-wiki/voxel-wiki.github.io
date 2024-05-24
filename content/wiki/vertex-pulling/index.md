@@ -53,7 +53,7 @@ int vertex = (position.x | position.y << 10 | position.z << 20);
 ssboVertices.push_back(vertex);
 ```
 
-3. Now that we have some mesh data, lets put it inside of the SSBO and send it off to the Vertex Shader. Note the 2nd parameter of glBindBufferBase - the 0. This parameter is referred to as the "binding point" and will come back next step as it needs to match the SSBO in the vertex shader, which is how they are linked.
+3. Now that we have some mesh data, lets put it inside of the SSBO and send it off to the Vertex Shader. Note the 2nd parameter of `glBindBufferBase` - the 0. This parameter is referred to as the "binding point" and will come back next step as it needs to match the SSBO in the vertex shader, which is how they are linked.
 
 ```cpp
 // Bind our shader program (created on your own)  
@@ -67,7 +67,7 @@ glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 0, ssbo);
 glUseProgram(0);
 ```
 
-4. Inside of your Vertex Shader, let's create the actual SSBO so the data from the previous step is sent inside. Note the line `binding = 0`. This is the binding point referred to in the previous step, and must match the 2nd parameter of glBindBufferBase.
+4. Inside of your Vertex Shader, let's create the actual SSBO so the data from the previous step is sent inside. Note the line `binding = 0`. This is the binding point referred to in the previous step, and must match the 2nd parameter of `glBindBufferBase`.
 
 ```glsl
 layout(std430, binding = 0) readonly buffer vertexPullBuffer 
@@ -76,7 +76,7 @@ layout(std430, binding = 0) readonly buffer vertexPullBuffer
 };
 ```
 
-5. Now, let's actually draw our mesh. We currently have 1 vertex per face in our mesh data since we are using vertex pulling, but 6 vertices are needed to draw a face since it uses 2 triangles, so the 3rd parameter of glDrawArrays is the size of our vertices multiplied by six. This basically means we will draw 6 vertices in our vertex shader, even though we have only supplied 1 vertice's worth of data.
+5. Now, let's actually draw our mesh. We currently have 1 vertex per face in our mesh data since we are using vertex pulling, but 6 vertices are needed to draw a face since it uses 2 triangles, so the 3rd parameter of `glDrawArrays` is the size of our vertices multiplied by six. This basically means we will draw 6 vertices in our vertex shader, even though we have only supplied 1 vertices worth of data.
 
 ```cpp
 // Bind our vertex array. This is needed even though we have no VBO
