@@ -73,7 +73,7 @@ Let's do the math again, shall we?
 
 1. Think of how far into the distance you want to 'see', in meters/voxels.
 2. Using that distance, calculate `(D*2)³` to get the visible volume.
-3. Assume our small struct takes 64 bits = 8 bytes of space...
+3. Assume our small struct takes 64 bits, i.e. 8 bytes of space...
 4. ...so multiply the volume by 8 bytes.
 5. Divide by `1024` to get it as kilobytes.
 6. Divide by `1024`, again, for megabytes.
@@ -86,11 +86,12 @@ Thanks to the scaling problem, memory usage is *cubic* in relation to view dista
 
 ---
 
-So, how does one avoid these pitfalls?
+So, how does one avoid these pitfalls and make things work?
 
-...
+You need to heed just one word: **Compression**
 
 ### How to actually store Bloxels
+
 
 
 
