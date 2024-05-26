@@ -7,7 +7,7 @@ categories = ["introduction"]
 [extra]
 chapters = true
 chapter_prev = {text = "Choosing A Language", link = "/wiki/introduction/language"}
-chapter_next = false
+chapter_next = {text = "World Generation", link = "/wiki/introduction/generation"}
 +++
 
 As noted in the [theory section](./#what-is-a-voxel-in-theory), a voxel can be ***anything***; the only limit is your imagination... and the amount of memory and disk-space you have! Speaking of which, how *are* voxels represented in practice?
@@ -21,13 +21,13 @@ Also, for the purpose of clarity, we will *not* be using pseudocode.
 
 {% warn_notice() %} **The following sections are a work-in-progress.** {% end %}
 
-### Basic Storage
+### Storing Voxels
 
-For a start, let's assume that our voxels store... nothing.
+For a start, let's assume that our voxels store a single byte each...
 
 ```rust
 /// This represents a single voxel sample/instance.
-type Voxel = (); // using the empty 'unit type' for now.
+type Voxel = u8; // A single byte.
 ```
 
 Since a voxel *outside* a grid is, by [definition](./#what-is-a-voxel-in-theory), *not* a voxel, we will have to put it into a grid of voxels...
@@ -57,9 +57,9 @@ pub struct VoxelGrid {
 Now accessing it is pretty simple:
 
 ```rust
-// Create the volume, filled with 'nothing'...
+// Create the volume, filled with zeroes...
 let mut volume = VoxelGrid {
-  values: [[[Voxel; GRID_SIZE]; GRID_SIZE]; GRID_SIZE]
+  values: [[[ 0 ; GRID_SIZE]; GRID_SIZE]; GRID_SIZE]
 };
 
 // Have some coordinates...
@@ -107,19 +107,20 @@ Of course, we will now have to do the bound-checks by ourselves, but as long as 
 ```rust
 impl VoxelGrid {
   pub fn get(&self, x: u32, y: u32, z: u32) -> Option<Voxel> {
-    if x < 0 || x >= GRID_SIZE {return None}
-    if y < 0 || y >= GRID_SIZE {return None}
-    if z < 0 || z >= GRID_SIZE {return None}
+    if x < 0 || x >= GRID_SIZE {return None} // 0 ⋯ GRID_SIZE-1
+    if y < 0 || y >= GRID_SIZE {return None} // 0 ⋯ GRID_SIZE-1
+    if z < 0 || z >= GRID_SIZE {return None} // 0 ⋯ GRID_SIZE-1
     self.values[ /* ??? */] // uuuuh...?
   }
 }
 ```
 
 I suppose a function that turns `x,y,z` into an index is also needed: an **index function**!
-Since it depends on the bounds-check to work correctly, let's move that there too.
+Since it depends on the bounds-check to work correctly, let's move it there...
 
 ```rust
 impl VoxelGrid {
+  /// A function to turn 3d coordinates into an array index.
   pub fn index(&self, x: u32, y: u32, z: u32) -> Option<usize> {
     if x < 0 || x >= GRID_SIZE {return None} // 0 ⋯ GRID_SIZE-1
     if y < 0 || y >= GRID_SIZE {return None} // 0 ⋯ GRID_SIZE-1
@@ -138,14 +139,16 @@ impl VoxelGrid {
 ```
 
 {% info_notice() %}
-The line marked with `SCHEME` declares a *spatial indexing scheme* for us, which defines the *order* and *importance* of the `x,y,z` axes, but also how to turn coordinates into a usable index. Neat!
+The line marked with `SCHEME` declares a (spatial) **indexing scheme** for us, which defines the *order* and *importance* of the `x,y,z` axes, but also how to turn coordinates into a usable index. Neat!
 {% end %}
 
 And so our example becomes this:
 
 ```rust
-// Create the volume... somehow.
-let mut volume = VoxelGrid { /* ??? */ };
+// Create the volume...
+let mut volume = VoxelGrid {
+  values: [ 0 ; GRID_SIZE * GRID_SIZE * GRID_SIZE]
+};
 
 // Have some coordinates...
 let (x,y,z) = (/**/, /**/, /**/);
@@ -162,11 +165,59 @@ if the coordinates are ever out of bounds, crash our program; but at least you'l
 
 But how to we fill it? And just what type should `Voxel` be?!
 
+We will answer the second question first... after fixing a glaring issue.
+
+### The Heap
+
+If you tried increasing the `GRID_SIZE` a little too much,
+you *might* run into a problem: a stack overflow!
+
+Right now our `VoxelGrid` is defined like this:
+
+```rust
+pub struct VoxelGrid {
+  values: [Voxel; GRID_SIZE * GRID_SIZE * GRID_SIZE];
+}
+```
+
+...and 'created' like this...
+
+```rust
+// Create the volume...
+let mut volume = VoxelGrid {
+  values: [ 0 ; GRID_SIZE * GRID_SIZE * GRID_SIZE]
+};
+```
+
+That line right there? It allocates our `VoxelGrid` on the stack! Which is bad,
+as stack memory is quite limited; putting huge things on it can (obviously)
+cause a stack-overflow, but will also obliterate our CPU's cache... :(
+
+Thankfully avoiding this is an easy fix: Allocate it on the heap!
+
+First turn the array into a vector (which is a thin abstraction over `malloc`)...
+
+```rust
+pub struct VoxelGrid {
+  values: Vec<Voxel>;
+}
+```
+
+...create it right on the heap, like this...
+
+```rust
+// Create the volume...
+let mut volume = VoxelGrid {
+  values: vec![ 0 ; GRID_SIZE * GRID_SIZE * GRID_SIZE]
+};
+```
+
+...and we're done! Now on to defining our voxel type(s)...
+
 ### Types of Voxel
 
 {% todo_notice() %} Types of voxels. {% end %}
 
-### Basic Generation
+## Next
 
-{% todo_notice() %} Filling a volume via [Procedural Generation](/wiki/procgen). {% end %}
-
+Next up: Basic world generation!
