@@ -1,6 +1,6 @@
 +++
 title = "Cluster Culling"
-description = "Replacement of geometry that is too small with lower detail geometry."
+description = "Efficiently culling small clusters of geometry."
 [taxonomies]
 categories = ["culling"]
 tags = ["rendering", "culling", "optimization"]
