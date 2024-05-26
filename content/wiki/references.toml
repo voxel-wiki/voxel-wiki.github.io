@@ -2141,8 +2141,15 @@ url = "https://www.gamedev.net/blogs/entry/2265248-voxel-traversal-algorithm-ray
 tags = []
 
 [balintcsala-voxel-tracing]
-title = "Voxel tracing with interactive examples"
+title = "Voxelization"
 url = "https://blog.balintcsala.com/posts/voxel-tracing/"
+type = "article"
+tags = []
+
+[balintcsala-voxelization]
+title = "Voxel tracing with interactive examples"
+url = "https://blog.balintcsala.com/posts/voxelization/"
+type = "article"
 tags = []
 
 [frtorvdudt]
@@ -2172,6 +2179,7 @@ tags = []
 [atrbvh]
 title = "leonardo-domingues/atrbvh: Implementation for \"Bounding Volume Hierarchy Optimization through Agglomerative Treelet Restructuring\""
 url = "https://github.com/leonardo-domingues/atrbvh"
+type = "repository"
 tags = []
 
 [adaptive-temporal-filtering]
