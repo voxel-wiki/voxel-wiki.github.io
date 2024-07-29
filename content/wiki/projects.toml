@@ -292,10 +292,10 @@ storage = "[Gvox meta-format library](https://github.com/GabeRundlett/gvox)"
 
 [[projects]]
 name = "vengi"
-url = "https://mgerhardy.github.io/vengi"
+url = "https://vengi-voxel.github.io/vengi/"
 state = "Active Dev."
-language = ["C++"]
-source = "https://mgerhardy.github.io/vengi"
+language = ["C++", "Lua"]
+source = "https://github.com/vengi-voxel/vengi"
 license = "MIT"
 
 [[projects]]
