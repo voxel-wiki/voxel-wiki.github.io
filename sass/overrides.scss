@@ -127,6 +127,8 @@ article blockquote {
 	background: rgba(222, 226, 230, 0.05);
 	padding: 0.25rem;
 	padding-left: 0.333rem;
+	
+	& .author {color: #65737e}
 }
 
 .float + .notice, .notice.float {
