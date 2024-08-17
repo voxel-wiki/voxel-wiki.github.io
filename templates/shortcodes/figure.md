@@ -1,4 +1,6 @@
-<figure itemscope itemtype="http://schema.org/MediaObject" class="{{ class | default(value='') }}">
+{% set class = class | default(value='') %}
+{% if float %}{% set class = class ~ "float " %}{% endif %}
+<figure itemscope itemtype="http://schema.org/MediaObject" class="{{ class }}">
 {%- if body is starting_with("http") or body is starting_with("/") -%}
 <img itemprop="contentUrl" src="{{ body }}">
 {% else %}{{ body | markdown }}{% endif %}
