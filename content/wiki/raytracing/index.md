@@ -2,6 +2,7 @@
 title = "Raytracing"
 description = "Rendering images via raycasting."
 path = "/wiki/raytracing"
+aliases = ["/wiki/volume-marching"]
 [taxonomies]
 categories = ["algorithms", "rendering"]
 tags = ["rendering", "raytracing", "raycasting"]

@@ -1,7 +1,7 @@
 +++
 title = "OpenGL API"
 description = "Classic hardware accelerated rendering API."
-aliases = ["/wiki/ogl", "/wiki/open-gl", "/wiki/gles"]
+aliases = ["/wiki/gl", "/wiki/ogl", "/wiki/open-gl", "/wiki/gles"]
 [taxonomies]
 categories = ["rendering"]
 tags = ["rendering", "api"]

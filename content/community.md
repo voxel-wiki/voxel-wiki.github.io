@@ -6,7 +6,7 @@ path = "wiki/community"
 categories = ["community"]
 +++
 
-Links for communities centered around **voxels**:
+Links for communities centred around **voxels**:
 
 - [Official Subreddit](https://www.reddit.com/r/VoxelGameDev)
 - [Official Discord](https://voxelgamedev.com/)
@@ -16,7 +16,7 @@ Links for communities centered around **voxels**:
 
 ## Games & Engines
 
-Links to various communities centered around **individual games** and **engines**...
+Links to various communities centred around **individual games** and **engines**...
 
 - [Teardown Discord](https://discord.gg/teardown)
 - [Vintage Story Discord](https://discord.gg/CkJjdrB)

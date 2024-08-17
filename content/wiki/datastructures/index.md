@@ -7,7 +7,7 @@ categories = ["datastructures"]
 tags = ["datastructures", "storage", "spatial-acceleration"]
 +++
 
-> Note: This section generally covers *runtime* storage, not [serialization](/wiki/serialization).
+{% info_notice() %} Note: This section is about *runtime* storage, not [serialization](/wiki/serialization). {% end %}
 
 The simplest way to store voxels is to define a three-dimensional array of elements (be it `struct`s or `integer`s), where each element represents a single voxel:
 

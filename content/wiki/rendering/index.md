@@ -14,7 +14,7 @@ mainly depending on the intended visual *style* and *scale* of the individual vo
 
 Ultimately it depends on what ***your*** goals are; try not to set them too lofty!
 
-Since there is no way to write about all possible methods, this article will talk about things *in general*, linking elsewhere for more details - if possible.
+Since there is no way to write about all possible methods, this article will talk about things *in general* and, if possible, link elsewhere for more details.
 
 ## Hardware Acceleration
 
@@ -136,7 +136,7 @@ Lighting is commonly defined via [some variant](https://en.wikipedia.org/wiki/Bi
 
 Depending on the method you choose to render voxels,
 you may have to [cull your geometry](/wiki/culling),
-so as to not overload your GPU with drawcalls & geometry.
+so as to not overload your GPU with draw-calls & geometry.
 
 ---
 
