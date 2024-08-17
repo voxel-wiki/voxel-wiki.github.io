@@ -100,6 +100,18 @@ Inlined definition/abbreviation, without link: {{def(id="voxel",link=false)}}
 
 ---
 
+<details class="notice info">
+<summary id="details-with-summary" tabindex="0">This is a summary.</summary>
+
+Well would you *look* at that! There's **markdown** in here... :D
+
+Yet *moar* math: \\( f_n(\vec{p}) \to [-1, +1] = \enspace ? \\)
+
+</details>
+
+
+---
+
 Exclusive Choice Set:
 
 <ul class="exclusive-choice-set" aria-label="example">
