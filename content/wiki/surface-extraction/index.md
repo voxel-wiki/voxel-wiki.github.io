@@ -13,3 +13,4 @@ tags = ["rendering", "meshing"]
 
 - <https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/>
 - <https://swiftcoder.wordpress.com/planets/isosurface-extraction/>
+- <https://github.com/cgerikj/binary-greedy-meshing>
