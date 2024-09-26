@@ -10,30 +10,22 @@ chapter_prev = {text = "Introduction", link = "/wiki/introduction"}
 chapter_next = {text = "Basic Storage", link = "/wiki/introduction/storage"}
 +++
 
-In many fields of programming, the choice of language is quite open... even interpreted languages are often acceptable!
+In many fields of programming, the choice of language is quite open... even interpreted languages are often acceptable and outright preferred!
 
-But with voxels? Let's do a quick exercise, shall we...
+But with voxels? Well... The Square-Cube Law: Electric Boogaloo!
 
 <!-- more -->
 
-## The Scaling Problem
-
-1. Grab a calculator (we ain't monsters here)!
-2. Think of how far into the distance you want to 'see', in meters/voxels.
-3. Type that number into the calculator.
-4. Double the number once.
-5. Multiply the number, by *itself*, **twice**.
-6. Look at the result.
-7. Try this again, from step 2, with some other numbers...
-
-{% info_notice() %}
-Alternatively, you can use the formula `(D*2)³`,
-were `D` is the initial number from step 2.
-{% end %}
-
-Unless you keep the range of the active volume *very* small (on the order of `16³` to `256³`), you will quickly realize that there is a *scaling problem*: Increasing the size of the volume will consume *cubically* more and more memory, making computations *horrendously* expensive.
-
 ## Requirements for performant Voxels
+
+Remember that section from the [Introduction](/wiki/introduction) article...?
+Well, here's where it rears it's cubic head!
+
+When your active volume is in the range of `16³` to ~`256³`, things will be *plenty* fast and any language (even interpreted ones!) will be just fine.
+
+But, going beyond that, you will quickly encounter the square-cube law: Increasing the size of the volume will consume *cubically* more and more memory, all while making computations *horrendously* expensive.
+
+While a combination of [Chunking](/wiki/chunking), [compression](/wiki/compression) and various acceleration structures can go a long way to alleviate these issues, you *will* eventually need the ability to manage memory on both fine and large scales.
 
 As such, there are some rather strong **requirements** when choosing a language:
 
@@ -44,19 +36,17 @@ As such, there are some rather strong **requirements** when choosing a language:
 5. Access to graphics hardware acceleration.
 6. Multithreading.
 
-This effectively cuts out *all* languages that are interpreted[^interpreted] instead of compiled; unless you are fine with a *very* small volume size, using these languages is *not* recommended for anything but higher level scripts.
+This effectively cuts out *all* languages that are interpreted[^interpreted] instead of compiled; using these languages is *not* recommended for anything but higher level (i.e.: gameplay) scripts.
 
 {% info_notice() %}
-Using JIT-compiled[^JIT] languages is fine, but you'll have to be ***very*** careful with managing memory, and may be forced into non-idiomatic[^idiom] code.
+**Note:** Using JIT-compiled[^JIT] interpreted languages is fine, but you'll have to be ***very*** careful with managing memory, and will have to deal with heaps of leaky abstractions and non-idiomatic[^idiom] code.
 {% end %}
-
-While [Chunking](/wiki/chunking) and various acceleration structures go a long way to alleviate the issues posed by interpreted and JIT'd languages, you *will* eventually need the ability to manage memory on both fine and large scales.
 
 ## Your Choices
 
 Unfortunately, all this restricts your choices to [system-level languages](https://en.wikipedia.org/wiki/System_programming_language#Higher-level_languages) such as `C++`, `Rust`, `Zig`, `Go` and (on the JIT side) `C# 7.2+`.
 
-For this guide we will be using *basic* `Rust`; you do not need to know how lifetimes work, for now.
+For this guide we will be using *basic* `Rust`, without the more complex features (async, lifetimes, etc).
 
 ## Next
 

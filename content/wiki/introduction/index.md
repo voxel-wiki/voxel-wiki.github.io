@@ -110,11 +110,25 @@ In practice you will usually notice this when either *rounding* or *off-by-one* 
 That is the definition of a voxel; and if that all sounded complicated... well that's because it is!
 Mathematics are like that sometimes.
 
-## What is *not* a voxel?
+
+
+
+
+
+
+
+
+
+
+
+<details class="notice info">
+<summary id="what-is-not-a-voxel" tabindex="0"><b>What is <em>not</em> a voxel?</b></summary>
 
 Every now and then, someone thinks they are dealing/working with voxels, when they're in fact **not** doing so...
 
-### Heightmaps Are Not Voxels
+---
+
+**Heightmaps Are Not Voxels**
 
 If values are generated in a *two*-dimensional grid and *expanded* into a *third* dimension on-demand,
 such as *during rendering*, you are ***not*** using voxels.
@@ -127,7 +141,9 @@ This does **not** mean that *columns* of values arranged in a grid, like [run-le
 The way that voxels are [*stored*](/wiki/datastructures) does not matter as long as the grid is indexable.
 {% end %}
 
-### Individual Voxels Have No Position
+---
+
+**Individual Voxels Have No Position**
 
 If one defines individual voxels with an *explicit* position, like...
 
@@ -138,11 +154,74 @@ struct Voxel {
 }
 ```
 
-...then its *not a Voxel*, by definition.
+...then that's *not a Voxel*, by definition.
 
 It's also really, *really* bad for performance. Don't do this.
 
 Let me repeat: <b style="color:red">Don't do this.</b>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+But you know what isn't complicated, but **extremely important** to know?
+
+## The Square-Cube Law
+
+{% figure(class="float", caption="Relationship between Length, Area & Volume.", author="[Cmglee](https://commons.wikimedia.org/wiki/User:Cmglee)", license="[CC-BY-SA-4.0](https://commons.wikimedia.org/wiki/File:Relationship_between_length_and_area_and_volume.svg)") %}https://upload.wikimedia.org/wikipedia/commons/a/ae/Relationship_between_length_and_area_and_volume.svg{% end %}
+
+When dealing with voxels/bloxels and their various algorithms,
+you'll quite often be up against the **Square&#8209;Cube&nbsp;Law**:
+
+{% quote(author="[Wikipedia](https://en.wikipedia.org/wiki/Square%E2%80%93cube_law)") %}
+When an object undergoes a proportional *increase in size*, its new **surface area** is proportional to the *square* of the multiplier and its new **volume** is proportional to the *cube* of the multiplier.
+{% end %}
+
+<div style="clear:both"></div>
+
+Let's do a tiny bit of math (<small>feel free to grab a calculator</small>):
+
+1. Think of how far into the distance you want to 'see', in meters/voxels.
+2. Using that distance, calculate `(D*2)³` to get the visible volume.
+3. Assume a voxel takes 64 bits, i.e. 8 bytes of space...
+4. ...so multiply the volume by 8 bytes.
+5. Divide by `1024` to get it as kilobytes.
+6. Divide by `1024`, again, for megabytes.
+   - Divide again to get gigabytes, if needed.
+7. Look at the amount of memory used.
+8. Change the distance and repeat a few times.
+
+{{ volume_memory_calc(id="calculator") }}
+
+{% info_notice(summary="Fun Fact: Planet-sized Volumes") %}
+If you solve for the size of the earth (a radius of 6371km), you will get a fun number of roughly **16550 exabyte**... which is more than half of the *entire* contents of the world-wide-web (in ~2024) at about **27000 exabyte**!
+
+Luckily, most of any planets volume is unreachable, hidden under the surface,
+so it can be treated as if it didn't exist, vastly reducing the needed volume.
+{% end %}
+
+While computers these days are pretty darn powerful, **they still have limits**,
+and working with voxels can push things there *very* quickly...
+
+- Your RAM may be large (many gigabytes, usually ~4-8 GB),<br/>
+  but the bits'n'bytes still need to go to/fro the CPU and back.
+
+- Your CPU may be fast (*billions* of operations per second),<br/>
+  but even the fastest processors will weep at `O(n³)`.
+
+- Your GPU has a whole lot of cores, but efficiently using them is... complicated.
+  Also, VRAM is *hella* expensive.
+
+So keep the law in mind when writing yet another `for(voxel in volume)`,
+or your CPU might just go up in flames. ;)
 
 ---
 
