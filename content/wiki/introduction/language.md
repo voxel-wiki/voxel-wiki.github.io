@@ -36,7 +36,7 @@ As such, there are some rather strong **requirements** when choosing a language:
 5. Access to graphics hardware acceleration.
 6. Multithreading.
 
-This effectively cuts out *all* languages that are interpreted[^interpreted] instead of compiled; using these languages is *not* recommended for anything but higher level (i.e.: gameplay) scripts.
+This effectively cuts out *all* languages that are interpreted[^interpreted] instead of compiled[^system-level]; using these languages is *not* recommended for anything but higher level (i.e.: gameplay) scripts.
 
 {% info_notice() %}
 **Note:** Using JIT-compiled[^JIT] interpreted languages is fine, but you'll have to be ***very*** careful with managing memory, and will have to deal with heaps of leaky abstractions and non-idiomatic[^idiom] code.
@@ -44,9 +44,22 @@ This effectively cuts out *all* languages that are interpreted[^interpreted] ins
 
 ## Your Choices
 
-Unfortunately, all this restricts your choices to [system-level languages](https://en.wikipedia.org/wiki/System_programming_language#Higher-level_languages) such as `C++`, `Rust`, `Zig`, `Go` and (on the JIT side) `C# 7.2+`.
+Unfortunately, there aren't many programming-languages that make writing high-performance code a reasonable affair, so your choices are quite limited ***if*** you want a whole hecc of a lot of voxels...
 
-For this guide we will be using *basic* `Rust`, without the more complex features (async, lifetimes, etc).
+This (*very* incomplete) table is roughly ordered by time to learn/get-started.
+
+| Language | Notes |
+|---|---|
+| `C#` <br><small>(7.2+)</small> | JIT-compiled; can never be used on game consoles. |
+| `Java` | JIT-compiled; harder to optimize well as project grows; can never be used on game consoles. |
+| `Go` | Garbage-Collector will cause issues as project grows. |
+| `Swift` | TBD |
+| `Rust` | Advanced concepts may take a few tries to learn. |
+| `Zig` | Completely manual memory management. |
+| `C++` | May have to bring your own standard library. |
+| `C` | Unless you know what you're doing: *Don't*. |
+
+For this guide we will be using *basic* `Rust`, without its more advanced concepts (async, lifetimes, etc).
 
 ## Next
 
@@ -55,6 +68,8 @@ Storing Voxels In Memory!
 ---
 
 [^interpreted]: Languages that are executed ["from source code"](https://en.wikipedia.org/wiki/Interpreter_(computing)), such as `Python`, `JavaScript`, `PHP`, `Lua`, `Perl` and `Ruby`.
+
+[^system-level]: [Higher-level System-level Languages](https://en.wikipedia.org/wiki/System_programming_language#Higher-level_languages).
 
 [^JIT]: [Just-In-Time Compiled](https://en.wikipedia.org/wiki/Just-in-time_compilation), such as `Java` and `C#`.
 
