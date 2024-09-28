@@ -15,8 +15,6 @@ As noted in the [theory section](./#what-is-a-voxel-in-theory), a voxel can be *
 {% info_notice() %}
 From this point on, we assume that you (the reader) know the basics of programming;
 in concrete terms that would be what **bits and bytes** are, **primitive types** like *integers*, the relation between **stack and heap memory** and, last of all, **pointers/references**.
-
-Also, for the purpose of clarity, we will *not* be using pseudocode.
 {% end %}
 
 {% warn_notice() %} **The following sections are a work-in-progress.** {% end %}
@@ -163,7 +161,7 @@ volume.set(x, y, z, v).unwrap();
 Handling errors is outside the scope of this guide, so do note that the `unwrap`s in the example will,
 if the coordinates are ever out of bounds, crash our program; but at least you'll know where!
 
-But how to we fill it? And just what type should `Voxel` be?!
+Now how do we fill it? And just what type should `Voxel` be?!
 
 We will answer the second question first... after fixing a glaring issue.
 
@@ -216,7 +214,61 @@ let mut volume = VoxelGrid {
 
 ### Types of Voxel
 
+To decide what our voxels *are*, we need to know...
+
+- How does a player interact with the voxels?
+- How the voxels interact with each other?
+- How much data can we cut out and derive?
+- Do the voxels form a continuous *or* discrete surface?
+
 {% todo_notice() %} Types of voxels. {% end %}
+{% todo_notice() %} `VoxelGrid` and `VoxelVolume` separation. {% end %}
+
+### World Management
+
+Now, having just a single finite `VoxelGrid` puts a hard limit on how large our world can be, while also forcing us to load the whole thing at once... which isn't exactly great. So let's go and cut up our world into **Chunks**!
+
+We begin by turning our existing `VoxelGrid` into a `VoxelChunk` with a *chunk position*:
+
+```rust
+/// The position of a chunk, defined in/as a larger `GRID_SIZE`-sized grid.
+#[derive(
+  Default, Clone, Copy, // this is a primitive type
+  Hash, PartialEq, Eq // needed for HashMap keying
+)]
+struct ChunkPosition {
+  pub x: i32,
+  pub y: i32,
+  pub z: i32,
+}
+
+/// A chunk of voxels within a larger world-grid.
+#[derive(Clone)]
+struct VoxelChunk {
+  pub position: ChunkPosition,
+  pub volume: VoxelVolume,
+}
+```
+
+Then we can create a `VoxelWorld` that holds any number of chunks,
+by stuffing them in a `HashMap`!
+
+```rust
+use std::collections::HashMap;
+
+struct VoxelWorld {
+  pub chunks: HashMap<ChunkPosition, VoxelChunk>,
+}
+```
+
+{% info_notice() %}
+You may *eventually* want to change the default `Hasher` of the `HashMap` to a faster one,
+like [`AHash`](https://crates.io/crates/ahash), [`FNV`](https://crates.io/crates/fxhash)
+or [`BLAKE`](https://crates.io/crates/blake2).
+{% end %}
+
+{% todo_notice() %} Chunk Management. {% end %}
+{% todo_notice() %} Sliding-Window impl? {% end %}
 
 ## Next
 
