@@ -2,7 +2,7 @@
 <div id='{{id}}' class='notice info' style='display:none'>
     <div style="text-align:center">Interactive <b>Distance ⇒ Memory</b> Calculator</div>
     <div style="display:flex;justify-content:center;align-items:center;padding:0.5rem">
-        <div>(<input type=number required min=16 max=65536 step=16 value=16 style='width:5em;text-align:end;border-radius:5px;border:1px solid grey;font-family:monofont' title='View Distance'>&hairsp;m * 2)³ * 8</div>
+        <div>(<input type=number required min=16 max=65536 step=16 value=16 style='width:5em;text-align:end;border-radius:5px;border:1px solid grey;font-family:monofont' title='View Distance'>&hairsp; * 2)³</div>
         <div>&nbsp;=&nbsp;</div>
         <code style='font-weight:bold;text-align:end;min-width:7em;background:#0000007a' title='Memory Usage'>0 kB</code>
     </div>
@@ -26,7 +26,7 @@
         }
         function put(b, u) {calc_output.innerHTML = b.toFixed(2) + '&hairsp;' + u}
         var V = Math.pow(D*2, 3), K = 1024;
-        var bytes = V * 8, kilobytes = bytes / K, megabytes = kilobytes / K, gigabytes = megabytes / K, terabytes = gigabytes / K;
+        var bytes = V, kilobytes = bytes / K, megabytes = kilobytes / K, gigabytes = megabytes / K, terabytes = gigabytes / K;
         if(terabytes >= K) {return put(terabytes / K, 'PiB')}
         if(gigabytes >= K) {return put(terabytes, 'TiB')}
         if(megabytes >= K) {return put(gigabytes, 'GiB')}
