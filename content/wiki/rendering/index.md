@@ -19,21 +19,21 @@ Since there is no way to write about all possible methods, this article will tal
 ## Hardware Acceleration
 
 Talking about rendering is impossible without talking about hardware acceleration
-and thus **GPU**s (*Graphics&nbsp;Processing&nbsp;Unit*); so let's do that real quick!
+and thus <abbr title="Graphics Processing Units">GPUs</abbr>; so let's do that real quick!
 
 The primary purpose of a GPU is to calculate/compute/solve a *massive* number of highly similar problems[^embarassinglyparallel] "all at once",
 by splitting up large sets of data into smaller groups, which are then worked thru by a large number of tiny processing units[^gpumanycores].
 
 {% info_notice() %}
 [Historically](https://en.wikipedia.org/wiki/Graphics_processing_unit#History),
-the problem in question was mainly [rasterization](https://en.wikipedia.org/wiki/Rasterisation)
+the problem in question was mainly vertex transformation and [rasterization](https://en.wikipedia.org/wiki/Rasterisation)
 (and later fragment processing) of triangles via GPUs on dedicated [graphics cards](https://en.wikipedia.org/wiki/Graphics_card).
 
 These days GPUs are much more [general purpose](https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units)
 and are used in so many applications that we won't bother listing them here.
 {% end %}
 
-To hopefully nobodies surprise, rendering voxels *is* such a massively parallel process, that *not* using GPUs would be very (very) silly.
+To hopefully nobodies surprise, rendering voxels is *such* a massively parallel process, that *not* using GPUs would be very (very) silly!
 
 How do we gain access to the awesome processing power of GPUs? Well...
 
@@ -79,8 +79,9 @@ so check out their documentation before rejecting any!
 
 ## Windowing Abstraction Libraries
 
-Creating a surface to actually draw into is, due to the many platforms that exist,
-terribly annoying, so it's best to leave it to a windowing library...
+Creating a surface to actually draw into is *terribly* annoying,
+due to the many platforms and operating systems that exist,
+so it's best to leave it to a windowing library...
 
 | Name | Language | Platforms |
 |------|----------|-----------|

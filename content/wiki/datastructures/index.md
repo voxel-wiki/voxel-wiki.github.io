@@ -7,8 +7,6 @@ categories = ["datastructures"]
 tags = ["datastructures", "storage", "spatial-acceleration"]
 +++
 
-{% info_notice() %} Note: This section is about *runtime* storage, not [serialization](/wiki/serialization). {% end %}
-
 The simplest way to store voxels is to define a three-dimensional array of elements (be it `struct`s or `integer`s), where each element represents a single voxel:
 
 ```c#
@@ -41,7 +39,8 @@ var voxels = new VOXEL[height * depth * width];
 // So let's define a function (here a lambda) for it:
 var idx = (int x, int y, int z) => (x + z*width + y*width*depth);
 // ^ NOTE: You may want to throw an error right here
-//         if the coordinate components are out of bounds.
+//         if either the coordinate components
+//         or the resulting index are out of bounds.
 
 // Set a voxel:
 voxels[idx(x,y,z)] = voxel;
@@ -52,7 +51,7 @@ var voxel = voxels[idx(x,y,z)];
 
 Now, storing voxels in a plain array like this is perfectly fine for small scenes...
 
-However, for larger scenes, we'll have to use a data-structure that allows both loading and purging *parts of our volume* (called [Chunks](/wiki/chunking)) from memory, nearly in realtime, without slowing down *accessing* our voxel data.
+However, for larger scenes, we'll have to use a data-structure that allows both loading and purging *parts of our volume* (called [Chunks](/wiki/chunking) or Bricks) from memory, nearly in realtime, without slowing down the *access times* of our voxel data too much.
 
 > **Note:** These techniques can often be combined.
 

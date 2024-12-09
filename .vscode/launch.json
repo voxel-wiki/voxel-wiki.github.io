@@ -1,0 +1,16 @@
+{
+	"configurations": [
+		{
+			"name": "Zola: Watch",
+			"type": "f5anything",
+			"request": "launch",
+			"command": "just dev"
+		},
+		{
+			"name": "Zola: Watch (open browser)",
+			"type": "f5anything",
+			"request": "launch",
+			"command": "just dev-open"
+		}
+	]
+}

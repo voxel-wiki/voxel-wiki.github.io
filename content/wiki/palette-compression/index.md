@@ -6,8 +6,6 @@ categories = ["compression"]
 tags = ["compression", "optimization", "flyweight"]
 +++
 
-> This is a rewrite; the original article can be found here: [https://www.longor.net/articles/voxel-palette-compression-reddit](https://www.longor.net/articles/voxel-palette-compression-reddit)
-
 When writing a voxel engine, eventually you will come to realize that storing your voxels as 32-bit integers (or worse: as individual heap-allocated objects!) is eating a lot more memory than you'd like, potentially slowing down your game without any obvious reason as to *why*, and doing [bit-twiddling](https://graphics.stanford.edu/~seander/bithacks.html) to pack your data into a smaller space, is probably giving you quite a headache, so you might be thinking: There *has* to be a better way! *Right*...?
 
 **And there is!**
@@ -91,3 +89,7 @@ Given a 32-bit architecture which aligns allocations on 32-bit/4-byte boundaries
 This gives you at minimum ***31 bits*** to encode a voxel type in (*63* bits on a 64-bit CPU!), which should be *way* more than enough for terrain (which tends to make up the majority of a voxel world by sheer volume), thus eliminating a *ton* of allocations and pointers!
 
 {% todo_notice() %} Implementation? {% end %}
+
+## References
+
+This article is a rewrite; the original article can be found here: [https://www.longor.net/articles/voxel-palette-compression-reddit](https://www.longor.net/articles/voxel-palette-compression-reddit)

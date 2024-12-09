@@ -15,9 +15,10 @@ Once we have our data structure of choice in place, we might still want (or outr
 
 To remedy these issues, we'll have to *compress* our voxels, for which there are many methods...
 
-- [Lossy Compression](/wiki/lossy-compression)
-- [Palette Compression](/wiki/palette-compression)
 - [Run-Length Encoding](/wiki/run-length-encoding)
+- [Palette Compression](/wiki/palette-compression)
+- [LZW Compression](/wiki/lzw-compression)
+- [Lossy Compression](/wiki/lossy-compression)
 
 > **Note:** Compressing voxel data is, of course, also greatly useful for persistence and networking.
 

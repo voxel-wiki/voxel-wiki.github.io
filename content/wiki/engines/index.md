@@ -36,10 +36,12 @@ Following are a few things you must keep in mind and be aware of **before** you 
 2. It is a *massive* amount of work, potentially spanning over years of your life.
 3. Having several years of programming experience is a must; nobody will hold your hand in this endeavour.
 4. All the tooling for asset-, level- and gameplay-creation? You'll have to make them.
-5. Running into driver bugs will eat a lot of time and cause premature balding.
+5. Running into driver bugs and various platform/OS differences will eat a lot of time and cause premature balding.
 
 The above list might make you question *"Why would anyone do this?!"*, to which most of [us](/wiki/community) will say... because it's fun! :D
 
 A more concrete reason is that, by writing both the high- and low-level code, you can gain *a lot* of performance (that'd otherwise be left on the table) *and* the freedom to make some truly awesome things.
 
-{% todo_notice() %} Create an article for game engine creation. {% end %}
+But with that said, keep in mind that *creating a game* is still best done with an existing engine.
+
+If you're still here, [let's get started](/wiki/engine-creation), shall we?

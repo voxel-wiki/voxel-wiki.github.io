@@ -33,12 +33,15 @@ The core of a game engine is (similar to an operating system) an abstraction for
 - The Core Lifecycle
 - The Task Manager
 - The Data/Asset Model
+- The User Interface
 - The Scene Structure
+- The Render Abstraction
+- The Streaming Mechanism
 - The Extension Mechanism
 
 {% info_notice() %}
 **Note:** Since *everything else* is built on top of these, some serious thought should be put into their design.
-Rebuilding/replacing them at a later time is considered a Bad Idea™, as they influence every part of the engine.
+Rebuilding/replacing them at a later time is considered a Very Bad Idea™, as they influence every part of the engine.
 {% end %}
 
 While the following sections will explain each concept on its own, do keep in mind that they're highly intertwined.
@@ -59,7 +62,19 @@ While the following sections will explain each concept on its own, do keep in mi
 
 {{stub_notice(kind="section")}}
 
+### The User Interface
+
+{{stub_notice(kind="section")}}
+
 ### The Scene Structure
+
+{{stub_notice(kind="section")}}
+
+### The Render Abstraction
+
+{{stub_notice(kind="section")}}
+
+### The Streaming Mechanism
 
 {{stub_notice(kind="section")}}
 
