@@ -131,7 +131,7 @@ impl VoxelGrid {
   }
   
   pub fn set(&self, x: u32, y: u32, z: u32, v: Voxel) -> Option<()> {
-    *self.values[ self.index(x,y,z)? ] = v;
+    (*self).values[ self.index(x,y,z)? ] = v;
   }
 }
 ```
@@ -188,7 +188,7 @@ let mut volume = VoxelGrid {
 ```
 
 That line right there? It allocates our `VoxelGrid` on the stack! Which is bad,
-as stack memory is quite limited; putting huge things on it can (obviously)
+as stack memory is quite limited (e.x.: 1mB on Windows); putting huge things on it can (obviously)
 cause a stack-overflow, but will also obliterate our CPU's cache... :(
 
 Thankfully avoiding this is an easy fix: Allocate it on the heap!
@@ -231,7 +231,7 @@ Now, having just a single finite `VoxelGrid` puts a hard limit on how large our 
 We begin by turning our existing `VoxelGrid` into a `VoxelChunk` with a *chunk position*:
 
 ```rust
-/// The position of a chunk, defined in/as a larger `GRID_SIZE`-sized grid.
+/// The position of a chunk, using `GRID_SIZE`-sized units.
 #[derive(
   Default, Clone, Copy, // this is a primitive type
   Hash, PartialEq, Eq // needed for HashMap keying
