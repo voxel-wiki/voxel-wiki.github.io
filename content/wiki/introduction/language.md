@@ -59,7 +59,7 @@ there are some requirements for getting the best performance...
 First things first: You *need* to be able to define and use flat data containers/aggregates/compounds,
 commonly called structs, and the ability to tightly pack them in memory (e.g.: as arrays).
 
-Without them, you'll have to manually read/write data from raw buffers of bytes,
+Without them, you'll have to manually read/write data from raw buffers of bytes/ints,
 which is both a colossal pain in the behind and a *massive* source of bugs.
 
 {% info_notice(summary="**Memcopy is (not) your friend.**") %}
@@ -112,8 +112,26 @@ We (humans) are inherently incapable of mentally dealing with multiple concurren
 we quite literally cannot comprehend this stuff without heaps of training and tools to assist us.
 Anybody that says otherwise is either a liar or a robot.
 
-So, take all the help you can, use existing threading and synchronization primitives,
+So, take all the help you can (debuggers and tracers!),
+use existing threading and synchronization primitives,
 and remember that queues are your most reasonable friend.
+
+## Profile. Profile. Profile.
+
+Using profilers is a ***must*** to get accurate pictures of your performance woes.
+
+While trusting your (hopefully sharply honed :wink:) programming wisdom is a good-ish thing,
+it can only get you so far before *actively hindering you*...
+so acquiring more knowledge via profiling is your best bet.
+
+Thankfully, most common <abbr title="Integrated Development Environments">IDEs</abbr>
+(such as Microsoft's Visual Studio, various JetBrains products, the Eclipse family, etc.)
+have profilers, or integrations with them, built right into them, making profiling your software relatively straight forward...
+
+Of course, learning how to use and interpret the data a profiler outputs is a whole 'nother topic,
+on which entire books have been written, so we won't get into that here.
+
+Again, remember: **Profile. Profile. Profile.**
 
 ## Your Choice
 
