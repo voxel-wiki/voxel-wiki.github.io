@@ -17,22 +17,6 @@ adapted to 3D, is *exactly* the thing one needs to travel along a line (or a ray
 <!-- more -->
 
 {{ stub_notice() }}
-## Implementation
-
-### Ray Generation
-To raycast, we first need to construct a ray for each pixel on the screen, as represented by a camera. 
-
-{% info_notice() %}
-The following implementation, based on [this library](https://github.com/dps/rust-raytracer/tree/main/raytracer), is for demonstration purposes and as such isn't particularly fast.
-{% end %}
-
-{{ embed_text(file="ray_build.glsl", lang="glsl") }}
-
-### Casting Rays
-Once a ray is generated, it has to be cast into a voxel volume.
-The following implementation is based on the algorithm published in [the original paper](#paper).
-
-{{ embed_text(file="dda.glsl", lang="glsl") }}
 
 ## References
 
@@ -45,6 +29,7 @@ The following implementation is based on the algorithm published in [the origina
   - For [`C`](https://webdocs.cs.ualberta.ca/~graphics/books/GraphicsGems/gemsiv/vox_traverse.c)
   - For [`C++`](https://gist.github.com/garymacindoe/895430c1e53a6e50cb35)
   - For [`C#`](https://web.archive.org/web/20121024081332/www.xnawiki.com/index.php?title=Voxel_traversal)
+  - For [`Rust`](https://github.com/bitshifter/glam-rs/discussions/564)
   - For [`GLSL`](https://www.shadertoy.com/view/XddcWn):
     - [Branchless](https://www.shadertoy.com/view/4dX3zl)
     - [Branchless & Textured](https://www.shadertoy.com/view/7dK3D3)
