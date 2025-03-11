@@ -69,6 +69,7 @@ Only well-known libraries directly exposing 3D graphics are listed.
 | [bgfx](https://github.com/bkaradzic/bgfx) | `C++` | [*various*](https://bkaradzic.github.io/bgfx/overview.html#supported-rendering-backends) |
 | [OGRE](https://ogrecave.github.io/ogre/) | `C++` | OpenGL / Direct3D |
 | [raylib](https://www.raylib.com/) | `C` | OpenGL |
+| [LWJGL](https://www.lwjgl.org/) | `Java` | OpenGL / Vulkan |
 | [libGDX](https://libgdx.com/) | `Java` | OpenGL(ES) |
 
 {% info_notice() %}
