@@ -20,7 +20,9 @@ jobs:
               with:
                   lfs: true
                   submodules: true
-            - name: Checkout LFS objects
+            - name: Fetch any needed Git LFS objects and prune extraneous ones
+              run: git lfs fetch --prune
+            - name: Checkout the previously fetched LFS objects
               run: git lfs checkout
             - name: "Build"
               uses: shalzz/zola-deploy-action@186b5039430ab38781dde8feaf0861bcc017413f
