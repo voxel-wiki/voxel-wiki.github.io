@@ -86,6 +86,8 @@ Math: \\( f_n(\vec{p}) \to [-1, +1] = \enspace ? \\)
 
 ---
 
+Inlined reference: {{ref(id="amanatides-and-woo")}}
+
 Inlined definition/abbreviation: {{def(id="voxel")}}
 
 Inlined definition/abbreviation, without link: {{def(id="voxel",link=false)}}
