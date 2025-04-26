@@ -95,6 +95,8 @@
                   <a class=card-link target="_blank" href="{{reference.url}}" id="{{refname}}">
                     {% if reference.title %}
                     {{reference.title}}
+                    {% elif reference.url %}
+                    {{reference.url}}
                     {% else %}
                     REF_TITLE_MISSING
                     {% endif %}
