@@ -2,6 +2,7 @@ default: zola-serve
 
 init:
     git submodule update --init --recursive
+    git lfs pull
 
 dev *ARGS: init
     zola serve --drafts --interface 127.0.0.1 --port 8080 --base-url localhost {{ARGS}}
