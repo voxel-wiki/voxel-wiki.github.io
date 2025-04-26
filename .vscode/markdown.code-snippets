@@ -1,0 +1,66 @@
+{
+	"VoxelWikiFrontMatter": {
+		"scope": "markdown",
+		"prefix": "+++",
+		"body": [
+			"+++",
+			"title = \"${1:title}\"",
+			"description = \"${2:description}\"",
+			"#path = \"${3:path}\"",
+			"[taxonomies]",
+			"categories = [$4]",
+			"tags = [$5]",
+			"+++",
+		]
+	},
+	"VoxelWikiRef": {
+		"scope": "markdown",
+		"prefix": "ref",
+		"body": ["{{ref(id=\"$0\")}}"]
+	},
+	"VoxelWikiRefBody": {
+		"scope": "markdown",
+		"prefix": "refb",
+		"body": ["{{ref(id=\"${1:id}\",body=\"${2:body}\")}}"]
+	},
+	"VoxelWikiDef": {
+		"scope": "markdown",
+		"prefix": "def",
+		"body": ["{{def(id=\"$0\")}}"]
+	},
+	"VoxelWikiStub": {
+		"scope": "markdown",
+		"prefix": "stub",
+		"body": ["{{ stub_notice() }}"]
+	},
+	"VoxelWikiTodo": {
+		"scope": "markdown",
+		"prefix": "todo",
+		"body": ["{{ todo_notice() }}"]
+	},
+	"VoxelWikiInfo": {
+		"scope": "markdown",
+		"prefix": "info",
+		"body": ["{% info_notice() %}", "$0", "{% end %}",]
+	},
+	"VoxelWikiWarn": {
+		"scope": "markdown",
+		"prefix": "warn",
+		"body": ["{% warn_notice() %}", "$0", "{% end %}",]
+	},
+	"VoxelWikiQuote": {
+		"scope": "markdown",
+		"prefix": "quote",
+		"body": ["{% quote(author=\"\") %}$0{% end %}",]
+	},
+	"VoxelWikiFigure": {
+		"scope": "markdown",
+		"prefix": "figure",
+		"body": ["{% figure(caption=\"\", author=\"\") %}$0{% end %}",]
+	},
+	"VoxelWikiMath": {
+		"scope": "markdown",
+		"prefix": "math",
+		"body": ["\\\\( $0 \\\\)"]
+	},
+}

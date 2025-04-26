@@ -1,0 +1,13 @@
+{
+	"VoxelWikiRef": {
+		"scope": "toml",
+		"prefix": "ref",
+		"body": [
+			"[${1:id}]",
+			"title = \"${2:title}\"",
+			"url = \"${3:url}\"",
+			"type = \"${4:type}\"",
+			"tags = [$5]",
+		]
+	}
+}
