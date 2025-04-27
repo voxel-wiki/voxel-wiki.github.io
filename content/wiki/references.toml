@@ -1,4 +1,14 @@
 # --- This file contains the references table data.
+#
+# The format for an entry is as follows:
+#
+# [ENTRYID]
+# title = "" # The editorialized title.
+# desc = "" # An editorialized markdown description.
+# url  = "" # The REQUIRED targeted/source URL.
+# type = "" # Type of the entry; one of: paper, video, video-list, user, repository, presentation.
+# tags = [] # A list of tags to make finding entries easier.
+#
 
 [voxelwiki-projects]
 title = "Voxel.Wiki: Projects Listing"

@@ -104,9 +104,9 @@
                 </h5>
                 <code class=card-subtitle>{{refname}}</code>
               </header>
-              {% if reference.description %}
+              {% if reference.desc %}
               <main class=card-body>
-                {{ reference | get(key="description", default="") | markdown }}
+                {{ reference | get(key="desc", default="") | markdown }}
               </main>
               {% endif %}
               <!--
