@@ -18,8 +18,14 @@ or the performance of world generation, *too* much.
 
 > **Note:** These techniques can often be combined.
 
+- Hashgrid
 - [Multi-Level Grids](/wiki/datastructures/multi-level-grid)
 - [Sparse Voxel Octree (SVO)](/wiki/datastructures/sparse-voxel-octree)
+
+{{ todo_notice(body="List more datastructures?") }}
+{{ todo_notice(body="Compare datastructures?") }}
+{{ todo_notice(body="Explain complexity trade-offs? Table/diagram?") }}
+{{ todo_notice(body="Top- and bottom-level acceleration structures?") }}
 
 ## References
 
