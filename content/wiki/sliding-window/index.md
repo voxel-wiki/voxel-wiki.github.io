@@ -4,7 +4,7 @@ description = "Having a window of active elements over a larger field is useful 
 path = "/wiki/sliding-window"
 [taxonomies]
 categories = ["algorithms", "datastructures"]
-tags = ["algorithms", "data-structures", "architecture"]
+tags = ["algorithms", "datastructures", "architecture"]
 +++
 
 A **sliding window** represents a movable view/slice of a larger dataset/field, to make accessing data-elements both faster and more convenient; they can be implemented in several ways...
