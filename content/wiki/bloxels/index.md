@@ -72,8 +72,18 @@ You need to heed just one word: **Compression**
 
 **Compression** is the **bread and butter of voxels**, and thus bloxels.
 
-Without it our worlds would be smol, our memory full, our CPU cache trashing, frametime climbing, fans screaming... and so on.
+Without it our worlds would be smol, our memory full, our CPU cache trashing, frame-time climbing, fans screaming... you get the idea.
 
+So how, and how much, can we compress our bloxels?
+
+Let's establish some rules-of-thumb:
+
+- Bloxels are mostly static.
+- Bloxels are mostly the same.
+- Bloxels are mostly hidden.
+- Bloxels tend to be 'piled up'.
+
+<!--
 So, let's start with the first thing: doing absolutely nothing!
 
 #### Bloxels Are Mostly Unchanging
@@ -84,6 +94,7 @@ not doing *anything*, millions upon millions[^mc-block-count] of them!
 
 This is not due to the developers being lazy or uninspired with making their bloxels *do* stuff,
 but rather a very important optimization strategy: **doing nothing is highly performant**.
+-->
 
 
 
@@ -109,4 +120,4 @@ but rather a very important optimization strategy: **doing nothing is highly per
 
 ---
 
-[^mc-block-count]: With a default view-distance of 12 chunks, there are approximately +20 million solid blocks surrounding the player.
+[^mc-block-count]: With a default view-distance of 12 chunks, there are approximately **+20 million _solid_ blocks** surrounding the player in Minecraft.
