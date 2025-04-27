@@ -13,6 +13,11 @@
 			"+++",
 		]
 	},
+	"VoxelWikiSeoSeparator": {
+		"scope": "markdown",
+		"prefix": "more",
+		"body": ["<!-- more -->"]
+	},
 	"VoxelWikiRef": {
 		"scope": "markdown",
 		"prefix": "ref",
