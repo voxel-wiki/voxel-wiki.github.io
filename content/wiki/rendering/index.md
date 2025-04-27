@@ -53,6 +53,12 @@ we can safely ignore a whole bunch of them and choose from one of three APIs:
 - To be future-proof and get as much performance as possible out of your GPU, use [Vulkan](/wiki/vulkan).
 - If you're okay with proprietary stuff and are targeting mainly Microsoft&nbsp;Windows & Xbox, you can use [Direct3D](https://en.wikipedia.org/wiki/Direct3D) via [DirectX](https://en.wikipedia.org/wiki/DirectX).
 
+{% warn_notice() %}
+Keep in mind that **game consoles** have their own, *proprietary*, graphics APIs;
+if you intend to port your project, you'll have to keep most graphics-related
+code behind some abstraction, separate from other systems.
+{% end %}
+
 ## Graphics Programming Libraries
 
 If you find the previously mentioned APIs too burdensome or low-level,
