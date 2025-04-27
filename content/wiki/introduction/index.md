@@ -232,7 +232,7 @@ if not, please take some time to think about it, otherwise just read on ahead! :
 {% end %}
 
 For the creation of **voxel art**,
-we highly recommend checking out [MagicaVoxel](https://ephtracy.github.io/index.html?page=mv_main),
+we highly recommend checking out [MagicaVoxel](/wiki/magicavoxel),
 which is currently considered to be *the* best voxel-editor you can get; it's completely free!
 
 Perhaps [share](/wiki/community) your creation?
