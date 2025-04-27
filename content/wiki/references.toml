@@ -1,50 +1,28 @@
 # --- This file contains the references table data.
 
-[0fps-an-analysis-of-minecraft-like-engines]
-title = "An Analysis of Minecraft-like Engines"
-url = "http://0fps.wordpress.com/2012/01/14/an-analysis-of-minecraft-like-engines/"
-type = "article"
+[voxelwiki-projects]
+title = "Voxel.Wiki: Projects Listing"
+url = "https://github.com/voxel-wiki/voxel-wiki.github.io/blob/main/content/wiki/projects.toml"
+type = "repository"
 tags = []
 
-[0fps-meshing-in-a-minecraft-game]
-title = "Meshing in a Minecraft Game"
-url = "https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/"
-type = "article"
+[voxelwiki-license]
+title = "Voxel.Wiki: License"
+url = "https://github.com/voxel-wiki/voxel-wiki.github.io/blob/main/LICENSE.md"
+type = "repository"
 tags = []
 
-[0fps-ambient-occlusion-for-minecraft-like-worlds]
-title = "Ambient occlusion for Minecraft-like worlds"
-url = "https://0fps.net/2013/07/03/ambient-occlusion-for-minecraft-like-worlds/"
-type = "article"
+[voxelwiki-issues]
+title = "Voxel.Wiki: Issues"
+url = "https://github.com/voxel-wiki/voxel-wiki.github.io/issues"
+type = "repository"
 tags = []
 
-[dwarffortress-wiki-pressure]
-title = "Pressure - Dwarf Fortress Wiki"
-url = "http://dwarffortresswiki.org/index.php/Pressure"
-#url = "http://dwarffortresswiki.org/index.php/v0.31:Pressure"
-tags = []
 
-[dwarffortress-wiki-water]
-title = "Water - Dwarf Fortress Wiki"
-url = "http://dwarffortresswiki.org/index.php/Water"
-#url = "http://dwarffortresswiki.org/index.php/v0.31:Water"
-tags = []
 
-[unity-forum-after-playing-minecraft]
-title = "After playing minecraft... - Unity Forums"
-url = "http://forum.unity3d.com/threads/63149-After-playing-minecraft"
-tags = []
+################################################################################
 
-[jmonkeyengine-a-block-world-framework]
-title = "Cubes - A Block World Framework - jMonkeyEngine Hub"
-url = "http://hub.jmonkeyengine.org/t/cubes-a-block-world-framework-update-preview/25002"
-tags = []
-
-[silverlight-real-time-3d-perlin-noise]
-title = "An Oscar Algorithm - Silverlight Real-time 3D Perlin Noise"
-url = "http://kodierer.blogspot.com/2009/05/oscar-algorithm-silverlight-real-time.html"
-type = "article"
-tags = []
+# The "All Things Minecraft" Section
 
 [minecraft]
 title = "Minecraft"
@@ -171,6 +149,656 @@ title = "Planet Minecraft"
 url = "https://www.planetminecraft.com/"
 tags = ["minecraft"]
 
+
+
+################################################################################
+
+
+
+[nvidia-efficient-sparse-voxel-octrees]
+title = "Efficient Sparse Voxel Octrees"
+url = "https://research.nvidia.com/sites/default/files/pubs/2010-02_Efficient-Sparse-Voxel/laine2010i3d_paper.pdf"
+type = "paper"
+tags = []
+
+[nvidia-efficient-sparse-voxel-octrees-aei]
+title = "Efficient Sparse Voxel Octrees – Analysis, Extensions, and Implementation"
+url = "https://research.nvidia.com/sites/default/files/pubs/2010-02_Efficient-Sparse-Voxel/laine2010tr1_paper.pdf"
+type = "paper"
+tags = []
+
+[nvidia-gvdb-raytracing-sparse-voxels]
+title = "GVDB: Raytracing Sparse Voxel Database Structures on the GPU"
+url = "http://ramakarl.com/pdfs/2016_Hoetzlein_GVDB.pdf"
+type = "paper"
+tags = []
+
+[nvidia-vulkan-multi-threading]
+title = "Vulkan Multi-Threading"
+url = "https://developer.nvidia.com/sites/default/files/akamai/gameworks/blog/munich/mschott_vulkan_multi_threading.pdf"
+type = "presentation"
+tags = []
+
+[nvidia-better-performance-at-lower-occupancy]
+title = "Better Performance at Lower Occupancy - 2238_GTC2010.pdf"
+url = "https://www.nvidia.com/content/GTC-2010/pdfs/2238_GTC2010.pdf"
+type = "paper"
+tags = []
+
+[nvidia-accelerating-openvdb-on-gpus-with-nanovdb]
+title = "Accelerating OpenVDB on GPUs with NanoVDB | NVIDIA Technical Blog"
+url = "https://developer.nvidia.com/blog/accelerating-openvdb-on-gpus-with-nanovdb/"
+tags = []
+
+[nvidia-advanced-api-performance-synchronization]
+title = "Advanced API Performance: Synchronization"
+url = "https://developer.nvidia.com/blog/advanced-api-performance-synchronization/"
+tags = []
+
+[vulkan-raytracing-nvidia-sample]
+title = "NVIDIA Vulkan Ray Tracing Tutorial"
+url = "https://nvpro-samples.github.io/vk_raytracing_tutorial_KHR/"
+tags = []
+
+
+
+################################################################################
+
+
+
+[wikipedia]
+title = "Wikipedia"
+url = "https://en.wikipedia.org/"
+tags = []
+
+[wikipedia-computer-graphics]
+title = "3D Computer Graphics"
+url = "https://en.wikipedia.org/wiki/3D_computer_graphics"
+tags = []
+
+[wikipedia-analog-signal]
+title = "Analog Signal"
+url = "https://en.wikipedia.org/wiki/Analog_signal"
+tags = []
+
+[wikipedia-antiportal]
+title = "Antiportal"
+url = "https://en.wikipedia.org/wiki/Antiportal"
+tags = []
+
+[wikipedia-bdrdf]
+title = "BiDirectional Reflectance Distribution Function"
+url = "https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function"
+tags = []
+
+[wikipedia-circular-buffer]
+title = "Circular Buffer"
+url = "https://en.wikipedia.org/wiki/Circular_buffer"
+tags = []
+
+[wikipedia-color]
+title = "Color"
+url = "https://en.wikipedia.org/wiki/Color"
+tags = []
+
+[wikipedia-indexed-color]
+title = "Indexed Color"
+url = "https://en.wikipedia.org/wiki/Indexed_color"
+tags = []
+
+[wikipedia-palette]
+title = "Palette (Computing)"
+url = "https://en.wikipedia.org/wiki/Palette_(computing)"
+tags = []
+
+[wikipedia-coordinate-system]
+title = "Coordinate System"
+url = "https://en.wikipedia.org/wiki/Coordinate_system"
+tags = []
+
+[wikipedia-cpu-cache]
+title = "CPU Cache"
+url = "https://en.wikipedia.org/wiki/CPU_cache"
+tags = []
+
+[wikipedia-data-structure]
+title = "Data Structure"
+url = "https://en.wikipedia.org/wiki/Data_structure"
+tags = []
+
+[wikipedia-data-driven-programming]
+title = "Data-driven Programming"
+url = "https://en.wikipedia.org/wiki/Data-driven_programming"
+tags = []
+
+[wikipedia-density]
+title = "Density"
+url = "https://en.wikipedia.org/wiki/Density"
+tags = []
+
+[wikipedia-dda]
+title = "Digital Differential Analyzer"
+url = "https://en.wikipedia.org/wiki/Digital_differential_analyzer_(graphics_algorithm)"
+tags = []
+
+[wikipedia-directx]
+title = "DirectX"
+url = "https://en.wikipedia.org/wiki/DirectX"
+tags = []
+
+[wikipedia-direct3d]
+title = "Direct3D"
+url = "https://en.wikipedia.org/wiki/Direct3d"
+tags = []
+
+[wikipedia-backface-culling]
+title = "Back-face Culling"
+url = "https://en.wikipedia.org/wiki/Back-face_culling"
+tags = []
+
+[wikipedia-embarrassingly-parallel]
+title = "Embarrassingly Parallel"
+url = "https://en.wikipedia.org/wiki/Embarrassingly_parallel"
+tags = []
+
+[wikipedia-euclidean-vector]
+title = "Euclidean Vector"
+url = "https://en.wikipedia.org/wiki/Euclidean_vector"
+tags = []
+
+[wikipedia-flyweight-pattern]
+title = "Flyweight Pattern"
+url = "https://en.wikipedia.org/wiki/Flyweight_pattern"
+tags = []
+
+[wikipedia-game-engine]
+title = "Game Engine"
+url = "https://en.wikipedia.org/wiki/Game_engine"
+tags = []
+
+[wikipedia-gpgpu]
+title = "General-purpose computing on graphics processing units"
+url = "https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units"
+tags = []
+
+[wikipedia-graphics-card]
+title = "Graphics Card"
+url = "https://en.wikipedia.org/wiki/Graphics_card"
+tags = []
+
+[wikipedia-gpu]
+title = "Graphics Processing Unit"
+url = "https://en.wikipedia.org/wiki/Graphics_processing_unit"
+tags = []
+
+[wikipedia-heightmap]
+title = "Heightmap"
+url = "https://en.wikipedia.org/wiki/Heightmap"
+tags = []
+
+[wikipedia-interpreter]
+title = "Interpreter"
+url = "https://en.wikipedia.org/wiki/Interpreter_(computing)"
+tags = []
+
+[wikipedia-game-item]
+title = "Item"
+url = "https://en.wikipedia.org/wiki/Item_(game_terminology)"
+tags = []
+
+[wikipedia-jit]
+title = "Just-In-Time Compilation"
+url = "https://en.wikipedia.org/wiki/Just-in-time_compilation"
+tags = []
+
+[wikipedia-ffi]
+title = "Foreign Function Interface"
+url = "https://en.wikipedia.org/wiki/Foreign_function_interface"
+tags = []
+
+[wikipedia-ken-perlin]
+title = "Ken Perlin"
+url = "https://en.wikipedia.org/wiki/Ken_Perlin"
+tags = []
+
+[wikipedia-linear-algebra]
+title = "Linear Algebra"
+url = "https://en.wikipedia.org/wiki/Linear_algebra"
+tags = []
+
+[wikipedia-linear-interpolation]
+title = "Linear Interpolation"
+url = "https://en.wikipedia.org/wiki/Linear_interpolation"
+tags = []
+
+[wikipedia-map-projection]
+title = "Map Projection"
+url = "https://en.wikipedia.org/wiki/Map_projection"
+tags = []
+
+[wikipedia-video-noise]
+title = "Noise (Video)"
+url = "https://en.wikipedia.org/wiki/Noise_(video)"
+tags = []
+
+[wikipedia-number]
+title = "Number"
+url = "https://en.wikipedia.org/wiki/Number"
+tags = []
+
+[wikipedia-object-cs]
+title = "Object"
+url = "https://en.wikipedia.org/wiki/Object_(computer_science)"
+tags = []
+
+[wikipedia-oop]
+title = "Object Oriented Programming"
+url = "https://en.wikipedia.org/wiki/Object-oriented_programming"
+tags = []
+
+[wikipedia-opengl]
+title = "OpenGL"
+url = "https://en.wikipedia.org/wiki/OpenGL"
+tags = []
+
+[wikipedia-paint-by-number]
+title = "Paint by Number"
+url = "https://en.wikipedia.org/wiki/Paint_by_number"
+tags = []
+
+[wikipedia-palette-cs]
+title = "Palette (Computing)"
+url = "https://en.wikipedia.org/wiki/Palette_(computing)"
+tags = []
+
+[wikipedia-perlin-noise]
+title = "Perlin Noise"
+url = "https://en.wikipedia.org/wiki/Perlin_noise"
+tags = []
+
+[wikipedia-pixel-art]
+title = "Pixel Art"
+url = "https://en.wikipedia.org/wiki/Pixel_art"
+tags = []
+
+[wikipedia-portal-rendering]
+title = "Portal Rendering"
+url = "https://en.wikipedia.org/wiki/Portal_rendering"
+tags = []
+
+[wikipedia-prng]
+title = "Pseudorandom Number Generator"
+url = "https://en.wikipedia.org/wiki/Pseudorandom_number_generator"
+tags = []
+
+[wikipedia-rasterisation]
+title = "Rasterisation"
+url = "https://en.wikipedia.org/wiki/Rasterisation"
+tags = []
+
+[wikipedia-regular-grid]
+title = "Regular Grid"
+url = "https://en.wikipedia.org/wiki/Regular_grid"
+tags = []
+
+[wikipedia-regular-polygon]
+title = "Regular Polygon"
+url = "https://en.wikipedia.org/wiki/Regular_polygon"
+tags = []
+
+[wikipedia-reproducibility]
+title = "Reproducibility"
+url = "https://en.wikipedia.org/wiki/Reproducibility"
+tags = []
+
+[wikipedia-lossy-compression]
+title = "Lossy Compression"
+url = "https://en.wikipedia.org/wiki/Lossy_compression"
+tags = []
+
+[wikipedia-lossless-compression]
+title = "Lossless Compression"
+url = "https://en.wikipedia.org/wiki/Lossless_compression"
+tags = []
+
+[wikipedia-huffman-coding]
+title = "Huffman Coding"
+url = "https://en.wikipedia.org/wiki/Huffman_coding"
+tags = []
+
+[wikipedia-run-length-encoding]
+parent = "wikipedia-lossless-compression"
+title = "Run-Length Encoding"
+url = "https://en.wikipedia.org/wiki/Run-length_encoding"
+tags = []
+
+[wikipedia-lzma]
+parent = "wikipedia-lossless-compression"
+title = "LZMA"
+url = "https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Markov_chain_algorithm"
+tags = []
+
+[wikipedia-deflate]
+parent = "wikipedia-lossless-compression"
+title = "Deflate"
+url = "https://en.wikipedia.org/wiki/Deflate"
+tags = []
+
+[wikipedia-zstd]
+parent = "wikipedia-lossless-compression"
+title = "Zstandard"
+url = "https://en.wikipedia.org/wiki/Zstd"
+tags = []
+
+[wikipedia-brotli]
+parent = "wikipedia-lossless-compression"
+title = "Brotli"
+url = "https://en.wikipedia.org/wiki/Brotli"
+tags = []
+
+[wikipedia-bzip2]
+parent = "wikipedia-lossless-compression"
+title = "Bzip2"
+url = "https://en.wikipedia.org/wiki/Bzip2"
+tags = []
+
+[wikipedia-sdf]
+title = "Signed Distance Fields"
+url = "https://en.wikipedia.org/wiki/Signed_distance_function"
+tags = []
+
+[wikipedia-state-cs]
+title = "State"
+url = "https://en.wikipedia.org/wiki/State_(computer_science)"
+tags = []
+
+[wikipedia-string-cs]
+title = "String"
+url = "https://en.wikipedia.org/wiki/String_(computer_science)"
+tags = []
+
+[wikipedia-system-programming-language]
+title = "System Programming Language"
+url = "https://en.wikipedia.org/wiki/System_programming_language"
+tags = []
+
+[wikipedia-system-programming-language-higher]
+title = "High-Level System Programming Languages"
+url = "https://en.wikipedia.org/wiki/System_programming_language#Higher-level_languages"
+tags = []
+
+[wikipedia-tagged-pointer]
+title = "Tagged Pointer"
+url = "https://en.wikipedia.org/wiki/Tagged_pointer"
+tags = []
+
+[wikipedia-3d]
+title = "Three-dimensional Space"
+url = "https://en.wikipedia.org/wiki/Three-dimensional_space"
+tags = []
+
+[wikipedia-plane3d]
+title = "Euclidean Planes in Three-dimensional Space"
+url = "https://en.wikipedia.org/wiki/Euclidean_planes_in_three-dimensional_space"
+tags = []
+
+[wikipedia-type-system]
+title = "Type System"
+url = "https://en.wikipedia.org/wiki/Type_system"
+tags = []
+
+[wikipedia-viewing-frustum]
+title = "Viewing Frustum"
+url = "https://en.wikipedia.org/wiki/Viewing_frustum"
+tags = []
+
+[wikipedia-voxel]
+title = "Voxel"
+url = "https://en.wikipedia.org/wiki/Voxel"
+tags = []
+
+[wikipedia-vulkan]
+title = "Vulkan"
+url = "https://en.wikipedia.org/wiki/Vulkan"
+tags = []
+
+[wikipedia-zachtronics]
+title = "Zachtronics"
+url = "https://en.wikipedia.org/wiki/Zachtronics"
+tags = []
+
+[wikipedia-infiniminer]
+title = "Infiniminer"
+url = "https://en.wikipedia.org/wiki/Zachtronics#Infiniminer"
+tags = []
+
+[wiktionary-idiomatic]
+title = "Idiomatic"
+url = "https://en.wiktionary.org/wiki/idiomatic"
+tags = []
+
+[wikipedia-user-ricardo-cancho-niemmietz]
+url = "https://en.wikipedia.org/wiki/User:Ricardo_Cancho_Niemietz"
+type = "user"
+tags = []
+
+[wikipedia-user-thetawave]
+url = "https://en.wikipedia.org/wiki/de:User:Thetawave"
+type = "user"
+tags = []
+
+[wikimedia-commons]
+title = "Wikimedia Commons"
+url = "https://commons.wikimedia.org/wiki/Main_Page"
+tags = []
+
+[wikimedia-pinkredliquid-perlin]
+url = "https://en.wikipedia.org/wiki/File:Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_(2415197699).png"
+type = "image"
+tags = []
+
+[wikimedia-dissolve-noise-texture]
+url = "https://commons.wikimedia.org/wiki/File:256x256_Dissolve_Noise_Texture.png"
+type = "image"
+tags = []
+
+[wikimedia-perlin-noise]
+url = "https://commons.wikimedia.org/wiki/File:Perlin_noise_example.png"
+type = "image"
+tags = []
+
+[wikimedia-voxelgitter]
+url = "https://commons.wikimedia.org/wiki/File:Voxelgitter.png"
+type = "image"
+tags = []
+
+[wikimedia-voxels]
+url = "https://commons.wikimedia.org/wiki/File:Voxels.svg"
+type = "image"
+tags = []
+
+[wikimedia-kjerish]
+url = "https://commons.wikimedia.org/wiki/User:Kjerish"
+type = "user"
+tags = []
+
+[wikimedia-lordbelbury]
+url = "https://commons.wikimedia.org/wiki/User:Lord_Belbury"
+type = "user"
+tags = []
+
+
+
+################################################################################
+
+
+
+[shadertoy-4dX3zl]
+title = "Branchless Voxel Raycasting"
+url = "https://www.shadertoy.com/view/4dX3zl"
+type = "example"
+tags = []
+
+[shadertoy-4sVfWw]
+title = "Random Voxel Octree Raycasting"
+url = "https://www.shadertoy.com/view/4sVfWw"
+type = "example"
+tags = []
+
+[shadertoy-7dK3D3]
+title = "Branchless Voxel Raycasting Textured"
+url = "https://www.shadertoy.com/view/7dK3D3"
+type = "example"
+tags = []
+
+[shadertoy-7stXzn]
+title = "Voxel Raycast with Sub-Objects"
+url = "https://www.shadertoy.com/view/7stXzn"
+type = "example"
+tags = []
+
+[shadertoy-XddcWn]
+title = "A Fast Voxel Traversal Algorithm"
+url = "https://www.shadertoy.com/view/XddcWn"
+type = "example"
+tags = []
+
+
+
+################################################################################
+
+
+
+[vulkan]
+title = "Vulkan"
+url = "https://www.vulkan.org/"
+tags = []
+
+[vulkan-registry]
+title = "Vulkan Registry"
+url = "https://www.khronos.org/registry/vulkan/"
+tags = []
+
+[vulkan-raytracing]
+title = "Khronos Blog - The Khronos Group Inc"
+url = "https://www.khronos.org/blog/ray-tracing-in-vulkan"
+tags = []
+
+[vulkan-lunarg]
+title = "Vulkan Development Kit"
+url = "https://vulkan.lunarg.com/"
+tags = []
+
+[vulkan-tutorial]
+title = "Vulkan Tutorial"
+url = "https://vulkan-tutorial.com/"
+type = "tutorial"
+tags = []
+
+[vulkan-guide]
+title = "Vulkan Guide"
+url = "https://vkguide.dev/"
+tags = []
+
+[vulkan-gpuinfo]
+title = "GpuInfo: Vulkan Hardware Database"
+url = "https://vulkan.gpuinfo.org/"
+tags = []
+
+[zeux-efficient-vulkan-renderer]
+title = "Writing an efficient Vulkan renderer"
+url = "https://zeux.io/2020/02/27/writing-an-efficient-vulkan-renderer/"
+tags = []
+
+[jenskrumsieck-vulkan-raytracing]
+title = "Raytracing in Vulkan using C# — Part 1 | Medium"
+url = "https://jenskrumsieck.medium.com/raytracing-in-vulkan-using-c-part-1-997cb284f7e8"
+tags = []
+
+[i-am-graphics-and-so-can-you]
+title = "I Am Graphics And So Can You"
+url = "https://www.fasterthan.life/blog/2017/7/11/i-am-graphics-and-so-can-you-part-1"
+tags = []
+
+[vulkan-resource-binding-2023]
+title = "Vulkan Shader Resource binding in 2023"
+url = "https://zoo.dev/blog/vulkan-resource-binding-2023"
+tags = []
+
+[vkoverhead]
+title = "zmike/vkoverhead: evaluating cpu overhead of vulkan drivers"
+url = "https://github.com/zmike/vkoverhead"
+type = "repository"
+tags = []
+
+[gdc_gtc_2019_q2vkpt]
+title = "Quake 2 Vulkan Path Tracer"
+url = "https://brechpunkt.de/q2vkpt/gdc_gtc_2019_q2vkpt.pdf"
+type = "presentation"
+tags = []
+
+[render-graphs-and-vulkan-a-deep-dive]
+title = "Render graphs and Vulkan — a deep dive"
+url = "http://themaister.net/blog/2017/08/15/render-graphs-and-vulkan-a-deep-dive/"
+tags = []
+
+[renderdoc-vulkan-in-30-minutes]
+title = "RenderDoc: Vulkan in 30 minutes"
+url = "https://renderdoc.org/vulkan-in-30-minutes.html"
+tags = []
+
+
+
+################################################################################
+
+
+
+[0fps-an-analysis-of-minecraft-like-engines]
+title = "An Analysis of Minecraft-like Engines"
+url = "http://0fps.wordpress.com/2012/01/14/an-analysis-of-minecraft-like-engines/"
+type = "article"
+tags = []
+
+[0fps-meshing-in-a-minecraft-game]
+title = "Meshing in a Minecraft Game"
+url = "https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/"
+type = "article"
+tags = []
+
+[0fps-ambient-occlusion-for-minecraft-like-worlds]
+title = "Ambient occlusion for Minecraft-like worlds"
+url = "https://0fps.net/2013/07/03/ambient-occlusion-for-minecraft-like-worlds/"
+type = "article"
+tags = []
+
+[dwarffortress-wiki-pressure]
+title = "Pressure - Dwarf Fortress Wiki"
+url = "http://dwarffortresswiki.org/index.php/Pressure"
+#url = "http://dwarffortresswiki.org/index.php/v0.31:Pressure"
+tags = []
+
+[dwarffortress-wiki-water]
+title = "Water - Dwarf Fortress Wiki"
+url = "http://dwarffortresswiki.org/index.php/Water"
+#url = "http://dwarffortresswiki.org/index.php/v0.31:Water"
+tags = []
+
+[unity-forum-after-playing-minecraft]
+title = "After playing minecraft... - Unity Forums"
+url = "http://forum.unity3d.com/threads/63149-After-playing-minecraft"
+tags = []
+
+[jmonkeyengine-a-block-world-framework]
+title = "Cubes - A Block World Framework - jMonkeyEngine Hub"
+url = "http://hub.jmonkeyengine.org/t/cubes-a-block-world-framework-update-preview/25002"
+tags = []
+
+[silverlight-real-time-3d-perlin-noise]
+title = "An Oscar Algorithm - Silverlight Real-time 3D Perlin Noise"
+url = "http://kodierer.blogspot.com/2009/05/oscar-algorithm-silverlight-real-time.html"
+type = "article"
+tags = []
+
 [longor-voxel-palette-compression-reddit]
 title = "Palette-based compression for chunked discrete voxel data"
 url = "https://www.longor.net/articles/voxel-palette-compression-reddit"
@@ -247,6 +875,12 @@ url = "https://upvoid.com/devblog/"
 tags = []
 
 [seedofandromeda]
+title = "Seed of Andromeda"
+url = "https://web.archive.org/web/20151019183321/https://www.seedofandromeda.com/"
+type = "game"
+tags = []
+
+[seedofandromeda-devblog]
 title = "Seed of Andromeda Devblog"
 url = "https://web.archive.org/web/20151020003436/https://www.seedofandromeda.com/blogs"
 tags = []
@@ -264,6 +898,11 @@ tags = []
 [seedofandromeda-fast-flood-fill-lighting-in-a-blocky-voxel-game-2]
 title = "Seed Of Andromeda - Fast Flood Fill Lighting in a Blocky Voxel Game: Pt 2"
 url = "https://web.archive.org/web/20170608094541/https://www.seedofandromeda.com/blogs/30-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-2"
+tags = []
+
+[seedofandromeda-round-voxel-planets]
+title = "Seed of Andromeda - Round Voxel Planets"
+url = "https://web.archive.org/web/20151020003436/https://www.seedofandromeda.com/blogs"
 tags = []
 
 [dreamincode-perlin-noise]
@@ -342,18 +981,6 @@ url = "https://graphics.tudelft.nl/Publications-new/2020/CBE20/ModifyingCompress
 type = "paper"
 tags = []
 
-[nvidia-efficient-sparse-voxel-octrees]
-title = "Efficient Sparse Voxel Octrees"
-url = "https://research.nvidia.com/sites/default/files/pubs/2010-02_Efficient-Sparse-Voxel/laine2010i3d_paper.pdf"
-type = "paper"
-tags = []
-
-[nvidia-efficient-sparse-voxel-octrees-aei]
-title = "Efficient Sparse Voxel Octrees – Analysis, Extensions, and Implementation"
-url = "https://research.nvidia.com/sites/default/files/pubs/2010-02_Efficient-Sparse-Voxel/laine2010tr1_paper.pdf"
-type = "paper"
-tags = []
-
 [geidav-advanced-octrees-1-pisamtd]
 title = "Advanced Octrees 1: Preliminaries, insertion strategies and maximum tree depth"
 url = "https://geidav.wordpress.com/2014/07/18/advanced-octrees-1-preliminaries-insertion-strategies-and-max-tree-depth/"
@@ -417,81 +1044,70 @@ title = "Euclideon Unlimited Detail Engine Open Source Version"
 url = "https://www.reddit.com/r/VoxelGameDev/comments/if3m8c/euclideon_unlimited_detail_engine_open_source/"
 tags = []
 
-[nvidia-gvdb-raytracing-sparse-voxels]
-title = "GVDB: Raytracing Sparse Voxel Database Structures on the GPU"
-url = "http://ramakarl.com/pdfs/2016_Hoetzlein_GVDB.pdf"
-type = "paper"
-tags = []
-
 [construction-of-voxelized-shadows]
 title = "Fast, Memory-Efficient Construction of Voxelized Shadows"
 url = "https://www.cse.chalmers.se/~uffe/Fast%20memory%20efficient%20construction%20of%20voxelized%20shadows%20TVCG.pdf"
 type = "paper"
 tags = []
 
-[frustum]
+[davidlively-frustum]
 title = "Frustum calculation and culling, HOPEFULLY demystified."
 url = "http://davidlively.com/programming/graphics/frustum-calculation-and-culling-hopefully-demystified/"
 tags = []
 
 [jojendersie-rendering-huge-amounts-of-voxels]
-title = ""
+title = "Rendering Huge Amounts Of Voxel (Part 1)"
 url = "http://jojendersie.de/rendering-huge-amounts-of-voxels/"
 tags = []
 
 [jojendersie-rendering-huge-amounts-of-voxels-2]
-title = ""
+title = "Rendering Huge Amounts Of Voxel (Part 2)"
 url = "http://jojendersie.de/rendering-huge-amounts-of-voxels-2/"
 tags = []
 
-[lotsacode-perlin-noise-in-c]
-title = ""
+[lotsacode-perlin-noise-in-cs]
+title = "Perlin Noise in C#"
 url = "http://lotsacode.wordpress.com/2010/02/24/perlin-noise-in-c/"
 tags = []
 
 [ngildea-dual-contouring-chunked-terrain]
-title = ""
+title = "Dual Contouring: Seams & LOD for Chunked Terrain"
 url = "http://ngildea.blogspot.com/2014/09/dual-contouring-chunked-terrain.html"
 tags = []
 
 [ngildea-dual-contouring-with-opencl]
-title = ""
+title = "Dual Contouring with OpenCL"
 url = "http://ngildea.blogspot.com/2015/06/dual-contouring-with-opencl.html"
 tags = []
 
 [pcgwiki-category-pcg-algorithms]
-title = ""
+title = "Algorithms for Procedural Content Generation"
 url = "http://pcg.wikidot.com/category-pcg-algorithms"
 tags = []
 
 [procworld-from-voxels-to-polygons]
-title = ""
+title = "From Voxels to Polygons"
 url = "http://procworld.blogspot.com/2010/11/from-voxels-to-polygons.html"
 tags = []
 
 [reddit-vgd]
-title = ""
+title = "VoxelGameDev Subreddit"
 url = "http://reddit.com/r/voxelgamedev/"
 tags = []
 
-[render-graphs-and-vulkan-a-deep-dive]
-title = "Render graphs and Vulkan — a deep dive"
-url = "http://themaister.net/blog/2017/08/15/render-graphs-and-vulkan-a-deep-dive/"
-tags = []
-
 [vgd]
-title = ""
+title = "VoxelGameDev Community"
 url = "http://voxelgamedev.com/"
 tags = []
 
 [amanatides-and-woo]
-title = "A Fast Voxel Traversal Algorithm for Ray Tracing"
+title = "A Fast Voxel Traversal Algorithm for Ray Tracing (1987)"
 url = "http://www.cse.yorku.ca/~amana/research/grid.pdf"
 type = "paper"
 tags = []
 
 [lighthouse3d-view-frustum-culling]
-title = ""
+title = "View Frustum Culling"
 url = "http://www.lighthouse3d.com/tutorials/view-frustum-culling"
 tags = []
 
@@ -517,7 +1133,7 @@ url = "https://accidentalnoise.sourceforge.net/minecraftworlds.html"
 tags = []
 
 [gamedev-archive-culling]
-title = ""
+title = "Culling"
 url = "https://archive.gamedev.net/archive/reference/programming/features/culling/index.html"
 tags = []
 
@@ -527,32 +1143,44 @@ url = "https://artis.inrialpes.fr/Publications/2009/CNLE09/"
 type = "paper"
 tags = []
 
-[astroneer]
-title = ""
+[game-astroneer]
+title = "Astroneer"
 url = "https://astroneer.space/"
 type = "game"
 tags = []
 
 [bazhenovc-dynamic-vertex-pulling]
-title = ""
+title = "D3D11 Dynamic Vertex Pulling"
 url = "https://bazhenovc.github.io/blog/post/d3d11-dynamic-vertex-pulling/"
 type = "article"
 tags = []
 
 [bgfx-rendering-backends]
-title = ""
+title = "bgfx: supported rendering backends"
 url = "https://bkaradzic.github.io/bgfx/overview.html#supported-rendering-backends"
 type = "documentation"
 tags = []
 
 [bruop-frustum-culling]
-title = ""
+title = "Frustum Culling"
 url = "https://bruop.github.io/frustum_culling/"
 type = "article"
 tags = []
 
+[bruop-frustum-culling-improved]
+title = "More (Robust) Frustum Culling"
+url = "https://bruop.github.io/improved_frustum_culling/"
+type = "article"
+tags = []
+
+[braynzarsoft-frustum-culling]
+title = "AABB CPU Side Frustum Culling"
+url = "https://www.braynzarsoft.net/viewtutorial/q16390-34-aabb-cpu-side-frustum-culling"
+type = "article"
+tags = []
+
 [castingrays-voxel-rendering-using-discrete-ray]
-title = ""
+title = "Voxel Rendering Using Discrete Ray Tracing"
 url = "https://castingrays.blogspot.com/2014/01/voxel-rendering-using-discrete-ray.html"
 type = "article"
 tags = []
@@ -569,58 +1197,10 @@ url = "https://choosealicense.com/"
 type = "tool"
 tags = []
 
-[wikimedia-pinkredliquid-perlin]
-title = ""
-url = "https://en.wikipedia.org/wiki/File:Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_(2415197699).png"
-type = "image"
-tags = []
-
-[wikimedia-dissolve-noise-texture]
-title = ""
-url = "https://commons.wikimedia.org/wiki/File:256x256_Dissolve_Noise_Texture.png"
-type = "image"
-tags = []
-
-[wikimedia-perlin-noise]
-title = ""
-url = "https://commons.wikimedia.org/wiki/File:Perlin_noise_example.png"
-type = "image"
-tags = []
-
-[wikimedia-voxelgitter]
-title = ""
-url = "https://commons.wikimedia.org/wiki/File:Voxelgitter.png"
-type = "image"
-tags = []
-
-[wikimedia-voxels]
-title = ""
-url = "https://commons.wikimedia.org/wiki/File:Voxels.svg"
-type = "image"
-tags = []
-
-[wikimedia-kjerish]
-title = ""
-url = "https://commons.wikimedia.org/wiki/User:Kjerish"
-type = "user"
-tags = []
-
-[wikimedia-lordbelbury]
-title = ""
-url = "https://commons.wikimedia.org/wiki/User:Lord_Belbury"
-type = "user"
-tags = []
-
 [mdn-webgl]
 title = "WebGL API"
 url = "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API"
 type = "documentation"
-tags = []
-
-[nvidia-vulkan-multi-threading]
-title = "Vulkan Multi-Threading"
-url = "https://developer.nvidia.com/sites/default/files/akamai/gameworks/blog/munich/mschott_vulkan_multi_threading.pdf"
-type = "presentation"
 tags = []
 
 [valvesoftware-visibility-optimization]
@@ -647,315 +1227,13 @@ url = "https://docs.gl/"
 type = "documentation"
 tags = []
 
-[wikipedia]
-title = "Wikipedia"
-url = "https://en.wikipedia.org/"
-tags = []
-
-[wikipedia-computer-graphics]
-title = ""
-url = "https://en.wikipedia.org/wiki/3D_computer_graphics"
-tags = []
-
-[wikipedia-analog-signal]
-title = ""
-url = "https://en.wikipedia.org/wiki/Analog_signal"
-tags = []
-
-[wikipedia-antiportal]
-title = ""
-url = "https://en.wikipedia.org/wiki/Antiportal"
-tags = []
-
-[wikipedia-bdrdf]
-title = ""
-url = "https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function"
-tags = []
-
-[wikipedia-circular-buffer]
-title = ""
-url = "https://en.wikipedia.org/wiki/Circular_buffer"
-tags = []
-
-[wikipedia-color]
-title = ""
-url = "https://en.wikipedia.org/wiki/Color"
-tags = []
-
-[wikipedia-coordinate-system]
-title = ""
-url = "https://en.wikipedia.org/wiki/Coordinate_system"
-tags = []
-
-[wikipedia-cpu-cache]
-title = ""
-url = "https://en.wikipedia.org/wiki/CPU_cache"
-tags = []
-
-[wikipedia-data-structure]
-title = ""
-url = "https://en.wikipedia.org/wiki/Data_structure"
-tags = []
-
-[wikipedia-data-driven-programming]
-title = ""
-url = "https://en.wikipedia.org/wiki/Data-driven_programming"
-tags = []
-
-[wikipedia-user-thetawave]
-title = ""
-url = "https://en.wikipedia.org/wiki/de:User:Thetawave"
-type = "user"
-tags = []
-
-[wikipedia-density]
-title = ""
-url = "https://en.wikipedia.org/wiki/Density"
-tags = []
-
-[wikipedia-dda]
-title = ""
-url = "https://en.wikipedia.org/wiki/Digital_differential_analyzer_(graphics_algorithm)"
-tags = []
-
-[wikipedia-direct3d]
-title = ""
-url = "https://en.wikipedia.org/wiki/Direct3d"
-tags = []
-
-[wikipedia-directx]
-title = ""
-url = "https://en.wikipedia.org/wiki/DirectX"
-tags = []
-
-[wikipedia-embarrassingly-parallel]
-title = ""
-url = "https://en.wikipedia.org/wiki/Embarrassingly_parallel"
-tags = []
-
-[wikipedia-euclidean-vector]
-title = ""
-url = "https://en.wikipedia.org/wiki/Euclidean_vector"
-tags = []
-
-[wikipedia-flyweight-pattern]
-title = ""
-url = "https://en.wikipedia.org/wiki/Flyweight_pattern"
-tags = []
-
-[wikipedia-game-engine]
-title = ""
-url = "https://en.wikipedia.org/wiki/Game_engine"
-tags = []
-
-[wikipedia-gpgpu]
-title = ""
-url = "https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units"
-tags = []
-
-[wikipedia-graphics-card]
-title = ""
-url = "https://en.wikipedia.org/wiki/Graphics_card"
-tags = []
-
-[wikipedia-gpu]
-title = ""
-url = "https://en.wikipedia.org/wiki/Graphics_processing_unit"
-tags = []
-
-[wikipedia-heightmap]
-title = ""
-url = "https://en.wikipedia.org/wiki/Heightmap"
-tags = []
-
-[wikipedia-interpreter]
-title = ""
-url = "https://en.wikipedia.org/wiki/Interpreter_(computing)"
-tags = []
-
-[wikipedia-game-item]
-title = ""
-url = "https://en.wikipedia.org/wiki/Item_(game_terminology)"
-tags = []
-
-[wikipedia-jit]
-title = ""
-url = "https://en.wikipedia.org/wiki/Just-in-time_compilation"
-tags = []
-
-[wikipedia-ken-perlin]
-title = ""
-url = "https://en.wikipedia.org/wiki/Ken_Perlin"
-tags = []
-
-[wikipedia-linear-algebra]
-title = ""
-url = "https://en.wikipedia.org/wiki/Linear_algebra"
-tags = []
-
-[wikipedia-linear-interpolation]
-title = ""
-url = "https://en.wikipedia.org/wiki/Linear_interpolation"
-tags = []
-
-[wikipedia-map-projection]
-title = ""
-url = "https://en.wikipedia.org/wiki/Map_projection"
-tags = []
-
-[wikipedia-video-noise]
-title = ""
-url = "https://en.wikipedia.org/wiki/Noise_(video)"
-tags = []
-
-[wikipedia-number]
-title = ""
-url = "https://en.wikipedia.org/wiki/Number"
-tags = []
-
-[wikipedia-object-cs]
-title = ""
-url = "https://en.wikipedia.org/wiki/Object_(computer_science)"
-tags = []
-
-[wikipedia-oop]
-title = ""
-url = "https://en.wikipedia.org/wiki/Object-oriented_programming"
-tags = []
-
-[wikipedia-opengl]
-title = ""
-url = "https://en.wikipedia.org/wiki/OpenGL"
-tags = []
-
-[wikipedia-paint-by-number]
-title = ""
-url = "https://en.wikipedia.org/wiki/Paint_by_number"
-tags = []
-
-[wikipedia-palette-cs]
-title = ""
-url = "https://en.wikipedia.org/wiki/Palette_(computing)"
-tags = []
-
-[wikipedia-perlin-noise]
-title = ""
-url = "https://en.wikipedia.org/wiki/Perlin_noise"
-tags = []
-
-[wikipedia-pixel-art]
-title = ""
-url = "https://en.wikipedia.org/wiki/Pixel_art"
-tags = []
-
-[wikipedia-portal-rendering]
-title = ""
-url = "https://en.wikipedia.org/wiki/Portal_rendering"
-tags = []
-
-[wikipedia-prng]
-title = ""
-url = "https://en.wikipedia.org/wiki/Pseudorandom_number_generator"
-tags = []
-
-[wikipedia-rasterisation]
-title = ""
-url = "https://en.wikipedia.org/wiki/Rasterisation"
-tags = []
-
-[wikipedia-regular-grid]
-title = ""
-url = "https://en.wikipedia.org/wiki/Regular_grid"
-tags = []
-
-[wikipedia-regular-polygon]
-title = ""
-url = "https://en.wikipedia.org/wiki/Regular_polygon"
-tags = []
-
-[wikipedia-reproducibility]
-title = ""
-url = "https://en.wikipedia.org/wiki/Reproducibility"
-tags = []
-
-[wikipedia-run-length-encoding]
-title = "Run-Length Encoding"
-url = "https://en.wikipedia.org/wiki/Run-length_encoding"
-tags = []
-
-[wikipedia-sdf]
-title = ""
-url = "https://en.wikipedia.org/wiki/Signed_distance_function"
-tags = []
-
-[wikipedia-state-cs]
-title = ""
-url = "https://en.wikipedia.org/wiki/State_(computer_science)"
-tags = []
-
-[wikipedia-string-cs]
-title = ""
-url = "https://en.wikipedia.org/wiki/String_(computer_science)"
-tags = []
-
-[wikipedia-system-programming-language]
-title = ""
-url = "https://en.wikipedia.org/wiki/System_programming_language"
-tags = []
-
-[wikipedia-tagged-pointer]
-title = ""
-url = "https://en.wikipedia.org/wiki/Tagged_pointer"
-tags = []
-
-[wikipedia-3d]
-title = ""
-url = "https://en.wikipedia.org/wiki/Three-dimensional_space"
-tags = []
-
-[wikipedia-type-system]
-title = ""
-url = "https://en.wikipedia.org/wiki/Type_system"
-tags = []
-
-[wikipedia-user-ricardo-cancho-niemmietz]
-title = ""
-url = "https://en.wikipedia.org/wiki/User:Ricardo_Cancho_Niemietz"
-type = "user"
-tags = []
-
-[wikipedia-voxel]
-title = ""
-url = "https://en.wikipedia.org/wiki/Voxel"
-tags = []
-
-[wikipedia-vulkan]
-title = "Vulkan"
-url = "https://en.wikipedia.org/wiki/Vulkan"
-tags = []
-
-[wikipedia-zachtronics]
-title = "Zachtronics"
-url = "https://en.wikipedia.org/wiki/Zachtronics"
-tags = []
-
-[wikipedia-infiniminer]
-title = "Infiniminer"
-url = "https://en.wikipedia.org/wiki/Zachtronics#Infiniminer"
-tags = []
-
-[wiktionary-idiomatic]
-title = "Idiomatic"
-url = "https://en.wiktionary.org/wiki/idiomatic"
-tags = []
-
 [magicavoxel]
 title = "MagicaVoxel"
 url = "https://ephtracy.github.io/index.html?page=mv_main"
 type = "tool"
 tags = []
 
-[sliding-window-algorithm]
+[favtutor-sliding-window-algorithm]
 title = "Sliding Window Algorithm (with Java, C++ and Python code)"
 url = "https://favtutor.com/blogs/sliding-window-algorithm"
 tags = []
@@ -1060,7 +1338,7 @@ type = "repository"
 tags = []
 
 [bevy-vertex-pulling]
-title = "Vertex pulling for bevy"
+title = "Vertex pulling for Bevy"
 url = "https://github.com/superdump/bevy-vertex-pulling"
 type = "repository"
 tags = []
@@ -1071,24 +1349,6 @@ url = "https://github.com/topics/perlin"
 type = "repository"
 tags = []
 
-[voxelwiki-projects]
-title = "Voxel.Wiki: Projects Listing"
-url = "https://github.com/voxel-wiki/voxel-wiki.github.io/blob/main/content/wiki/projects.toml"
-type = "repository"
-tags = []
-
-[voxelwiki-license]
-title = "Voxel.Wiki: License"
-url = "https://github.com/voxel-wiki/voxel-wiki.github.io/blob/main/LICENSE.md"
-type = "repository"
-tags = []
-
-[voxelwiki-issues]
-title = "Voxel.Wiki: Issues"
-url = "https://github.com/voxel-wiki/voxel-wiki.github.io/issues"
-type = "repository"
-tags = []
-
 [godot]
 title = "Godot Game Engine"
 url = "https://godotengine.org/"
@@ -1096,7 +1356,7 @@ type = "engine"
 tags = []
 
 [webgpu-coordinate-systems]
-title = ""
+title = "WebGPU Specification: Coordinate Systems"
 url = "https://gpuweb.github.io/gpuweb/#coordinate-systems"
 tags = []
 
@@ -1123,6 +1383,11 @@ tags = []
 [ktstephano-programmable-vertex-pulling]
 title = "Programmable Vertex Pulling"
 url = "https://ktstephano.github.io/rendering/opengl/prog_vtx_pulling"
+tags = []
+
+[ktstephano-view-frustum-culling]
+title = "View-Frustum Culling Using Axis-Aligned Bounding-Boxes"
+url = "https://medium.com/@ktstephano/view-frustum-culling-using-axis-aligned-bounding-boxes-23368881ce0f"
 tags = []
 
 [opengl-learn]
@@ -1196,25 +1461,15 @@ url = "https://ogrecave.github.io/ogre/"
 type = "engine"
 tags = []
 
-[gpuinfo-opengl]
-title = "GpuInfo: OpenGL"
+[opengl-gpuinfo]
+title = "GpuInfo: OpenGL Hardware Database"
 url = "https://opengl.gpuinfo.org/"
-tags = []
-
-[gpuinfo-vulkan]
-title = "GpuInfo: Vulkan"
-url = "https://vulkan.gpuinfo.org/"
 tags = []
 
 [opentk]
 title = "C# Open Toolkit for OpenGL (ES), OpenAL and OpenCL"
 url = "https://opentk.net/"
 type = "library"
-tags = []
-
-[renderdoc-vulkan-in-30-minutes]
-title = "Vulkan in 30 minutes"
-url = "https://renderdoc.org/vulkan-in-30-minutes.html"
 tags = []
 
 [latency-virtual-memory]
@@ -1268,31 +1523,14 @@ type = "message"
 tags = []
 
 [webalys]
-title = ""
 url = "https://twitter.com/webalys"
 type = "user"
 tags = []
 
 [unity]
-title = ""
+title = "Unity3D"
 url = "https://unity.com/"
 type = "engine"
-tags = []
-
-[vkguide]
-title = ""
-url = "https://vkguide.dev/"
-tags = []
-
-[vulkan-lunarg]
-title = ""
-url = "https://vulkan.lunarg.com/"
-tags = []
-
-[vulkan-tutorial]
-title = ""
-url = "https://vulkan-tutorial.com/"
-type = "tutorial"
 tags = []
 
 [xna-wiki-voxel-traversal]
@@ -1358,11 +1596,6 @@ url = "https://www.bigocheatsheet.com/"
 type = "tool"
 tags = []
 
-[i-am-graphics-and-so-can-you]
-title = "I Am Graphics And So Can You"
-url = "https://www.fasterthan.life/blog/2017/7/11/i-am-graphics-and-so-can-you-part-1"
-tags = []
-
 [glfw]
 title = "GLFW"
 url = "https://www.glfw.org/"
@@ -1391,38 +1624,38 @@ url = "https://iquilezles.org/articles/distfunctions2d/"
 tags = []
 
 [opengl-wiki]
-title = ""
+title = "OpenGL Wiki"
 url = "https://www.khronos.org/opengl/wiki/"
 tags = []
 
 [opengl-wiki-common-mistakes]
-title = ""
+title = "OpenGL Wiki: Common Mistakes"
 url = "https://www.khronos.org/opengl/wiki/Common_Mistakes"
 tags = []
 
 [opengl-wiki-language-bindings]
-title = ""
+title = "OpenGL Wiki: Language Bindings"
 url = "https://www.khronos.org/opengl/wiki/Language_bindings"
 tags = []
 
 [opengl-wiki-object]
-title = ""
+title = "OpenGL Wiki: Object Model"
 url = "https://www.khronos.org/opengl/wiki/OpenGL_Object"
 tags = []
 
+[opengl-wiki-faceculling]
+title = "OpenGL Wiki: (Back)Face Culling"
+url = "https://www.khronos.org/opengl/wiki/Face_Culling"
+tags = []
+
 [opengl-wiki-glsl]
-title = ""
+title = "OpenGL Wiki: OpenGL Shading Language (GLSL)"
 url = "https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language"
 tags = []
 
 [opengl-wiki-rendering-pipeline]
-title = ""
+title = "OpenGL Wiki: Rendering Pipelines"
 url = "https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview"
-tags = []
-
-[vulkan-registry]
-title = ""
-url = "https://www.khronos.org/registry/vulkan/"
 tags = []
 
 [libsdl]
@@ -1495,40 +1728,16 @@ title = "Simple and Fast Multimedia Library: Platform Support"
 url = "https://www.sfml-dev.org/faq.php#grl-platforms"
 tags = []
 
-[shadertoy-4dX3zl]
-title = "Branchless Voxel Raycasting"
-url = "https://www.shadertoy.com/view/4dX3zl"
-type = "example"
-tags = []
-
-[shadertoy-4sVfWw]
-title = "Random Voxel Octree Raycasting"
-url = "https://www.shadertoy.com/view/4sVfWw"
-type = "example"
-tags = []
-
-[shadertoy-7dK3D3]
-title = "Branchless Voxel Raycasting Textured"
-url = "https://www.shadertoy.com/view/7dK3D3"
-type = "example"
-tags = []
-
-[shadertoy-7stXzn]
-title = "Voxel Raycast with Sub-Objects"
-url = "https://www.shadertoy.com/view/7stXzn"
-type = "example"
-tags = []
-
-[shadertoy-XddcWn]
-title = "A Fast Voxel Traversal Algorithm"
-url = "https://www.shadertoy.com/view/XddcWn"
-type = "example"
-tags = []
-
-[starmade]
+[game-starmade]
 title = "Starmade"
 url = "https://www.star-made.org/"
 type = "game"
+tags = []
+
+[game-starmade-cavedwelling]
+title = "Video of Caves (Starmade)"
+url = "https://drive.google.com/file/d/15TjUH68W4wEQ3GoMO0lCPyd3oMwxNzjQ/view?usp=sharing"
+type = "video"
 tags = []
 
 [cpu-cache]
@@ -1540,11 +1749,6 @@ tags = []
 title = "Unreal Engine"
 url = "https://www.unrealengine.com/"
 type = "engine"
-tags = []
-
-[vulkan]
-title = "Vulkan"
-url = "https://www.vulkan.org/"
 tags = []
 
 [newtype-pattern]
@@ -1563,53 +1767,6 @@ tags = []
 title = "Vertex Formats Part 2: Fetch vs Pull"
 url = "https://www.yosoygames.com.ar/wp/2018/03/vertex-formats-part-2-fetch-vs-pull/"
 type = "article"
-tags = []
-
-[youtube-bJr4QlDxEME]
-title = "SoA Tech: Round Voxel Planets"
-url = "https://www.youtube.com/watch?v=bJr4QlDxEME"
-type = "video"
-tags = []
-
-[youtube-JXeJANDKwDc]
-title = "When This Number Hits 5200 - You Will be Dead"
-url = "https://www.youtube.com/watch?v=JXeJANDKwDc"
-type = "video"
-tags = []
-
-[youtube-MZ2GuvUWaP8]
-title = "Everything is a Remix"
-url = "https://www.youtube.com/watch?v=MZ2GuvUWaP8"
-type = "video"
-tags = []
-
-[youtube-sChQCdbLdHE]
-title = "The ONE Texture Every Game NEEDS"
-url = "https://www.youtube.com/watch?v=sChQCdbLdHE"
-type = "video"
-tags = []
-
-[youtube-ZsEnnB2wrbI]
-title = "How to turn a few Numbers into Worlds (Fractal Perlin Noise)"
-url = "https://www.youtube.com/watch?v=ZsEnnB2wrbI"
-type = "video"
-tags = []
-
-[youtube-zXsWftRdsvU]
-title = "Value Noise Explained!"
-url = "https://www.youtube.com/watch?v=zXsWftRdsvU"
-type = "video"
-tags = []
-
-[youtube-YyVAaJqYAfE]
-title = "How Minecraft ACTUALLY Works 💎⛏️"
-url = "https://www.youtube.com/watch?v=YyVAaJqYAfE"
-type = "video"
-tags = []
-
-[zeux-efficient-vulkan-renderer]
-title = "Writing an efficient Vulkan renderer"
-url = "https://zeux.io/2020/02/27/writing-an-efficient-vulkan-renderer/"
 tags = []
 
 [threedscans]
@@ -1640,28 +1797,6 @@ tags = []
 [ambientcg]
 title = "AmbientCG - 3D for everyone"
 url = "https://ambientcg.com/"
-tags = []
-
-[vulkan-raytracing]
-title = "Khronos Blog - The Khronos Group Inc"
-url = "https://www.khronos.org/blog/ray-tracing-in-vulkan"
-tags = []
-
-[vulkan-raytracing-nvidia-sample]
-title = "NVIDIA Vulkan Ray Tracing Tutorial"
-url = "https://nvpro-samples.github.io/vk_raytracing_tutorial_KHR/"
-tags = []
-
-[youtube-ToCozpl1sYY]
-title = "GPU-Based Run-Time Procedural Placement in Horizon: Zero Dawn"
-url = "https://www.youtube.com/watch?v=ToCozpl1sYY"
-type = "video"
-tags = []
-
-[youtube-wavnKZNSYqU]
-title = "Between Tech and Art: The Vegetation of Horizon Zero Dawn"
-url = "https://www.youtube.com/watch?v=wavnKZNSYqU"
-type = "video"
 tags = []
 
 [utah-tcgv]
@@ -1710,11 +1845,6 @@ url = "https://github.com/yuanming-hu/taichi_mpm"
 type = "repository"
 tags = []
 
-[jenskrumsieck-vulkan-raytracing]
-title = "Raytracing in Vulkan using C# — Part 1 | Medium"
-url = "https://jenskrumsieck.medium.com/raytracing-in-vulkan-using-c-part-1-997cb284f7e8"
-tags = []
-
 [algorithmicbotany-colonization-egwnp2007]
 title = "Modeling Trees with a Space Colonization Algorithm"
 url = "http://algorithmicbotany.org/papers/colonization.egwnp2007.pdf"
@@ -1723,12 +1853,6 @@ tags = []
 [cpumemory]
 title = "What Every Programmer Should Know About Memory"
 url = "https://people.freebsd.org/~lstewart/articles/cpumemory.pdf"
-tags = []
-
-[youtube-A0pxY9QsgJE]
-title = "The Jump Flood Algorithm | Visualized and Explained"
-url = "https://www.youtube.com/watch?v=A0pxY9QsgJE"
-type = "video"
 tags = []
 
 [vengi]
@@ -1747,24 +1871,6 @@ tags = []
 title = "Improving the Performance of K-Means for Color Quantization"
 url = "https://arxiv.org/pdf/1101.0395.pdf"
 type = "paper"
-tags = []
-
-[youtube-w6m06QvQaGJKw7vRuPlnYJWczvPj]
-title = "OBBG: Open Block Building Game"
-url = "https://www.youtube.com/playlist?list=PLMkT-w6m06QvQaGJKw7vRuPlnYJWczvPj"
-type = "video-list"
-tags = []
-
-[youtube-DW93P4bZJIo]
-title = "Sean Barrett explains his GPU compute shader voxel raycasting engine"
-url = "https://www.youtube.com/watch?v=DW93P4bZJIo"
-type = "video"
-tags = []
-
-[youtube-2vnTtiLrV1w]
-title = "stb_voxel_render.h programming library"
-url = "https://www.youtube.com/watch?v=2vnTtiLrV1w"
-type = "video"
 tags = []
 
 [efficient-high-quality-gpu-based-visualization-of-voxelized-surface-data]
@@ -1791,18 +1897,6 @@ title = "GameDev Pensieve"
 url = "https://www.gamedevpensieve.com/main"
 tags = []
 
-[youtube-NsMHicoZTzQ]
-title = "How To PLAN your Game as a Solo Developer"
-url = "https://www.youtube.com/watch?v=NsMHicoZTzQ"
-type = "video"
-tags = []
-
-[youtube-ltkk_nlMhQo]
-title = "EG / Full Papers 4 / Sparse Voxels and Texture Synthesis / Tuesday 11:00-12:30"
-url = "https://www.youtube.com/watch?v=ltkk_nlMhQo"
-type = "video"
-tags = []
-
 [how-we-render-extremely-large-point-clouds]
 title = "How We Render Extremely Large Point Clouds — Magnopus"
 url = "https://www.magnopus.com/blog/how-we-render-extremely-large-point-clouds"
@@ -1818,35 +1912,11 @@ title = "BiVector.net: Geometric Algebra Resources"
 url = "https://bivector.net/"
 tags = []
 
-[youtube-VY8tGpGO-G0]
-title = "Deep Implicit Volume Compression"
-url = "https://www.youtube.com/watch?v=VY8tGpGO-G0"
-type = "video"
-tags = []
-
 [asedgsfvbmamo3dd]
 title = "A scale-elastic discrete grid structure for voxel-based modeling and management of 3D data"
 url = "https://www.sciencedirect.com/science/article/pii/S1569843222001972"
 doi = "10.1016/j.jag.2022.103009"
 type = "paper"
-tags = []
-
-[youtube-htYh-Tq7ZBI]
-title = "Why can't you multiply vectors?"
-url = "https://www.youtube.com/watch?v=htYh-Tq7ZBI"
-type = "video"
-tags = []
-
-[youtube-Idlv83CxP-8]
-title = "Let's remove Quaternions from every 3D Engine: Intro to Rotors from Geometric Algebra"
-url = "https://www.youtube.com/watch?v=Idlv83CxP-8"
-type = "video"
-tags = []
-
-[youtube-sudgylacmoe]
-title = "sudgylacmoe"
-url = "https://www.youtube.com/@sudgylacmoe/videos"
-type = "user"
 tags = []
 
 [projectivegeometricalgebra]
@@ -1898,36 +1968,6 @@ url = "https://graphics.tudelft.nl/Publications-new/2020/VSE20/LossyGeometryComp
 type = "paper"
 tags = []
 
-[youtube-PLSlpr6o9vURwq3oxVZSimY8iC-cdd3kIs]
-title = "Let's Make a Physics Engine"
-url = "https://www.youtube.com/playlist?list=PLSlpr6o9vURwq3oxVZSimY8iC-cdd3kIs"
-type = "video-list"
-tags = []
-
-[youtube-PLSPw4ASQYyynKPY0I-QFHK0iJTjnvNUys]
-title = "C++/Game Tutorials"
-url = "https://www.youtube.com/playlist?list=PLSPw4ASQYyynKPY0I-QFHK0iJTjnvNUys"
-type = "video-list"
-tags = []
-
-[youtube-kuvina]
-title = "Kuvina Saydaki"
-url = "https://www.youtube.com/@Kuvina"
-type = "user"
-tags = []
-
-[youtube-hX3mazz8txo]
-title = "Signed Distance Functions & Ray-Marching"
-url = "https://www.youtube.com/watch?v=hX3mazz8txo"
-type = "video"
-tags = []
-
-[youtube-lSBsBrUAwFs]
-title = "Fixing the Hyperdrive: Maximizing Rendering Performance on NVIDIA GPUs"
-url = "https://www.youtube.com/watch?v=lSBsBrUAwFs"
-type = "video"
-tags = []
-
 [anteru-intro-to-compute-shaders]
 title = "Introduction to compute shaders | Anteru's Blog"
 url = "https://anteru.net/blog/2018/intro-to-compute-shaders/index.html"
@@ -1938,31 +1978,14 @@ title = "Intro to GPU Scalarization - Part 1 - Dreams of flashy pixels (on a whi
 url = "https://flashypixels.wordpress.com/2018/11/10/intro-to-gpu-scalarization-part-1/"
 tags = []
 
-[nvidia-advanced-api-performance-synchronization]
-title = "Advanced API Performance: Synchronization"
-url = "https://developer.nvidia.com/blog/advanced-api-performance-synchronization/"
-tags = []
-
 [bruop-tonemapping]
 title = "Tone Mapping | Bruno Opsenica's Blog"
 url = "https://bruop.github.io/tonemapping/"
 tags = []
 
-[youtube-SUEhzkwX4KI]
-title = "SparseLeap"
-url = "https://www.youtube.com/watch?v=SUEhzkwX4KI"
-type = "video"
-tags = []
-
 [texture-gathers-and-coordinate-precision]
 title = "Texture Gathers and Coordinate Precision"
 url = "https://www.reedbeta.com/blog/texture-gathers-and-coordinate-precision/"
-tags = []
-
-[youtube-G9Gfrbf6wLI]
-title = "Vulkanised 2023: Diligent Engine: Building a modern graphics abstraction layer"
-url = "https://www.youtube.com/watch?v=G9Gfrbf6wLI"
-type = "video"
 tags = []
 
 [brickadia-fast-collisions]
@@ -1979,12 +2002,6 @@ tags = []
 [casual-effects-data]
 title = "McGuire Computer Graphics Archive"
 url = "https://casual-effects.com/data/"
-tags = []
-
-[youtube-ob3VwY4JyzE]
-title = "Reinventing Minecraft world generation by Henrik Kniberg"
-url = "https://www.youtube.com/watch?v=ob3VwY4JyzE"
-type = "video"
 tags = []
 
 [reac2023_scripting_language]
@@ -2014,12 +2031,6 @@ title = "Goodbye Far Clipping Plane"
 url = "https://chaosinmotion.com/2010/09/06/goodbye-far-clipping-plane/"
 tags = []
 
-[nvidia-better-performance-at-lower-occupancy]
-title = "Better Performance at Lower Occupancy - 2238_GTC2010.pdf"
-url = "https://www.nvidia.com/content/GTC-2010/pdfs/2238_GTC2010.pdf"
-type = "paper"
-tags = []
-
 [histogram-tiling]
 title = "Histogram-Preserving Tiling | Benedikt Bitterli's Portfolio"
 url = "https://benedikt-bitterli.me/histogram-tiling/"
@@ -2046,38 +2057,9 @@ title = "VDB: A Deep Dive - JangaFX"
 url = "https://jangafx.com/2022/09/29/vdb-a-deep-dive/"
 tags = []
 
-[vulkan-resource-binding-2023]
-title = "Vulkan Shader Resource binding in 2023"
-url = "https://zoo.dev/blog/vulkan-resource-binding-2023"
-tags = []
-
-[vkoverhead]
-title = "zmike/vkoverhead: evaluating cpu overhead of vulkan drivers"
-url = "https://github.com/zmike/vkoverhead"
-type = "repository"
-tags = []
-
 [increasing-wave-coherence-with-ray-binning]
 title = "Increasing wave coherence with ray binning"
 url = "https://interplayoflight.wordpress.com/2022/05/08/increasing-wave-coherence-with-ray-binning/"
-tags = []
-
-[youtube-GvI7qt3kmz4]
-title = "3D JumpFlood of Voxel texture to make Distance Field Gradient"
-url = "https://www.youtube.com/watch?v=GvI7qt3kmz4"
-type = "video"
-tags = []
-
-[youtube-NjCp-HIZTcA]
-title = "Sparse Voxel Octrees"
-url = "https://www.youtube.com/watch?v=NjCp-HIZTcA"
-type = "video"
-tags = []
-
-[youtube-gNZtx3ijjpo]
-title = "Animated Sparse Voxel Octrees: In-depth pt1/3"
-url = "https://www.youtube.com/watch?v=gNZtx3ijjpo"
-type = "video"
 tags = []
 
 [motionforgepictures-height-maps]
@@ -2122,11 +2104,6 @@ tags = []
 title = "schulkinator/memorymanager: A simple, thread-safe memory manager for 64bit C++ applications and games. Focus is on preventing heap fragmentation in the absence of good virtual memory management, at the cost of wasting some memory. It works by globally overriding the new and delete operators."
 url = "https://github.com/schulkinator/memorymanager"
 type = "repository"
-tags = []
-
-[nvidia-accelerating-openvdb-on-gpus-with-nanovdb]
-title = "Accelerating OpenVDB on GPUs with NanoVDB | NVIDIA Technical Blog"
-url = "https://developer.nvidia.com/blog/accelerating-openvdb-on-gpus-with-nanovdb/"
 tags = []
 
 [eaosvofrtrt]
@@ -2188,22 +2165,10 @@ url = "https://cg.ivd.kit.edu/publications/2018/adaptive_temporal_filtering/adap
 type = "paper"
 tags = []
 
-[gdc_gtc_2019_q2vkpt]
-title = "Quake 2 Vulkan Path Tracer"
-url = "https://brechpunkt.de/q2vkpt/gdc_gtc_2019_q2vkpt.pdf"
-type = "presentation"
-tags = []
-
 [q2vkpt]
 title = "cschied/q2vkpt: Real-time path tracer VKPT integrated into q2pro Quake 2 client."
 url = "https://github.com/cschied/q2vkpt"
 type = "repository"
-tags = []
-
-[youtube-JYR-GwQ7JUk]
-title = "Ray Traced Voxel GI w/ SVGF - A Long Ramble on Denoising"
-url = "https://www.youtube.com/watch?v=JYR-GwQ7JUk"
-type = "video"
 tags = []
 
 [mpmmls2018siggraph]
@@ -2227,12 +2192,6 @@ title = "Random-access rendering of general vector graphics"
 url = "https://hhoppe.com/proj/ravg/"
 tags = []
 
-[youtube-8sf9soKi7j4]
-title = "Cubical Marching Squares"
-url = "https://www.youtube.com/watch?v=8sf9soKi7j4"
-type = "video"
-tags = []
-
 [sbgames2019-198453]
 title = "Ambient Sound with Signed Distance Fields and Gradient Fields"
 url = "https://www.sbgames.org/sbgames2019/files/papers/ComputacaoFull/198453.pdf"
@@ -2254,15 +2213,10 @@ title = "kallisto56/Raymarching-voxels-inside-cube: Shaders for raymarching voxe
 url = "https://github.com/kallisto56/Raymarching-voxels-inside-cube"
 tags = []
 
-[youtube-XkSS_veoSg0]
-title = "Sparse Voxel Octree and Polygon hybrid"
-url = "https://www.youtube.com/watch?v=XkSS_veoSg0"
-type = "video"
-tags = []
-
 [rogueviz]
 title = "HyperRogue - RogueViz"
 url = "https://roguetemple.com/z/hyper/rogueviz.php"
+type = "game"
 tags = []
 
 [synthetic-silviculture]
@@ -2278,13 +2232,252 @@ url = "https://github.com/stijnherfst/BrickMap"
 type = "repository"
 tags = []
 
+[dct-image-compression]
+title = "Image Compression Using the Discrete Cosine Transform"
+url = "http://sites.apam.columbia.edu/courses/ap1601y/Watson_MathJour_94.pdf"
+type = "paper"
+
+[graphicsgems-voxel-traversal]
+title = "Voxel Traversal Algorithm implemented in C"
+url = "https://web.archive.org/web/20111007033849/https://webdocs.cs.ualberta.ca/~graphics/books/GraphicsGems/gemsiv/vox_traverse.c"
+type = "example"
+tags = []
+
+[glam-rs-dda-impl]
+title = "Voxel Traveral Algorithm implemented in Rust via Glam"
+url = "https://github.com/bitshifter/glam-rs/discussions/564"
+type = "example"
+tags = []
+
+[zeuc-fine-backface-culling]
+title = "Fine-grained Backface Culling"
+url = "https://zeux.io/2023/04/28/triangle-backface-culling/"
+type = "article"
+tags = []
+
+[jonshiach-backface-culling]
+title = "Back Face Culling"
+url = "https://jonshiach.github.io/graphics-book/files/4.3_Backface_culling.html"
+type = "article"
+tags = []
+
+[karan-backface-culling]
+title = "Back Face Culling"
+url = "https://www.dgp.toronto.edu/~karan/courses/csc418/fall_2002/notes/cull.html"
+type = "article"
+tags = []
+
+
+
+################################################################################
+
+
+
+[youtube-w6m06QvQaGJKw7vRuPlnYJWczvPj]
+title = "OBBG: Open Block Building Game"
+url = "https://www.youtube.com/playlist?list=PLMkT-w6m06QvQaGJKw7vRuPlnYJWczvPj"
+type = "video-list"
+tags = []
+
+[youtube-PLSlpr6o9vURwq3oxVZSimY8iC-cdd3kIs]
+title = "Let's Make a Physics Engine"
+url = "https://www.youtube.com/playlist?list=PLSlpr6o9vURwq3oxVZSimY8iC-cdd3kIs"
+type = "video-list"
+tags = []
+
+[youtube-PLSPw4ASQYyynKPY0I-QFHK0iJTjnvNUys]
+title = "C++/Game Tutorials"
+url = "https://www.youtube.com/playlist?list=PLSPw4ASQYyynKPY0I-QFHK0iJTjnvNUys"
+type = "video-list"
+tags = []
+
+[youtube-VY8tGpGO-G0]
+title = "Deep Implicit Volume Compression"
+url = "https://www.youtube.com/watch?v=VY8tGpGO-G0"
+type = "video"
+tags = []
+
+[youtube-NsMHicoZTzQ]
+title = "How To PLAN your Game as a Solo Developer"
+url = "https://www.youtube.com/watch?v=NsMHicoZTzQ"
+type = "video"
+tags = []
+
+[youtube-ltkk_nlMhQo]
+title = "EG / Full Papers 4 / Sparse Voxels and Texture Synthesis / Tuesday 11:00-12:30"
+url = "https://www.youtube.com/watch?v=ltkk_nlMhQo"
+type = "video"
+tags = []
+
+[youtube-DW93P4bZJIo]
+title = "Sean Barrett explains his GPU compute shader voxel raycasting engine"
+url = "https://www.youtube.com/watch?v=DW93P4bZJIo"
+type = "video"
+tags = []
+
+[youtube-2vnTtiLrV1w]
+title = "stb_voxel_render.h programming library"
+url = "https://www.youtube.com/watch?v=2vnTtiLrV1w"
+type = "video"
+tags = []
+
+[youtube-A0pxY9QsgJE]
+title = "The Jump Flood Algorithm | Visualized and Explained"
+url = "https://www.youtube.com/watch?v=A0pxY9QsgJE"
+type = "video"
+tags = []
+
+[youtube-ToCozpl1sYY]
+title = "GPU-Based Run-Time Procedural Placement in Horizon: Zero Dawn"
+url = "https://www.youtube.com/watch?v=ToCozpl1sYY"
+type = "video"
+tags = []
+
+[youtube-wavnKZNSYqU]
+title = "Between Tech and Art: The Vegetation of Horizon Zero Dawn"
+url = "https://www.youtube.com/watch?v=wavnKZNSYqU"
+type = "video"
+tags = []
+
+[youtube-bJr4QlDxEME]
+title = "SoA Tech: Round Voxel Planets"
+url = "https://www.youtube.com/watch?v=bJr4QlDxEME"
+type = "video"
+tags = []
+
+[youtube-JXeJANDKwDc]
+title = "When This Number Hits 5200 - You Will be Dead"
+url = "https://www.youtube.com/watch?v=JXeJANDKwDc"
+type = "video"
+tags = []
+
+[youtube-MZ2GuvUWaP8]
+title = "Everything is a Remix"
+url = "https://www.youtube.com/watch?v=MZ2GuvUWaP8"
+type = "video"
+tags = []
+
+[youtube-sChQCdbLdHE]
+title = "The ONE Texture Every Game NEEDS"
+url = "https://www.youtube.com/watch?v=sChQCdbLdHE"
+type = "video"
+tags = []
+
+[youtube-ZsEnnB2wrbI]
+title = "How to turn a few Numbers into Worlds (Fractal Perlin Noise)"
+url = "https://www.youtube.com/watch?v=ZsEnnB2wrbI"
+type = "video"
+tags = []
+
+[youtube-zXsWftRdsvU]
+title = "Value Noise Explained!"
+url = "https://www.youtube.com/watch?v=zXsWftRdsvU"
+type = "video"
+tags = []
+
+[youtube-YyVAaJqYAfE]
+title = "How Minecraft ACTUALLY Works 💎⛏️"
+url = "https://www.youtube.com/watch?v=YyVAaJqYAfE"
+type = "video"
+tags = []
+
+[youtube-htYh-Tq7ZBI]
+title = "Why can't you multiply vectors?"
+url = "https://www.youtube.com/watch?v=htYh-Tq7ZBI"
+type = "video"
+tags = []
+
+[youtube-Idlv83CxP-8]
+title = "Let's remove Quaternions from every 3D Engine: Intro to Rotors from Geometric Algebra"
+url = "https://www.youtube.com/watch?v=Idlv83CxP-8"
+type = "video"
+tags = []
+
+[youtube-hX3mazz8txo]
+title = "Signed Distance Functions & Ray-Marching"
+url = "https://www.youtube.com/watch?v=hX3mazz8txo"
+type = "video"
+tags = []
+
+[youtube-lSBsBrUAwFs]
+title = "Fixing the Hyperdrive: Maximizing Rendering Performance on NVIDIA GPUs"
+url = "https://www.youtube.com/watch?v=lSBsBrUAwFs"
+type = "video"
+tags = []
+
+[youtube-SUEhzkwX4KI]
+title = "SparseLeap"
+url = "https://www.youtube.com/watch?v=SUEhzkwX4KI"
+type = "video"
+tags = []
+
+[youtube-ob3VwY4JyzE]
+title = "Reinventing Minecraft world generation by Henrik Kniberg"
+url = "https://www.youtube.com/watch?v=ob3VwY4JyzE"
+type = "video"
+tags = []
+
+[youtube-GvI7qt3kmz4]
+title = "3D JumpFlood of Voxel texture to make Distance Field Gradient"
+url = "https://www.youtube.com/watch?v=GvI7qt3kmz4"
+type = "video"
+tags = []
+
+[youtube-NjCp-HIZTcA]
+title = "Sparse Voxel Octrees"
+url = "https://www.youtube.com/watch?v=NjCp-HIZTcA"
+type = "video"
+tags = []
+
+[youtube-gNZtx3ijjpo]
+title = "Animated Sparse Voxel Octrees: In-depth pt1/3"
+url = "https://www.youtube.com/watch?v=gNZtx3ijjpo"
+type = "video"
+tags = []
+
+[youtube-JYR-GwQ7JUk]
+title = "Ray Traced Voxel GI w/ SVGF - A Long Ramble on Denoising"
+url = "https://www.youtube.com/watch?v=JYR-GwQ7JUk"
+type = "video"
+tags = []
+
+[youtube-8sf9soKi7j4]
+title = "Cubical Marching Squares"
+url = "https://www.youtube.com/watch?v=8sf9soKi7j4"
+type = "video"
+tags = []
+
+[youtube-XkSS_veoSg0]
+title = "Sparse Voxel Octree and Polygon hybrid"
+url = "https://www.youtube.com/watch?v=XkSS_veoSg0"
+type = "video"
+tags = []
+
+[youtube-G9Gfrbf6wLI]
+title = "Vulkanised 2023: Diligent Engine: Building a modern graphics abstraction layer"
+url = "https://www.youtube.com/watch?v=G9Gfrbf6wLI"
+type = "video"
+tags = []
+
+[youtube-kuvina]
+title = "Kuvina Saydaki"
+url = "https://www.youtube.com/@Kuvina"
+type = "user"
+tags = []
+
+[youtube-sudgylacmoe]
+title = "sudgylacmoe"
+url = "https://www.youtube.com/@sudgylacmoe/videos"
+type = "user"
+tags = []
+
+
+
 ### DEAD LINKS ###
 
 #url = "http://alexstv.com/index.php/posts/unity-voxel-block-tutorial"
 
 #url = "https://github.com/Bukkit/CraftBukkit/tree/master/src/main/java/org/bukkit/craftbukkit/generator"
-
-#url = "https://webdocs.cs.ualberta.ca/~graphics/books/GraphicsGems/gemsiv/vox_traverse.c"
 
 #url = "https://www.bit-101.com/blog/2021/07/perlin-vs-simplex"
 
