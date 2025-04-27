@@ -50,6 +50,18 @@ pub struct VoxelGrid {
   values: [[[Voxel; GRID_SIZE]; GRID_SIZE]; GRID_SIZE];
   // Well ain't that nice to look at, eh?
 }
+
+// Define methods to GET and SET voxels:
+impl VoxelGrid {
+  pub fn get(&self, x: u32, y: u32, z: u32) -> Voxel {
+    self.values[x][y][z]
+  }
+  
+  pub fn set(&self, x: u32, y: u32, z: u32, v: Voxel) {
+    *self.values[x][y][z] = v;
+  }
+}
+
 ```
 
 Now accessing it is pretty simple:
@@ -64,35 +76,26 @@ let mut volume = VoxelGrid {
 let (x,y,z) = (0, 1, 2);
 
 // Get a voxel:
-let v = volume.values[x][y][z];
+let v = volume.get(x, y, z);
 
 // Set a voxel:
-*volume.values[x][y][z] = v;
+volume.set(x, y, z, v);
 ```
 
-But what happens if `x`, `y` or `z` go *outside* the volume? We might get an error and crash!
+{% info_notice() %}
+**Note on 3D arrays:**  
+In the vast majority of languages, 3D arrays are implemented as *"arrays of pointers to arrays of pointers to arrays of values"* (sometimes referred to as "jagged arrays"), which has a few downsides:
 
-Let's prevent that by defining *accessor functions* and then ***only*** use these:
+- If the memory allocator doesn't play nice,
+  our innermost arrays may be spread all over the place (i.e.: fragmentation).
+- Accessing any value requires dereferencing three-ish pointers,
+  which can and will trash the cache and thus access speed.
+- Iterating/looping over them *always* requires three nested loops.
+- Creating and (de)serializing 3d arrays tends to be a messy affair.
+{% end %}
 
-```rust
-impl VoxelGrid {
-  pub fn get(&self, x: u32, y: u32, z: u32) -> Option<Voxel> {
-    self.values.get(x)?.get(y)?.get(z)
-  }
-  
-  pub fn set(&self, x: u32, y: u32, z: u32, v: Voxel) -> Option<()> {
-    *self.values.get_mut(x)?.get_mut(y)?.get_mut(z) = v;
-  }
-}
-```
-
-Alas, this shows us one of three annoyances with using 3D arrays:
-
-- Accessing elements always requires us to 'jump' trough two levels of indirection.
-- Iterating/looping over our voxels requires *three* nested loops, which is a pain to write.
-- Creating and filling a 3D array is, unsurprisingly, quite messy.
-
-As such, we will now go ahead and make our array *flat*, turning it one-dimensional!
+For a variety of reasons (see note above) and reasons yet to be revealed,
+we will now go ahead and *flatten* our array, turning it one-dimensional!
 
 ```rust
 pub struct VoxelGrid {

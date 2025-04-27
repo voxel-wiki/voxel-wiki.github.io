@@ -7,51 +7,14 @@ categories = ["datastructures"]
 tags = ["datastructures", "storage", "spatial-acceleration"]
 +++
 
-The simplest way to store voxels is to define a three-dimensional array of elements (be it `struct`s or `integer`s), where each element represents a single voxel:
+Storing voxels in a plain array is perfectly fine for small scenes,
+but as we increase the size (and thus volume) of our scene,
+we will inevitably run into various limits, like the *size of our RAM*...
 
-```c#
-int width = ...;
-int height = ...;
-int depth = ...;
-var voxels = new VOXEL[width][height][depth];
-
-// Set a voxel:
-voxels[x][y][z] = voxel;
-
-// Get a voxel:
-var voxel = voxels[x][y][z];
-```
-
-However, because storing *arrays within arrays* often means having *pointers pointing at pointers* (which ain't good for [various reasons](/wiki/optimization) we won't get into here), it is generally recommended to use a one-dimensional array with a clearly defined *spatial indexing scheme*.
-
-Here's an example:
-
-```c#
---snip--
-// Spatial Indexing Scheme is: Y-height, Z-depth, X-width
-// The arrays size is just all axes multiplied together:
-var voxels = new VOXEL[height * depth * width];
-
-// Our Indexing Formula is the indexing scheme in reverse,
-// with the components being multiplied subsequently:
-//     x + z*width + y*width*depth
-
-// So let's define a function (here a lambda) for it:
-var idx = (int x, int y, int z) => (x + z*width + y*width*depth);
-// ^ NOTE: You may want to throw an error right here
-//         if either the coordinate components
-//         or the resulting index are out of bounds.
-
-// Set a voxel:
-voxels[idx(x,y,z)] = voxel;
-
-// Get a voxel:
-var voxel = voxels[idx(x,y,z)];
-```
-
-Now, storing voxels in a plain array like this is perfectly fine for small scenes...
-
-However, for larger scenes, we'll have to use a data-structure that allows both loading and purging *parts of our volume* (called [Chunks](/wiki/chunking) or Bricks) from memory, nearly in realtime, without slowing down the *access times* of our voxel data too much.
+As such, we'll have to use a data-structure that allows both
+loading and purging *parts of our volume* (called [Chunks](/wiki/chunking) or Bricks)
+from memory, nearly in realtime, without slowing down the *access times* of our voxel data,
+or the performance of world generation, *too* much.
 
 > **Note:** These techniques can often be combined.
 
