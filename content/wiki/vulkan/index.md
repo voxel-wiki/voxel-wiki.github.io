@@ -7,6 +7,8 @@ categories = ["rendering"]
 tags = ["rendering", "api"]
 +++
 
+> Vulkan is a modern cross-platform API and open standard for hardware accelerated 2D/3D graphics and computing.
+
 {% figure(class="float", caption="Official Logo", author="Khronos", license="CC0") %}https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Vulkan_logo.svg/320px-Vulkan_logo.svg.png{% end %}
 
 {{ stub_notice() }}
@@ -26,6 +28,7 @@ tags = ["rendering", "api"]
   - [I Am Graphics And So Can You](https://www.fasterthan.life/blog/2017/7/11/i-am-graphics-and-so-can-you-part-1)
   - [Writing an efficient Vulkan renderer](https://zeux.io/2020/02/27/writing-an-efficient-vulkan-renderer/)
 - [Vulkan Multithreading Overview](https://developer.nvidia.com/sites/default/files/akamai/gameworks/blog/munich/mschott_vulkan_multi_threading.pdf) (PDF)
+- [Metal API Compatibility](https://github.com/KhronosGroup/MoltenVK)
 
 ## See Also
 
