@@ -21,10 +21,15 @@ title = "Data Management"
 content = "There are many ways to <a href='wiki/datastructures'>structure</a>, <a href='wiki/serialization'>serialize</a> and <a href='wiki/compression'>compress</a> voxels, all with their own pros and cons..."
 #link = "/wiki/datastructures"
 
+# [[extra.list]]
+# title = "Interactivity"
+# content = "Want to make voxels interact with each other or have entities roaming around? Then you'll have to deal with physics and things like navigation meshes..."
+# #link = "/wiki/interactivity"
+
 [[extra.list]]
-title = "Interactivity"
-content = "Want to make voxels interact with each other or have entities roaming around? Then you'll have to deal with physics and things like navigation meshes..."
-#link = "/wiki/interactivity"
+title = "Editors & Tools"
+content = "Don't want to waste time writing your own editor & tools?"
+link = "/tags/software"
 
 [[extra.list]]
 title = "Procedural Generation"

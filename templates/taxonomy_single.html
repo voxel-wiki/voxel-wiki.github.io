@@ -7,6 +7,9 @@
   {% set taxonomy_page = term.pages | filter(attribute="path", value=taxonomy_path) | first %}
   {% set title = "Pages in " ~ taxonomy_name %}
   {% set title_addition = "" %}
+  {% if taxonomy.name == "tags" %}
+    {% set title = "Pages tagged " ~ taxonomy_name %}
+  {% endif %}
   {% if config.title %}
     {% set title_addition = title_separator ~ config.title %}
   {% endif %}
