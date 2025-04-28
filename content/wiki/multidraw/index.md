@@ -1,7 +1,7 @@
 +++
 title = "Multidraw"
 description = "A method for rendering massive amounts of geometry, with a single drawcall."
-#path = "path"
+aliases = ["/wiki/mdi"]
 [taxonomies]
 categories = ["rendering"]
 tags = ["rendering"]
@@ -12,6 +12,7 @@ tags = ["rendering"]
 {{ stub_notice() }}
 
 {{ todo_notice(body="Motivation: Drawcalls are expensive.") }}
+{{ todo_notice(body="Requirement: Modern graphics APIs.") }}
 {{ todo_notice(body="Requirement: Pooling of geometry.") }}
 {{ todo_notice(body="Follow-up: Vertex pulling.") }}
 {{ todo_notice(body="GPU-driven culling and rendering?") }}
