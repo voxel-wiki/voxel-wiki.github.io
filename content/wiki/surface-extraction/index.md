@@ -35,6 +35,13 @@ mainly depends on the following factors:
 
 {{ todo_notice(body="Explain further?") }}
 
+## See also
+
+- [Vertex Packing](/wiki/vertex-packing)
+- [Vertex Pulling](/wiki/vertex-pulling)
+- [Vertex Pooling](/wiki/vertex-pooling)
+<!-- - [Greedy Meshing](/wiki/greedy-meshing) -->
+
 ## References
 
 - <https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/>

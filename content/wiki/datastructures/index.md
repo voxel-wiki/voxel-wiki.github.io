@@ -24,6 +24,7 @@ or the performance of world generation, *too* much.
 
 {{ todo_notice(body="List more datastructures?") }}
 {{ todo_notice(body="Compare datastructures?") }}
+{{ todo_notice(body="Coordinate-hashing vs -indexing?") }}
 {{ todo_notice(body="Explain complexity trade-offs? Table/diagram?") }}
 {{ todo_notice(body="Top- and bottom-level acceleration structures?") }}
 
