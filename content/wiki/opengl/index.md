@@ -31,7 +31,7 @@ tags = ["rendering", "api"]
 - Guides:
   - [Using Modern OpenGL to Avoid Common Errors](https://juandiegomontoya.github.io/modern_opengl.html)
 - [Language Bindings](https://www.khronos.org/opengl/wiki/Language_bindings):
-  - For `C` and `C++`: [GLFW](https://www.glfw.org/)
+  - For `C++`: [glbinding](https://glbinding.org/)
   - For `C#`: [OpenTK](https://opentk.net/)
   - For `Java`: [LWJGL](https://www.lwjgl.org/)
   - For `JavaScript`: [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) ([Guide](https://webglfundamentals.org/))
