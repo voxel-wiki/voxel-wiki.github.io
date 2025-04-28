@@ -7,7 +7,11 @@ categories = ["culling"]
 tags = ["rendering", "culling", "optimization"]
 +++
 
+> Removal of geometry that is not in the same 'room'.
+
 {{ stub_notice() }}
+{{ todo_notice(body="Relation to visibility sets.") }}
+{{ todo_notice(body="Relation to interior culling.") }}
 
 ## References
 

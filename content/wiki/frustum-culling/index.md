@@ -6,6 +6,8 @@ categories = ["culling"]
 tags = ["rendering", "culling", "optimization"]
 +++
 
+> Removal of geometry that is outside the cameras view region.
+
 {{ stub_notice() }}
 
 **Notes:**

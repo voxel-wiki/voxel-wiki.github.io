@@ -6,6 +6,8 @@ categories = ["culling"]
 tags = ["rendering", "culling", "optimization"]
 +++
 
+> Removal of geometry not facing the camera.
+
 {{ stub_notice() }}
 
 **Notes:**
