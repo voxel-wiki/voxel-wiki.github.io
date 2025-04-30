@@ -2283,6 +2283,18 @@ url = "https://www.dgp.toronto.edu/~karan/courses/csc418/fall_2002/notes/cull.ht
 type = "article"
 tags = []
 
+[allenchou-game-physics-series]
+title = "AllenChou's Game Physics Series"
+url = "https://allenchou.net/game-physics-series/"
+type = "article"
+tags = []
+
+[gdc2014-understanding-constraints]
+title = "GDC 2014: Physics for Game Programmers: Understanding Constraints"
+url = "https://gdcvault.com/play/1020603/Physics-for-Game-Programmers-Understanding"
+type = "video"
+tags = []
+
 
 
 ################################################################################
