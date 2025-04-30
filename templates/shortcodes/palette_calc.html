@@ -1,0 +1,194 @@
+<div id='{{id}}' class='notice info' style='display:none'>
+	<div style="text-align:center"><b>Palette Compression</b> Calculator</div>
+	<div style="display:flex;gap:0.75rem;justify-content:center;align-items:center;padding:0.5rem">
+		<label>
+			<span>Palette Entry Size</span><br/>
+			<input required
+				type=number
+				min=1 max=256
+				step=1 value=4
+				name="palette-entry-size"
+				style="text-align:end;width:9em"
+			/><br/>
+			<small>In bytes.</small>
+		</label>
+		<label>
+			<span>Maximum Entropy</span><br/>
+			<input required
+				type=number
+				min=1 max=65536
+				step=1 value=16
+				name="palette-entropy"
+				style="text-align:end;width:9em"
+			/><br/>
+			<small># of unique states.</small>
+		</label>
+		<label>
+			<span>Cell/Word Size</span><br/>
+			<select required
+				name="cell-size"
+				style="text-align:end;width:9em"
+			>
+				<option value=8>u8</option>
+				<option value=16>u16</option>
+				<option value=32>u32</option>
+				<option value=64 selected>u64</option>
+				<option value=128>u128</option>
+				<option value=256>u256</option>
+			</select><br/>
+			<small>Backing Storage Type</small>
+		</label>
+	</div>
+	<blockquote style="display:flex;justify-content:center;align-items:center;padding:0.5rem">
+		Palette Memory = PEntrySize + Entropy<br/>
+		Cell Count = Volume / Voxels Per Cell<br/>
+		Index Memory = Cell Count * Voxels Per Cell * CellSize / 8
+	</blockquote>
+	<table style="margin:0 auto">
+		<thead></thead>
+		<tbody></tbody>
+	</table>
+	<style>[id="{{id}}"] {
+		table {border-collapse: collapse}
+		table td {white-space: nowrap;padding:0.125em 0.5em;text-align:end;border-top:1px solid lightgray}
+		table td:nth-child(5) {border-right:1px solid lightgray}
+		span.unit {opacity: 0.75;font-size:0.75em}
+	}</style>
+</div>
+<script async defer style='display:none'>
+(function() {
+	// Yes, this code is sinfully ugly.
+	// No, I will not use a framework.
+	// No, I give not a singular fuck.
+	
+	function formatMemory(bytes) {
+		const K = 1024;
+		const kilobytes = bytes / K,
+			megabytes = kilobytes / K,
+			gigabytes = megabytes / K,
+			terabytes = gigabytes / K,
+			petabytes = terabytes / K;
+		var unit = 'B', measure = Math.ceil(bytes), fixed=false;
+		if(terabytes >= K) {measure = petabytes; unit = 'PiB'; fixed=true}
+		if(gigabytes >= K) {measure = terabytes; unit = 'TiB'; fixed=true}
+		if(megabytes >= K) {measure = gigabytes; unit = 'GiB'; fixed=true}
+		if(kilobytes >= K) {measure = megabytes; unit = 'MiB'; fixed=true}
+		if(bytes >= K) {measure = kilobytes; unit = 'KiB'; fixed=true}
+		return `<span class=measure>${fixed?measure.toFixed(1):measure}</span>&hairsp;<span class=unit>${unit}</span>`;
+	}
+	
+	var calculator = document.getElementById('{{id}}');
+    var calc_input_es = calculator.querySelector('input[name=palette-entry-size]');
+    var calc_input_me = calculator.querySelector('input[name=palette-entropy]');
+    var calc_input_cs = calculator.querySelector('select[name=cell-size]');
+    var calc_thead = calculator.querySelector('thead');
+    var calc_tbody = calculator.querySelector('tbody');
+	
+	function update() {
+        var EntrySize = null, MaxEntropy = null, CellSize = 64;
+        try {
+            EntrySize = Number.parseInt(calc_input_es.value || "1");
+            MaxEntropy = Number.parseInt(calc_input_me.value || "1");
+			CellSize = calc_input_cs.value;
+            if (!EntrySize) throw "invalid";
+            if (!MaxEntropy) throw "invalid";
+        } catch(e) {
+            calc_tbody.innerHTML = '';
+            return;
+        }
+		
+		var sizes = [4, 8, 16, 32, 64];
+		var scols = sizes.map((size) => {
+			return {
+				size: size,
+				area: size * size,
+				cube: size * size * size,
+				raw: size * size * size * EntrySize
+			};
+		});
+		
+		var thead = `<tr>`
+			+ `<th style="writing-mode:vertical-rl;transform:scale(-1);vertical-align:top"
+				title="Number of unique voxel states in the volume."
+				>Entropy</th>`
+			+ `<th style="writing-mode:vertical-rl;transform:scale(-1);vertical-align:top"
+				title="The number of bits per voxel sample."
+				>
+					Bits per Voxel
+				</th>`
+			+ `<th style="writing-mode:vertical-rl;transform:scale(-1);vertical-align:top"
+				title="The number of voxels per cell."
+				>
+					Voxels per Cell
+				</th>`
+			+ `<th style="writing-mode:vertical-rl;transform:scale(-1);vertical-align:top"
+				title="The wasted bits per cell."
+				>
+					Waste per Cell
+				</th>`
+			+ `<th style="writing-mode:vertical-rl;transform:scale(-1);vertical-align:top"
+				title="The size of the palette, in bytes."
+				>Palette Memory</th>`
+		;
+		for(var scol of scols) {
+			thead += `<th style="vertical-align:bottom">${scol.size}³<br/><small>${scol.cube}</small></th>`;
+		}
+		calc_thead.innerHTML = thead + "</tr>";
+		
+		var tbody = "";
+		for(var entropy = 1; entropy <= MaxEntropy; entropy++) {
+			var entropy_bits = Math.ceil(Math.log2(entropy));
+			var entries = EntrySize * entropy;
+			var voxels_per_cell = Math.floor(entropy_bits != 0 ? CellSize / entropy_bits : 0);
+			var wasted_per_cell = entropy_bits != 0 ? CellSize % entropy_bits : 0;
+			var packed = wasted_per_cell == 0;
+			
+			if(entropy_bits != 0 && voxels_per_cell <= 0) {
+				continue;
+			}
+			
+			tbody += `<tr class="${packed?'packed':'wasted'}">`;
+			tbody += `<td>${entropy}</td>`;
+			tbody += `<td>${entropy_bits}</td>`;
+			tbody += `<td>${voxels_per_cell}</td>`;
+			tbody += `<td ${packed?'':'style="color:red"'}>${wasted_per_cell}</td>`;
+			tbody += `<td>${formatMemory(entries)}</td>`;
+			
+			for(var scol of scols) {
+				var cells = voxels_per_cell == 0 ? 0 : scol.cube / voxels_per_cell;
+				var wasted = wasted_per_cell == 0 ? 0 : (cells * wasted_per_cell)/8;
+				var indices = cells * CellSize / 8;
+				var percent = indices != 0 ? (indices / scol.raw) : 0;
+				
+				tbody += `<td title="(${cells} / ${voxels_per_cell}) * ${CellSize}/8">`;
+				tbody += `${formatMemory(indices)}`;
+				tbody += `<div>${(percent*100).toFixed(1)}<span class=unit>%</span></div>`;
+				if(wasted != 0)
+					tbody += `<div style="color:red">${formatMemory(wasted)}</div>`;
+				tbody += `</td>`;
+			}
+			
+			tbody += "</tr>";
+		}
+		
+		tbody += `<tr>`;
+		tbody += `<td>${EntrySize*8}</td>`;
+		tbody += `<td>${EntrySize*8}</td>`;
+		tbody += `<td>&nbsp;</td>`;
+		tbody += `<td>&nbsp;</td>`;
+		tbody += `<td>${formatMemory(EntrySize*8)}</td>`;
+		for(var scol of scols) {
+			tbody += `<td>${formatMemory(scol.raw)}</td>`;
+		}
+		tbody += "</tr>";
+		
+		calc_tbody.innerHTML = tbody;
+	}
+	
+	calc_input_es.oninput = update;
+	calc_input_me.oninput = update;
+	calc_input_cs.onchange = update;
+	update();
+	calculator.style = '';
+}) ();
+</script>
