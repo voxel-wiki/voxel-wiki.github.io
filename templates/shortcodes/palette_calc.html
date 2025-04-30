@@ -1,6 +1,6 @@
 <div id='{{id}}' class='notice info' style='display:none'>
 	<div style="text-align:center"><b>Palette Compression</b> Calculator</div>
-	<div style="display:flex;gap:0.75rem;justify-content:center;align-items:center;padding:0.5rem">
+	<div style="display:flex;flex-flow:row wrap;gap:0.75rem;justify-content:center;align-items:center;padding:0.5rem">
 		<label>
 			<span>Palette Entry Size</span><br/>
 			<input required
@@ -44,10 +44,12 @@
 		Cell Count = Volume / Voxels Per Cell<br/>
 		Index Memory = Cell Count * Voxels Per Cell * Cell Size / 8
 	</blockquote>
-	<table style="margin:0 auto">
-		<thead></thead>
-		<tbody></tbody>
-	</table>
+	<div style="overflow-x: auto; overflow-y: auto; width: 100%">
+		<table style="max-width: 100%">
+			<thead></thead>
+			<tbody></tbody>
+		</table>
+	</div>
 	<style>[id="{{id}}"] {
 		table {border-collapse: collapse}
 		table td {white-space: nowrap;padding:0.125em 0.5em;text-align:end;border-top:1px solid lightgray}
