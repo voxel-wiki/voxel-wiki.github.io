@@ -17,7 +17,7 @@
 			<input required
 				type=number
 				min=1 max=65536
-				step=1 value=16
+				step=1 value=1024
 				name="palette-entropy"
 				style="text-align:end;width:9em"
 			/><br/>
@@ -37,6 +37,14 @@
 				<option value=256>u256</option>
 			</select><br/>
 			<small>Backing Storage Type</small>
+		</label>
+		<label>
+			<input required
+			type="checkbox"
+			checked
+			name="recurring-entropy-skip"
+			/>
+			<span>Skip Recurring</span>
 		</label>
 	</div>
 	<blockquote style="display:flex;justify-content:center;align-items:center;padding:0.5rem">
@@ -80,24 +88,27 @@
 	}
 	
 	var calculator = document.getElementById('{{id}}');
-    var calc_input_es = calculator.querySelector('input[name=palette-entry-size]');
-    var calc_input_me = calculator.querySelector('input[name=palette-entropy]');
-    var calc_input_cs = calculator.querySelector('select[name=cell-size]');
-    var calc_thead = calculator.querySelector('thead');
-    var calc_tbody = calculator.querySelector('tbody');
+	var calc_input_es = calculator.querySelector('input[name=palette-entry-size]');
+	var calc_input_me = calculator.querySelector('input[name=palette-entropy]');
+	var calc_input_cs = calculator.querySelector('select[name=cell-size]');
+	var calc_input_rs = calculator.querySelector('input[name=recurring-entropy-skip]');
+	var calc_thead = calculator.querySelector('thead');
+	var calc_tbody = calculator.querySelector('tbody');
 	
 	function update() {
-        var EntrySize = null, MaxEntropy = null, CellSize = 64;
-        try {
-            EntrySize = Number.parseInt(calc_input_es.value || "1");
-            MaxEntropy = Number.parseInt(calc_input_me.value || "1");
+		var EntrySize = null, MaxEntropy = null, CellSize = 64, SkipRecurring = true;
+		try {
+			EntrySize = Math.abs(Number.parseInt(calc_input_es.value || "1"));
+			MaxEntropy = Math.abs(Number.parseInt(calc_input_me.value || "1"));
 			CellSize = calc_input_cs.value;
-            if (!EntrySize) throw "invalid";
-            if (!MaxEntropy) throw "invalid";
-        } catch(e) {
-            calc_tbody.innerHTML = '';
-            return;
-        }
+			if(MaxEntropy >= 512) calc_input_rs.checked = true;
+			SkipRecurring = calc_input_rs.checked;
+			if (!EntrySize) throw "invalid";
+			if (!MaxEntropy) throw "invalid";
+		} catch(e) {
+			calc_tbody.innerHTML = '';
+			return;
+		}
 		
 		var sizes = [4, 8, 16, 32, 64];
 		var scols = sizes.map((size) => {
@@ -137,9 +148,30 @@
 		}
 		calc_thead.innerHTML = thead + "</tr>";
 		
+		var prev_entropy_bits = -1;
+		var prev_skipped_count = 0;
 		var tbody = "";
 		for(var entropy = 1; entropy <= MaxEntropy; entropy++) {
 			var entropy_bits = Math.ceil(Math.log2(entropy));
+			
+			if(SkipRecurring) {
+				if(prev_entropy_bits == entropy_bits) {
+					prev_skipped_count++;
+					continue;
+				} else if(prev_skipped_count > 0) {
+					tbody += `<tr>`;
+					tbody += `<td colspan=${5} style="text-align:center;font-size:0.65em">`;
+					tbody += `<span style="opacity:0.5">Skipped ${prev_skipped_count} row/s.</span>`;
+					tbody += `</td>`;
+					tbody += `<td colspan=${scols.length} style="border-left:1px solid lightgray">`;
+					tbody += `</td>`;
+					tbody += `</tr>`;
+				}
+			}
+			
+			prev_entropy_bits = entropy_bits;
+			prev_skipped_count = 0;
+			
 			var entries = EntrySize * entropy;
 			var voxels_per_cell = Math.floor(entropy_bits != 0 ? CellSize / entropy_bits : 0);
 			var wasted_per_cell = entropy_bits != 0 ? CellSize % entropy_bits : 0;
@@ -190,6 +222,7 @@
 	calc_input_es.oninput = update;
 	calc_input_me.oninput = update;
 	calc_input_cs.onchange = update;
+	calc_input_rs.onchange = update;
 	update();
 	calculator.style = '';
 }) ();
