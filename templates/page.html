@@ -39,10 +39,14 @@
 {% endblock body %}
 
 {% block content %}
-<div class="wrap container" role="document">
+<div class="wrap container {{page.extra.container|default(value='')}}" role="document">
   <div class="content">
     <div class="row justify-content-center">
+      {% if page.extra.breakpoints is defined %}
+      <div class="{{page.extra.breakpoints}}">
+      {% else %}
       <div class="col-md-12 col-lg-10 col-xxl-8">
+      {% endif %}
         {% if page.taxonomies is defined %}
             <nav style="display:flex;flex-flow:row wrap;max-width:100%;font-size:0.9rem">
                 {% set categories = page.taxonomies | get(key="categories", default=[]) %}
