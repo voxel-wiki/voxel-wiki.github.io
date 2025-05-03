@@ -4,7 +4,7 @@ description = "Traveling through 3D grids in a straight line."
 path = "/wiki/raycasting"
 [taxonomies]
 categories = ["algorithms"]
-tags = ["algorithm", "math", "raycasting", "raytracing"]
+tags = ["algorithms", "math", "raycasting", "raytracing"]
 [extra]
 chapters = true
 chapter_prev = false
