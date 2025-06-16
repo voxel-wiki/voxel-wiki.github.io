@@ -92,7 +92,7 @@ so it's best to leave it to a windowing library...
 | Name | Language | Platforms |
 |------|----------|-----------|
 | [SDL](https://www.libsdl.org/)  | `C` | [*various*](https://wiki.libsdl.org/SDL2/FAQGeneral#what_platforms_are_supported) |
-| [GLFW](https://www.glfw.org/) | `C++` | [*various*](https://www.glfw.org/faq.html#14---what-platforms-are-supported-by-glfw) |
+| [GLFW](https://www.glfw.org/) | `C` | [*various*](https://www.glfw.org/faq.html#14---what-platforms-are-supported-by-glfw) |
 | [SFML](https://www.sfml-dev.org/) | `C++` | [*various*](https://www.sfml-dev.org/faq.php#grl-platforms) |
 | [Winit](https://github.com/rust-windowing/winit) | `Rust` | [*various*](https://github.com/rust-windowing/winit/blob/master/FEATURES.md) |
 
