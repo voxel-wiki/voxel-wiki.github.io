@@ -3,6 +3,11 @@
 	src: local(Hack),local(sfmono-regular),local(menlo),local(monaco),local(consolas),local("Liberation Mono"),local("Courier New"),local(monospace);
 }
 
+html:has(body.draft) {
+	background: repeating-linear-gradient(45deg, rgb(17, 17, 17) 0% 5%, rgb(218, 165, 32) 5% 10%);
+	padding: 0 2rem;
+}
+
 .home > .container > .content {
 	position: relative;
 }

@@ -36,6 +36,9 @@
   {% else %}
     {% set page_class = "page single" %}
   {% endif %}
+  {% if page.draft %}
+    {% set page_class = page_class ~ " draft" %}
+  {% endif %}
 {% endblock body %}
 
 {% block content %}
