@@ -11,6 +11,10 @@ tags = ["procgen", "algorithms"]
 each only doing 'one thing', caching the result, and feeding into the *next* phase,
 on and on until some final 'completed' phase is reached.
 
+<!-- more -->
+
+{% figure(class="float aspect", caption="Phased Generation, as visualized by Minecraft when <a href=https://minecraft.wiki/w/Loading_world_screen>opening a world.</a>", author="By [Unavailablehoax](https://minecraft.wiki/w/User:Unavailablehoax)") %}/wiki/phased-generation/20250204210519!Chunk_colormap.gif{% end %}
+
 This can happen both **globally**, when a world is initially created,
 and **locally** as [sections](/wiki/chunking) of the world need to
 be realized into actual voxel volumes for simulation/play.
