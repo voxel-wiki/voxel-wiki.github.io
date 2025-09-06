@@ -66,3 +66,8 @@ Although this approach creates distortions near the corners, it is a usable appr
 
 ## See also
 - [Coordinate Systems](/wiki/coordinate-systems)
+
+## References
+
+- [Andart: Torus–Earth](https://www.aleph.se/andart/archives/2014/02/torusearth.html)
+- [Bowerbyte: Blocky Planet — Making Minecraft Spherical](https://www.bowerbyte.com/posts/blocky-planet/)
