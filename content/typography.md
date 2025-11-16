@@ -1,7 +1,12 @@
 +++
+draft = true
 title = "Typography"
 description = "Typography Test Page"
 path = "typography"
+#aliases = []
+#[taxonomies]
+#categories = []
+#tags = []
 +++
 
 # Heading 1
