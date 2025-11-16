@@ -18,7 +18,7 @@ link = "/wiki/rendering"
 
 [[extra.list]]
 title = "Data Management"
-content = "There are many ways to <a href='wiki/datastructures'>structure</a>, <a href='wiki/serialization'>serialize</a> and <a href='wiki/compression'>compress</a> voxels, all with their own pros and cons..."
+content = "There are many ways to <a href='wiki/datastructures'>structure</a>, <a href='wiki/accelerationstructures'>optimize</a>, <a href='wiki/serialization'>serialize</a> and <a href='wiki/compression'>compress</a> voxels, all with their own pros and cons..."
 #link = "/wiki/datastructures"
 
 # [[extra.list]]
