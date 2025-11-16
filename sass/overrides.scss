@@ -240,9 +240,23 @@ pre, code, kbd, samp {
 }
 
 pre {
+	position: relative;
 	margin: 0;
 	margin-bottom: 1rem;
 	padding: 0;
+}
+
+pre[data-lang]::after {
+	position: absolute;
+	top: 0; right: 0;
+	display: inline-block;
+	content: attr(data-lang);
+	padding: 0.2em;
+	background: black;
+	color: whitesmoke;
+	opacity: 0.3;
+	border-radius: 3px;
+	text-transform: capitalize;
 }
 
 pre code {
