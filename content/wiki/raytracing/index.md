@@ -9,7 +9,7 @@ tags = ["rendering", "raytracing", "raycasting"]
 [extra]
 chapters = true
 chapter_prev = {text = "Raycasting", link = "/wiki/raycasting"}
-chapter_next = false
+chapter_next = {text = "Raysterization", link = "/wiki/raysterization"}
 +++
 
 Rendering images via raycasting, be it on the CPU or GPU, is a powerful method, *especially* when it comes to voxels.
