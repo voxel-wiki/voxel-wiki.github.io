@@ -15,7 +15,7 @@ When dealing with voxels as discrete values (i.e.: bloxels) one will usually hav
 
 <!-- more -->
 
-{% figure(class="float clear-header", caption="**A Color Palette**", author="[Vincent Le Moign](https://twitter.com/webalys)", license="CC-BY-4.0") %}/wiki/palette-compression/600-artist-palette.svg{% end %}
+{% figure(class="float clear-header", caption="**A Color Palette**", author="[Vincent Le Moign](https://twitter.com/webalys)", license="CC-BY-4.0") %}/wiki/palettes/600-artist-palette.svg{% end %}
 
 ...as such, a global palette is often declared as a static/constant `enum`, like this:
 
@@ -82,7 +82,7 @@ What does the local palette contain? Well `Air` and `Dirt` of course!
 {% info_notice() %}
 **Analogy: Painting by Numbers**
 
-A good way to think of this, is to imagine the chunk as [paint by numbers](https://en.wikipedia.org/wiki/Paint_by_number) picture, where the parts are marked up with numbers, with a palette of numbered colors by the side.
+A good way to think of this, is to imagine the chunk as a [paint by numbers](https://en.wikipedia.org/wiki/Paint_by_number) picture, where the parts are marked up with numbers, with a palette of numbered colors by the side.
 
 To then 'paint' the chunk, all we have to do is take it's local palette and fill in the numbered parts with their correspondingly numbered colors!
 {% end %}
