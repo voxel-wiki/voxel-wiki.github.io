@@ -13,7 +13,7 @@ url_button = "Getting Started"
 
 [[extra.list]]
 title = "Rendering"
-content = "How to turn voxels into pixels?<br> The <a href='wiki/rendering'>choice is yours</a>..."
+content = "How to turn voxels into pixels?<br> The choice is yours..."
 link = "/wiki/rendering"
 
 [[extra.list]]
@@ -21,20 +21,15 @@ title = "Data Management"
 content = "There are many ways to <a href='wiki/datastructures'>structure</a>, <a href='wiki/accelerationstructures'>optimize</a>, <a href='wiki/serialization'>serialize</a> and <a href='wiki/compression'>compress</a> voxels, all with their own pros and cons..."
 #link = "/wiki/datastructures"
 
-# [[extra.list]]
-# title = "Interactivity"
-# content = "Want to make voxels interact with each other or have entities roaming around? Then you'll have to deal with physics and things like navigation meshes..."
-# #link = "/wiki/interactivity"
+[[extra.list]]
+title = "Procedural Generation"
+content = "Creating worlds from nothing but math, with the art(!) of procedural generation!"
+link = "/wiki/procedural-generation"
 
 [[extra.list]]
 title = "Editors & Tools"
-content = "Don't want to waste time writing your own editor & tools?"
+content = "Don't want to spend time writing your own editors & tools? Don't worry, random strangers on the internet already did!"
 link = "/tags/software"
-
-[[extra.list]]
-title = "Procedural Generation"
-content = "Creating worlds from nothing but math, the art of <a href='wiki/procedural-generation'>procedural generation</a>..."
-link = "/wiki/procedural-generation"
 
 [[extra.list]]
 title = "Engines"
