@@ -42,6 +42,11 @@ content = "Don't want to start entirely <a href='wiki/engine-creation'>from scra
 link = "/wiki/engines"
 
 [[extra.list]]
+title = "References"
+content = "Do you need inspiration? Want to read research papers? Or just watch cool videos about voxels? Check out <i>The Great List Of References!</i>"
+link = "/wiki/references"
+
+[[extra.list]]
 title = "Community"
 content = "Want to talk with people that love voxels?<br>Well, visit us <a href='http://voxelgamedev.com/'>on discord</a> or <a href='http://reddit.com/r/voxelgamedev/'>reddit</a>!"
 link = "/wiki/community"
