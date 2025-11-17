@@ -101,7 +101,7 @@ so it's best to leave it to a windowing library...
 
 ## General Rendering Methods
 
-There are, in general, *two* families of volume rendering methods:
+There are, in general, *two* families of volume rendering methods, with different complexity, fidelity, extensibility, performance and memory trade-offs:
 
 <ul class="exclusive-choice-set" aria-label="volume rendering methods">
   <li><a href="/wiki/surface-extraction">Surface Extraction</a></li>
@@ -115,7 +115,7 @@ which can then be [rasterized](https://en.wikipedia.org/wiki/Rasterisation) (eg:
 
 In the latter family of **volume marching**, the volume itself is marched through via [raycasting](/wiki/raycasting)/raymarching (eg: visible pixels ⇒ voxels).
 
-It is possible to combine both families for more complex techniques and effects.
+It's also possible to [combine](/wiki/raysterization) both families, presenting yet more trade-offs to use/apply and deal with.
 
 ---
 

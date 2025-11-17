@@ -4,7 +4,7 @@ description = "A collection of information (a wiki) dealing with all things voxe
 aliases = ["/wiki"]
 
 [extra]
-lead = "This website is a collection of information dealing with all things voxel. To quote <a href='https://en.wikipedia.org/wiki/Voxel'>Wikipedia</a>:&nbsp;<i>„[...] a voxel represents a value on a <a href='https://en.wikipedia.org/wiki/Regular_grid'>regular grid</a> in three-dimensional space.‟</i> <br><br><b>Currently under construction.</b> <br><br>"
+lead = "This website is a collection of information dealing with all things voxel. To quote <a href='https://en.wikipedia.org/wiki/Voxel'>Wikipedia</a>:&nbsp;<i>„[...] a voxel represents a value on a <a href='https://en.wikipedia.org/wiki/Regular_grid'>regular grid</a> in three-dimensional space.‟</i> <br><br><b><a href='https://github.com/voxel-wiki/voxel-wiki.github.io/commits/main/'>Currently</a> under construction.</b> <br><br>"
 repo_url = "https://github.com/voxel-wiki/voxel-wiki.github.io/blob/main/LICENSE.md"
 repo_version = "License"
 

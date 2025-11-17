@@ -8,6 +8,10 @@ html:has(body.draft) {
 	padding: 0 2rem;
 }
 
+body.dark {
+	color-scheme: dark;
+}
+
 .home > .container > .content {
 	position: relative;
 }
@@ -69,6 +73,12 @@ article *:last-child {
 article img {
 	border-radius: 3px;
 	max-width: 100%;
+}
+
+article q.fancy {
+	quotes: "«" "»";
+	font-style: italic;
+	color: light-dark(#555,#bbb);
 }
 
 article .important {
