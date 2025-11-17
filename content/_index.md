@@ -22,6 +22,11 @@ content = "There are many ways to <a href='wiki/datastructures'>structure</a>, <
 #link = "/wiki/datastructures"
 
 [[extra.list]]
+title = "Interactivity & Gameplay"
+content = "Want to bring your world of voxels to life? Then you'll have to deal with <a href='/wiki/cellularautomata'>cellular automata</a>, physics, sounds, NPCs, etc.!"
+#link = "/wiki/interactivity"
+
+[[extra.list]]
 title = "Procedural Generation"
 content = "Creating worlds from nothing but math, with the art(!) of procedural generation!"
 link = "/wiki/procedural-generation"
