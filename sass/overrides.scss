@@ -332,6 +332,14 @@ figure {
 		height: auto;
 	}
 	
+	&.contain img {
+		object-fit: contain !important;
+	}
+	
+	&.cover img {
+		object-fit: cover !important;
+	}
+	
 	&>p {display: contents}
 	&:not(.full) img {
 		object-fit: contain;
