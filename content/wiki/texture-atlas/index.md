@@ -29,4 +29,4 @@ tags = ["textures", "algorithms"]
 
 ## References
 
-{% todo_notice() %} References {% end %}
+- <https://lisyarus.github.io/blog/posts/texture-packing.html>
