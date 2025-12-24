@@ -45,6 +45,7 @@ title = "Technical Minecraft Wiki"
 url = "https://wiki.vg/Main_Page"
 type = "wiki"
 tags = ["minecraft"]
+dead = "See <http://www.minecraft.wiki/> instead."
 
 [minecraft-wiki]
 title = "Minecraft Wiki"

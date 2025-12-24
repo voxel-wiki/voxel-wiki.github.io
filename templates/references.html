@@ -102,7 +102,7 @@
               data-path-slug='{{ refpath | slugify }}'
               data-tags='{{ reference | get(key="tags", default=[]) | join(sep=",") }}'
             >
-              <header class=card-header>
+              <header class="card-header {% if reference.dead %}text-decoration-line-through{% endif %}">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <title>{{reftype}}</title>
                   {% if reftype == "paper" %}
@@ -147,8 +147,12 @@
                 </h5>
                 <code class=card-subtitle>{{refname}}</code>
               </header>
-              {% if reference.desc %}
-              <main class=card-body>
+              {% if reference.dead %}
+              <main class="card-body">
+                <strong>Dead Link:</strong> {{reference | get(key="dead", default="") | markdown(inline=true) | safe }}
+              </main>
+              {% elif reference.desc %}
+              <main class="card-body">
                 {{ reference | get(key="desc", default="") | markdown }}
               </main>
               {% endif %}
