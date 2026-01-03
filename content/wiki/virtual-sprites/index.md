@@ -1,15 +1,24 @@
 +++
-title = "Virtual Sprites"
-description = "Dynamically building an atlas of used sprites at runtime."
-draft = true
+title = "Virtual Texture Atlas"
+description = "Dynamically building an atlas of sprites at runtime."
+path = "/wiki/virtual-texture-atlas"
+aliases = ["/wiki/dynamic-atlas", "/wiki/virtual-sprites"]
 [taxonomies]
 categories = ["rendering"]
 tags = ["rendering", "texturing"]
+[extra]
+chapters = true
+chapter_prev = {text = "Texture Atlas", link = "/wiki/texture-atlas"}
+chapter_next = false
 +++
 
-> Dynamically building an atlas and index of sprites at runtime...
+By dynamically building (and uploading/keeping on the GPU) a texture atlas *with* a lookup-table of its contained sprites, both a variety of interesting effects and dynamic loading of textures/sprites can be achieved.
 
-{{ todo_notice(body="This article is incomplete and explains an experimental technique.") }}
+<!-- more -->
+
+{{ warn_notice(body="**Disclaimer:** This article covers an experimental/unproven technique.") }}
+
+{{ todo_notice(body="This article is **incomplete**.") }}
 
 ## Motivation
 
@@ -19,25 +28,28 @@ tags = ["rendering", "texturing"]
 - Array textures are limited to ~2048 layers and require all sprites to have the same size.
 - Both a normal atlas and array-textures have trouble with animated textures.
 - Uploading small textures/sprites to the GPU is surprisingly fast and easy.
-- As chunk meshes depend on their used sprites, we can't save/restore them to disk.
+- Chunk meshes depend on their used sprites, so doing this allows persisting them to disk.
 - Being able to dynamically create new sprites at runtime as needed is neat.
-- Being able to let sprites have special projections and parameters is neat.
+- Being able to let sprites have special effects/projections is neat.
 - Surprisingly this is doable, though slower, with older OpenGL versions!
-  - (iirc, older GPUs/drivers don't like random-ish memory/texture reads?)
+  <small>(older GPUs don't do well with random memory access, iirc)</small>
 
 Silly things one can do with this technique:
 
-- 'Environmental' sprites.
+- Unlimited sprite permutations.
+- Sprites animated per-instance.
+- Sprites with multiple layers.
+- Weird texture projections.
 - User-generated sprites.
 - Font glyphs and emoji.
 
 Drawbacks:
 
-- Whomst cares?
+- An additional buffer lookup in the vertex shader.
 
 ## Implementation
 
-{{ todo_notice(body="Finish (minimal) implementation?") }}
+{{ todo_notice(body="Create a (minimal) implementation?") }}
 
 ```glsl
 #version 460 core
