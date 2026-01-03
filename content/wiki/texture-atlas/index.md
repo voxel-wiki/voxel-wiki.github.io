@@ -35,6 +35,11 @@ by address/pointer in shaders (called **bindless textures**),
 so anyone that needed large amounts of tiny textures (like sprites and glyphs),
 had to package them into a texture atlas.
 
+Alternatively, if there are less than ~2000[^GL_MAX_ARRAY_TEXTURE_LAYERS] sprites, all of which with the same size, one can use a texture *array*, instead of an atlas, removing the need for atlas generation and allowing for dynamic/arbitrary sprite indexing.
+
+If neither of the above apply, you'll have to use a texture atlas.  
+<small>Or procedurally generate textures in the fragment shader...?</small>
+
 ## Atlas Generation
 
 A basic algorithm for generating a texture atlas is as follows:
@@ -69,3 +74,7 @@ On bindless rendering:
 - <https://henriquegois.dev/posts/bindless-resources-in-vulkan/>
 - <https://alextardif.com/Bindless.html>
 - <https://vulkan.org/user/pages/09.events/vulkanised-2023/vulkanised_2023_setting_up_a_bindless_rendering_pipeline.pdf>
+
+---
+
+[^GL_MAX_ARRAY_TEXTURE_LAYERS]: The [vast majority](https://opengl.gpuinfo.org/displaycapability.php?name=GL_MAX_ARRAY_TEXTURE_LAYERS) of GPUs/drivers only support up to 2048 texture array layers.
