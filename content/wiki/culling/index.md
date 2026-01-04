@@ -1,5 +1,5 @@
 +++
-title = "Rendering: Culling"
+title = "Culling"
 description = "Limiting the amount of voxels rendered to manageable levels."
 [taxonomies]
 categories = ["culling"]

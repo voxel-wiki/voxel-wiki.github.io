@@ -24,9 +24,15 @@
           </div>
           <ul>
             {% for term in terms %}
+              {% set taxonomy_name = term.name | capitalize %}
+              {% set taxonomy_path = "/wiki/" ~ term.slug ~ "/" %}
+              {% set taxonomy_page = term.pages | filter(attribute="path", value=taxonomy_path) | first %}
+              {% if taxonomy_page != "" %}
+                {% set taxonomy_name = taxonomy_page.title %}
+              {% endif %}
               {% set page_count = term.pages | length %}
                 <li>
-                    <a href="{{ term.permalink }}">{{ term.name | capitalize }}</a>:
+                    <a href="{{ term.permalink }}">{{ taxonomy_name }}</a>:
                     <code>{{ page_count }}</code> Page{% if page_count != 1 %}s{% endif %}
                 </li>
             {% endfor %}

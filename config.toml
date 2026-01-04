@@ -16,7 +16,7 @@ feed_filename  = "rss.xml"
 
 # TODO: Make use of this...
 taxonomies = [
-	{name = "tags", feed = true},
+	{name = "tags"},
 	{name = "categories"},
 	{name = "authors"},
 ]
