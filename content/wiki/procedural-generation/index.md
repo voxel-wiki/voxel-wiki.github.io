@@ -29,28 +29,53 @@ If we tried listing all the ways proc-gen is used, we'd be here all week!
 Note that procedural generation is **not** limited to just *games*; far from it! It's used basically *anywhere* anyone needs to create *chaos*, *repetition* and large-scale *patterns* without spending days (if not weeks or months!) being bored out of their mind[^boredom].
 {% end %}
 
+Some common algorithms used for procedural generation are:
 
-{{ stub_notice() }}
+- Coherent [Noise](/wiki/noise)
+- [Cellular Automata](/wiki/cellular-automata)
+- [Phased Generation](/wiki/phased-generation)
+- Lindenmayer Systems
+- Voronoi Diagrams
+- Neural Networks
+- Markov Chains
+- Wang Tiles
+- Random Walks
+- Mersenne Twister
+- XORShift
 
-## See also
+{{ todo_notice(body="Create articles for the above?") }}
 
-- [**Noise**](/wiki/noise)
+{{ todo_notice(body="Add more explainers? Guides?") }}
 
 ## References
 
-{{ todo_notice(body="Add more references.") }}
+{{ todo_notice(body="Add **more** references.") }}
 
 - [Wikipedia: Procedural Generation](https://en.wikipedia.org/wiki/Procedural_generation)
 - [Wikipedia: Pseudorandom Number Generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- [Wikipedia: Pseudorandom Number Sampling](https://en.wikipedia.org/wiki/Non-uniform_random_variate_generation)
 - [Wikipedia: Fractals](https://en.wikipedia.org/wiki/Fractal)
-- [Wikipedia: L-System](https://en.wikipedia.org/wiki/L-system)
-- [Wikipedia: Voronoi Diagram](https://en.wikipedia.org/wiki/Voronoi_diagram)
+- [Wikipedia: Tessellation](https://en.wikipedia.org/wiki/Tessellation)
+- [Wikipedia: Poisson Distribution](https://en.wikipedia.org/wiki/Poisson_distribution)
+- [Wikipedia: Stochastic Process](https://en.wikipedia.org/wiki/Stochastic_process)
+- [Wikipedia: Lindenmayer Systems](https://en.wikipedia.org/wiki/L-system)
 - [Wikipedia: Gradient Noise](https://en.wikipedia.org/wiki/Gradient_noise)
+- [Wikipedia: Colors of Noise](https://en.wikipedia.org/wiki/Colors_of_noise)
+- [Wikipedia: Voronoi Diagram](https://en.wikipedia.org/wiki/Voronoi_diagram)
+- [Wikipedia: Wang Tiles](https://en.wikipedia.org/wiki/Wang_tile)
+- [Wikipedia: Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- [Wikipedia: XORShift](https://en.wikipedia.org/wiki/Xorshift)
 - [Wikipedia: Roguelike](https://en.wikipedia.org/wiki/Roguelike)
 - [Wikipedia: Sandbox Game](https://en.wikipedia.org/wiki/Sandbox_game)
 - [Wikipedia: Games using Proc-Gen](https://en.wikipedia.org/wiki/List_of_games_using_procedural_generation)
+- [Wang Tiles: edge and corner matched tilesets](https://www.boristhebrave.com/permanent/24/06/cr31/stagecast/wang/intro.html)
+- [Some Interesting Examples of Wang Tilings](https://web.williams.edu/Mathematics/sjmiller/public_html/hudson/Zeltzer_Wang_Tilings.pdf)
+- [Experiments in Map Generation using Markov Chains (2014)](http://fdg2014.org/papers/fdg2014_paper_29.pdf)
+- [A Hierarchical Approach to Generating Maps Using Markov Chains (2020)](https://cdn.aaai.org/ojs/12708/12708-52-16225-1-2-20201228.pdf)
+- [aparis69: Learn Procedural Generation](https://aparis69.github.io/LearnProceduralGeneration/)
 - <http://pcg.wikidot.com/category-pcg-algorithms>
 - <https://web.archive.org/web/20180126135353/http://ltrees.codeplex.com/>
+- [/r/ProceduralGeneration](https://www.reddit.com/r/proceduralgeneration/)
 
 ---
 
