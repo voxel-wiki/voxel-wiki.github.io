@@ -1,1 +1,5 @@
 public/
+
+# Files generated during link-aggregation:
+/links.jsonl
+/links.toml
