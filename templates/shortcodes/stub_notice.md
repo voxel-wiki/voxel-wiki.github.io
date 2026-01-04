@@ -8,4 +8,4 @@
     {% set body_text = kinds[kind] %}
     {% set help = true %}
 {% endif %}
-<div class='notice stub {{ class }}'>{% if body %}{{ body | markdown(inline=true) }}{% if help %}{{ help_text }}{% endif %}{% else %}{{ body_text }}{{ help_text }}{% endif %}</div>
+<div {% if id %}id="{{ id }}"{% endif %} class='notice stub {{ class }}'>{% if body %}{{ body | markdown(inline=true) }}{% if help %}{{ help_text }}{% endif %}{% else %}{{ body_text }}{{ help_text }}{% endif %}</div>
