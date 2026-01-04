@@ -74,7 +74,7 @@
         {% if page.extra.chapters is defined %}
         <nav aria-label="chapter-navigation" class="chapters-nav">
           {% if page.extra.chapter_prev is defined and page.extra.chapter_prev != false %}
-            <a href="{{page.extra.chapter_prev.link}}" class="chapters-link chapters-prev">
+            <a rel="prev" href="{{page.extra.chapter_prev.link}}" class="chapters-link chapters-prev">
               <span class="chapters--dir">Previous Chapter:</span>
               <span class="chapters--txt">{{page.extra.chapter_prev.text}}</span>
             </a>
@@ -82,7 +82,7 @@
             <span class="chapters-link chapters-none">No previous chapter.</span>
           {% endif %}
           {% if page.extra.chapter_next is defined and page.extra.chapter_next != false %}
-            <a href="{{page.extra.chapter_next.link}}" class="chapters-link chapters-next">
+            <a rel="next" href="{{page.extra.chapter_next.link}}" class="chapters-link chapters-next">
               <span class="chapters--dir">Next Chapter:</span>
               <span class="chapters--txt">{{page.extra.chapter_next.text}}</span>
             </a>
