@@ -52,12 +52,21 @@ we can safely ignore a whole bunch of them and choose from one of three APIs:
 - To get started *as fast as possible*, with no regard as to how modern GPUs and their drivers work, use [OpenGL](/wiki/opengl).
 - To be future-proof and get as much performance as possible out of your GPU, use [Vulkan](/wiki/vulkan).
 - If you're okay with proprietary stuff and are targeting mainly Microsoft&nbsp;Windows & Xbox, you can use [Direct3D](https://en.wikipedia.org/wiki/Direct3D) via [DirectX](https://en.wikipedia.org/wiki/DirectX).
+- Or, if you are somehow developing on/for the Apple platforms, you'll have to use the [Metal API](https://en.wikipedia.org/wiki/Metal_(API)).
 
 {% warn_notice() %}
 Keep in mind that **game consoles** have their own, *proprietary*, graphics APIs;
 if you intend to port your project, you'll have to keep most graphics-related
 code behind some abstraction, separate from other systems.
 {% end %}
+
+Unfortunately the pain doesn't stop there: since these APIs require low-level access to system/platform resources, are generally quite large/complex and (like in the case of Vulkan) still being actively updated, the *vast* majority of languages simply *do not* include them in their standard libraries... so you *must* use a [language binding](https://en.wikipedia.org/wiki/Language_binding) made for the given **API&nbsp;+&nbsp;language** pair you need.
+
+Since there are over ~7000 languages out there, each with potentially *multiple* bindings for *several* of these APIs, we *cannot* list them here, so the best we can give you is this:
+
+- **OpenGL:** <https://wikis.khronos.org/opengl/Language_bindings>
+- **Vulkan:** <https://www.vulkan.org/tools#language-bindings>
+- **DirectX / Metal:** Good luck.
 
 ## Graphics Programming Libraries
 
