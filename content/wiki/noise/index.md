@@ -3,8 +3,8 @@ title = "Noise"
 description = "Fields of pseudorandom numbers."
 aliases = ["/wiki/noise", "/wiki/noise-types"]
 [taxonomies]
-categories = ["procgen", "math"]
-tags = ["procgen", "design", "math", "noise"]
+categories = ["procedural-generation", "math"]
+tags = ["procedural-generation", "design", "math", "noise"]
 +++
 
 {% figure(id="fig-1", class="float", caption="Pink/Red Liquid using Perlin Noise", author="[Simon Strandgaard](https://www.flickr.com/people/12739382@N04)", license="[CC-BY-2.0](https://en.wikipedia.org/wiki/File:Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_(2415197699).png)") %}https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_%282415197699%29.png/240px-Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_%282415197699%29.png{% end %}

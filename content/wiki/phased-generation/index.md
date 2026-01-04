@@ -3,8 +3,8 @@ title = "Phased Generation"
 description = "By splitting world generation into phases, the entire process can be made both faster and simpler."
 alias = "/wiki/phasegen"
 [taxonomies]
-categories = ["procgen"]
-tags = ["procgen", "algorithms"]
+categories = ["procedural-generation"]
+tags = ["procedural-generation", "algorithms"]
 +++
 
 **Phased generation** is a process wherein world generation is separated into specialized *phases*,

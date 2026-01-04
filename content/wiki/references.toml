@@ -275,7 +275,7 @@ tags  = ["gpu"]
 [nvidia-sites-default-files-pubs-2017-07-spatiotemporal-variance-guided-filtering-3a-svgf-preprint-pdf]
 title = "Spatiotemporal Variance-Guided Filtering: Real-Time Reconstruction for Path-Traced Global Illumination - svgf_preprint.pdf"
 url   = "https://research.nvidia.com/sites/default/files/pubs/2017-07_Spatiotemporal-Variance-Guided-Filtering%3A//svgf_preprint.pdf"
-tags  = ["bluenoise","filtering","noise","rendering","sampling","render","procgen","opengl"]
+tags  = ["bluenoise","filtering","noise","rendering","sampling","render","procedural-generation","opengl"]
 
 [nvidia-gpugems-gpugems2-part-i-geometric-complexity-chapter-2-terrain-rendering-using-gpu-based-geometry]
 title = "Chapter 2. Terrain Rendering Using GPU-Based Geometry Clipmaps | NVIDIA Developer"
@@ -305,7 +305,7 @@ tags  = ["rendering","gpu","render"]
 [nvidia-blog-rendering-in-real-time-with-spatiotemporal-blue-noise-textures-part-1]
 title = "Rendering in Real Time with Spatiotemporal Blue Noise Textures, Part 1 | NVIDIA Developer Blog"
 url   = "https://developer.nvidia.com/blog/rendering-in-real-time-with-spatiotemporal-blue-noise-textures-part-1/"
-tags  = ["rendering","render","texture","sampling","noise","procgen"]
+tags  = ["rendering","render","texture","sampling","noise","procedural-generation"]
 
 [nvidia-blog-turing-multi-view-rendering-vrworks]
 title = "Turing Multi-View Rendering in VRWorks | NVIDIA Technical Blog"
@@ -561,7 +561,7 @@ tags = ["culling", "occlusion", "portals"]
 [wikipedia-prng]
 title = "Pseudorandom Number Generator"
 url = "https://en.wikipedia.org/wiki/Pseudorandom_number_generator"
-tags = ["rng", "prng", "procgen"]
+tags = ["rng", "prng", "procedural-generation"]
 
 [wikipedia-rasterisation]
 title = "Rasterisation"
@@ -847,7 +847,7 @@ tags = ["raycasting", "raytracing", "dda", "algorithm", "shader"]
 title = "Hash Functions for GPU Rendering"
 url = "https://www.shadertoy.com/view/XlGcRh"
 type = "example"
-tags = ["rng", "prng", "procgen", "hashing", "algorithm", "shader"]
+tags = ["rng", "prng", "procedural-generation", "hashing", "algorithm", "shader"]
 
 [shadertoy-ldl3DS]
 title = "Voxel Ambient Occlusion"
@@ -867,17 +867,17 @@ tags  = ["rust"]
 [shadertoy-3d3yRj]
 title = "Simple Water Caustic Pattern"
 url   = "https://www.shadertoy.com/view/3d3yRj"
-tags  = ["noise","shader","procgen"]
+tags  = ["noise","shader","procedural-generation"]
 
 [shadertoy-3ttGR2]
 title = "wind test"
 url   = "https://www.shadertoy.com/view/3ttGR2"
-tags  = ["example","gradient","noise","rendering","sampling","shader","simulation","wind","render","procgen"]
+tags  = ["example","gradient","noise","rendering","sampling","shader","simulation","wind","render","procedural-generation"]
 
 [shadertoy-4ddyzj]
 title = "simple Worley noise shader"
 url   = "https://www.shadertoy.com/view/4ddyzj"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [shadertoy-4slXW7]
 title = "2D Voxels"
@@ -887,7 +887,7 @@ tags  = ["effects","fx","glsl","graphics","shader","shading","voxels","rendering
 [shadertoy-7ljcRW]
 title = "Terrain Erosion Noise"
 url   = "https://www.shadertoy.com/view/7ljcRW"
-tags  = ["glsl","procgen","terrain","noise","opengl"]
+tags  = ["glsl","procedural-generation","terrain","noise","opengl"]
 
 [shadertoy-7sdGRr]
 title = "Wireframe Rendering Trick"
@@ -897,7 +897,7 @@ tags  = ["rendering","render"]
 [shadertoy-clGyWm]
 title = "Noise - Gabor - 2D - Deriv"
 url   = "https://www.shadertoy.com/view/clGyWm"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [shadertoy-csX3RH]
 title = "Anti Aliased Texture Sampling"
@@ -912,7 +912,7 @@ tags  = ["shader"]
 [shadertoy-dlKyWw]
 title = "SHARD NOISE"
 url   = "https://www.shadertoy.com/view/dlKyWw"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [shadertoy-dsSXWh]
 title = "Voxel DDA 2"
@@ -937,7 +937,7 @@ tags  = ["compression","normals","shading"]
 [shadertoy-lscyD7]
 title = "Cheap 5D Wave Noise"
 url   = "https://www.shadertoy.com/view/lscyD7"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [shadertoy-ltfXWS]
 title = "Antialiased Blocky Sampling"
@@ -967,7 +967,7 @@ tags  = ["artifacts","filtering","mipmapping","pixel","pixelart","screenspace","
 [shadertoy-Ms3czX]
 title = "galaxy spirals: ellipmod +Perlin"
 url   = "https://www.shadertoy.com/view/Ms3czX"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [shadertoy-MXySDd]
 title = "Voxel Upscaling Tech"
@@ -1007,17 +1007,17 @@ tags  = ["voxel"]
 [shadertoy-wlc3zr]
 title = "Water Caustics with OpenSimplex2"
 url   = "https://www.shadertoy.com/view/wlc3zr"
-tags  = ["noise","shader","procgen"]
+tags  = ["noise","shader","procedural-generation"]
 
 [shadertoy-WldGzn]
 title = "K.jpg's Cells"
 url   = "https://www.shadertoy.com/view/WldGzn"
-tags  = ["noise","shader","procgen"]
+tags  = ["noise","shader","procedural-generation"]
 
 [shadertoy-Ws23RD]
 title = "Noise - Simplex - 3D - Deriv"
 url   = "https://www.shadertoy.com/view/Ws23RD"
-tags  = ["noise","shader","procgen"]
+tags  = ["noise","shader","procedural-generation"]
 
 [shadertoy-WttXWX]
 title = "'Best' Integer Hash"
@@ -1279,7 +1279,7 @@ tags = ["fluids"]
 title = "Polygonal Map Generation for Games"
 url = "http://www-cs-students.stanford.edu/~amitp/game-programming/polygon-map-generation/"
 type = "article"
-tags = ["procgen"]
+tags = ["procedural-generation"]
 
 [reddit-minecraft-hsqpt-a-few-technical-ideas]
 title = "Few technical ideas for minecraft from a programmer"
@@ -1383,7 +1383,7 @@ tags = ["analysis"]
 [notch-terrain-generation]
 title = "Terrain generation, Part 1"
 url = "https://web.archive.org/web/20120227060728/https://notch.tumblr.com/post/3746989361/terrain-generation-part-1"
-tags = ["procgen"]
+tags = ["procedural-generation"]
 
 [nickmcd-high-performance-voxel-engine]
 title = "High Performance Voxel Engine: Vertex Pooling"
@@ -1533,7 +1533,7 @@ tags = []
 [pcgwiki-category-pcg-algorithms]
 title = "Algorithms for Procedural Content Generation"
 url = "http://pcg.wikidot.com/category-pcg-algorithms"
-tags = ["procgen"]
+tags = ["procedural-generation"]
 
 [procworld-from-voxels-to-polygons]
 title = "From Voxels to Polygons"
@@ -1583,7 +1583,7 @@ tags = []
 [accidentalnoise-minecraftworlds]
 title = "3D Cube World Level Generation"
 url = "https://accidentalnoise.sourceforge.net/minecraftworlds.html"
-tags = ["procgen"]
+tags = ["procedural-generation"]
 
 [gamedev-archive-culling]
 title = "Culling"
@@ -1716,7 +1716,7 @@ tags = ["optimization"]
 title = "Modular node graph based noise generation library using SIMD, C++17 and templates"
 url = "https://github.com/Auburn/FastNoise2"
 type = "repository"
-tags = ["procgen", "noise"]
+tags = ["procedural-generation", "noise"]
 
 [fastnoiselite]
 title = "Fast Portable Noise Library - C# C++ C Java HLSL GLSL JavaScript Rust Go"
@@ -1832,7 +1832,7 @@ tags = ["meshing"]
 [hiteshkrsahu-voxel-planets]
 title = "Generating Voxel Planet using 3D Simplex Noise"
 url = "https://hiteshkrsahu.medium.com/generating-voxel-planet-using-3d-simplex-noise-3ab011fd88ec"
-tags = ["procgen", "noise"]
+tags = ["procedural-generation", "noise"]
 
 [opengl-modern-best-practices]
 title = "Best Practices for Modern OpenGL"
@@ -1889,19 +1889,19 @@ tags = ["framework", "library"]
 title = "LibNoise"
 url = "https://libnoise.sourceforge.net"
 type = "library"
-tags = ["library", "noise", "procgen"]
+tags = ["library", "noise", "procedural-generation"]
 
 [libnoise-modules]
 title = "LibNoise: Modules"
 url = "https://libnoise.sourceforge.net/docs/modules.html"
 type = "documentation"
-tags = ["noise", "procgen", "documentation"]
+tags = ["noise", "procedural-generation", "documentation"]
 
 [libnoise-glossary]
 title = "LibNoise: Glossary"
 url = "https://libnoise.sourceforge.net/glossary/index.html"
 type = "documentation"
-tags = ["noise", "procgen", "documentation"]
+tags = ["noise", "procedural-generation", "documentation"]
 
 [lodev-cgtutor-raycasting]
 title = "Lode's Computer Graphics Tutorial"
@@ -2192,7 +2192,7 @@ tags  = ["graphics","rendering"]
 [iquilezles-articles-gradientnoise-gradientnoise-htm]
 title = "Inigo Quilez :: fractals, computer graphics, mathematics, demoscene and more"
 url   = "https://iquilezles.org/www/articles/gradientnoise/gradientnoise.htm"
-tags  = ["gradient","rendering","graphics","noise","procgen"]
+tags  = ["gradient","rendering","graphics","noise","procedural-generation"]
 
 [iquilezles-articles-texturerepetition-texturerepetition-htm]
 title = "Inigo Quilez :: fractals, computer graphics, mathematics, demoscene and more"
@@ -2274,7 +2274,7 @@ tags = ["windowing", "rendering", "graphics", "framework"]
 [terrain-from-noise]
 title = "Making maps with noise functions"
 url = "https://www.redblobgames.com/maps/terrain-from-noise/"
-tags = ["noise", "procgen"]
+tags = ["noise", "procedural-generation"]
 
 [reddit-ftb]
 title = "Feed The Beast Subreddit"
@@ -2627,7 +2627,7 @@ tags = ["projection", "camera", "clipping"]
 [histogram-tiling]
 title = "Histogram-Preserving Tiling | Benedikt Bitterli's Portfolio"
 url = "https://benedikt-bitterli.me/histogram-tiling/"
-tags = ["procgen"]
+tags = ["procedural-generation"]
 
 [dnnd-1-a-deep-neural-network-dive]
 title = "DNND 1: A Deep Neural Network Dive"
@@ -2685,13 +2685,13 @@ tags = []
 [unity-turbulence-library]
 title = "Turbulence Library - Massive collection of complex and fast noise on the GPU"
 url = "https://forum.unity.com/threads/turbulence-library-massive-collection-of-complex-and-fast-noise-on-the-gpu.143649/"
-tags = ["noise", "procgen"]
+tags = ["noise", "procedural-generation"]
 
 [farazzshaikh-glnoise]
 title = "FarazzShaikh/glNoise: A collection of GLSL noise functions for use with WebGL with an easy to use API."
 url = "https://github.com/FarazzShaikh/glNoise"
 type = "repository"
-tags = ["noise", "procgen", "webgl", "shaders", "algorithm", "library"]
+tags = ["noise", "procedural-generation", "webgl", "shaders", "algorithm", "library"]
 
 [cpp-64bit-memorymanager]
 title = "schulkinator/memorymanager: A simple, thread-safe memory manager for 64bit C++ applications and games. Focus is on preventing heap fragmentation in the absence of good virtual memory management, at the cost of wasting some memory. It works by globally overriding the new and delete operators."
@@ -3005,7 +3005,7 @@ tags  = ["blurry","generator","hash","hashing","image","preview","small","thumbn
 [blog-voxagon-se-2018-12-07-the-importance-of-good-noise-html]
 title = "The importance of good noise | Voxagon Blog"
 url   = "https://blog.voxagon.se/2018/12/07/the-importance-of-good-noise.html"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [fileadmin-cs-lth-se-graphics-theses-projects-projgrid-projgrid-lq-pdf]
 title = "Real-time water rendering - Introducing the projected grid concept"
@@ -3321,17 +3321,17 @@ tags  = ["opengl"]
 [blog-demofox-org-2017-10-25-transmuting-white-noise-to-blue-red-green-purple]
 title = "Transmuting White Noise To Blue, Red, Green, Purple « The blog at the bottom of the sea"
 url   = "https://blog.demofox.org/2017/10/25/transmuting-white-noise-to-blue-red-green-purple/"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [blog-demofox-org-2017-10-31-animating-noise-for-integration-over-time]
 title = "Animating Noise For Integration Over Time « The blog at the bottom of the sea"
 url   = "https://blog.demofox.org/2017/10/31/animating-noise-for-integration-over-time/"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [blog-demofox-org-2022-01-01-interleaved-gradient-noise-a-different-kind-of-low-discrepancy-sequence]
 title = "Interleaved Gradient Noise: A Different Kind of Low Discrepancy Sequence « The blog at the bottom of the sea"
 url   = "https://blog.demofox.org/2022/01/01/interleaved-gradient-noise-a-different-kind-of-low-discrepancy-sequence/"
-tags  = ["gradient","rendering","noise","procgen"]
+tags  = ["gradient","rendering","noise","procedural-generation"]
 
 [wiki-csswg-org-ideas-mistakes]
 title = "Incomplete List of Mistakes in the Design of CSS [CSS Working Group Wiki]"
@@ -3346,7 +3346,7 @@ tags  = ["rendering","opengl","render","minecraft"]
 [codeflow-org-entries-2010-dec-09-minecraft-like-rendering-experiments-in-opengl-4-more-interesting-noise]
 title = "Minecraft Like Rendering Experiments in OpenGL 4 - Codeflow"
 url   = "http://codeflow.org/entries/2010/dec/09/minecraft-like-rendering-experiments-in-opengl-4/#more-interesting-noise"
-tags  = ["rendering","opengl","render","noise","procgen","minecraft"]
+tags  = ["rendering","opengl","render","noise","procedural-generation","minecraft"]
 
 [cesiumjs-org-massiveworlds]
 title = "Rendering Massive Virtual Worlds - SIGGRAPH 2013"
@@ -3520,12 +3520,12 @@ tags  = ["globalillumination","irradiance","lightprobes","lighting","sphericalha
 [noiseposti-ng-posts-2021-03-13-fast-biome-blending-without-squareness-html]
 title = "NoisePosti.ng"
 url   = "https://noiseposti.ng/posts/2021-03-13-Fast-Biome-Blending-Without-Squareness.html"
-tags  = ["biomes","blending","noise","procgen","sampling","rendering"]
+tags  = ["biomes","blending","noise","procedural-generation","sampling","rendering"]
 
 [noiseposti-ng-posts-2024-01-20-evaluating-multiple-noise-seeds-at-once-html]
 title = "NoisePosti.ng -  Evaluating Multiple Noise Seeds at Once "
 url   = "https://noiseposti.ng/posts/2024-01-20-Evaluating-Multiple-Noise-Seeds-At-Once.html"
-tags  = ["noise","procgen","lua"]
+tags  = ["noise","procedural-generation","lua"]
 
 [wwwtyro-net-2019-03-21-advanced-map-shading-html]
 title = "wwwtyro.net"
@@ -3581,7 +3581,7 @@ tags  = ["rendering","render"]
 [sourceforge-libnoise-examples-worms]
 title = "libnoise example: Perlin worms"
 url   = "http://libnoise.sourceforge.net/examples/worms/"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [slideshare-ajeetsingh41-ms-sql-server-architecture-15852738]
 title = "Ms sql server architecture"
@@ -4177,7 +4177,7 @@ tags  = ["opengl"]
 [watabou-index-html]
 title = "Watabou's Procgen Arcana"
 url   = "https://watabou.github.io/index.html"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [vector-graphics-periapsis]
 title = "Periapsis - vector-graphics.github.io/"
@@ -4632,7 +4632,7 @@ tags  = ["gpu","culling","rendering","rust","minecraft"]
 [armanmaesumi-onenoise]
 title = "One Noise to Rule Them All: Learning a Unified Model of Spatially-Varying Noise Patterns"
 url   = "https://armanmaesumi.github.io/onenoise/"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [aschrein-jekyll-update-2019-06-13-whatsup-with-my-branches-on-gpu-html]
 title = "What's up with my branch on GPU?"
@@ -4657,7 +4657,7 @@ tags  = ["rendering","render","c++"]
 [adrianb-io-2014-08-09-perlinnoise-html]
 title = "Understanding Perlin Noise"
 url   = "https://adrianb.io/2014/08/09/perlinnoise.html"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [apoorvaj-io-render-graphs-1]
 title = "Render graphs"
@@ -4812,7 +4812,7 @@ tags  = ["tool"]
 [hal-inria-fr-hal-01824773]
 title = " High-Performance By-Example Noise using a Histogram-Preserving Blending Operator"
 url   = "https://hal.inria.fr/hal-01824773"
-tags  = ["blending","graphics","histogram","noise","procgen","shading","synthesis","texture","textures","texturing","rendering"]
+tags  = ["blending","graphics","histogram","noise","procedural-generation","shading","synthesis","texture","textures","texturing","rendering"]
 
 [gigavoxels-inrialpes-fr-publications-html]
 title = "GigaVoxels"
@@ -4939,7 +4939,7 @@ tags  = ["design"]
 [eev-ee-blog-2016-05-29-perlin-noise]
 title = "Perlin noise / fuzzy notepad"
 url   = "https://eev.ee/blog/2016/05/29/perlin-noise/"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [web-eecs-utk-edu-huangj-cs452-notes-452-rasterization-pdf]
 title = "456_rasterization.ppt - 452_rasterization.pdf"
@@ -5000,12 +5000,12 @@ tags  = ["gpu"]
 [physbam-stanford-edu-cs448x-old-procedural-noise-2f-categories-html]
 title = "Procedural Noise/Categories"
 url   = "https://physbam.stanford.edu/cs448x/old/Procedural_Noise(2f)Categories.html"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [mrl-cs-nyu-edu-perlin-noise]
 title = "Improved Noise reference implementation"
 url   = "http://mrl.cs.nyu.edu/~perlin/noise/"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [cg-ivd-kit-edu-svgf-php]
 title = "KIT - Computergrafik - Publikationen - Spatiotemporal Variance-Guided Filtering"
@@ -5266,7 +5266,7 @@ tags  = ["rendering","render","graphics"]
 [momentsingraphics-de-3dbluenoise-html]
 title = "The problem with 3D blue noise"
 url   = "http://momentsingraphics.de/3DBlueNoise.html"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [momentsingraphics-de-page-id-210]
 title = "i3D 2018 – Moment-Based Order-Independent Transparency | Moments in Graphics"
@@ -5276,7 +5276,7 @@ tags  = ["graphics","rendering"]
 [momentsingraphics-de-bluenoise-html]
 title = "Free blue noise textures"
 url   = "http://momentsingraphics.de/BlueNoise.html"
-tags  = ["texture","rendering","noise","procgen"]
+tags  = ["texture","rendering","noise","procedural-generation"]
 
 [momentsingraphics-de-media-siggraphasia2025-peters2025-jackknife-paper-pdf]
 title = "Jackknife Transmittance and MIS Weight Estimation - peters2025-jackknife-paper.pdf"
@@ -5293,7 +5293,7 @@ tags  = ["graphics","rendering"]
 title = "Recursive_Wang_Tiles_For_Real-Time_Blue_Noise.pdf"
 url   = "https://johanneskopf.de/publications/blue_noise/paper/Recursive_Wang_Tiles_For_Real-Time_Blue_Noise.pdf"
 type  = "paper"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [jojendersie-de-numerical-rendering]
 title = "Numerical Recipes for Rendering | Developerblog - Johannes Jendersie"
@@ -5335,7 +5335,7 @@ tags  = ["voxel"]
 [mc-server-xoft-cz-docs-generator-html]
 title = "Generating terrain in Cuberite"
 url   = "http://mc-server.xoft.cz/docs/Generator.html"
-tags  = ["biome","biomes","climate","cuberite","generator","noise","perlin","procgen","terrain","world","worldgen"]
+tags  = ["biome","biomes","climate","cuberite","generator","noise","perlin","procedural-generation","terrain","world","worldgen"]
 
 [zyanidelab-com-how-to-add-thousands-of-lights-to-your-renderer]
 title = "How to add thousands of lights to your renderer and not die in the process"
@@ -5518,7 +5518,7 @@ tags  = ["gpu"]
 [wordpress-fractalformulas-2019-08-19-coherent-noise]
 title = "Coherent Noise – Fractal Formulas"
 url   = "https://fractalformulas.wordpress.com/2019/08/19/coherent-noise/"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [wordpress-interplayoflight-2013-04-29-parallax-corrected-cubemapping-with-any-cubemap]
 title = "Parallax-corrected cubemapping with any cubemap – Interplay of Light"
@@ -5675,7 +5675,7 @@ tags  = ["voxel"]
 [blog-tuxedolabs-com-2018-12-07-the-importance-of-good-noise-html]
 title = "The importance of good noise | Tuxedolabs Blog"
 url   = "http://blog.tuxedolabs.com/2018/12/07/the-importance-of-good-noise.html"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [tomhultonharrop-com-mathematics-graphics-2023-08-06-reverse-z-html]
 title = "Reverse Z (and why it’s so awesome) | Tom Hulton-Harrop"
@@ -5722,7 +5722,7 @@ tags  = ["gpu"]
 [threejsroadmap-com-blog-10-noise-functions-for-threejs-tsl-shaders]
 title = "10 Noise Functions for Three.js TSL Shaders | Three.js Roadmap"
 url   = "https://threejsroadmap.com/blog/10-noise-functions-for-threejs-tsl-shaders"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [thecreativefolk-com-types-of-clay]
 title = "Types Of Clay – Complete Guide - The Creative Folk"
@@ -6019,7 +6019,7 @@ tags  = ["rendering","render","unrealengine"]
 [reddit-r-voxelgamedev-comments-1fbryci-the-secret-to-minecraft-betas-famous-terrain-share-id-lncywuxbiam0qxbd1ph2f]
 title = "The Secret to Minecraft Beta's Famous Terrain: Broken Perlin Noise? : VoxelGameDev"
 url   = "https://www.reddit.com/r/VoxelGameDev/comments/1fbryci/the_secret_to_minecraft_betas_famous_terrain/?share_id=lNCyWUXBiAM0QxBd1pH2f"
-tags  = ["noise","procgen","voxel","minecraft"]
+tags  = ["noise","procedural-generation","voxel","minecraft"]
 
 [reddit-r-voxelgamedev-comments-a0l8zc-correct-depthordering-for-translucent-discrete]
 title = "Correct Depth-Ordering for Translucent Discrete Voxels : VoxelGameDev"
@@ -6029,12 +6029,12 @@ tags  = ["voxel"]
 [reddit-r-voxelgamedev-comments-e0rg38-spiral-chunk-generation-f8jwdwj]
 title = "Longor1996 comments on Spiral Chunk Generation"
 url   = "https://www.reddit.com/r/VoxelGameDev/comments/e0rg38/spiral_chunk_generation/f8jwdwj/"
-tags  = ["algorithm","procgen","programming","spiral","noise","voxel"]
+tags  = ["algorithm","procedural-generation","programming","spiral","noise","voxel"]
 
 [redblobgames-x-1843-planet-generation]
 title = "Procedural map generation on a sphere"
 url   = "https://www.redblobgames.com/x/1843-planet-generation/"
-tags  = ["generator","geometry","graphics","planet","procgen","rendering","tectonics","render","noise"]
+tags  = ["generator","geometry","graphics","planet","procedural-generation","rendering","tectonics","render","noise"]
 
 [red3d-com-cwr-npr]
 title = "Stylized Depiction: Non-Photorealistic, Painterly and 'Toon Rendering"
@@ -6176,7 +6176,7 @@ tags  = ["sampling","rendering"]
 [palettegenerator-com-]
 title = "Create Natural Palettes from Images - Color Palette Generator"
 url   = "https://palettegenerator.com/"
-tags  = ["art","colortheory","colors","colours","design","generator","k-means","palette","procgen","noise"]
+tags  = ["art","colortheory","colors","colours","design","generator","k-means","palette","procedural-generation","noise"]
 
 [subscription-packtpub-com-book-game-development-9781838986193-3-ch03lvl1sec27-implementing-programmable-vertex-pulling-pvp-in-opengl]
 title = "Implementing programmable vertex pulling (PVP) in OpenGL | 3D Graphics Rendering Cookbook"
@@ -6246,7 +6246,7 @@ tags  = ["graphics","rendering"]
 [miro-com-app-board-uxjvnkg4pkk]
 title = "Minecraft World Generation"
 url   = "https://miro.com/app/board/uXjVNKg4PKk=/"
-tags  = ["procgen","noise","minecraft"]
+tags  = ["procedural-generation","noise","minecraft"]
 
 [microsoft-en-us-windows-hardware-drivers-display-directx-compressed-volumetexture-formats]
 title = "DirectX Compressed VolumeTexture Formats - Windows drivers | Microsoft Learn"
@@ -6998,7 +6998,7 @@ tags  = ["opengl"]
 title = "Blue Noise links"
 url   = "https://gist.github.com/pixelmager/5d25fa32987273b9608a2d2c6cc74bfa"
 type  = "repository"
-tags  = ["bluenoise","filtering","noise","rendering","sampling","render","procgen"]
+tags  = ["bluenoise","filtering","noise","rendering","sampling","render","procedural-generation"]
 
 [github-misode-77ee37217a69a3c74032679d8084d6c6-file-tick-order-md]
 title = "minecraft tick order.md"
@@ -7016,7 +7016,7 @@ tags  = []
 title = "Voronoise Noise Function"
 url   = "https://gist.github.com/Longor1996/64ca31a25286470e3730"
 type  = "repository"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [github-mattatz-86fff4b32d198d0928d0fa4ff32cf6fa]
 title = "Matrix operations for HLSL"
@@ -7082,7 +7082,7 @@ tags  = []
 title = "SSGI noise free - gist.github.com/"
 url   = "https://gist.github.com/ademola-lou/8fcd19bf081ff9cafd31f6ce1781c59d"
 type  = "repository"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [geeks3d-com-shader-library]
 title = "Shader Library (GLSL) | Geeks3D"
@@ -7145,7 +7145,7 @@ tags  = ["voxel"]
 [gdcvault-play-1026701-fast-denoising-with-self-stabilizing]
 title = "GDC Vault - Fast Denoising With Self Stabilizing Recurrent Blurs (Presented by NVIDIA)"
 url   = "https://www.gdcvault.com/play/1026701/Fast-Denoising-With-Self-Stabilizing"
-tags  = ["denoising","graphics","noise","rendering","shading","temporal","render","sampling","procgen"]
+tags  = ["denoising","graphics","noise","rendering","shading","temporal","render","sampling","procedural-generation"]
 
 [gdcvault-play-1024612-framegraph-extensible-rendering-architecture-in]
 title = "GDC Vault - FrameGraph: Extensible Rendering Architecture in Frostbite"
@@ -7272,7 +7272,7 @@ tags  = ["rendering","render"]
 [factorio-com-blog-post-fff-112]
 title = "Friday Facts #112 - Better noise | Factorio"
 url   = "https://factorio.com/blog/post/fff-112"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [factorio-com-blog-post-fff-172]
 title = "Friday Facts #172 - Blending and Rendering | Factorio"
@@ -7282,7 +7282,7 @@ tags  = ["rendering","render"]
 [factorio-com-blog-post-fff-390]
 title = "Friday Facts #390 - Noise expressions 2.0 | Factorio"
 url   = "https://www.factorio.com/blog/post/fff-390"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [factorio-com-blog-post-fff-437]
 title = "Friday Facts #437 - Cargo Pod Deep Dive | Factorio"
@@ -7461,7 +7461,7 @@ tags  = ["blogging","tutorial"]
 [caseymuratori-com-blog-0011]
 title = "The Nebraska Problem"
 url   = "https://caseymuratori.com/blog_0011"
-tags  = ["distribution","generation","poisson","procgen","random","uniformity","noise"]
+tags  = ["distribution","generation","poisson","procedural-generation","random","uniformity","noise"]
 
 [catlikecoding-com-unity-tutorials]
 title = "Unity C# and Shader Tutorials"
@@ -7485,7 +7485,7 @@ tags  = []
 title = "Simplex Noise"
 url   = "https://catlikecoding.com/unity/tutorials/pseudorandom-noise/simplex-noise/"
 type  = "tutorial"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [cambridgeincolour-com-tutorials-gamma-correction-htm]
 title = "Understanding Gamma Correction"
@@ -7562,7 +7562,7 @@ tags  = ["opengl","rendering"]
 [blogspot-2019-01-general-domain-warping-html]
 title = "General Domain Warping"
 url   = "https://thingonitsown.blogspot.com/2019/01/general-domain-warping.html"
-tags  = ["domainwarping","noise","procgen"]
+tags  = ["domainwarping","noise","procedural-generation"]
 
 [blogspot-2015-08-portal-rendering-with-offscreen-render-html]
 title = "Tom's Programming Blog: Portal Rendering with Offscreen Render Targets"
@@ -7757,7 +7757,7 @@ tags  = ["rendering","render"]
 [alanzucconi-com-2022-06-05-minecraft-world-generation]
 title = "The World Generation of Minecraft - Alan Zucconi"
 url   = "https://www.alanzucconi.com/2022/06/05/minecraft-world-generation/"
-tags  = ["procgen","noise","minecraft"]
+tags  = ["procedural-generation","noise","minecraft"]
 
 [alexisbacot-com-blog-per-triangle-occlusion-on-the-gpu-in-1ms-with-unity]
 title = "Real-time GPU accelerated per-triangle occlusion in Unity — Alexis Bacot"
@@ -7845,7 +7845,7 @@ tags  = ["rendering","render","sampling","opengl"]
 [weigert-vsos-ethz-ch-2020-08-01-gpu-accelerated-voronoi]
 title = "GPU Accelerated Voronoi Textures and Filters – Nick's Blog"
 url   = "https://weigert.vsos.ethz.ch/2020/08/01/gpu-accelerated-voronoi/"
-tags  = ["procgen","gpu","texture","rendering","noise"]
+tags  = ["procedural-generation","gpu","texture","rendering","noise"]
 
 [weigert-vsos-ethz-ch-2021-04-04-high-performance-voxel-engine]
 title = "High Performance Voxel Engine: Vertex Pooling – Nick's Blog"
@@ -7868,7 +7868,7 @@ tags  = ["rendering","render"]
 title = "Curl-Noise for Procedural Fluid Flow"
 url   = "https://www.cs.ubc.ca/~rbridson/docs/bridson-siggraph2007-curlnoise.pdf"
 type  = "paper"
-tags  = ["noise","procgen"]
+tags  = ["noise","procedural-generation"]
 
 [songho-ca-opengl-gl-projectionmatrix-html]
 title = "OpenGL Projection Matrix"
@@ -8187,7 +8187,7 @@ tags  = []
 title = "Minecraft terrain generation in a nutshell"
 url   = "https://www.youtube.com/watch?v=CSa5O6knuwI"
 type  = "video"
-tags  = ["generate","minecraft","noise","procgen","terrain"]
+tags  = ["generate","minecraft","noise","procedural-generation","terrain"]
 
 [youtube-d6tp43wZqps]
 title = "Crafting a Better Shader for Pixel Art Upscaling"
