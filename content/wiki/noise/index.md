@@ -170,6 +170,10 @@ With that we have seen enough noise functions, for now... on to noise operations
 
 ## Noise Operations
 
+{% info_notice() %}
+This section uses the definitions/concepts of the [libnoise](https://libnoise.sourceforge.net) library.
+{% end %}
+
 Since using a single type of noise might be just a smidge boring,
 one usually combines multiple layers of noise through various **noise operators**.
 
@@ -366,7 +370,10 @@ You can on a first pass, generate some kind of coarse regular or irregular grid 
 
 - [The Book Of Shaders: Noise](https://thebookofshaders.com/11/)
 - [The Book Of Shaders: Cellular Noise](https://thebookofshaders.com/12/)
-- [The Book Of Shaders: Fractal Brownian Motion](https://thebookofshaders.com/13/).
+- [The Book Of Shaders: Fractal Brownian Motion](https://thebookofshaders.com/13/)
+- [libnoise: What is coherent noise?](https://libnoise.sourceforge.net/coherentnoise/index.html)
+- [libnoise: Generating coherent noise](https://libnoise.sourceforge.net/noisegen/index.html)
+- [libnoise: Glossary](https://libnoise.sourceforge.net/glossary/index.html)
 - [Terrain from Noise](https://www.redblobgames.com/maps/terrain-from-noise/)
 - [3D Cube World Level Generation](https://accidentalnoise.sourceforge.net/minecraftworlds.html)
 - [C# Perlin Noise](http://lotsacode.wordpress.com/2010/02/24/perlin-noise-in-c/)
