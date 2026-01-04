@@ -9,7 +9,7 @@ tags = ["procedural-generation", "design", "math", "noise"]
 
 {% figure(id="fig-1", class="float", caption="Pink/Red Liquid using Perlin Noise", author="[Simon Strandgaard](https://www.flickr.com/people/12739382@N04)", license="[CC-BY-2.0](https://en.wikipedia.org/wiki/File:Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_(2415197699).png)") %}https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_%282415197699%29.png/240px-Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_%282415197699%29.png{% end %}
 
-The most common and useful approach when procedurally generating *anything*, is to use **noise**: randomly generated numbers.
+The most common and useful approach when [procedurally generating](/wiki/procedural-generation) *anything*, is to use **noise**: randomly generated numbers.
 
 Of course, purely random numbers are kind of useless to us,
 as we need to be able to test things (i.e.: [reproducibility](https://en.wikipedia.org/wiki/Reproducibility)),
@@ -91,6 +91,8 @@ Linear interpolation produces a texture of poor quality; so alternatively, there
 {% end %}-->
 
 Unfortunately, while value noise tends to be ludicrously fast to generate, it's *quality* isn't particularly great due to *linear artifacts*. When used for terrain generation, these artifacts will cause strange patterns to emerge, which is absolutely *not* what one wants, so we will have to find something better than value noise...
+
+{{ todo_notice(body="Add section for Blue Noise.") }}
 
 ### Perlin Noise
 
@@ -376,6 +378,8 @@ You can on a first pass, generate some kind of coarse regular or irregular grid 
 - [libnoise: Glossary](https://libnoise.sourceforge.net/glossary/index.html)
 - [Terrain from Noise](https://www.redblobgames.com/maps/terrain-from-noise/)
 - [3D Cube World Level Generation](https://accidentalnoise.sourceforge.net/minecraftworlds.html)
+- [Moments in Graphics: Free Blue Noise Textures](https://momentsingraphics.de/BlueNoise.html)
+- [Moments in Graphics: The problem with 3D blue noise](https://momentsingraphics.de/3DBlueNoise.html)
 - [C# Perlin Noise](http://lotsacode.wordpress.com/2010/02/24/perlin-noise-in-c/)
 - [Perlin vs Simplex](https://www.bit-101.com/blog/2021/07/perlin-vs-simplex/)
 - [Simplex Noise Demystified (PDF)](https://web.archive.org/web/20230310204125if_/https://webstaff.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf)
