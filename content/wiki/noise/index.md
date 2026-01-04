@@ -1,13 +1,13 @@
 +++
 title = "Noise"
 description = "Fields of pseudorandom numbers."
-aliases = ["/wiki/noise"]
+aliases = ["/wiki/noise", "/wiki/noise-types"]
 [taxonomies]
 categories = ["procgen", "math"]
 tags = ["procgen", "design", "math", "noise"]
 +++
 
-{% figure(class="float", caption="Pink/Red Liquid using Perlin Noise", author="[Simon Strandgaard](https://www.flickr.com/people/12739382@N04)", license="[CC-BY-2.0](https://en.wikipedia.org/wiki/File:Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_(2415197699).png)") %}https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_%282415197699%29.png/240px-Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_%282415197699%29.png{% end %}
+{% figure(id="fig-1", class="float", caption="Pink/Red Liquid using Perlin Noise", author="[Simon Strandgaard](https://www.flickr.com/people/12739382@N04)", license="[CC-BY-2.0](https://en.wikipedia.org/wiki/File:Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_(2415197699).png)") %}https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_%282415197699%29.png/240px-Pink_red_liquid_using_perlin_noise_%2B_bump_%2B_coloring_%282415197699%29.png{% end %}
 
 The most common and useful approach when procedurally generating *anything*, is to use **noise**: randomly generated numbers.
 
@@ -58,12 +58,12 @@ fn noise(position: Vecℕ) -> f32;
 
 Calling such a function means **to sample the noise function**.
 
-{% info_notice() %}
+{% info_notice(id="number-ranges") %}
 **A note on number ranges:**
 
 While most libraries return numbers in the `[-1, +1]`-range, some may use the `[0, +1]`-range, or something else entirely even; read the documentation, or code, to make sure!
 
-Though conversions are usually rather easy; for example:
+Thankfully, conversions are usually rather easy; for example:
 
 - To turn `[0, +1]` into `[-1, +1]`:  
   Multiply by two and subtract one: `v * 2 - 1`
@@ -125,7 +125,7 @@ making values appear to be axis-aligned and/or biased on the diagonal.
 
 This is visible in the top left of the previous example image as a straight 'hill'.
 
-{% info_notice() %}
+{% info_notice(id="artifacts") %}
 If you are interested in the inner workings and actual reasons behind these artifacts,
 we *highly recommend* reading KdotJPG's excellent blog post [The Perlin Problem: Moving Past Square Noise](https://noiseposti.ng/posts/2022-01-16-The-Perlin-Problem-Moving-Past-Square-Noise.html) for more!
 {% end %}
@@ -148,19 +148,32 @@ The solution is surprisingly simple: Instead of sampling and interpolating the r
 Due to patent shenanigans, simplex noise was not possible to freely implement for quite some time,
 leading to the creation of **open simplex noise**. Thankfully, the patent has run out, so go forth and code!
 
+### Cellular Noise
 
+<small>[The book of shaders](https://thebookofshaders.com/12/) has an *awesome* article for this one.</small>
 
+Yet another method to generate noise is **Cellular Noise** (also called *Voronoi Noise*, or *Voronoise*),
+which has the benefit of being incredibly simple:
 
-
-
+- Have an imaginary grid of cells, with a point in every cell.
+- Each point has a pseudo-random value and position in its cell.
+- The random generator uses the cells index/coordinate as seed.
+- To then sample the noise at some location:
+  - Figure out which cell the sample location is in.
+  - Loop over neighbouring cells <small>(3 in 1D, 9 in 2D, 27 in 3D, ...)</small>.
+  - Find the cell whose point is the closest to the sample location.
+  - Use that closest points distance and/or value.
 
 ---
 
-With that we have seen enough noise functions... on to noise operations!
+With that we have seen enough noise functions, for now... on to noise operations!
 
 ## Noise Operations
 
-Noise operators are functions that accept **noise modules** (which are noise-functions and -operators), creating new noise modules from them. This allows for the creation of *much* more complex/detailed noise.
+Since using a single type of noise might be just a smidge boring,
+one usually combines multiple layers of noise through various **noise operators**.
+
+Noise operators are functions that accept **noise modules** (which are noise-functions *and -operators*), creating new noise modules from them. This allows for the creation of *much* more complex/detailed noise.
 
 They are split into these four categories:
 
@@ -182,11 +195,14 @@ They are split into these four categories:
 
 Even with just one noise sample, we can do *many* things... for example:
 
-- Shift it by adding/subtracting
-- Multiply it to scale its amplitude
-- Put it through a spline or easing function
-- Change its slope with `pow(v, …)`
-- Convert to other number ranges
+- **Shift** its value range by adding/subtracting.
+- **Multiply** it to scale its amplitude.
+- Change its **slope** with `pow(v, …)`.
+- Make it **billow** by removing the sign (`abs(v)`).
+- Make it **ridged** by doing the same and flipping (`1-abs(v)`).
+- **Flatten its middle** via `smoothstep( ℝ>0 , ℝ<1 , v)`.
+- Put it through a **spline** or **easing function**.
+- **Convert** it to other [number ranges](#number-ranges).
 - etc. etc.
 
 Here is an example of a *cubic easing modifier*, written in Rust:
@@ -220,7 +236,7 @@ v = ease_cubic(v, 0, 1, 1);
 
 You *might* notice that we did not define what the sample position `p` is, or where the result goes... and this is on purpose!
 
-Modifiers are *independent* of each other, so you can mix-and-match them however you like, there are no limits to your creativity here!
+Modifiers are *independent* of each other, so you can mix-and-match them however you like; there are no limits to your creativity here!
 
 {{ stub_notice(kind="section") }}
 
@@ -238,17 +254,33 @@ Modifiers are *independent* of each other, so you can mix-and-match them however
 <!-- Noise can be zoomed in; this usually changes the **frequency** of the noise.
   * More zoom => lower frequency. Frequency here roughly means "detail". High frequency noise has a lot of sharp edges and detail. Low frequency noise is blurred, smoothly varying. -->
 
-{{ stub_notice(kind="section") }}
+**Transformer operations** are applied to sample positions *before* they're passed into a noise-function:
 
-<!-- 
+```pseudocode
+let sample_value = noise_function(
+  TRANSFORM( sample_position )
+);
+```
+
+Transformations can be as simple as:
+
+- Adding to a position, shifting the noise function.
+- Multiplying a position by a constant, changing the noise frequency / zooming in or out.
+- Rotating the position, to break up possible [artifacts in the noise](#artifacts).
+
+#### Domain Warping
+
+But the transformations can also be controlled by *yet more noise*, which brings us to **domain warping**:
+
+By sampling a different noise function and using its sampled values to apply a transformation operation (the *warp*), like adding or multiplying, to the position input (the *domain*) of a second noise function... quite interesting patterns can emerge, as can be seen in [the first image](#fig-1).
+
 ### Field Operations
-Operations that work on *fields* of noise samples, instead of individual samples.
+<!-- Operations that work on *fields* of noise samples, instead of individual samples.
 
 - **Caching** takes the output *field* of a noise function and stores it.
-- **Subsampling** takes a cached field and samples from within it.
+- **Subsampling** takes a cached field and samples from within it.-->
 
 {{ stub_notice(kind="section") }}
--->
 
 
 
@@ -332,9 +364,13 @@ You can on a first pass, generate some kind of coarse regular or irregular grid 
 
 {{ todo_notice(body="Add more references.") }}
 
+- [The Book Of Shaders: Noise](https://thebookofshaders.com/11/)
+- [The Book Of Shaders: Cellular Noise](https://thebookofshaders.com/12/)
+- [The Book Of Shaders: Fractal Brownian Motion](https://thebookofshaders.com/13/).
 - [Terrain from Noise](https://www.redblobgames.com/maps/terrain-from-noise/)
 - [3D Cube World Level Generation](https://accidentalnoise.sourceforge.net/minecraftworlds.html)
 - [C# Perlin Noise](http://lotsacode.wordpress.com/2010/02/24/perlin-noise-in-c/)
+- [Perlin vs Simplex](https://www.bit-101.com/blog/2021/07/perlin-vs-simplex/)
 - [Simplex Noise Demystified (PDF)](https://web.archive.org/web/20230310204125if_/https://webstaff.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf)
 - [Goodbye Perlin noise in 2D, hello Perlin noise in 3D!](https://web.archive.org/web/20151122204631/https://blog.movingblocks.net/2011/06/11/goodbye-perlin-noise-2d-perlin-noise-3d/)
 - [Voxel Terrain](http://www.terathon.com/lengyel/Lengyel-VoxelTerrain.pdf)
@@ -353,6 +389,8 @@ Writing correct noise-generating code can be quite hard, so it is generally reco
   Fast noise generation with implementations in several languages, several kinds of noise and a GUI to preview noise.
 * **[FastNoise2](https://github.com/Auburn/FastNoise2)**  
   Newer version of *FastNoiseLite*, by the same author, written entirely in C++. One of the, if not *the*, fastest noise generation libraries.
+* **[psrdnoise](https://github.com/stegu/psrdnoise/)**  
+  A library implementing tiled simplex noise for GLSL.
 
 ### Explainer Videos
 
