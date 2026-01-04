@@ -3,6 +3,7 @@
 {% block seo %}
   {{ super() }}
   {% set taxonomy_name = term.name | capitalize %}
+  {% set taxonomy_slug = term.slug %}
   {% set taxonomy_path = "/wiki/" ~ term.slug ~ "/" %}
   {% set taxonomy_page = term.pages | filter(attribute="path", value=taxonomy_path) | first %}
   {% if taxonomy_page != "" %}
@@ -55,6 +56,32 @@
             {% endfor %}
           </ul>
           <br>
+          <section id="taxonomy-references">
+            <hr>
+            <style>
+              #taxonomy-references:has(ul:empty) {display:none}
+              #taxonomy-references h2 code {white-space: pre}
+            </style>
+            <h2>References tagged with <code>{{ taxonomy_slug }}</code></h2>
+            <ul class="big-gap">
+              {%- set references = load_data(path="content/wiki/references.toml", format="toml") -%}
+              {%- for refname, reference in references -%}
+                {%- set reftags = reference | get(key="tags", default=[]) -%}
+                {%- if reftags is containing(term.name) -%}
+                  <li><a href="{{reference.url}}">
+                    {%- if reference.title -%}
+                    {{reference.title}}
+                    {%- elif reference.url -%}
+                    {{reference.url}}
+                    {%- else -%}
+                    REF_TITLE_MISSING
+                    {%- endif -%}
+                  </a></li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+            <br>
+          </section>
         </article>
       </div>
     </div>
