@@ -27,9 +27,15 @@ tags = ["rendering", "api"]
 - [BlendFunc Tool](https://www.andersriggelsen.dk/glblendfunc.php)
 - Tutorials:
   - [Learn OpenGL](https://learnopengl.com/)
-  - [OpenGL Tutorial](http://www.opengl-tutorial.org/)
+  - [OpenGL 3.3 Tutorial](http://www.opengl-tutorial.org/)
+  - [Anton's OpenGL 4 Tutorial](https://antongerdelan.net/opengl/)
 - Guides:
   - [Using Modern OpenGL to Avoid Common Errors](https://juandiegomontoya.github.io/modern_opengl.html)
+- The OpenGL Red Book
+  - <http://www.opengl-redbook.com/>
+  - [Amazon.com](https://www.amazon.com/OpenGL-Programming-Guide-Official-Learning/dp/0134495497)
+  - [Ebooks.com](https://www.ebooks.com/en-us/book/95824283/opengl-programming-guide/john-kessenich/)
+  - [Play Store](https://play.google.com/store/books/details/OpenGL_Programming_Guide_The_Official_Guide_to_Lea?id=vUK1DAAAQBAJ&hl=en-US)
 - [Language Bindings](https://www.khronos.org/opengl/wiki/Language_bindings):
   - For `C++`: [glbinding](https://glbinding.org/)
   - For `C#`: [OpenTK](https://opentk.net/)
