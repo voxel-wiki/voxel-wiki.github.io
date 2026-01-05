@@ -16,7 +16,11 @@ Ultimately it depends on what ***your*** goals are; try not to set them too loft
 
 Since there is no way to write about all possible methods, this article will talk about things *in general* and, if possible, link elsewhere for more details.
 
-## Hardware Acceleration
+## Prerequisites
+
+Before you can render anything, there is a bunch of decisions to make and things to prepare.
+
+### Hardware Acceleration
 
 Talking about rendering is impossible without talking about hardware acceleration
 and thus <abbr title="Graphics Processing Units">GPUs</abbr>; so let's do that real quick!
@@ -37,22 +41,22 @@ To hopefully nobodies surprise, rendering voxels is *such* a massively parallel 
 
 How do we gain access to the awesome processing power of GPUs? Well...
 
-## Graphics Programming APIs
+### Graphics Programming APIs
 
 Unfortunately, directly accessing GPUs usually isn't possible, since:
 
 1. Operating systems must share GPU resources between multiple processes.
 2. There are a multitude of hardware vendors and thus GPUs, not to mention drivers!
 
-As such, we are forced to use a **Graphics&nbsp;Programming&nbsp;API**... of which there are several.
+As such, we are forced to use a **Graphics&nbsp;Programming&nbsp;API**... of which there are also several.
 
 However, since you are most likely to want to run your program across many platforms and hardware combinations,
-we can safely ignore a whole bunch of them and choose from one of three APIs:
+we can safely ignore a whole bunch of them and choose from one of four APIs:
 
 - To get started *as fast as possible*, with no regard as to how modern GPUs and their drivers work, use [OpenGL](/wiki/opengl).
 - To be future-proof and get as much performance as possible out of your GPU, use [Vulkan](/wiki/vulkan).
 - If you're okay with proprietary stuff and are targeting mainly Microsoft&nbsp;Windows & Xbox, you can use [Direct3D](https://en.wikipedia.org/wiki/Direct3D) via [DirectX](https://en.wikipedia.org/wiki/DirectX).
-- Or, if you are somehow developing on/for the Apple platforms, you'll have to use the [Metal API](https://en.wikipedia.org/wiki/Metal_(API)).
+- When developing on and targeting the various Apple platforms, you'll have to[^applegl] use the [Metal API](https://en.wikipedia.org/wiki/Metal_(API)).
 
 {% warn_notice() %}
 Keep in mind that **game consoles** have their own, *proprietary*, graphics APIs;
@@ -68,7 +72,7 @@ Since there are over ~7000 languages out there, each with potentially *multiple*
 - **Vulkan:** <https://www.vulkan.org/tools#language-bindings>
 - **DirectX / Metal:** Good luck.
 
-## Graphics Programming Libraries
+### Graphics Programming Libraries
 
 If you find the previously mentioned APIs too burdensome or low-level,
 there are various *rendering abstraction* libraries available,
@@ -92,7 +96,7 @@ Some of these libraries have bindings for other languages,
 so check out their documentation before rejecting any!
 {% end %}
 
-## Windowing Abstraction Libraries
+### Windowing Abstraction Libraries
 
 Creating a surface to actually draw into is *terribly* annoying,
 due to the many platforms and operating systems that exist,
@@ -105,10 +109,11 @@ so it's best to leave it to a windowing library...
 | [SFML](https://www.sfml-dev.org/) | `C++` | [*various*](https://www.sfml-dev.org/faq.php#grl-platforms) |
 | [Winit](https://github.com/rust-windowing/winit) | `Rust` | [*various*](https://github.com/rust-windowing/winit/blob/master/FEATURES.md) |
 
-
 ---
 
-## General Rendering Methods
+<small class="text-secondary">End of prerequisites.</small>
+
+## Volume Rendering Methods
 
 There are, in general, *two* families of volume rendering methods, with different complexity, fidelity, extensibility, performance and memory trade-offs:
 
@@ -122,9 +127,37 @@ the volume is pre-processed into a *surface-only* representation,
 such as a **mesh** or a **point-cloud**,
 which can then be [rasterized](https://en.wikipedia.org/wiki/Rasterisation) (eg: triangles ⇒ visible pixels).
 
-In the latter family of **volume marching**, the volume itself is marched through via [raycasting](/wiki/raycasting)/raymarching (eg: visible pixels ⇒ voxels).
+In the latter family of **volume marching**, the volume itself is uploaded to the GPU and marched through via [raycasting](/wiki/raycasting)/raymarching (eg: visible pixels ⇒ voxels).
 
-It's also possible to [combine](/wiki/raysterization) both families, presenting yet more trade-offs to use/apply and deal with.
+One can also [combine](/wiki/raysterization) both families, presenting yet more trade-offs to use/apply and deal with.
+
+## Streaming
+
+Regardless of the rendering method, it's necessary to decide which chunks of voxels (be it as meshes or volumes) to upload to the GPU, as uploading *all of them* would consume entirely too much GPU memory, which is often smaller than CPU-side memory[^igpuvram].
+
+{% todo_notice() %} Explain more and/or link to relevant articles. {% end %}
+
+But which data should you upload? And should you upload *all of it*?
+
+### Level of Detail
+
+While GPUs *do* have massive amounts of computational power, with modern ones being capable of rasterizing literal *billions* (`1'000'000'000`) of triangles per second, they still have limits, especially as your shaders get more complex and render pipelines become ever longer spaghetti.
+
+Unsurprisingly, as the draw-distance increases, voxels get smaller and smaller, to the point of voxels being *smaller* than pixels.... which means we can reduce the **Level of Detail** of things!
+
+{% todo_notice() %} Explain more and/or link to relevant articles. {% end %}
+
+## Memory Pooling
+
+In practice, it's strongly recommended (if not a *must*) to use **memory&nbsp;pooling** techniques, handling the allocation and layout of geometry/volume data on your own, instead of letting the driver do it automatically, so as to:
+
+- Reduce the need for synchronization and invalidation work (aka&nbsp;overhead) the driver must perform.
+- Allow much more efficient batching of draw calls, usually via [multidraw commands](/wiki/multidraw), massively improving performance.
+- Perform [frustum](/wiki/frustum-culling)- and [occlusion](/wiki/occlusion-culling)-culling on the GPU using compute shaders.
+
+Of course, that means having to deal with allocation and synchronization yourself, but that's frankly a small price to pay compared to the enormous benefits gained. Note that when using an existing engine, this *may* happen automatically, if all goes well <small>(basically never)</small>.
+
+{% todo_notice() %} Explain more and/or link to relevant articles. {% end %}
 
 ---
 
@@ -138,7 +171,7 @@ Lighting is commonly defined via [some variant](https://en.wikipedia.org/wiki/Bi
   <li><a href="#aspects-of-lighting">Mirror</a></li>
 </ul>
 
-{% todo_notice() %} Create article just for lighting? {% end %}
+{% todo_notice() %} Completely rewrite this section. {% end %}
 
 - Global Illumination
 - [Ambient Occlusion](https://0fps.net/2013/07/03/ambient-occlusion-for-minecraft-like-worlds/)
@@ -154,23 +187,35 @@ Depending on the method you choose to render voxels,
 you may have to [cull your geometry](/wiki/culling),
 so as to not overload your GPU with draw-calls & geometry.
 
+{% todo_notice() %} Move section? {% end %}
+{% todo_notice() %} Explain more and/or link to relevant articles. {% end %}
+{% todo_notice() %} Note on distance & frustum culling. {% end %}
+{% todo_notice() %} Note on (raster) occlusion culling. {% end %}
+{% todo_notice() %} Note on portal/cave/PVS culling. {% end %}
+
 ---
+
+{% todo_notice() %} Yet more sections? {% end %}
 
 ## References
 
 - [GigaVoxels: Ray-Guided Streaming for Efficient and Detailed Voxel Rendering](https://artis.inrialpes.fr/Publications/2009/CNLE09/)
-- <http://jojendersie.de/rendering-huge-amounts-of-voxels/>
-- <http://jojendersie.de/rendering-huge-amounts-of-voxels-2/>
-- <https://swiftcoder.wordpress.com/planets/isosurface-extraction/>
-- <https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/>
-- <http://procworld.blogspot.com/2010/11/from-voxels-to-polygons.html>
-- <http://ngildea.blogspot.com/2014/09/dual-contouring-chunked-terrain.html>
-- <http://ngildea.blogspot.com/2015/06/dual-contouring-with-opencl.html>
-- <https://web.archive.org/web/20200718072744/https://codeflow.org/entries/2010/dec/09/minecraft-like-rendering-experiments-in-opengl-4/>
-- <https://gamedev.stackexchange.com/questions/22664/how-can-i-improve-rendering-speeds-of-a-voxel-minecraft-type-game>
+- [Johannes Jendersie: Rendering huge amounts of Voxels](http://jojendersie.de/rendering-huge-amounts-of-voxels/)
+- [Johannes Jendersie: Rendering huge amounts of Voxels 2](http://jojendersie.de/rendering-huge-amounts-of-voxels-2/)
+- [0fps: Meshing in a Minecraft Game](https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/)
+- [Procedural World: From Voxels to Polygons](http://procworld.blogspot.com/2010/11/from-voxels-to-polygons.html)
+- [Nick's Voxel Blog: Dual Contouring: Seams & LOD for Chunked Terrain](http://ngildea.blogspot.com/2014/09/dual-contouring-chunked-terrain.html)
+- [Nick's Voxel Blog: Dual Contouring with OpenCL](http://ngildea.blogspot.com/2015/06/dual-contouring-with-opencl.html)
+- [Minecraft Like Rendering Experiments in OpenGL 4](https://web.archive.org/web/20200718072744/https://codeflow.org/entries/2010/dec/09/minecraft-like-rendering-experiments-in-opengl-4/)
+- [Stackoverflow: How can I improve rendering speeds of a Voxel/Minecraft type game?](https://gamedev.stackexchange.com/questions/22664/how-can-i-improve-rendering-speeds-of-a-voxel-minecraft-type-game)
+- [Inigo Quilez: Sphere projection](https://iquilezles.org/articles/sphereproj/)
 
 ---
 
 [^embarassinglyparallel]: Commonly referred to as [embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel).
 
 [^gpumanycores]: Modern GPU's have literally hundreds, if not *thousands*, of 'units' running in parallel; the exact mapping of 'units' to 'threads' differs per GPU vendor.
+
+[^applegl]: Apple deprecated OpenGL a while ago, permanently pinning support/drivers at OpenGL 4.1, seemingly planning to remove it *eventually* <small>(probably never?)</small>. Unfortunately, that means the drivers are also stuck being a buggy mess, so working with *modern* OpenGL on their platforms is... painful.
+
+[^igpuvram]: On systems with an iGPU (i.e.: most laptops and 'thin' desktops), the memory between CPU and GPU is shared, as both live on the same chip; this is both a boon (less synchronization and no PCIe transfers) and a curse (weird performance profiles and less memory). This can also be the case on some smartphones.

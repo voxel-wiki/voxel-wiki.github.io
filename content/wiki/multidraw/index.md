@@ -28,4 +28,5 @@ tags = ["rendering"]
 - <https://docs.vulkan.org/samples/latest/samples/performance/multi_draw_indirect/README.html>
 - <https://vkguide.dev/docs/gpudriven/draw_indirect/>
 - <https://registry.khronos.org/OpenGL-Refpages/gl4/html/glMultiDrawElementsIndirect.xhtml>
+- <https://ferransole.wordpress.com/2014/07/09/multidrawindirect/>
 - <https://litasa.github.io/blog/2017/09/04/OpenGL-MultiDrawIndirect-with-Individual-Textures>
