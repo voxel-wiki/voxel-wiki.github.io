@@ -150,14 +150,6 @@ article blockquote {
 	& .author {color: #65737e}
 }
 
-.float + .notice, .notice.float {
-	float: right;
-	margin-top: 0.125rem;
-	margin-left: 0.5rem;
-	margin-bottom: 0.5rem;
-	width: 14rem;
-}
-
 article > .notice {
 	/* <div class="notice"></div> */
 	display: flow-root;
@@ -191,6 +183,14 @@ article > .notice {
 	&.warning {
 		/* {% warn_notice() %} ... {% end %} */
 		@include notice-color(rgb(255, 20, 20));
+	}
+	
+	&.float {
+		float: right;
+		margin-top: 0.125rem;
+		margin-left: 0.5rem;
+		margin-bottom: 0.5rem;
+		width: 14rem;
 	}
 	
 	:first-child {
