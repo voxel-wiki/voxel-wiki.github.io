@@ -4,19 +4,21 @@ description = "Classic hardware accelerated rendering API."
 aliases = ["/wiki/gl", "/wiki/ogl", "/wiki/open-gl", "/wiki/gles"]
 [taxonomies]
 categories = ["rendering"]
-tags = ["rendering", "api"]
+tags = ["rendering", "api", "opengl"]
 +++
 
 > OpenGL is a cross-platform API for hardware accelerated 2D/3D graphics.
 
-{% figure(class="float", caption="Official Logo", author="Khronos", license="CC0") %}https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/OpenGL_logo.svg/320px-OpenGL_logo.svg.png{% end %}
+{% figure(class="float", width="14rem", caption="Official Logo", author="Khronos", license="CC0") %}https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/OpenGL_logo.svg/320px-OpenGL_logo.svg.png{% end %}
 
 {{ stub_notice() }}
+
+<div class="clearfix"></div>
 
 ## References
 
 - [Official Website](http://www.opengl.org/)
-- [Official OpenGL Wiki](https://www.khronos.org/opengl/wiki/):
+- [Official OpenGL Wiki](https://www.khronos.org/opengl/wiki/)
   - [Rendering Pipeline Overview](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview)
   - [OpenGL Object Model](https://www.khronos.org/opengl/wiki/OpenGL_Object)
   - [OpenGL Shading Language](https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language)

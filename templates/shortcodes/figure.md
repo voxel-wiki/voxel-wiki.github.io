@@ -2,7 +2,7 @@
 {% if float %}{% set class = class ~ "float " %}{% endif %}
 <figure {% if id %}id="{{ id }}"{% endif %} itemscope itemtype="http://schema.org/MediaObject" class="{{ class }}">
 {%- if body is starting_with("http") or body is starting_with("/") -%}
-<img itemprop="contentUrl" src="{{ body }}">
+<img itemprop="contentUrl" src="{{ body }}"{% if width %} style="width:{{width}}"{% endif %}>
 {% else %}{{ body | markdown }}{% endif %}
 {%- if caption -%}<figcaption><span class=caption itemprop="caption">{{ caption | markdown }}</span>{%- if author -%}<span class=author itemprop="author">{{ author | markdown }}</span>{% endif %}{%- if license -%}<span class=license itemprop="license">{{ license | markdown }}</span>{% endif %}</figcaption>{% endif %}
 </figure>{%- if clear -%}<br style="clear: both">{% endif %}

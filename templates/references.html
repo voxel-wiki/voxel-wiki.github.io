@@ -149,7 +149,7 @@
               </header>
               {% if reference.dead %}
               <main class="card-body">
-                <strong>Dead Link:</strong> {{reference | get(key="dead", default="") | markdown(inline=true) | safe }}
+                <strong>Dead Link:</strong> {{reference | get(key="dead", default="") | markdown(inline=true) }}
               </main>
               {% elif reference.desc %}
               <main class="card-body">

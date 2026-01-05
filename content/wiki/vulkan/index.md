@@ -4,14 +4,16 @@ description = "Modern hardware accelerated rendering API."
 aliases = ["/wiki/vk"]
 [taxonomies]
 categories = ["rendering"]
-tags = ["rendering", "api"]
+tags = ["rendering", "api", "vulkan"]
 +++
 
 > Vulkan is a modern cross-platform API and open standard for hardware accelerated 2D/3D graphics and computing.
 
-{% figure(class="float", caption="Official Logo", author="Khronos", license="CC0") %}https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Vulkan_logo.svg/320px-Vulkan_logo.svg.png{% end %}
+{% figure(class="float", width="14rem", caption="Official Logo", author="Khronos", license="CC0") %}https://upload.wikimedia.org/wikipedia/commons/3/30/Vulkan.svg{% end %}
 
 {{ stub_notice() }}
+
+<div class="clearfix"></div>
 
 ## References
 
