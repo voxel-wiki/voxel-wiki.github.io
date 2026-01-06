@@ -143,7 +143,7 @@ But which data should you upload? And should you upload *all of it*?
 
 While GPUs *do* have massive amounts of computational power, with modern ones being capable of rasterizing literal *billions* (`1'000'000'000`) of triangles per second, they still have limits, especially as your shaders get more complex and render pipelines become ever longer spaghetti.
 
-Unsurprisingly, as the draw-distance increases, voxels get smaller and smaller, to the point of voxels being *smaller* than pixels.... which means we can reduce the **Level of Detail** of things!
+Unsurprisingly, as the draw-distance increases, voxels get smaller and smaller, to the point of voxels being *smaller* than pixels.... which means we can reduce the [**Level of Detail**](/wiki/level-of-detail) of things!
 
 {% todo_notice() %} Explain more and/or link to relevant articles. {% end %}
 
