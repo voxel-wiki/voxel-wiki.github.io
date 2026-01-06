@@ -55,13 +55,17 @@ As such, we are forced to use a **Graphics&nbsp;Programming&nbsp;API**... of whi
 However, since you are most likely to want to run your program across many platforms and hardware combinations,
 we can safely ignore a whole bunch of them and choose from one of four APIs:
 
-- To get started *as fast as possible*, with no regard as to how modern GPUs and their drivers work, use [OpenGL](/wiki/opengl).
-- To be future-proof and get as much performance as possible out of your GPU, use [Vulkan](/wiki/vulkan).
+- To get *started as fast as possible*, use [OpenGL](/wiki/opengl) version 4+.
+- To get *all the performance* out of your GPU, use [Vulkan](/wiki/vulkan).
 - If you're okay with proprietary stuff and are targeting mainly Microsoft&nbsp;Windows & Xbox, you can use [Direct3D](https://en.wikipedia.org/wiki/Direct3D) via [DirectX](https://en.wikipedia.org/wiki/DirectX).
 - When developing on and targeting the various Apple platforms, you'll have to[^applegl] use the [Metal API](https://en.wikipedia.org/wiki/Metal_(API)).
 
+{% info_notice() %}
+**Note:** You can safely start with OpenGL and switch to the other APIs at a later date. No need to learn *all* of rendering tech at once!
+{% end %}
+
 {% warn_notice() %}
-Keep in mind that **game consoles** have their own, *proprietary*, graphics APIs;
+**Note:** Keep in mind that **game consoles** have their own, *proprietary*, graphics APIs;
 if you intend to port your project, you'll have to keep most graphics-related
 code behind some abstraction, separate from other systems.
 {% end %}
