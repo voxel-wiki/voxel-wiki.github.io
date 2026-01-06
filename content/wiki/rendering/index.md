@@ -147,6 +147,19 @@ Unsurprisingly, as the draw-distance increases, voxels get smaller and smaller, 
 
 {% todo_notice() %} Explain more and/or link to relevant articles. {% end %}
 
+## Culling
+
+If you use surface extraction or [a hybrid method](/wiki/raysterization), 
+[**culling**](/wiki/culling) will be necessary, as to not overload the GPUs rasterization and fragment pipeline stages.
+
+The first and most common culling method to apply is [Frustum Culling](/wiki/frustum-culling), usually followed by (Raster) [Occlusion Culling](/wiki/occlusion-culling) and/or a variant of [Portal Culling](/wiki/portal-culling).
+
+Culling algorithms can also (and perhaps *should*) be implemented via compute shaders *on the GPU*, using its massive parallelism to cull literal millions of objects all at once, further reducing the work both CPU and GPU must do.
+
+## Packing
+
+Depending on the attributes and precision of your geometries data, you may be able to [tightly pack data](/wiki/vertex-packing) into individual `int`s or `long`s, avoiding complex [VAO](https://wikis.khronos.org/opengl/Vertex_Specification#Vertex_Array_Object) layouts and allowing for [custom vertex pulling](/wiki/vertex-pulling) functionality. The performance gains here can be *ridiculous*, as memory bandwidth and cache is severely limited on the GPU... so if you can do this without unduly limiting your stylistic choices, *do it*.
+
 ## Memory Pooling
 
 In practice, it's strongly recommended (if not a *must*) to use **memory&nbsp;pooling** techniques, handling the allocation and layout of geometry/volume data on your own, instead of letting the driver do it automatically, so as to:
@@ -178,20 +191,6 @@ Lighting is commonly defined via [some variant](https://en.wikipedia.org/wiki/Bi
 - [Flood-Fill Lighting](https://web.archive.org/web/20210429192404/https://www.seedofandromeda.com/blogs/29-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-1)
 - [Shadow Mapping](https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping)
 - ...?
-
----
-
-## General Culling Methods
-
-Depending on the method you choose to render voxels,
-you may have to [cull your geometry](/wiki/culling),
-so as to not overload your GPU with draw-calls & geometry.
-
-{% todo_notice() %} Move section? {% end %}
-{% todo_notice() %} Explain more and/or link to relevant articles. {% end %}
-{% todo_notice() %} Note on distance & frustum culling. {% end %}
-{% todo_notice() %} Note on (raster) occlusion culling. {% end %}
-{% todo_notice() %} Note on portal/cave/PVS culling. {% end %}
 
 ---
 
