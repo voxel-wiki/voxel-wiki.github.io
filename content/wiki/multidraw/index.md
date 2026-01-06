@@ -24,8 +24,8 @@ where each piece or model was unique in some way <small>(like, say, chunks of me
 there was no other way but to submit an individual drawcall for each and every single piece.
 
 This meant that the CPU had to do *a lot* of work,
-repeatedly sending a tons of small commands to the driver and GPU,
-making the driver do a ton of validation work,
+repeatedly sending tons of small commands to the driver and GPU,
+making the driver do unnecessary validation work,
 with the GPU spending a *significant* amount of time just... waiting.
 
 Fortunately in late 2012, [OpenGL](/wiki/opengl) 4.3 was released, adding two new commands: [glMultiDrawArraysIndirect](https://registry.khronos.org/OpenGL-Refpages/gl4/html/glMultiDrawArraysIndirect.xhtml) and [`glMultiDrawElementsIndirect`](https://registry.khronos.org/OpenGL-Refpages/gl4/html/glMultiDrawElementsIndirect.xhtml).
