@@ -7,15 +7,15 @@
   {% set taxonomy_path = "/wiki/" ~ term.slug ~ "/" %}
   {% set taxonomy_page = term.pages | filter(attribute="path", value=taxonomy_path) | first %}
   {% if taxonomy_page != "" %}
-    {% set taxonomy_name = taxonomy_page.title %}
+  {% set taxonomy_name = taxonomy_page.title %}
   {% endif %}
   {% set title = "Pages in " ~ taxonomy_name %}
   {% set title_addition = "" %}
   {% if taxonomy.name == "tags" %}
-    {% set title = "Pages tagged " ~ taxonomy_name %}
+  {% set title = "Pages tagged " ~ taxonomy_name %}
   {% endif %}
   {% if config.title %}
-    {% set title_addition = title_separator ~ config.title %}
+  {% set title_addition = title_separator ~ config.title %}
   {% endif %}
   {{ macros_head::seo(title=title, title_addition=title_addition) }}
 {% endblock seo %}
@@ -56,6 +56,7 @@
             {% endfor %}
           </ul>
           <br>
+          {% if config.mode is matching("build") %}
           <section id="taxonomy-references">
             <hr>
             <style>
@@ -65,10 +66,15 @@
             <h2>References tagged with <code>{{ taxonomy_slug }}</code></h2>
             <ul class="big-gap">
               {%- set references = load_data(path="content/wiki/references.toml", format="toml") -%}
+              {%- set taxonomy_regex = "(?i)\b" ~ term.name ~ ".?\b" -%}
               {%- for refname, reference in references -%}
                 {%- set reftags = reference | get(key="tags", default=[]) -%}
-                {%- if reftags is containing(term.name) -%}
-                  <li><a href="{{reference.url}}">
+                {%- set reftitle = reference | get(key="title", default=reference.url) -%}
+                {%- if reftags is containing(term.name)
+                    or refname is matching(taxonomy_regex)
+                    or reftitle is matching(taxonomy_regex)
+                -%}
+                  <li title="ref: {{refname}}"><a href="{{reference.url}}">
                     {%- if reference.title -%}
                     {{reference.title}}
                     {%- elif reference.url -%}
@@ -82,6 +88,9 @@
             </ul>
             <br>
           </section>
+          {%- else -%}
+          <div class="notice warning">References are not resolved while in <code>serve</code> or <code>check</code> mode.</div>
+          {%- endif -%}
         </article>
       </div>
     </div>
