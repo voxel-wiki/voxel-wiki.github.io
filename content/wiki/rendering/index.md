@@ -4,6 +4,8 @@ description = "How to turn voxels into pixels?"
 [taxonomies]
 categories = ["rendering"]
 tags = ["rendering"]
+[extra]
+toc = true
 +++
 
 While rendering voxels appears easy at a glance ("they're just cubes!"),
@@ -191,12 +193,9 @@ All lighting methods will have trade-offs, especially when it comes to accuracy 
 And if for some ungodly reason you want *actual realistic lightning*... look into [spectral rendering](https://en.wikipedia.org/wiki/Spectral_rendering), and we'll see ya in a few years!
 {% end %}
 
+### Flood-Fill Lighting
 
-### Cellular Automata
-
-<small>Also known as *flood-fill lighting*.</small>
-
-Now, to keep things relatively simple (and that's putting it mildly), one can use [cellular automata](/wiki/cellularautomata) to [calculate lighting](https://web.archive.org/web/20210429192404/https://www.seedofandromeda.com/blogs/29-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-1).
+Now, to keep things relatively simple (and that's putting it mildly), one can use [cellular automata](/wiki/cellularautomata) algorithms to [calculate lighting](https://web.archive.org/web/20210429192404/https://www.seedofandromeda.com/blogs/29-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-1).
 
 This works by propagating local lighting to neighbouring voxels, starting at the light-emitting voxels, in a [breadth-first-search](https://en.wikipedia.org/wiki/Breadth-first_search) throughout the grid, resulting in every non-solid voxel taking on the *largest* lightning value of the surrounding lights. Updating the local lighting works almost the same, propagating from where ever the change occurred, but giving each voxel the *smallest* lighting value of its neighbours.
 
