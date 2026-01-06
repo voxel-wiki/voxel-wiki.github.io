@@ -64,7 +64,38 @@
                 {% endfor %}
             </nav>
         {% endif %}
-        <article>
+        {% if page.toc %}
+        <!-- This is a *terribly* hacky way of doing this. ;_; -->
+        <style>
+          article {counter-reset: section;}
+          article > h2 {counter-increment: section;}
+          article > h2::before {content: counter(section) ". "; opacity: 0.75}
+        </style>
+        <details id="table-of-contents" class="card mt-2 page-table-of-contents">
+          <summary class="card-header">
+            <strong>Table of Contents</strong>
+          </summary>
+          <div class="card-body">
+            <ol role="list">
+              {% for h1 in page.toc %}
+              <li>
+                <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                {% if h1.children %}
+                <ul>
+                  {% for h2 in h1.children %}
+                  <li>
+                    <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ol>
+          </div>
+        </details>
+        {% endif %}
+        <article {% if page.toc %}class="page-has-toc"{% endif %}>
           <div class="page-header">
             <h1>{{ page.title }}</h1>
           </div>
