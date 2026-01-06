@@ -174,40 +174,112 @@ Of course, that means having to deal with allocation and synchronization yoursel
 
 ---
 
-## Aspects of Lighting
+## Lighting
 
-Lighting is commonly defined via [some variant](https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function#Models) of the [**Bidirectional Reflectance Distribution Function**](https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function)...
+If you've read all of the above, you might think:
 
-<ul class="exclusive-choice-set" aria-label="brdf aspects">
-  <li><a href="#aspects-of-lighting">Diffuse</a></li>
-  <li><a href="#aspects-of-lighting">Glossy</a></li>
-  <li><a href="#aspects-of-lighting">Mirror</a></li>
-</ul>
+> oh boy, this sure seems complicated!
 
-{% todo_notice() %} Completely rewrite this section. {% end %}
+Unfortunately for you and *everyone* else, lighting is *more* complicated.
+**By a whole <span title="(This is the only acceptable instance of swearing in this Wiki.)" style="color:red">fucking</span> lot.**
 
-- Global Illumination
-- [Ambient Occlusion](https://0fps.net/2013/07/03/ambient-occlusion-for-minecraft-like-worlds/)
-- [Flood-Fill Lighting](https://web.archive.org/web/20210429192404/https://www.seedofandromeda.com/blogs/29-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-1)
-- [Shadow Mapping](https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping)
-- ...?
+{% warn_notice() %}
+**Warning:** There is no silver bullet. Perfection is a lie.
+
+All lighting methods will have trade-offs, especially when it comes to accuracy and realism, with how much frame-time it costs, the amount of (graphics) memory it takes and the implementation complexity being *wildly* different for each.
+
+And if for some ungodly reason you want *actual realistic lightning*... look into [spectral rendering](https://en.wikipedia.org/wiki/Spectral_rendering), and we'll see ya in a few years!
+{% end %}
+
+
+### Cellular Automata
+
+<small>Also known as *flood-fill lighting*.</small>
+
+Now, to keep things relatively simple (and that's putting it mildly), one can use [cellular automata](/wiki/cellularautomata) to [calculate lighting](https://web.archive.org/web/20210429192404/https://www.seedofandromeda.com/blogs/29-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-1).
+
+This works by propagating local lighting to neighbouring voxels, starting at the light-emitting voxels, in a [breadth-first-search](https://en.wikipedia.org/wiki/Breadth-first_search) throughout the grid, resulting in every non-solid voxel taking on the *largest* lightning value of the surrounding lights. Updating the local lighting works almost the same, propagating from where ever the change occurred, but giving each voxel the *smallest* lighting value of its neighbours.
+
+{% info_notice() %}
+If you're annoyed at this method resulting in a rhombus/diamond shape, you will also have to spread lighting diagonally; handling the literal corner-cases can be quite annoying, but is doable, and will slow down the spreading quite a bit.
+{% end %}
+
+Getting a little bit more complicated, but still within reason, sunlight can be calculated by propagating lighting from every block, starting at the highest *neighbour* of a given column, down to the columns *own* highest block. How to deal with updates here is left as an exercise to the reader.
+
+Now, just one teeny-tinsy problem: This method doesn't actually give you shadows. Nor does it allow for diagonal/moving sunlight.
+
+### Grid-based Visibility
+{{ stub_notice(kind="section") }}
+
+- <https://oliver-hare.com/daedalus/algorithms/light/lightsys/2017/10/22/game-board-light-propagation-algorithm.html>
+- <https://towardsdatascience.com/a-quick-and-clear-look-at-grid-based-visibility-bf63769fbc78/>
+
+### Radiosity/Photon Mapping
+{{ stub_notice(kind="section") }}
+
+- <https://en.wikipedia.org/wiki/Radiosity_(computer_graphics)>
+- <https://graphics.stanford.edu/courses/cs348b-00/course8.pdf>
+- <https://www.cs.cmu.edu/afs/cs/academic/class/15462-s10/www/lec-slides/lec21.pdf>
+- <https://www3.cs.stonybrook.edu/~qin/courses/visualization/visualization-radiosity-and-photon-mapping.pdf>
+- <https://cdn.steamstatic.com/apps/valve/2007/SIGGRAPH2007_EfficientSelfShadowedRadiosityNormalMapping.pdf>
+- <https://developer.nvidia.com/gpugems/gpugems2/part-v-image-oriented-computing/chapter-39-global-illumination-using-progressive>
+
+### Radiance Cascades
+{{ stub_notice(kind="section") }}
+
+- <https://radiance-cascades.com/>
+- <https://mini.gmshaders.com/p/radiance-cascades?utm_campaign=post&utm_medium=web>
+- <https://mini.gmshaders.com/p/radiance-cascades2>
+- <https://m4xc.dev/articles/fundamental-rc/>
+- <https://tmpvar.com/poc/radiance-cascades/>
+
+### Voxel Cone Tracing
+{{ stub_notice(kind="section") }}
+
+- <https://research.nvidia.com/sites/default/files/publications/GIVoxels-pg2011-authors.pdf>
+- <https://cgvr.informatik.uni-bremen.de/theses/finishedtheses/VoxelConeTracing/S4552-rt-voxel-based-global-illumination-gpus.pdf>
+- <https://fumufumu.q-games.com/archives/Cascaded_Voxel_Cone_Tracing_final.pdf>
+- <https://leifnode.com/2015/05/voxel-cone-traced-global-illumination/>
+- <https://www.tobias-franke.eu/publications/franke14dvct/franke14dvct.pdf>
+- <https://kth.diva-portal.org/smash/get/diva2:1886204/FULLTEXT01.pdf>
+- <https://otaviopeixoto1.github.io/portfolio/vctgi/>
+
+### Path Tracing
+{{ stub_notice(kind="section") }}
+
+- <https://en.wikipedia.org/wiki/Path_tracing>
+- <https://blogs.nvidia.com/blog/what-is-path-tracing/>
+- <http://graphics.ucsd.edu/~henrik/papers/book/>
+- <http://graphics.ucsd.edu/~henrik/papers/coherent_path_tracing.pdf>
+- <https://www.cescg.org/wp-content/uploads/2018/04/Vlnas-Bidirectional-Path-Tracing-1.pdf>
+- <https://intro-to-restir.cwyman.org/presentations/2023ReSTIR_Course_Cyberpunk_2077_Integration.pdf>
+- <https://fpsunflower.github.io/ckulla/data/egsr_2012_volume_paper.pdf>
+- <https://shellblade.net/files/slides/path-tracing.pdf>
 
 ---
+
+{% todo_notice() %} Add more lighting methods? {% end %}
 
 {% todo_notice() %} Yet more sections? {% end %}
 
 ## References
 
+- [Wikipedia: Bidirectional Reflectance Distribution Function (BRDF)](https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function)
 - [GigaVoxels: Ray-Guided Streaming for Efficient and Detailed Voxel Rendering](https://artis.inrialpes.fr/Publications/2009/CNLE09/)
 - [Johannes Jendersie: Rendering huge amounts of Voxels](http://jojendersie.de/rendering-huge-amounts-of-voxels/)
 - [Johannes Jendersie: Rendering huge amounts of Voxels 2](http://jojendersie.de/rendering-huge-amounts-of-voxels-2/)
 - [0fps: Meshing in a Minecraft Game](https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/)
+- [0fps: Ambient Occlusion](https://0fps.net/2013/07/03/ambient-occlusion-for-minecraft-like-worlds/)
 - [Procedural World: From Voxels to Polygons](http://procworld.blogspot.com/2010/11/from-voxels-to-polygons.html)
 - [Nick's Voxel Blog: Dual Contouring: Seams & LOD for Chunked Terrain](http://ngildea.blogspot.com/2014/09/dual-contouring-chunked-terrain.html)
 - [Nick's Voxel Blog: Dual Contouring with OpenCL](http://ngildea.blogspot.com/2015/06/dual-contouring-with-opencl.html)
 - [Minecraft Like Rendering Experiments in OpenGL 4](https://web.archive.org/web/20200718072744/https://codeflow.org/entries/2010/dec/09/minecraft-like-rendering-experiments-in-opengl-4/)
 - [Stackoverflow: How can I improve rendering speeds of a Voxel/Minecraft type game?](https://gamedev.stackexchange.com/questions/22664/how-can-i-improve-rendering-speeds-of-a-voxel-minecraft-type-game)
 - [Inigo Quilez: Sphere projection](https://iquilezles.org/articles/sphereproj/)
+- [Learn OpenGL: Shadow Mapping](https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping)
+- [Shading in Valve’s Source Engine](https://advances.realtimerendering.com/s2006/Chapter7-Shading_in_Valve's_Source_Engine.pdf)
+
+...and [even more](/tags/rendering/) references.
 
 ---
 
