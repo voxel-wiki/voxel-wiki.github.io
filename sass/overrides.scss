@@ -70,6 +70,20 @@ ul {
 	border-bottom-width: 0.125rem;
 }
 
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', "Segoe UI", Roboto, Helvetica, 'Helvetica Neue', "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Arial, system-ui, sans-serif, "Apple Color Emoji", "Twemoji Mozilla", "Segoe UI Emoji", "Android Emoji";
+	font-weight: 400;
+	& .content article {
+		font-weight: normal;
+		& p { text-wrap: pretty; }
+		& :is(h1,h2,h3,h4,h5,h6) {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Heading', "Segoe UI", Roboto, Helvetica, 'Helvetica Neue', "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Arial, system-ui, sans-serif, "Apple Color Emoji", "Twemoji Mozilla", "Segoe UI Emoji", "Android Emoji";
+			font-weight: 500;
+			text-wrap: pretty;
+		}
+	}
+}
+
 article *:last-child {
 	margin-bottom: 0;
 }
