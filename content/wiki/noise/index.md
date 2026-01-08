@@ -270,7 +270,7 @@ let sample_value = noise_function(
 
 Transformations can be as simple as:
 
-- Adding to a position, shifting the noise function.
+- Adding to a position, shifting the noise functions phase.
 - Multiplying a position by a constant, changing the noise frequency / zooming in or out.
 - Rotating the position, to break up possible [artifacts in the noise](#artifacts).
 

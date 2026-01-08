@@ -69,7 +69,7 @@ Just to drive the point home, what is a chunks entropy if it, say... only consis
 
 If you guessed **two**, you'd be right again!
 
-> The *entropy* of a chunk is the *amount* of voxel variants contained in that chunk.
+> The *entropy* of a chunk is the *amount* of voxel *variants* contained in that chunk.
 
 With all that said... why are we talking about this? What does entropy have to do with palettes? Good question! The answer is surprisingly simple:
 

@@ -218,17 +218,17 @@ So, what kind of properties could a patch of grass have?
 
 - Moisture level?
 - Temperature?
-- Muddiness?
 - Coverage?
+- Muddiness?
 
 Seems simple enough; let's struct-ify that!
 
 ```pseudocode
 @Derive(Equality)
 struct GrassState:
-	temperature: AVERAGE | FROZEN
-	moisture: AVERAGE | DRY | WET
-	coverage: AVERAGE | BARE | DENSE
+	moisture:    AVERAGE | DRY | WET
+	temperature: AVERAGE | FROZEN | HEATED
+	coverage:    AVERAGE | BARE | DENSE
 	mud: NONE | LOW | HIGH
 ```
 

@@ -1388,7 +1388,7 @@ tags = ["procedural-generation"]
 [nickmcd-high-performance-voxel-engine]
 title = "High Performance Voxel Engine: Vertex Pooling"
 url = "https://nickmcd.me/2021/04/04/high-performance-voxel-engine/"
-tags = []
+tags  = ["gpu","memory","meshing","opengl","rendering","verts","voxels","render","voxel"]
 
 [3dvoxelgame-terrain-renderer]
 title = "Voxel terrain renderer with OpenGL"
@@ -7846,11 +7846,6 @@ tags  = ["rendering","render","sampling","opengl"]
 title = "GPU Accelerated Voronoi Textures and Filters – Nick's Blog"
 url   = "https://weigert.vsos.ethz.ch/2020/08/01/gpu-accelerated-voronoi/"
 tags  = ["procedural-generation","gpu","texture","rendering","noise"]
-
-[weigert-vsos-ethz-ch-2021-04-04-high-performance-voxel-engine]
-title = "High Performance Voxel Engine: Vertex Pooling – Nick's Blog"
-url   = "https://weigert.vsos.ethz.ch/2021/04/04/high-performance-voxel-engine/"
-tags  = ["gpu","memory","meshing","opengl","rendering","verts","voxels","render","voxel"]
 
 [wili-cc-research-lsao-lsao-pdf]
 title = "Line-Sweep Ambient Obscurance - lsao.pdf"

@@ -1,7 +1,7 @@
 +++
 title = "Vertex Pulling"
 description = "Manual vertex streaming for improved memory usage and bandwidth."
-aliases = ["/wiki/vertex-pulling"]
+#aliases = ["/wiki/vertex-pulling"]
 [taxonomies]
 categories = ["rendering"]
 tags = ["rendering", "meshing", "vertices"]
