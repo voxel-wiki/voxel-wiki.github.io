@@ -195,12 +195,22 @@ If you've read all of the above, you might think:
 Unfortunately for you and *everyone* else, lighting is *more* complicated.
 **By a whole <span title="(This is the only acceptable instance of swearing in this Wiki.)" style="color:red">fucking</span> lot.**
 
+To start, all lighting methods have various costs / trade-offs:
+
+- **Frame cost:** at 60 FPS you've got ~15ms to render *everything*.
+- **Memory cost:** average VRAM is at 4-8 GB, rarely more.
+- **Convergence:** some methods take time to 'settle'.
+- **Leakiness:** light may 'leak' thru corners/edges.
+- **Shadowing:** some don't have shadows, most aren't soft.
+- **Refractions:** most can't do refractions/caustics at all.
+- **Translucency:** borderline impossible without ray-tracing.
+- **Implementation:** a lot of spaghetti code.
+- ...and many more.
+
+Outside of using [Path Tracing](#path-tracing), which is *very* performance intensive, **there is no general "best" solution**.
+
 {% warn_notice() %}
-**Warning:** There is no silver bullet. Perfection is a lie.
-
-All lighting methods will have trade-offs, especially when it comes to accuracy and realism, with how much frame-time it costs, the amount of (graphics) memory it takes and the implementation complexity being *wildly* different for each.
-
-And if for some ungodly reason you want *actual realistic lightning*... look into [spectral rendering](https://en.wikipedia.org/wiki/Spectral_rendering), and we'll see ya in a few years!
+The method that yields the most realistic lighting is [spectral rendering](https://en.wikipedia.org/wiki/Spectral_rendering)... but even the greatest graphics wizards haven't got it to work in realtime, much less on consumer hardware, yet.
 {% end %}
 
 ### Flood-Fill Lighting
