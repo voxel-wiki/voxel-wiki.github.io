@@ -25,21 +25,24 @@ Before you can render anything, there is a bunch of decisions to make and things
 ### Hardware Acceleration
 
 Talking about rendering is impossible without talking about hardware acceleration
-and thus <abbr title="Graphics Processing Units">GPUs</abbr>; so let's do that real quick!
+and thus <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit" title="Graphics Processing Units">GPUs</a>; so let's do that real quick!
 
 The primary purpose of a GPU is to calculate/compute/solve a *massive* number of highly similar problems[^embarassinglyparallel] "all at once",
 by splitting up large sets of data into smaller groups, which are then worked thru by a large number of tiny processing units[^gpumanycores].
 
-{% info_notice() %}
 [Historically](https://en.wikipedia.org/wiki/Graphics_processing_unit#History),
 the problem in question was mainly vertex transformation and [rasterization](https://en.wikipedia.org/wiki/Rasterisation)
-(and later fragment processing) of triangles via GPUs on dedicated [graphics cards](https://en.wikipedia.org/wiki/Graphics_card).
+(and later fragment processing) of triangles via GPUs on [dedicated graphics cards](https://en.wikipedia.org/wiki/Graphics_card).
+These days, they're much more general purpose and
+used for [quite a lot of things](https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units#Applications), not just rendering and gaming.
 
-These days GPUs are much more [general purpose](https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units)
-and are used in so many applications that we won't bother listing them here.
+More often than you'd expect, they're also combined/situated with the CPU on the same chip, especially on mobile/laptop devices, as iGPU!
+
+{% info_notice() %}
+If you need statistics on what kind of hardware, and not just the GPU, the average user has installed in their system, please refer to the [Steam Hardware & Software Survey](https://store.steampowered.com/hwsurvey) and the [GPUinfo Hardware Databases](https://www.gpuinfo.org/).
 {% end %}
 
-To hopefully nobodies surprise, rendering voxels is *such* a massively parallel process, that *not* using GPUs would be very (very) silly!
+With that said, to hopefully nobodies surprise, rendering voxels is *such* a massively parallel process, that *not* using GPUs would be very (very) silly!
 
 How do we gain access to the awesome processing power of GPUs? Well...
 
