@@ -101,15 +101,18 @@ Only well-known libraries directly exposing 3D graphics are listed.
 
 {% info_notice() %}
 **Note:**  
-Some of these libraries have bindings for other languages,
-so check out their documentation before rejecting any!
+Most of these libraries have bindings for other languages;
+look into their documentation before rejecting any outright!
 {% end %}
 
 ### Windowing Abstraction Libraries
 
 Creating a surface to actually draw into is *terribly* annoying,
 due to the many platforms and operating systems that exist,
-so it's best to leave it to a windowing library...
+so it's best to leave it to a windowing library.
+
+Some of the graphics programming libraries, from the previous section, provide their own windowing abstractions, so you may not need/have to choose one at all.
+Either way, here's a small list:
 
 | Name | Language | Platforms |
 |------|----------|-----------|
