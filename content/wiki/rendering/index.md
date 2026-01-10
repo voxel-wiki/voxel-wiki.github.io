@@ -186,32 +186,46 @@ Of course, that means having to deal with allocation and synchronization yoursel
 
 ---
 
-## Lighting
+## Light(ing) Transport
 
 If you've read all of the above, you might think:
 
 > oh boy, this sure seems complicated!
 
 Unfortunately for you and *everyone* else, lighting is *more* complicated.
-**By a whole <span title="(This is the only acceptable instance of swearing in this Wiki.)" style="color:red">fucking</span> lot.**
+**By a whole <span title="(This is the only acceptable instance of swearing in this Wiki.)" style="color:red">[BLEEP]</span>ing lot.**
 
-To start, all lighting methods have various costs / trade-offs:
+The problem with (and thus complexity of) [light transport](https://en.wikipedia.org/wiki/Light_transport_theory) boils down to three opposing factors: **Time**, **accuracy** and **fidelity**.
 
-- **Frame cost:** at 60 FPS you've got ~15ms to render *everything*.
-- **Memory cost:** average VRAM is at 4-8 GB, rarely more.
-- **Convergence:** some methods take time to 'settle'.
-- **Leakiness:** light may 'leak' thru corners/edges.
-- **Shadowing:** some don't have shadows, most aren't soft.
-- **Refractions:** most can't do refractions/caustics at all.
-- **Translucency:** borderline impossible without ray-tracing.
-- **Implementation:** a lot of spaghetti code.
-- ...and many more.
+With an average frame-time of ~16 milliseconds (about 60 FPS),
+even disregarding *all* other rendering,
+there just *isn't enough time* to accurately calculate lighting;
+the higher the framerate, the worse this gets.
 
-Outside of using [Path Tracing](#path-tracing), which is *very* performance intensive, **there is no general "best" solution**.
+As such, one has to employ quite a bunch of trickery to make it happen,
+lowering the *accuracy* of lighting and, at the same time, giving up on its *fidelity*.
 
-{% warn_notice() %}
-The method that yields the most realistic lighting is [spectral rendering](https://en.wikipedia.org/wiki/Spectral_rendering)... but even the greatest graphics wizards haven't got it to work in realtime, much less on consumer hardware, yet.
+{% info_notice(summary="**Note on Spectral Rendering**") %}
+If we had *much* faster GPUs (like 10-100 times faster!), we could use the method that yields the most realistic lighting: [Spectral Rendering](https://en.wikipedia.org/wiki/Spectral_rendering). Unfortunately, even with some of the greatest graphics wizards working on it, there is still no way to make it run in realtime, at sufficient resolution... much less on consumer hardware.
 {% end %}
+
+Now we add voxels into the mix.
+
+*On one hand*, voxels give us a relatively easy way to obtain/compute occlusion data for lighting: re- or up-sampling and storing them in a fast spatial hierarchy on the GPU, like a [Sparse 64-Tree](/wiki/sparse-64-tree), allows for relatively efficient ray-traversal; at least at small sample counts.
+
+*On the other*, since users can place/create light-emitting voxels, we now have to deal with lighting in an endless variety of placements and patterns... at a *ludicrous* scale; even simple user-made buildings may contain dozens of lights, or hell, imagine dealing with a whole city!
+
+So, remember how there isn't a lot of time to calculate lighting?
+
+We have two(-ish) tricks to help us deal with this un-timely mess:
+
+1. Instead of computing all lighting in realtime, perform as much work as possible on the CPU-side and *bake it* into the voxel volume (or mesh), before ever uploading it to the GPU.
+
+2. Since the accuracy of lighting strongly depends on how many samples of light(ray)s there are per pixel, we can *spread out* the computations over multiple frames and *spatio-temporally accumulate* it.
+
+For all these reasons, after many decades of research, there are *a lot* of lighting methods; all with different levels of accuracy, fidelity, overall complexity and various trade-offs.
+
+Depending on the method chosen, implementation will probably take up *most* of the renderers overall development time, and will have to keep being adjusted as development continues.
 
 ### Flood-Fill Lighting
 
