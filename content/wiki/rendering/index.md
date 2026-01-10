@@ -233,6 +233,19 @@ Now, just one teeny-tinsy problem: This method doesn't actually give you shadows
 - <https://cdn.steamstatic.com/apps/valve/2007/SIGGRAPH2007_EfficientSelfShadowedRadiosityNormalMapping.pdf>
 - <https://developer.nvidia.com/gpugems/gpugems2/part-v-image-oriented-computing/chapter-39-global-illumination-using-progressive>
 
+### Light Propagation Volumes
+{{ stub_notice(kind="section") }}
+
+- <https://blog.blackhc.net/2010/07/light-propagation-volumes/>
+- [Light Propagation Volumes in CryEngine 3](https://www.advances.realtimerendering.com/s2009/Light_Propagation_Volumes.pdf)
+- [Cascaded Light Propagation Volumes using Spherical Radial Basis Functions](https://arxiv.org/abs/2407.17336)
+- [Cascaded light propagation volumes for real-time indirect illumination](https://dl.acm.org/doi/10.1145/1730804.1730821)
+- [Real-time multiple scattering using light propagation volumes](https://dl.acm.org/doi/10.1145/2159616.2159636)
+- [Convergent Light Volumes for Indirect Illumination](https://publications.lib.chalmers.se/records/fulltext/193682/193682.pdf)
+- [Octree Light Propagation Volumes](https://fileadmin.cs.lth.se/cs/Personal/Michael_Doggett/pubs/olovsson13-olpv.pdf)
+- [Deferred Voxel Shading for Real Time Global Illumination](https://jose-villegas.github.io/post/deferred_voxel_shading/)
+- [Delta Light Propagation Volumes for Mixed Reality](https://www.tobias-franke.eu/publications/franke13dlpv/franke13dlpv.pdf)
+
 ### Radiance Cascades
 {{ stub_notice(kind="section") }}
 
