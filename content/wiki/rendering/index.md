@@ -251,6 +251,7 @@ Now, just one teeny-tinsy problem: This method doesn't actually give you shadows
 {{ stub_notice(kind="section") }}
 
 - <https://en.wikipedia.org/wiki/Radiosity_(computer_graphics)>
+- <https://web.archive.org/web/20160511192712/http:/freespace.virgin.net/hugo.elias/radiosity/radiosity.htm>
 - <https://graphics.stanford.edu/courses/cs348b-00/course8.pdf>
 - <https://www.cs.cmu.edu/afs/cs/academic/class/15462-s10/www/lec-slides/lec21.pdf>
 - <https://www3.cs.stonybrook.edu/~qin/courses/visualization/visualization-radiosity-and-photon-mapping.pdf>
