@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for entry in entries %}
+	<url>
+		<loc>{{entry.permalink}}</loc>
+		{% if entry.updated %}<lastmod>{{entry.updated}}</lastmod>{% endif %}
+		<priority>
+		{%- if entry.permalink is containing("/wiki/") or loop.first -%}
+		1.0
+		{%- elif entry.permalink is containing("/categories/") -%}
+		0.8
+		{%- else -%}
+		0.5
+		{%- endif -%}
+		</priority>
+	</url>
+{% endfor %}
+</urlset>
