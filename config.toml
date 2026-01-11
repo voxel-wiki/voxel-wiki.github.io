@@ -21,12 +21,14 @@ taxonomies = [
 	{name = "authors"},
 ]
 
-build_search_index = true
+build_search_index = false
 
 [markdown]
 highlight_code = true
 
 [search]
+index_format = "elasticlunr_javascript"
+include_path = true
 include_title = true
 include_description = true
 include_content = false
