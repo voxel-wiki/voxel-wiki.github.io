@@ -66,6 +66,15 @@ ul {
 	}
 }
 
+table { margin: 2rem 0 }
+p + table {
+	margin-top: 1rem;
+}
+
+details > summary + * {
+	margin-top: 0;
+}
+
 .table > :not(:last-child) > :last-child > *, table > :not(:last-child) > :last-child > * {
 	border-bottom-width: 0.125rem;
 }
@@ -208,11 +217,11 @@ article > .notice {
 		width: 14rem;
 	}
 	
-	:first-child {
+	& :first-child {
 		margin-top: 0;
 	}
 	
-	:last-child {
+	& :last-child {
 		margin-bottom: 0;
 	}
 }
@@ -369,6 +378,7 @@ figure {
 		object-fit: cover !important;
 	}
 	
+	&>table {margin: 0}
 	&>p {display: contents}
 	&:not(.full) img {
 		object-fit: contain;
