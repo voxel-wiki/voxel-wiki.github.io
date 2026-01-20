@@ -20,10 +20,11 @@
           <p>
             <input id="searchinput"
               type="search"
+              autocomplete="off"
+              autofocus
               class="form-control is-search"
               placeholder="Search for reference..."
               aria-label="Search for reference..."
-              autocomplete="off"
               style="display:none"
             />
           </p>
@@ -203,6 +204,7 @@
               });
               
               searchinput.style.display = '';
+              searchinput.focus();
             })();</script>
         </article>
       </div>
