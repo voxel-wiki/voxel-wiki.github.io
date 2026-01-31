@@ -94,7 +94,7 @@ body {
 	}
 }
 
-article *:last-child {
+article > *:last-child {
 	margin-bottom: 0;
 }
 
@@ -172,9 +172,10 @@ article blockquote {
 	padding-left: 0.333rem;
 	
 	& .author {color: #65737e}
+	&:last-child { margin-bottom: 0; }
 }
 
-article > .notice {
+article .notice {
 	/* <div class="notice"></div> */
 	display: flow-root;
 	margin-bottom: 1rem;
@@ -377,6 +378,9 @@ figure {
 	&.cover img {
 		object-fit: cover !important;
 	}
+	
+	& :first-child { margin-top: 0; }
+	& :last-child { margin-bottom: 0; }
 	
 	&>table {margin: 0}
 	&>p {display: contents}
