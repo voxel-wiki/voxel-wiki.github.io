@@ -60,17 +60,16 @@ class Chunk:
 
 ## Motivation
 
-Eventually, as the project grows, you add more voxel types. And more. Even **MORE**. ***MOA-***
+Eventually, as the project grows, you add more voxel types.
+Then some more. And even more. Even **MORE**. ***MOA-***
 
 `Compile Error: Cannot fit 257 enum variants in a byte.`
 
-`Runtime Error: Cannot cast to u8 due to overflow.`
-
-*-r*-oh? Well, that's a bummer.
+*-r*-oh... well, that's a bummer.
 
 Fitting 257 unique states into 8 bits is, unfortunately, mathematically and physically impossible...
 so we've got to change our voxel instances to occupy the next largest data-type,
-which is... *checks notes*... a short.
+which is... <small>*checks notes*</small>... a short.
 
 Which is eight more bits, or *two* bytes.
 
@@ -80,10 +79,12 @@ That'd make all our voxels take up **twice** the memory as before... do we *real
 
 ### Prior Art
 
-With the release of [Minecraft 1.13](https://minecraft.wiki/w/Java_Edition_1.13) <small>("Update Aquatic")</small> in July&nbsp;2018,
-Mojang changed how their voxel types are [handled and stored internally](https://minecraft.wiki/w/Java_Edition_Flattening),
-implementing a form of [palette](https://en.wikipedia.org/wiki/Palette_(computing))-based [lossless compression](https://en.wikipedia.org/wiki/Lossless_compression),
-inspired by the [GIF file format](https://en.wikipedia.org/wiki/GIF).
+- [Physical color palettes](https://en.wikipedia.org/wiki/Palette_(painting)) and [paint-by-number kits](https://en.wikipedia.org/wiki/Paint_by_number).
+- [Indexed color](https://en.wikipedia.org/wiki/Indexed_color) [image file formats](https://en.wikipedia.org/wiki/Image_file_format), such as [GIF](https://en.wikipedia.org/wiki/GIF).
+- [Minecraft 1.13](https://minecraft.wiki/w/Java_Edition_1.13)
+	<small>("Update Aquatic", released July&nbsp;2018)</small>:  
+	By changing how voxel types are [referenced internally](https://minecraft.wiki/w/Java_Edition_Flattening),
+	Mojang was able to [losslessly compress](https://en.wikipedia.org/wiki/Lossless_compression) voxel volumes at runtime.
 
 ## Theory
 
@@ -129,9 +130,9 @@ It's only on the surface where all the plants and structures live,
 which is a *way* smaller volume than the sky and underground,
 that the average chunk will hold more than a bakers dozen variants.
 
-So, how do we use that to our advantage?
+So, how can we use that to our advantage?
 
-Well, since the *variants* in any given chunk are *unique* within that chunk,
+Well... since the *variants* in any given chunk are *unique* within that chunk,
 we can stuff them into a list, like say...
 
 ```pseudocode
@@ -150,20 +151,20 @@ Now you *might* think-
 
 > Great, so we're painting our voxels by numbers, palette in hand; *so what*?
 
-But the important detail here is that we're *not* holding the *global* palette:
-this one is *local* to the chunk, the voxels pointing into *it*,
-with it's *own* "colors" in turn, referencing the global palette.
+But the important detail here is that we're **not holding the global palette**:
+this one is *local* to its chunk with it's own "colors", the chunks voxels pointing into it,
+indirectly using the global palette.
 
-And this local palette holds *only the unique variants*, of the voxels *actually contained* in the chunk...
-so any index pointing *into* that palette, only's gotta be *just* big enough to do that and *no larger*.
+And this local palette holds *only* the unique variants, of the voxels currently stored in the chunk...
+so any index pointing into that palette, only's gotta be *just* big enough to do that *and no larger*.
 
-How big, exactly?
+How big exactly? Well, here's the math:
 
 {% figure(class="m-2", id="palette-size-equation", caption="Relation between a palettes size and the bit-size of any index/indices pointing into it.") %}
 <center class="m-2"><code>index<sub>bits</sub> = ceil( log2 ( palette<sub>size</sub> ) )</code></center>
 {% end %}
 
-This formula may not mean much to you, so let's look at a table that solves it for some palette sizes:
+This formula may not mean much to you, so let's look at a table that solves it for some palette sizes...
 
 | Palette Size<br><small>(local unique variants)</small> | Index Bits<br><small>`ceil(log2(palette-size))`</small> |
 |------------:|-----|
@@ -177,15 +178,15 @@ This formula may not mean much to you, so let's look at a table that solves it f
 |  `65 - 128` | `7` |
 | `129 - 256` | `8` |
 
-Well, would you look at that: Our indices don't need many bits at all... or *any* at all, if the palette contains exactly *one* variant!
+Well, would you look at that: Even with reasonably high numbers of variants, the indices don't need many bits at all... or *any* at all, if the palette contains exactly *one* variant!
 
-Let me be *much* louder and direct about this:
-
-<span style="font-size:1.75em">By using *chunk-local* palettes, our voxels need *mere **bits*** to be stored.</span>
+{% figure(class="mb-3", id="palette-local-minbits") %}
+> With per-chunk palettes, voxels need *mere bits* of storage.
+{% end %}
 
 Since voxels, by their very nature, exist in *stupidly large*[^squarecubelaw] amounts,
 this results in a pretty ludicrous reduction in memory consumption,
-often *halving* or even *quartering* RAM usage.
+often halving or even quartering RAM usage.
 
 Let's redefine our chunk structure, to use an array of integers whose size is variably defined by the formula:
 
@@ -200,19 +201,44 @@ All that really changed, is that the chunks volume is now made of *indices*,
 whose bit-size depends on the palettes size,
 with the palette they point at as a new field above it...
 
-And that's it.
+...and that's it, theory-wise: **palette compressed** voxel storage.
 
-Finally, at long last: **palette compressed** voxel storage.
+### Pro & Contra
 
+Using this technique, we gain many advantages, like...
 
+- **Massively reduced memory footprint:**  
+  Since common environments only need a few voxel variants, even if arranged in impossibly many [pseudo-randomly generated](/wiki/procgen) patterns, large volumes of voxels will take up *way* less memory.
 
+- **Smaller (pre-)serialized size:**  
+  The technique is also great for persistent storage, as a chunks volume of indices can still be dumped straight to disk, with the serialized palette taking barely any additional space.
 
+- **Effectively unlimited voxel types:**  
+  With the indirection of the palette, the pointer into the global palette can safely use a 32-bit integer,
+  ensuring you'll run out of ideas for voxel types, before ever overflowing said pointer.
 
+- **Almost zero-cost state permutations:**  
+  Entries in the local palette can hold additional data, not just a reference into the global palette,
+  with even a single extra 32-bit integer allowing for ludicrously many state permutations.
 
+- **Multilayer voxel data:**  
+  By splitting voxel types up into layers, like 'solid' and 'fluid', each layer having its own palette,
+  multiple voxel types can be overlaid and potentially simulated in parallel.
 
+...but, of course, this comes with trade-offs:
 
+- **Access overhead:**  
+  All voxel accesses will be a <small>tiny</small> bit slower on average.
+  Given some old micro-benchmarks, one can expect up to ~14% slowdown,
+  with reads less affected than writes. For bulk access,
+  temporary decompression of the volume may be needed.
 
+- **Pointer chasing:**  
+  The palette entries *must* be stored as contiguous array that, except for the global palette, shouldn't contain any additional pointers/references, to keep the palettes uniqueness constraint intact. This *can* be worked around, if necessary, with tagged value pointers and/or atomically shared objects.
 
+- **Dynamic allocations:**  
+  Both the volume of indices and its associated palette can change in size as they're edited,
+  which can be quite the issue in memory- or allocation-constrained environments (like the GPU!).
 
 ---
 
@@ -220,7 +246,9 @@ Finally, at long last: **palette compressed** voxel storage.
 
 Now then, time to actually implement it!
 
-### Palettization
+For simplicities/familiarities sake, we'll be using
+[C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
+here.
 
 Let's start with a basic chunk implementation,
 using `byte` for `VoxelTypeId`, as one often does:
@@ -249,6 +277,7 @@ public class Chunk {
 To store our unique voxel variants in a palette, we turn the volume into indices and create a plain-ol' array of palette entries... let's rewrite our chunk class:
 
 ```c#
+// This MUST be a struct.
 struct PaletteEntry {
 	short voxel_type_id;
 }
@@ -288,7 +317,10 @@ First off, to ensure the uniqueness of variants in the palette, we now have to *
 		
 		// Check if the voxel type is already in the palette,
 		// and if so, use it!
-		int replace = Array.FindIndex(palette, (entry) => entry.voxel_type_id == voxel_type_id);
+		int replace = Array.FindIndex(palette
+			, (entry) => entry.voxel_type_id == voxel_type_id
+		);
+		
 		if (replace != -1) {
 			// the type is already in the palette, use it!
 			volume[index] = replace;
@@ -339,7 +371,10 @@ Of course, we now have to correctly keep track of these `refcount`-ers, so...
 		
 		// Check if the voxel type is already in the palette,
 		// and if so, use it!
-		int replace = Array.FindIndex(palette, (entry) => entry.voxel_type_id == voxel_type_id);
+		int replace = Array.FindIndex(palette
+			, (entry) => entry.voxel_type_id == voxel_type_id
+		);
+		
 		if (replace != -1) {
 			// the type is already in the palette
 			volume[index] = replace;
@@ -347,13 +382,13 @@ Of course, we now have to correctly keep track of these `refcount`-ers, so...
 			return;
 		}
 		
-		/* --- snip --- */
+		/* --- snip A --- */
 ```
 
 Since we know whether any given palette entry is used at all, we can also check if our 'old' entry has no remaining references, and reuse it instead:
 
 ```c#
-		/* --- snip --- */
+		/* --- snip A --- */
 		// There is no existing palette entry with our type...
 		
 		// Is the *current* palette entry unused?
@@ -369,13 +404,13 @@ Since we know whether any given palette entry is used at all, we can also check 
 			return; // done!
 		}
 		
-		/* --- snip --- */
+		/* --- snip B --- */
 ```
 
 And finally, we fix up the part where we grow the palette...
 
 ```c#
-		/* --- snip --- */
+		/* --- snip B --- */
 		
 		Array.Resize(palette, palette.Length * 2);
 		// ^This (ab)uses zero-initialization of structs.
@@ -393,94 +428,16 @@ Et voilà, we have implemented palettes! :D
 Except we forgot to compress the indices; *oooops!*
 
 {% info_notice() %}
-**Note:** Compressing the indices isn't *strictly* necessary, actually.  
-It's perfectly fine to only use the uniqueness properties of palette-based storage,
-for implementing 'struct-like' variants of voxels;
-more on that in the follow-up article.
+**Note:** Compressing the indices isn't *strictly* necessary.  
+
+If one can ensure the palette stays below 256 variants, using plain bytes as indices is viable,
+and will still save memory, compared to using a volume of shorts as voxels.
+
+It's also perfectly fine to stop right here and come back later,
+as the compression of indices is a self-contained implementation detail.
 {% end %}
 
-### Compression
-
-{% todo_notice() %} continue here {% end %}
-
-
-```c#
-class VarIntArray {
-	enum Varlen {
-		ZERO = 0, // A palette of 1.
-		ONE  = 1, // A palette of 2.
-		TWO  = 2, // A palette of 4.
-		FOUR = 4, // A palette of 16.
-		EIGHT = 8, // A palette of 256.
-		SIXTEEN = 16 // A palette of 65536.
-	} // TODO: Ext-class for enum (mask/shift/etc)
-	
-	readonly int capacity; // How many 'indices' the array holds.
-	Varlen  length; // The current length of each/all indices.
-	uint[]? data;   // The compressed indices: capacity*length/32
-	
-	// TODO: Setter
-	// TODO: Getter
-	// TODO: Resize
-	// TODO: ForEach
-	// TODO: SetAll
-}
-```
-
-
-```pseudocode
-// A fixed-size flat/linear storage
-// for deduplicated bloxel states.
-class BloxelStorage<const CAPACITY>:
-	struct BloxelEntry:
-		refcount: int
-		instance: BloxelState
-	
-	palette: Array<BloxelEntry> = [
-		BloxelEntry {refcount=CAPACITY, instance=AIR}
-	]
-	
-	logsize: VarIntSize = log2(palette.length)
-	
-	indices: VarIntBuffer<CAPACITY> = new(logsize)
-	
-```
-
-```pseudocode
-enum VarIntSize:
-	ZERO = 0 // A palette of 1.
-	ONE  = 1 // A palette of 2.
-	TWO  = 2 // A palette of 4.
-	FOUR = 4 // A palette of 16.
-	EIGHT = 8  // A palette of 256.
-	SIXTEEN = 16 // A palette of 65536.
-
-class VarIntBuffer<CAPACITY>:
-	final vsize: VarIntSize = ZERO
-	cells: Array<u64> = [_; CAPACITY * vsize / 64]
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{{ todo_notice(body="???") }}
 
 
 
@@ -493,4 +450,4 @@ class VarIntBuffer<CAPACITY>:
 
 ---
 
-[^squarecubelaw]: **the square cube law:** With every meter/unit that the viewing distance (a diameter `d`) is increased, the overall surface *area* will grow by a *square* factor (`d²`), while the *volume* will grow by a *cubic* (`d³`) factor!
+[^squarecubelaw]: **The square cube law:** With every meter/unit that the viewing distance (a diameter `d`) is increased, the overall surface area will grow by a *square* factor (`d²`), while the volume will grow by a *cubic* (`d³`) factor!
