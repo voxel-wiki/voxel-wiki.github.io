@@ -172,7 +172,7 @@ article blockquote {
 	padding-left: 0.333rem;
 	
 	& .author {color: #65737e}
-	&:last-child { margin-bottom: 0; }
+	& :last-child { margin-bottom: 0; }
 }
 
 article .notice {
