@@ -2,9 +2,22 @@
 <div id='{{id}}' class='notice info' style='display:none'>
     <div style="text-align:center">Interactive <b>Distance ⇒ Memory</b> Calculator</div>
     <div style="display:flex;justify-content:center;align-items:center;padding:0.5rem">
-        <div>(<input type=number required min=16 max=65536 step=16 value=16 style='width:5em;text-align:end;border-radius:5px;border:1px solid grey;font-family:monofont' title='View Distance'>&hairsp; * 2)³</div>
+        <div>(<input required
+            name="in"
+            type=number
+            min=16 max=65536
+            step=16 value=16
+            class="form-control input d-inline text-end font-monospace"
+            style='width: 8rem'
+            title='View Distance'
+        >&hairsp; * 2)³</div>
         <div>&nbsp;=&nbsp;</div>
-        <code style='font-weight:bold;text-align:end;min-width:7em;background:#0000007a' title='Memory Usage'>0 kB</code>
+        <output readonly
+            name="out"
+            class="form-control input d-inline text-end font-monospace fw-bold"
+            style='width:8rem'
+            title='Memory Usage'
+        >0 kB</output>
     </div>
 </div>
 <script async defer style='display:none'>
@@ -13,8 +26,8 @@
     // No, I will not use a framework.
     // No, I give not a singular fuck.
     var calculator = document.getElementById('{{id}}');
-    var calc_input = calculator.querySelector('input');
-    var calc_output = calculator.querySelector('code');
+    var calc_input = calculator.querySelector('[name="in"]');
+    var calc_output = calculator.querySelector('[name="out"]');
     calc_input.oninput = function() {
         var D = null;
         try {
