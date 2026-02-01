@@ -192,15 +192,15 @@ If you've read all of the above, you might think:
 
 > oh boy, this sure seems complicated!
 
-Unfortunately for you and *everyone* else, lighting is *more* complicated.
+Unfortunately, lighting is *more* complicated.  
 **By a whole <span title="(This is the only acceptable instance of swearing in this Wiki.)" style="color:red">[BLEEP]</span>ing lot.**
 
-The problem with (and thus complexity of) [light transport](https://en.wikipedia.org/wiki/Light_transport_theory) boils down to three opposing factors: **Time**, **accuracy** and **fidelity**.
+The problem (and thus complexity of) [light transport](https://en.wikipedia.org/wiki/Light_transport_theory) begins with, and mainly boils down to, three opposing factors: **Time**, **accuracy** and **fidelity**.
 
 With an average frame-time of ~16 milliseconds (about 60 FPS),
 even disregarding *all* other rendering,
 there just *isn't enough time* to accurately calculate lighting;
-the higher the framerate, the worse this gets.
+the higher the framerate and camera resolution, the worse this gets.
 
 As such, one has to employ quite a bunch of trickery to make it happen,
 lowering the *accuracy* of lighting and, at the same time, giving up on its *fidelity*.
@@ -215,15 +215,17 @@ Now we add voxels into the mix.
 
 *On the other*, since users can place/create light-emitting voxels, we now have to deal with lighting in an endless variety of placements and patterns... at a *ludicrous* scale; even simple user-made buildings may contain dozens of lights, or hell, imagine dealing with a whole city!
 
-So, remember how there isn't a lot of time to calculate lighting?
+So, with there clearly not being anywhere near enough time to "properly" calculate lighting, what do we do?
 
-We have two(-ish) tricks to help us deal with this un-timely mess:
+Well, we happen to have three(-ish) families of tricks to deal with this un-timely mess:
 
 1. Instead of computing all lighting in realtime, perform as much work as possible on the CPU-side and *bake it* into the voxel volume (or mesh), before ever uploading it to the GPU.
 
-2. Since the accuracy of lighting strongly depends on how many samples of light(ray)s there are per pixel, we can *spread out* the computations over multiple frames and *spatio-temporally accumulate* it.
+2. Since the accuracy of lighting strongly depends on how many samples of light(ray)s there are per pixel, we can *spread out* the computations over multiple frames and *spatio-temporally accumulate* it; i.e.: caching.
 
-For all these reasons, after many decades of research, there are *a lot* of lighting methods; all with different levels of accuracy, fidelity, overall complexity and various trade-offs.
+3. Depending on the distance to visible things/pixels, the accuracy and fidelity of lighting can be variable... so using less detailed geometry and (smartly) performing less sampling steps is always a good idea!
+
+For all these reasons above and more, after many decades of research, there are *a lot* of lighting methods; all with different levels of accuracy, fidelity, overall complexity and various trade-offs.
 
 Depending on the method chosen, implementation will probably take up *most* of the renderers overall development time, and will have to keep being adjusted as development continues.
 
@@ -261,7 +263,7 @@ Now, just one teeny-tinsy problem: This method doesn't actually give you shadows
 ### Light Propagation Volumes
 {{ stub_notice(kind="section") }}
 
-- <https://blog.blackhc.net/2010/07/light-propagation-volumes/>
+- [BlackHC's Adventures: Light Propagation Volumes](https://blog.blackhc.net/2010/07/light-propagation-volumes/)
 - [Light Propagation Volumes in CryEngine 3](https://www.advances.realtimerendering.com/s2009/Light_Propagation_Volumes.pdf)
 - [Cascaded Light Propagation Volumes using Spherical Radial Basis Functions](https://arxiv.org/abs/2407.17336)
 - [Cascaded light propagation volumes for real-time indirect illumination](https://dl.acm.org/doi/10.1145/1730804.1730821)
