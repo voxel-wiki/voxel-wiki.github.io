@@ -26,7 +26,7 @@ adapted to 3D, is *exactly* the thing one needs to travel along a line (or a ray
 - [Cast ray to select block in voxel game](https://gamedev.stackexchange.com/a/49423)
 - [Lode's Raycasting Tutorial](https://lodev.org/cgtutor/raycasting.html)
 - Various Implementations:
-  - For [`C`](https://webdocs.cs.ualberta.ca/~graphics/books/GraphicsGems/gemsiv/vox_traverse.c)
+  - For [`C`](https://web.archive.org/web/20111007033849/https://webdocs.cs.ualberta.ca/~graphics/books/GraphicsGems/gemsiv/vox_traverse.c)
   - For [`C++`](https://gist.github.com/garymacindoe/895430c1e53a6e50cb35)
   - For [`C#`](https://web.archive.org/web/20121024081332/www.xnawiki.com/index.php?title=Voxel_traversal)
   - For [`Rust`](https://github.com/bitshifter/glam-rs/discussions/564)
