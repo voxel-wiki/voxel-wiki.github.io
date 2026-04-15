@@ -21,7 +21,7 @@ Links to various communities centred around **individual games** and **engines**
 - [Teardown Discord](https://discord.gg/teardown)
 - [Vintage Story Discord](https://discord.gg/CkJjdrB)
 - [Veloren Discord](https://discord.gg/ecUxc9N)
-- [Minetest](https://www.minetest.net/get-involved/)
+- [Luanti](https://www.luanti.org/en/get-involved/)
 
 ### Minecraft
 
