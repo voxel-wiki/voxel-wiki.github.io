@@ -11,7 +11,7 @@ tags = ["procedural-generation", "design", "gamedev"]
 
 <!-- more -->
 
-The art&thinsp;(!) of **procedural generation** is an extremely powerful method to reduce the amount of work needed to create levels and assets.
+The **art**&thinsp;(!) of procedural generation is an extremely powerful method to reduce the amount of work needed to create levels and assets.
 
 It's quite common for game engines, frameworks and editors to provide artists with a large variety of proc-gen tools, from basic object placement to generating entire levels/worlds. As such, a ludicrous number of games use procedural generation, in one form or another, for a variety of purposes such as:
 
@@ -26,7 +26,9 @@ It's quite common for game engines, frameworks and editors to provide artists wi
 If we tried listing all the ways proc-gen is used, we'd be here all week!
 
 {% info_notice() %}
-Note that procedural generation isn't limited to just games; far from it! It's used basically *anywhere* anyone needs to create *chaos*, *repetition* and large-scale *patterns* without spending days (if not weeks or months!) being bored out of their mind[^boredom].
+Procedural generation isn't limited to just games; far from it!
+
+It's used anywhere anyone needs to create **chaos**, **repetition** and **large-scale patterns** without spending days (if not weeks or months!) being bored out of their mind[^boredom], even if paid to do so.
 {% end %}
 
 Some common algorithms used for procedural generation are:
