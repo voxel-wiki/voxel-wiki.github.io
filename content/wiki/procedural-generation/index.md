@@ -26,7 +26,7 @@ It's quite common for game engines, frameworks and editors to provide artists wi
 If we tried listing all the ways proc-gen is used, we'd be here all week!
 
 {% info_notice() %}
-Note that procedural generation is **not** limited to just *games*; far from it! It's used basically *anywhere* anyone needs to create *chaos*, *repetition* and large-scale *patterns* without spending days (if not weeks or months!) being bored out of their mind[^boredom].
+Note that procedural generation isn't limited to just games; far from it! It's used basically *anywhere* anyone needs to create *chaos*, *repetition* and large-scale *patterns* without spending days (if not weeks or months!) being bored out of their mind[^boredom].
 {% end %}
 
 Some common algorithms used for procedural generation are:

@@ -213,7 +213,7 @@ Now we add voxels into the mix.
 
 *On one hand*, voxels give us a relatively easy way to obtain/compute occlusion data for lighting: re- or up-sampling and storing them in a fast spatial hierarchy on the GPU, like a [Sparse 64-Tree](/wiki/sparse-64-tree), allows for relatively efficient ray-traversal; at least at small sample counts.
 
-*On the other*, since users can place/create light-emitting voxels, we now have to deal with lighting in an endless variety of placements and patterns... at a *ludicrous* scale; even simple user-made buildings may contain dozens of lights, or hell, imagine dealing with a whole city!
+*On the other*, since users can place/create light-emitting voxels, we now have to deal with lighting in an endless variety of placements and patterns... at a *ludicrous* scale; even simple user-made buildings may contain dozens of lights in close proximity. Hell, imagine dealing with a whole city at night time!
 
 So, with there clearly not being anywhere near enough time to "properly" calculate lighting, what do we do?
 
