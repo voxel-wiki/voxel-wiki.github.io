@@ -4,6 +4,9 @@ description = "Removal of geometry that is outside the cameras view region."
 [taxonomies]
 categories = ["culling"]
 tags = ["rendering", "culling", "optimization"]
+[extra.sidebar]
+show = true
+chapter = "visibility"
 +++
 
 > Removal of geometry that is outside the cameras view region.

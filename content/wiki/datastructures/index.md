@@ -5,6 +5,9 @@ path = "wiki/datastructures"
 [taxonomies]
 categories = ["datastructures"]
 tags = []
+[extra.sidebar]
+show = true
+chapter = "storage"
 +++
 
 Storing voxels in a plain array is perfectly fine for small scenes...

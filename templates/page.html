@@ -42,6 +42,7 @@
 {% endblock body %}
 
 {% block content %}
+{{ macros_wiki_sidebar::wiki_sidebar(current_url=page.permalink) }}
 <div class="wrap container {{page.extra.container|default(value='')}}" role="document">
   <div class="content">
     <div class="row justify-content-center">

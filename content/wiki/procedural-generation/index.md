@@ -5,6 +5,9 @@ aliases = ["/wiki/procgen", "/wiki/proc-gen"]
 [taxonomies]
 categories = ["procedural-generation"]
 tags = ["procedural-generation", "design", "gamedev"]
+[extra.sidebar]
+show = true
+chapter = "generation"
 +++
 
 {% quote(author="[Wikipedia](https://en.wikipedia.org/wiki/Procedural_generation)") %} In computing, **procedural generation** (sometimes shortened as **proc-gen**) is a method of creating data algorithmically as opposed to manually, typically through a *combination* of *human-generated* assets and algorithms coupled with *computer-generated* randomness and processing power. {% end %}

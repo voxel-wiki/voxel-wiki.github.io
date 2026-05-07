@@ -10,6 +10,9 @@ tags = ["textures", "algorithms"]
 chapters = true
 chapter_prev = false
 chapter_next = {text = "Dynamic/Virtual Atlas", link = "/wiki/virtual-texture-atlas"}
+[extra.sidebar]
+show = true
+chapter = "rendering"
 +++
 
 A **texture atlas** (also called a **spritesheet**) is an image containing a

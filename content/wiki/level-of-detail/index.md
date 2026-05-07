@@ -5,6 +5,9 @@ aliases = ["/wiki/lod"]
 [taxonomies]
 categories = ["rendering"]
 tags = ["rendering", "level-of-detail", "lod", "meshing", "optimization"]
+[extra.sidebar]
+show = true
+chapter = "visibility"
 +++
 
 Under [perspective projection](https://en.wikipedia.org/wiki/3D_projection#Perspective_projection), as the distance to any visible object increases, it'll occupy/cover less and less pixels on the screen, so the geometric features or *details* of the object become ever smaller too. Because of this, it makes sense to reduce the **level of detail** an object has at large distances.

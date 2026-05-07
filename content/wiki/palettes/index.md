@@ -2,6 +2,7 @@
 title = "Palette Storage"
 description = "Storing voxels via painting by numbers."
 draft = true
+weight = 20
 [taxonomies]
 categories = ["datastructures", "compression"]
 tags = ["datastructures", "compression", "optimization", "instancing", "flyweight"]
@@ -9,6 +10,10 @@ tags = ["datastructures", "compression", "optimization", "instancing", "flyweigh
 chapters = true
 chapter_prev = false
 chapter_next = {text = "Indices Bit-Compression", link = "/wiki/palettes/indices-bit-compression"}
+[extra.sidebar]
+show = true
+chapter = "storage"
+label = "Palette Storage"
 +++
 
 When dealing with voxels as discrete values (i.e.: bloxels) one will usually have a single **global palette**,

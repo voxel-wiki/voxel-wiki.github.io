@@ -8,6 +8,9 @@ tags = ["datastructures", "spatial-hierarchy"]
 chapters = true
 chapter_prev = {text = "Sparse Octree", link = "/wiki/sparse-voxel-octree"}
 chapter_next = false
+[extra.sidebar]
+show = true
+chapter = "storage"
 +++
 
 {{ stub_notice() }}

@@ -5,6 +5,9 @@ alias = "/wiki/pathfinding"
 [taxonomies]
 categories = ["algorithms"]
 tags = ["pathfinding", "algorithms"]
+[extra.sidebar]
+show = true
+chapter = "generation"
 +++
 
 {{ stub_notice() }}

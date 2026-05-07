@@ -3,8 +3,12 @@ title = "Projects"
 description = "Known projects that prominently use voxels."
 path = "wiki/projects"
 template = "projects.html"
+weight = 10
 [taxonomies]
 categories = ["community"]
+[extra.sidebar]
+show = true
+chapter = "tools"
 +++
 
 On this page anybody can add projects involving voxels (even their own!), just edit the [`projects.toml` file](https://github.com/voxel-wiki/voxel-wiki.github.io/blob/main/content/wiki/projects.toml) and create a [pull-request/issue](https://github.com/voxel-wiki/voxel-wiki.github.io/issues)!

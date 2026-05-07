@@ -2,12 +2,17 @@
 title = "Introduction"
 description = "A general introduction to the concept of voxels."
 path = "/wiki/introduction"
+weight = 10
 [taxonomies]
 categories = ["introduction"]
 [extra]
 chapters = true
 chapter_prev = false
 chapter_next = {text = "Choosing A Language", link = "/wiki/introduction/language"}
+[extra.sidebar]
+show = true
+chapter = "foundations"
+label = "Introduction"
 +++
 
 This is a basic introduction to what voxels *are*, what they are *not* and their general use cases.

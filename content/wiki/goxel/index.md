@@ -4,6 +4,9 @@ description = "Open Source Voxel Editor for Windows, Mac, Linux, iOS, and Androi
 [taxonomies]
 categories = []
 tags = ["software", "tool", "editor", "opensource"]
+[extra.sidebar]
+show = true
+chapter = "tools"
 +++
 
 > Open Source Voxel Editor for Windows, Mac, Linux, iOS, and Android.

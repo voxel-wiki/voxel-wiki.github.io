@@ -2,6 +2,7 @@
 title = "Palette Storage: Tagged-Pointer Palette Entries"
 description = "Amortizing the indirection of palette entry pointers."
 draft = true
+weight = 50
 [taxonomies]
 categories = ["datastructures", "compression"]
 tags = ["datastructures", "compression", "optimization", "instancing", "flyweight"]
@@ -9,6 +10,10 @@ tags = ["datastructures", "compression", "optimization", "instancing", "flyweigh
 chapters = true
 chapter_prev = {text = "Single-Variant Volume Omission", link = "/wiki/palettes/single-variant-volume-omission"}
 chapter_next = false
+[extra.sidebar]
+show = true
+chapter = "storage"
+label = "Tagged-Pointer Palette Entries"
 +++
 
 > Here's a question: How many bits does a single type of voxel (eg: a palette entry) take?

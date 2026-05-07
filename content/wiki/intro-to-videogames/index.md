@@ -4,6 +4,9 @@ description = "A introduction to voxels in videogames."
 path = "/wiki/intro-to-videogames"
 [taxonomies]
 categories = ["introduction"]
+[extra.sidebar]
+show = true
+chapter = "foundations"
 +++
 
 So you want to create a videogame using voxels?

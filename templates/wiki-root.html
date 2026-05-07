@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block seo %}
+  {{ super() }}
+  <meta http-equiv="refresh" content="0; url={{ get_url(path='/', trailing_slash=true) | safe }}">
+  <link rel="canonical" href="{{ get_url(path='/', trailing_slash=true) | safe }}">
+{% endblock seo %}
+
+{% block content %}
+{{ macros_wiki_sidebar::wiki_sidebar(current_url=get_url(path='/', trailing_slash=true)) }}
+<div class="wrap container" role="document">
+  <div class="content">
+    <p><a href="{{ get_url(path='/', trailing_slash=true) | safe }}">Redirecting to the homepage…</a></p>
+  </div>
+</div>
+{% endblock content %}

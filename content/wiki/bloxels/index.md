@@ -5,6 +5,9 @@ draft = true
 [taxonomies]
 categories = ["bloxels"]
 tags = ["bloxels"]
+[extra.sidebar]
+show = true
+chapter = "foundations"
 +++
 
 {% info_notice() %}

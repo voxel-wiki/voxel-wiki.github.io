@@ -5,6 +5,9 @@ aliases = ["/wiki/planets"]
 [taxonomies]
 categories = ["gameplay"]
 tags = ["planets", "math", "rendering"]
+[extra.sidebar]
+show = true
+chapter = "generation"
 +++
 
 Just as with the problem of [map projection](https://en.wikipedia.org/wiki/Map_projection), creating planets shows a fundamental fact with voxels: As they are [regular grids](https://en.wikipedia.org/wiki/Regular_grid), shaping the actual grid into a planet, without distortions or discontinuities, is *mathematically impossible*. As such, we need to employ different methods depending on what we ultimately want to achieve.

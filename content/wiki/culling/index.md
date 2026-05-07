@@ -4,6 +4,9 @@ description = "Limiting the amount of voxels rendered to manageable levels."
 [taxonomies]
 categories = ["culling"]
 tags = ["rendering", "culling", "optimization"]
+[extra.sidebar]
+show = true
+chapter = "visibility"
 +++
 
 In general, (visibility-) culling is the process of limiting the amount of things rendered

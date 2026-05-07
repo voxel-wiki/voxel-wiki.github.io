@@ -6,6 +6,9 @@ aliases = ["/wiki/mc"]
 [taxonomies]
 categories = ["games"]
 tags = ["software", "game", "minecraft"]
+[extra.sidebar]
+show = true
+chapter = "foundations"
 +++
 
 [**Minecraft**](https://en.wikipedia.org/wiki/Minecraft) is a [sandbox videogame](https://en.wikipedia.org/wiki/Sandbox_game) developed and published by [Mojang Studios](https://en.wikipedia.org/wiki/Mojang_Studios), the best-selling game of all time, and the one to re-ignite and -popularize the genres of both voxel- and survival-sandbox -games.

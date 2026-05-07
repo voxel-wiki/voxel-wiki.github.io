@@ -5,6 +5,9 @@ aliases = ["/wiki/mdi"]
 [taxonomies]
 categories = ["rendering"]
 tags = ["rendering"]
+[extra.sidebar]
+show = true
+chapter = "visibility"
 +++
 
 > A method for rendering massive amounts of geometry, with a single drawcall.

@@ -10,6 +10,9 @@ tags = ["rendering", "raytracing", "raycasting"]
 chapters = true
 chapter_prev = {text = "Raytracing", link = "/wiki/raytracing"}
 chapter_next = false
+[extra.sidebar]
+show = true
+chapter = "rendering"
 +++
 
 Rendering images via parallax-projected raymarching of rasterized bounding volumes. Also often <small>(wrongly)</small> called *parallax raymarching*.

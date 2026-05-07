@@ -4,6 +4,9 @@ description = "The basic pattern of indices for quads made of triangles."
 [taxonomies]
 categories = []
 tags = ["meshing"]
+[extra.sidebar]
+show = true
+chapter = "rendering"
 +++
 
 A **quadliteral** (also called **quad**, **tetragon** or **quadrangle**) is a four-sided polygon, with four corners/vertices and four edges/sides.

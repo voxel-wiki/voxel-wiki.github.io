@@ -1,0 +1,121 @@
+{% macro wiki_sidebar(current_url) %}
+{% set wiki = get_section(path="wiki/_index.md") %}
+<div class="wiki-sidebar-backdrop" data-sidebar-close></div>
+<aside id="wiki-sidebar" class="wiki-sidebar" aria-label="Wiki navigation">
+  <nav class="wiki-sidebar-nav" aria-label="Wiki navigation">
+    <ul class="wiki-sidebar-tree list-unstyled">
+      {% set introduction = get_page(path="wiki/introduction/index.md") %}
+      <li class="wiki-sidebar-item">
+        <a class="wiki-sidebar-link wiki-sidebar-top-link{% if current_url is containing(introduction.permalink) %} active{% endif %}" href="{{ introduction.permalink | safe }}">
+          Introduction
+        </a>
+      </li>
+
+      {% set group_order = ["foundations", "generation", "storage", "rendering", "visibility", "tools"] %}
+      {% for group_id in group_order %}
+        {% set group_open = false %}
+        {% for subsection_path in wiki.subsections %}
+          {% set chapter = get_section(path=subsection_path) %}
+          {% if chapter.extra.sidebar is defined and chapter.extra.sidebar.show | default(value=false) and chapter.extra.sidebar.chapter is defined and chapter.extra.sidebar.chapter == group_id and current_url is containing(chapter.permalink) %}
+            {% set_global group_open = true %}
+          {% endif %}
+        {% endfor %}
+        {% for extra_page in wiki.pages %}
+          {% if extra_page.extra.sidebar is defined and extra_page.extra.sidebar.show | default(value=false) and extra_page.extra.sidebar.chapter is defined and extra_page.extra.sidebar.chapter == group_id and current_url == extra_page.permalink %}
+            {% set_global group_open = true %}
+          {% endif %}
+        {% endfor %}
+        <li class="wiki-sidebar-chapter">
+          <details class="wiki-sidebar-chapter-group" data-wiki-sidebar-chapter="{{ group_id }}"{% if group_open %} open{% endif %}>
+            <summary class="wiki-sidebar-chapter-label">
+              {% if group_id == "foundations" %}Foundations{% endif %}
+              {% if group_id == "generation" %}Generation{% endif %}
+              {% if group_id == "storage" %}Storage{% endif %}
+              {% if group_id == "rendering" %}Rendering{% endif %}
+              {% if group_id == "visibility" %}Optimizations{% endif %}
+              {% if group_id == "tools" %}Tools{% endif %}
+            </summary>
+            <ul class="wiki-sidebar-subtree list-unstyled">
+              {% for subsection_path in wiki.subsections %}
+                {% set chapter = get_section(path=subsection_path) %}
+                {% if chapter.extra.sidebar is defined and chapter.extra.sidebar.show | default(value=false) and chapter.extra.sidebar.chapter is defined and chapter.extra.sidebar.chapter == group_id and not chapter.permalink is containing("/wiki/introduction") %}
+                  {% set chapter_open = current_url is containing(chapter.permalink) %}
+                  {% if chapter.extra.sidebar.label is defined %}
+                    {% set chapter_label = chapter.extra.sidebar.label %}
+                  {% else %}
+                    {% set chapter_label = chapter.title %}
+                  {% endif %}
+                  <li class="wiki-sidebar-item">
+                    {% if chapter.pages | length > 0 %}
+                      <details class="wiki-sidebar-group"{% if chapter_open %} open{% endif %}>
+                        <summary class="wiki-sidebar-summary">{{ chapter_label }}</summary>
+                        <ul class="wiki-sidebar-group-links list-unstyled">
+                          <li>
+                            <a class="wiki-sidebar-link{% if current_url == chapter.permalink %} active{% endif %}" href="{{ chapter.permalink | safe }}">
+                              Overview
+                            </a>
+                          </li>
+                          {% for child in chapter.pages | sort(attribute="weight") %}
+                            {% if child.extra.sidebar is defined and child.extra.sidebar.show | default(value=false) %}
+                              <li>
+                                <a class="wiki-sidebar-link{% if current_url == child.permalink %} active{% endif %}" href="{{ child.permalink | safe }}">
+                                  {% if child.extra.sidebar.label is defined %}
+                                    {{ child.extra.sidebar.label }}
+                                  {% else %}
+                                    {{ child.title }}
+                                  {% endif %}
+                                </a>
+                              </li>
+                            {% endif %}
+                          {% endfor %}
+                        </ul>
+                      </details>
+                    {% else %}
+                      <a class="wiki-sidebar-link wiki-sidebar-top-link{% if current_url == chapter.permalink %} active{% endif %}" href="{{ chapter.permalink | safe }}">
+                        {{ chapter_label }}
+                      </a>
+                    {% endif %}
+                  </li>
+                {% endif %}
+              {% endfor %}
+
+              {% for extra_page in wiki.pages %}
+                {% if extra_page.extra.sidebar is defined and extra_page.extra.sidebar.show | default(value=false) and extra_page.extra.sidebar.chapter is defined and extra_page.extra.sidebar.chapter == group_id %}
+                  {% if extra_page.relative_path != "wiki/references.md" %}
+                  <li class="wiki-sidebar-item">
+                    <a class="wiki-sidebar-link wiki-sidebar-top-link{% if current_url == extra_page.permalink %} active{% endif %}" href="{{ extra_page.permalink | safe }}">
+                      {% if extra_page.extra.sidebar.label is defined %}
+                        {{ extra_page.extra.sidebar.label }}
+                      {% else %}
+                        {{ extra_page.title }}
+                      {% endif %}
+                    </a>
+                  </li>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </details>
+        </li>
+      {% endfor %}
+
+    </ul>
+  </nav>
+</aside>
+<script>
+(() => {
+  try {
+    const storedChapter = localStorage.getItem('wiki-sidebar-chapter');
+    if (!storedChapter) return;
+
+    const chapterGroups = Array.from(document.querySelectorAll('[data-wiki-sidebar-chapter]'));
+    const matchingGroup = chapterGroups.find((group) => group.dataset.wikiSidebarChapter === storedChapter);
+    if (!matchingGroup) return;
+
+    chapterGroups.forEach((group) => {
+      group.open = group === matchingGroup;
+    });
+  } catch (_) {}
+})();
+</script>
+{% endmacro %}

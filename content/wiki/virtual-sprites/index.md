@@ -10,6 +10,9 @@ tags = ["rendering", "texturing"]
 chapters = true
 chapter_prev = {text = "Texture Atlas", link = "/wiki/texture-atlas"}
 chapter_next = false
+[extra.sidebar]
+show = true
+chapter = "rendering"
 +++
 
 By dynamically building (and uploading/keeping on the GPU) a texture atlas *with* a lookup-table of its contained sprites, both a variety of interesting effects and dynamic loading of textures/sprites can be achieved.

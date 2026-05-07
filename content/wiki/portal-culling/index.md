@@ -5,6 +5,9 @@ aliases = ["/wiki/cave-culling"]
 [taxonomies]
 categories = ["culling"]
 tags = ["rendering", "culling", "optimization"]
+[extra.sidebar]
+show = true
+chapter = "visibility"
 +++
 
 > Removal of geometry that is not in the same 'room'.

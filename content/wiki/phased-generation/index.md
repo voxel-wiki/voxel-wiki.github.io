@@ -5,6 +5,9 @@ alias = "/wiki/phasegen"
 [taxonomies]
 categories = ["procedural-generation"]
 tags = ["procedural-generation", "algorithms"]
+[extra.sidebar]
+show = true
+chapter = "generation"
 +++
 
 **Phased generation** is a process wherein world generation is separated into specialized *phases*,

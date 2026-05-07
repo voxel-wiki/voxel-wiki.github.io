@@ -2,12 +2,16 @@
 title = "Choosing a Language"
 description = "Which language to choose?"
 path = "/wiki/introduction/language"
+weight = 20
 [taxonomies]
 categories = ["introduction"]
 [extra]
 chapters = true
 chapter_prev = {text = "Introduction", link = "/wiki/introduction"}
 chapter_next = {text = "Basic Storage", link = "/wiki/introduction/storage"}
+[extra.sidebar]
+show = true
+chapter = "foundations"
 +++
 
 In many fields of programming, the choice of language is quite open... even interpreted[^interpreted] languages are often acceptable and outright preferred!

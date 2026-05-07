@@ -10,6 +10,9 @@ tags = ["rendering", "meshing", "vertices"]
 #chapters = true
 #chapter_prev = {text = "Vertex Packing", link = "/wiki/vertex-packing"}
 #chapter_next = {text = "Face Pulling", link = "/wiki/face-pulling"}
+[extra.sidebar]
+show = true
+chapter = "rendering"
 +++
 
 > Storing all of your voxel geometry in a single enormous manually sub-allocated buffer.

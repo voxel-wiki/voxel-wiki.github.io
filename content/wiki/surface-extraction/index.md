@@ -5,6 +5,9 @@ aliases = ["/wiki/meshing"]
 [taxonomies]
 categories = ["rendering"]
 tags = ["rendering", "meshing"]
+[extra.sidebar]
+show = true
+chapter = "rendering"
 +++
 
 **Surface extraction** (commonly called **meshing**), is the process of generating

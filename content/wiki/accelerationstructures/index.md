@@ -6,6 +6,9 @@ aliases = ["/wiki/tlas", "/wiki/blas"]
 [taxonomies]
 categories = ["datastructures"]
 tags = ["spatial-acceleration", "TLAS", "BLAS"]
+[extra.sidebar]
+show = true
+chapter = "storage"
 +++
 
 **Acceleration structures** are [data structures](/wiki/datastructures), specialized for improving the spatial lookup/query performance of objects in a scene, by subdividing said scene into smaller volumes.

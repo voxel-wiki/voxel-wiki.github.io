@@ -5,6 +5,9 @@ aliases = ["/wiki/gl", "/wiki/ogl", "/wiki/open-gl", "/wiki/gles"]
 [taxonomies]
 categories = ["rendering"]
 tags = ["rendering", "api", "opengl"]
+[extra.sidebar]
+show = true
+chapter = "rendering"
 +++
 
 > OpenGL is a cross-platform API for hardware accelerated 2D/3D graphics.

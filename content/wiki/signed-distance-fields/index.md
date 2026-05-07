@@ -5,6 +5,9 @@ aliases = ["/wiki/sdf"]
 [taxonomies]
 categories = ["rendering"]
 tags = ["raytracing"]
+[extra.sidebar]
+show = true
+chapter = "rendering"
 +++
 
 > An N-dimensional field/function where at every point the distance to the closest surface is known.

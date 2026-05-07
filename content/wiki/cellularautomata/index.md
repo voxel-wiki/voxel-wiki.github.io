@@ -6,6 +6,9 @@ aliases = ["/wiki/cellular-automata", "/wiki/cellularautomaton", "/wiki/cellular
 [taxonomies]
 categories = ["cellular-automata"]
 tags = ["simulation", "gameplay", "physics"]
+[extra.sidebar]
+show = true
+chapter = "generation"
 +++
 
 {% figure(class="float cover", caption="A glider from <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'>Conway's Game of Life</a>.", author="Lars Longor K", license="CC0") %}/wiki/cellularautomata/CellularAutomata.drawio.svg{% end %}

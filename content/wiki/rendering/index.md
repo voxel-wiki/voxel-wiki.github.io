@@ -6,6 +6,9 @@ categories = ["rendering"]
 tags = ["rendering"]
 [extra]
 toc = true
+[extra.sidebar]
+show = true
+chapter = "rendering"
 +++
 
 While rendering voxels appears easy at a glance ("they're just cubes!"),

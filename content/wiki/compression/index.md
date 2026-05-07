@@ -5,6 +5,9 @@ path = "wiki/compression"
 [taxonomies]
 categories = ["compression"]
 tags = ["compression", "optimization"]
+[extra.sidebar]
+show = true
+chapter = "storage"
 +++
 
 Once we have our data structure of choice in place, we might still want (or outright *need*) to have *a lot* of voxels loaded at once, which leads us to two issues:

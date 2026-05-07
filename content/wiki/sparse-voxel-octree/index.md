@@ -8,6 +8,9 @@ tags = ["datastructures", "spatial-hierarchy"]
 chapters = true
 chapter_prev = false
 chapter_next = {text = "Sparse 64-Tree", link = "/wiki/sparse-64-tree"}
+[extra.sidebar]
+show = true
+chapter = "storage"
 +++
 
 {{ stub_notice() }}

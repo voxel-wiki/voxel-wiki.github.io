@@ -2,6 +2,9 @@
 title = "Engine Creation"
 description = "How does one create a new game engine?"
 draft = true
+[extra.sidebar]
+show = true
+chapter = "foundations"
 +++
 
 {% warn_notice() %} Please carefully read the [article on engines](/wiki/engines) before this one. {% end %}

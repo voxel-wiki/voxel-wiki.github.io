@@ -4,6 +4,9 @@ description = "A free lightweight GPU-based voxel art editor and interactive pat
 [taxonomies]
 categories = []
 tags = ["software", "tool", "editor"]
+[extra.sidebar]
+show = true
+chapter = "tools"
 +++
 
 > A free lightweight GPU-based voxel art editor and interactive path tracing renderer.

@@ -4,6 +4,9 @@ description = "Free and open source voxel art tools - editor, thumbnailer and fo
 [taxonomies]
 categories = []
 tags = ["software", "tool", "editor"]
+[extra.sidebar]
+show = true
+chapter = "tools"
 +++
 
 > Free and open source voxel art tools - editor, thumbnailer and format converter.

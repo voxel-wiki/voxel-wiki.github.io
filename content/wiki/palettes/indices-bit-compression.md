@@ -2,6 +2,7 @@
 title = "Palette Storage: Indices Bit-Compression"
 description = "Compressing voxels below one byte."
 draft = true
+weight = 30
 [taxonomies]
 categories = ["datastructures", "compression"]
 tags = ["datastructures", "compression", "optimization", "instancing", "flyweight"]
@@ -9,6 +10,10 @@ tags = ["datastructures", "compression", "optimization", "instancing", "flyweigh
 chapters = true
 chapter_prev = {text = "Palette Storage", link = "/wiki/palettes"}
 chapter_next = {text = "Single-Variant Volume Omission", link = "/wiki/palettes/single-variant-volume-omission"}
+[extra.sidebar]
+show = true
+chapter = "storage"
+label = "Indices Bit-Compression"
 +++
 
 {% info_notice() %} This is the technique commonly known as **Palette Compression**. {% end %}
@@ -81,7 +86,6 @@ class VarIntBuffer<CAPACITY>:
 	cells: Array<u64> = [_; CAPACITY * vsize / 64]
 
 ```
-
 
 
 

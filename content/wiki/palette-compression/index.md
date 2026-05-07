@@ -4,6 +4,9 @@ description = "Compressing voxels like one would a GIF-image."
 [taxonomies]
 categories = ["compression"]
 tags = ["compression", "optimization", "flyweight"]
+[extra.sidebar]
+show = true
+chapter = "storage"
 +++
 
 When writing a voxel engine, eventually you will come to realize that storing your voxels as 32-bit integers (or worse: as individual heap-allocated objects!) is eating a lot more memory than you'd like, potentially slowing down your game without any obvious reason as to *why*, and doing [bit-twiddling](https://graphics.stanford.edu/~seander/bithacks.html) to pack your data into a smaller space, is probably giving you quite a headache, so you might be thinking: There *has* to be a better way! *Right*...?

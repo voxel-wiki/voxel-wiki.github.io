@@ -5,6 +5,9 @@ path = "/wiki/optimization"
 [taxonomies]
 categories = ["optimization"]
 tags = ["optimization"]
+[extra.sidebar]
+show = true
+chapter = "visibility"
 +++
 
 {{ stub_notice() }}

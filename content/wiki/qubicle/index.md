@@ -4,6 +4,9 @@ description = "Qubicle is a professional voxel editor optimized for the easy cre
 [taxonomies]
 categories = []
 tags = ["software", "tool", "editor"]
+[extra.sidebar]
+show = true
+chapter = "tools"
 +++
 
 > Qubicle is a professional voxel editor optimized for the easy creation of 3D models.

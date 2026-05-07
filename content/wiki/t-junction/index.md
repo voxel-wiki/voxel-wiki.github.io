@@ -4,6 +4,9 @@ description = "Any vertex placed on an edge creates infinitely small gaps in geo
 [taxonomies]
 categories = ["math"]
 tags = ["math", "meshing"]
+[extra.sidebar]
+show = true
+chapter = "rendering"
 +++
 
 Any time your meshing process results in the corner of a triangle

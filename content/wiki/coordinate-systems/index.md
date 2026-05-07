@@ -6,6 +6,9 @@ aliases = ["/wiki/coordinates"]
 [taxonomies]
 categories = ["math"]
 tags = ["math"]
+[extra.sidebar]
+show = true
+chapter = "foundations"
 +++
 
 When dealing with voxels (and math in three-dimensional space in general), it is extremely important to get your coordinate systems and the conversions between them right. Even slightly wrong conversions can (and will) lead to *massive* headaches and horrible debugging sessions.

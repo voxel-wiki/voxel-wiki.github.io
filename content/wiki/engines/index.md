@@ -1,8 +1,12 @@
 +++
 title = "Engines"
 description = "Using an existing engine or writing a new one is a hard question; this article might help."
+weight = 30
 [taxonomies]
 categories = ["engines"]
+[extra.sidebar]
+show = true
+chapter = "foundations"
 +++
 
 {% quote(author="[Wikipedia](https://en.wikipedia.org/wiki/Game_engine)") %}

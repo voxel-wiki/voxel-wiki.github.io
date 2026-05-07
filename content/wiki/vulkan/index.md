@@ -5,6 +5,9 @@ aliases = ["/wiki/vk"]
 [taxonomies]
 categories = ["rendering"]
 tags = ["rendering", "api", "vulkan"]
+[extra.sidebar]
+show = true
+chapter = "rendering"
 +++
 
 > Vulkan is a modern cross-platform API and open standard for hardware accelerated 2D/3D graphics and computing.

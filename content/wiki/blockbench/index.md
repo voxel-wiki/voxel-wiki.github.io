@@ -4,6 +4,9 @@ description = "A low-poly 3D model editor."
 [taxonomies]
 categories = []
 tags = ["software", "tool", "editor", "modeler"]
+[extra.sidebar]
+show = true
+chapter = "tools"
 +++
 
 A 3D **model** editor specialized for low-poly/cubic styles, as opposed to a universal editor like [Blender](https://www.blender.org/); used by the developers of Minecraft.

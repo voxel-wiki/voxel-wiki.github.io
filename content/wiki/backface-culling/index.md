@@ -4,6 +4,9 @@ description = "Removal of geometry not facing the camera."
 [taxonomies]
 categories = ["culling"]
 tags = ["rendering", "culling", "optimization"]
+[extra.sidebar]
+show = true
+chapter = "visibility"
 +++
 
 > Removal of geometry not facing the camera.

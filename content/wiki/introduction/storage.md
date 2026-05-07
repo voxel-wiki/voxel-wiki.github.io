@@ -2,12 +2,16 @@
 title = "Basic Storage"
 description = "What is a voxel in practice?"
 path = "/wiki/introduction/storage"
+weight = 30
 [taxonomies]
 categories = ["introduction"]
 [extra]
 chapters = true
 chapter_prev = {text = "Choosing A Language", link = "/wiki/introduction/language"}
 chapter_next = {text = "World Generation", link = "/wiki/introduction/generation"}
+[extra.sidebar]
+show = true
+chapter = "foundations"
 +++
 
 As noted in the [theory section](./#what-is-a-voxel-in-theory), a voxel can be ***anything***; the only limit is your imagination... and the amount of memory and disk-space you have! Speaking of which, how *are* voxels represented in practice?

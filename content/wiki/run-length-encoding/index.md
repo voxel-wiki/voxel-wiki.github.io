@@ -5,6 +5,9 @@ aliases = ["/wiki/rle"]
 [taxonomies]
 categories = ["compression"]
 tags = ["compression", "optimization"]
+[extra.sidebar]
+show = true
+chapter = "storage"
 +++
 
 {{ref(id="wikipedia-run-length-encoding")}} (or **RLE** for short) is a type of compression that encodes sequences of repeating values in just a few bytes! <!-- more -->

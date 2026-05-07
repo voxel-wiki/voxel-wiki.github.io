@@ -4,6 +4,9 @@ description = "3D art and rendering tool for voxel artists, map builders and gam
 [taxonomies]
 categories = []
 tags = ["software", "tool", "editor"]
+[extra.sidebar]
+show = true
+chapter = "tools"
 +++
 
 > Create, import, export and render large voxel worlds.  

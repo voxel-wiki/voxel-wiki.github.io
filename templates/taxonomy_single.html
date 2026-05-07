@@ -37,6 +37,7 @@
 {% endmacro list_item %}
 
 {% block content %}
+{{ macros_wiki_sidebar::wiki_sidebar(current_url=current_url) }}
 <div class="wrap container" role="document">
   <div class="content">
     <div class="row justify-content-center">

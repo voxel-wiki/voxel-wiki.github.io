@@ -5,6 +5,9 @@ path = "/wiki/sliding-window"
 [taxonomies]
 categories = ["algorithms", "datastructures"]
 tags = ["algorithms", "datastructures", "architecture"]
+[extra.sidebar]
+show = true
+chapter = "foundations"
 +++
 
 A **sliding window** represents a movable view/slice of a larger dataset/field, to make accessing data-elements both faster and more convenient; they can be implemented in several ways...

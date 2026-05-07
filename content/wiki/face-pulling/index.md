@@ -9,6 +9,9 @@ tags = ["rendering", "meshing", "vertices"]
 chapters = true
 chapter_prev = {text = "Vertex Pulling", link = "/wiki/vertex-pulling"}
 chapter_next = false
+[extra.sidebar]
+show = true
+chapter = "rendering"
 +++
 
 {% todo_notice() %} This article is a work-in-progress. {% end %}
