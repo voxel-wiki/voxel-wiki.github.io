@@ -68,4 +68,99 @@
 		"prefix": "math",
 		"body": ["\\\\( $0 \\\\)"]
 	},
+	"TextNonBreakingSpace": {
+		"scope": "markdown",
+		"prefix": " ",
+		"body": "&nbsp;"
+	},
+	"TextNonBreakingHyphen": {
+		"scope": "markdown",
+		"prefix": "-",
+		"body": "&#8209;"
+	},
+	"TextThinSpace": {
+		"scope": "markdown",
+		"prefix": " ",
+		"body": "&thinsp;"
+	},
+	"TextHairSpace": {
+		"scope": "markdown",
+		"prefix": " ",
+		"body": "&hairsp;"
+	},
+	"TextTabulator": {
+		"scope": "markdown",
+		"prefix": " ",
+		"body": "&#9;"
+	},
+	"TextEmDash": {
+		"scope": "markdown",
+		"prefix": "-",
+		"body": "&emdash;"
+	},
+	"TextEnDash": {
+		"scope": "markdown",
+		"prefix": "-",
+		"body": "&#8211;"
+	},
+	"TextAmpersand": {
+		"scope": "markdown",
+		"prefix": "&",
+		"body": "&amp;"
+	},
+	"TextEmptySet": {
+		"scope": "markdown",
+		"prefix": "o",
+		"body": "∅"
+	},
+	"TextNaturalNumberSet": {
+		"scope": "markdown",
+		"prefix": "N",
+		"body": "ℕ"
+	},
+	"TextIntegerNumberSet": {
+		"scope": "markdown",
+		"prefix": "Z",
+		"body": "ℤ"
+	},
+	"TextRealNumberSet": {
+		"scope": "markdown",
+		"prefix": "R",
+		"body": "ℝ"
+	},
+	"TextRationalNumberSet": {
+		"scope": "markdown",
+		"prefix": "Q",
+		"body": "ℚ"
+	},
+	"TextComplexNumberSet": {
+		"scope": "markdown",
+		"prefix": "C",
+		"body": "ℂ"
+	},
+	"TextPlusMinus": {
+		"scope": "markdown",
+		"prefix": "+-",
+		"body": "±"
+	},
+	"TextSquareRoot": {
+		"scope": "markdown",
+		"prefix": "sqrt",
+		"body": "√"
+	},
+	"TextCubeRoot": {
+		"scope": "markdown",
+		"prefix": "cbrt",
+		"body": "∛"
+	},
+	"TextDiameter": {
+		"scope": "markdown",
+		"prefix": "d",
+		"body": "⌀"
+	},
+	"TextDot": {
+		"scope": "markdown",
+		"prefix": "*",
+		"body": "∙"
+	}
 }
