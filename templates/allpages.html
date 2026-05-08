@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block body %}{% set page_class="allpages" %}{% endblock body %}
+{% block content %}
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xl-8">
+        <article>
+          <div class="page-header">
+            <h1>All Wiki Pages</h1>
+          </div>
+          <p class="lead">
+            This is an alphabetical listing of all wiki pages and their respective categories.
+          </p>
+          <style style="display:none">
+            ul#pages {display:table}
+            ul#pages > li {display:table-row}
+            ul#pages > li::before {display:table-cell;content: '•';}
+            ul#pages > li > * {display:table-cell; padding: 0.125rem 0.5rem;}
+            ul#pages > li > span {text-align: end;}
+          </style>
+          {% set wikiroot = get_section(path="wiki/_index.md") %}
+          <ul id="pages" style="display:table">
+            {% for wikipage in wikiroot.pages
+              | filter(attribute="draft", value=false)
+              | sort(attribute="title")
+            %}
+              <li>
+                <a href="{{wikipage.path}}">{{wikipage.title}}</a>
+                {% if wikipage.taxonomies and wikipage.taxonomies.categories %}
+                  <span>
+                    {% for category in wikipage.taxonomies.categories %}
+                      <a class="badge bg-light" href="/wiki/categories/{{category}}">
+                        {{category|capitalize}}
+                      </a>
+                    {% endfor %}
+                  </span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+          <p class="small subtle mt-2 mb-5">End of listing.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

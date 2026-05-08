@@ -81,6 +81,12 @@ url = "/tags/"
 weight = 15
 
 [[extra.menu.main]]
+name = "Pages"
+section = "wiki"
+url = "/wiki/"
+weight = 10
+
+[[extra.menu.main]]
 name = "References"
 section = "references"
 url = "/wiki/references"
