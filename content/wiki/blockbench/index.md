@@ -2,7 +2,7 @@
 title = "Blockbench"
 description = "A low-poly 3D model editor."
 [taxonomies]
-categories = []
+categories = ["software"]
 tags = ["software", "tool", "editor", "modeler"]
 +++
 

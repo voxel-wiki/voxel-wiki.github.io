@@ -2,7 +2,7 @@
 title = "Vengi"
 description = "Free and open source voxel art tools - editor, thumbnailer and format converter."
 [taxonomies]
-categories = []
+categories = ["software"]
 tags = ["software", "tool", "editor"]
 +++
 

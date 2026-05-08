@@ -2,7 +2,7 @@
 title = "Avoyd"
 description = "3D art and rendering tool for voxel artists, map builders and game developers."
 [taxonomies]
-categories = []
+categories = ["software"]
 tags = ["software", "tool", "editor"]
 +++
 

@@ -2,7 +2,7 @@
 title = "Quad Indices"
 description = "The basic pattern of indices for quads made of triangles."
 [taxonomies]
-categories = []
+categories = ["rendering"]
 tags = ["meshing"]
 +++
 

@@ -2,7 +2,7 @@
 title = "Qubicle"
 description = "Qubicle is a professional voxel editor optimized for the easy creation of 3D models."
 [taxonomies]
-categories = []
+categories = ["software"]
 tags = ["software", "tool", "editor"]
 +++
 

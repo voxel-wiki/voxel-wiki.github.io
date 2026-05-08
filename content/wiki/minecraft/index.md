@@ -4,7 +4,7 @@ description = "Minecraft is a videogame by Mojang Studios, the best-selling game
 path = "/wiki/minecraft"
 aliases = ["/wiki/mc"]
 [taxonomies]
-categories = ["games"]
+categories = ["software"]
 tags = ["software", "game", "minecraft"]
 +++
 

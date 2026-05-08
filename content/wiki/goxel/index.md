@@ -2,7 +2,7 @@
 title = "Goxel"
 description = "Open Source Voxel Editor for Windows, Mac, Linux, iOS, and Android."
 [taxonomies]
-categories = []
+categories = ["software"]
 tags = ["software", "tool", "editor", "opensource"]
 +++
 

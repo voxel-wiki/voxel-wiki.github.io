@@ -2,7 +2,7 @@
 title = "MagicaVoxel"
 description = "A free lightweight GPU-based voxel art editor and interactive path tracing renderer."
 [taxonomies]
-categories = []
+categories = ["software"]
 tags = ["software", "tool", "editor"]
 +++
 

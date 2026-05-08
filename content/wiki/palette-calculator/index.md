@@ -2,7 +2,7 @@
 title = "Palette Compression Calculator"
 description = "A memory calculator for the palette compression technique."
 [taxonomies]
-categories = []
+categories = ["software"]
 tags = ["tool"]
 [extra]
 breakpoints = ""
