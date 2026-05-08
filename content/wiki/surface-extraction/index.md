@@ -71,6 +71,7 @@ the combined efficiency of the **extraction** algorithm and **rasterization**
 
 ## See also
 
+- [T-Junctions](/wiki/t-junction)
 - [Vertex Packing](/wiki/vertex-packing)
 - [Vertex Pulling](/wiki/vertex-pulling)
 - [Vertex Pooling](/wiki/vertex-pooling)

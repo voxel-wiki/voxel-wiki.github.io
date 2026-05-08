@@ -21,3 +21,6 @@ line-count:
 
 link-grep:
     rg "((https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s'>]{2,})|(www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s'>]{2,})|(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s'>]{2,})|(www\.[a-zA-Z0-9]+\.[^\s'>]{2,}))" ./content/ -g '*.md' -o --trim -I --pcre2 | sed -e "s/)[\"'\)\*,!.:;]*$//" -e "s/{%$//" | sort -u > links.log
+
+link-load *ARGS:
+    node links.js {{ARGS}}

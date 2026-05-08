@@ -143,3 +143,4 @@ Should be pretty straightforward to adapt that code to moving right.
 ## References
 
 - <https://en.wikipedia.org/wiki/Circular_buffer>
+- <https://github.com/ErisianArchitect/rollgrid/>

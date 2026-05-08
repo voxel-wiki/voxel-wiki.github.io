@@ -1,6 +1,7 @@
 +++
 title = "T-Junctions"
 description = "Any vertex placed on an edge creates infinitely small gaps in geometry."
+alias = ["/wiki/t-junctions"]
 [taxonomies]
 categories = ["math"]
 tags = ["math", "meshing"]

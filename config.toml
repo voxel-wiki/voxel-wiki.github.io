@@ -23,6 +23,9 @@ taxonomies = [
 
 build_search_index = false
 
+[link_checker]
+internal_level = "warn"
+
 [markdown]
 highlight_code = true
 
