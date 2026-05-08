@@ -38,7 +38,8 @@ with most falling into one of roughly two-ish families...
 
 When rendering voxels using surface extraction, overall performance depends on
 the combined efficiency of the **extraction** algorithm and **rasterization**
-(vertex&thinsp;&&thinsp;fragment shader) stages, which in turn depend on *yet more* factors.
+(vertex&thinsp;&&thinsp;fragment shader) stages,
+which in turn both depend on *yet&nbsp;more* factors.
 
 **Extraction** depends on:
 
@@ -57,17 +58,42 @@ the combined efficiency of the **extraction** algorithm and **rasterization**
 - Pixel surface area of any given triangle (underdraw/microtris).
 - Any area of pixels where any geometry overlaps (overdraw).
 
----
+Also to be kept in mind is *timing and latency*, both on the whole,
+in the time it takes until a change in voxel-data becomes visible on screen,
+but also some finer issues, like how to efficiently get the extracted geometry
+into GPU memory, or the timely preparation and sending of draw&#8209;calls.
+
+{% info_notice(summary="**Why not use the GPU for everything?**") %}
+Sure, ideally, surface extraction would run entirely on the GPU.
+
+However, **extraction algorithms** require quite a bit of bookkeeping
+and have to dynamically read-write data, so GPU shaders would have to run low-latency,
+memory-intensive and non-parallelizable code, which isn't ideal for GPU hardware.
+
+This may get easier in the future with **Task Shaders**,
+though that's still a few years away from being usable,
+much less available on consumer hardware.
+{% end %}
+
+While many of the above factors can be mitigated, none can ever be fully avoided/removed.
+Everything is a trade&#8209;off, with the biggest costs being time and sanity.
 
 {{ todo_notice(body="Explain further topics/factors?") }}
 
+### Common Mistakes And Pitfalls
+{{ todo_notice(body="Common performance optimizations and pitfalls.") }}
+
+### Voxels per Mesh
 {{ todo_notice(body="Amount of geometry per mesh *vs* amount of meshes.") }}
 
+### Meshing Frequency
 {{ todo_notice(body="Reducing frequency of remeshing and bandwidth limits.") }}
 
+### Off-Thread Meshing
 {{ todo_notice(body="Offloading meshing to other threads and cloning/sharing of volume data.") }}
 
-{{ todo_notice(body="Common performance optimizations and pitfalls.") }}
+### T-Junctions
+{{ todo_notice(body="The unavoidable T-Junction issue.") }}
 
 ## See also
 
