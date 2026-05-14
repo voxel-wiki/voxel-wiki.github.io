@@ -332,6 +332,61 @@ title = "NVIDIA Vulkan Ray Tracing Tutorial"
 url = "https://nvpro-samples.github.io/vk_raytracing_tutorial_KHR/"
 tags = ["vulkan", "raytracing"]
 
+[nvidia-app-html]
+title = "Gʀᴀᴘʜɪᴄs Cᴏᴅᴇx"
+url   = "https://graphicscodex.courses.nvidia.com/app.html"
+tags  = ["bibliothek","glossary","gpu","graphics","index","listing","nvidia","rendering","render"]
+
+[nvidia-performance-rendering-tools-reflex]
+title = "NVIDIA Reflex | NVIDIA Developer"
+url   = "https://developer.nvidia.com/performance-rendering-tools/reflex"
+tags  = ["fps","lag","stutter","rendering","render","tool"]
+
+[nvidia-labs-rtr-publication-lin2026restirptenhanced]
+title = "ReSTIR PT Enhanced: Algorithmic Advances for Faster and More Robust ReSTIR Path Tracing | NVIDIA Real-Time Graphics Research - research.nvidia.com/"
+url   = "https://research.nvidia.com/labs/rtr/publication/lin2026restirptenhanced/"
+tags  = ["graphics","rendering"]
+
+[nvidia-labs-rtr-publication-liu2025splatting]
+title = "Reservoir Splatting for Temporal Path Resampling and Motion Blur | NVIDIA Real-Time Graphics Research - research.nvidia.com/"
+url   = "https://research.nvidia.com/labs/rtr/publication/liu2025splatting/"
+tags  = ["sampling","rendering","graphics"]
+
+[nvidia-labs-rtr-publication-liu2025splatting-liu2025splatting-paper-pdf]
+title = "Reservoir Splatting for Temporal Path Resampling and Motion Blur - liu2025splatting_paper.pdf"
+url   = "https://research.nvidia.com/labs/rtr/publication/liu2025splatting/liu2025splatting_paper.pdf"
+tags  = ["sampling","rendering"]
+
+[nvidia-labs-rtr-publication-zeng2025restirpg]
+title = "ReSTIR PG: Path Guiding with Spatiotemporally Resampled Paths | NVIDIA Real-Time Graphics Research - research.nvidia.com/"
+url   = "https://research.nvidia.com/labs/rtr/publication/zeng2025restirpg/"
+tags  = ["sampling","rendering","graphics"]
+
+[nvidia-labs-rtr-publication-zeng2025restirpg-zeng2025restirpg-paper-pdf]
+title = "ReSTIR PG: Path Guiding with Spatiotemporally Resampled Paths - zeng2025restirpg_paper.pdf"
+url   = "https://research.nvidia.com/labs/rtr/publication/zeng2025restirpg/zeng2025restirpg_paper.pdf"
+tags  = ["sampling","rendering"]
+
+[nvidia-labs-rtr-publication-zhang2024area]
+title = "Area ReSTIR: Resampling for Real-Time Defocus and Antialiasing | NVIDIA Real-Time Graphics Research - research.nvidia.com/"
+url   = "https://research.nvidia.com/labs/rtr/publication/zhang2024area/"
+tags  = ["sampling","rendering","graphics"]
+
+[nvidia-labs-rtr-publication-zhang2024area-zhang2024area-pdf]
+title = "Area ReSTIR: Resampling for Real-Time Defocus and Antialiasing - zhang2024area.pdf"
+url   = "https://research.nvidia.com/labs/rtr/publication/zhang2024area/zhang2024area.pdf"
+tags  = ["sampling","rendering"]
+
+[nvidia-publication-2020-07-practical-product-sampling-fitting-and-composing-warps]
+title = "Practical Product Sampling by Fitting and Composing Warps | Research - research.nvidia.com/"
+url   = "https://research.nvidia.com/publication/2020-07_practical-product-sampling-fitting-and-composing-warps"
+tags  = ["sampling","rendering"]
+
+[nvidia-sites-default-files-pubs-2020-07-practical-product-hart2020sampling-0-pdf]
+title = "Practical Product Sampling - Hart2020Sampling_0.pdf"
+url   = "https://research.nvidia.com/sites/default/files/pubs/2020-07_-Practical-Product/Hart2020Sampling_0.pdf"
+tags  = ["sampling","rendering"]
+
 
 
 ################################################################################
@@ -1029,6 +1084,26 @@ title = "Hash without Sine 2 (WebGL 2)"
 url   = "https://www.shadertoy.com/view/XdGfRR"
 tags  = ["opengl"]
 
+[shadertoy-4dfGzs]
+title = "Voxel Edges - www.shadertoy.com/"
+url   = "https://www.shadertoy.com/view/4dfGzs"
+tags  = ["voxel"]
+
+[shadertoy-4sSXDV]
+title = "Box - occlusion clipping - www.shadertoy.com/"
+url   = "https://www.shadertoy.com/view/4sSXDV"
+tags  = ["occlusion","rendering"]
+
+[shadertoy-7l3cD2]
+title = "triangle noise test - www.shadertoy.com/"
+url   = "https://www.shadertoy.com/view/7l3cD2"
+tags  = ["noise","procgen"]
+
+[shadertoy-dtVSzw]
+title = "Hybrid SDF-Voxel Traversal - www.shadertoy.com/"
+url   = "https://www.shadertoy.com/view/dtVSzw"
+tags  = ["voxel"]
+
 
 ################################################################################
 
@@ -1078,6 +1153,11 @@ tags  = ["opengl","rendering"]
 
 ################################################################################
 
+[howtovulkan-com]
+title = "How to Vulkan in 2026 - How to Vulkan - www.howtovulkan.com/"
+url   = "https://www.howtovulkan.com/"
+tags  = ["vulkan","rendering"]
+
 [vulkan]
 title = "Vulkan"
 url = "https://www.vulkan.org/"
@@ -1113,6 +1193,17 @@ tags = ["vulkan"]
 title = "GpuInfo: Vulkan Hardware Database"
 url = "https://vulkan.gpuinfo.org/"
 tags = ["vulkan"]
+
+[githubusercontent-khronosgroup-vulkan-docs-refs-heads-main-xml-vk-xml]
+title = "vulkan.xml - HEAD / latest - raw.githubusercontent.com/"
+url   = "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/refs/heads/main/xml/vk.xml"
+tags  = ["vulkan","rendering"]
+
+[vulkan-org-user-pages-09-events-vulkanised-2023-vulkanised-2023-setting-up-a-bindless-rendering-pipeline-pdf]
+title = "Vulkanised bindless rendering.pptx - vulkanised_2023_setting_up_a_bindless_rendering_pipeline.pdf"
+url   = "https://vulkan.org/user/pages/09.events/vulkanised-2023/vulkanised_2023_setting_up_a_bindless_rendering_pipeline.pdf"
+type  = "paper"
+tags  = ["rendering","vulkan","render"]
 
 [zeux-efficient-vulkan-renderer]
 title = "Writing an efficient Vulkan renderer"
@@ -3682,6 +3773,24 @@ tags  = ["rendering","render"]
 [slideshare-repii-the-rendering-pipeline-challenges-next-steps]
 title = "The Rendering Pipeline - Challenges & Next Steps"
 url   = "http://de.slideshare.net/repii/the-rendering-pipeline-challenges-next-steps"
+type  = "presentation"
+tags  = ["rendering","render"]
+
+[slideshare-slideshow-device-generated-commands-in-vulkan-4bea-276099338-from-search-4]
+title = "Device-Generated Commands in Vulkan | PDF - www.slideshare.net/"
+url   = "https://www.slideshare.net/slideshow/device-generated-commands-in-vulkan-4bea/276099338?from_search=4"
+type  = "presentation"
+tags  = ["vulkan","rendering"]
+
+[slideshare-slideshow-directx-11-rendering-in-battlefield-3-7207663]
+title = "DirectX 11 Rendering in Battlefield 3 | PPTX - www.slideshare.net/"
+url   = "https://www.slideshare.net/slideshow/directx-11-rendering-in-battlefield-3/7207663"
+type  = "presentation"
+tags  = ["rendering","directx","windows","render"]
+
+[slideshare-slideshow-framegraph-extensible-rendering-architecture-in-frostbite-72795495-from-search-1]
+title = "FrameGraph: Extensible Rendering Architecture in Frostbite | PPTX - www.slideshare.net/"
+url   = "https://www.slideshare.net/slideshow/framegraph-extensible-rendering-architecture-in-frostbite/72795495?from_search=1"
 type  = "presentation"
 tags  = ["rendering","render"]
 
@@ -6409,6 +6518,36 @@ title = "Vertex Ambient Occlusion for Voxel Games — The Principle and Implemen
 url   = "https://medium.com/@andrebluntindie/vertex-ambient-occlusion-for-voxel-games-the-principle-and-implementation-e5340bd62845"
 tags  = ["occlusion","rendering","voxel"]
 
+[medium-evanwallace-easy-scalable-text-rendering-on-the-gpu-c3f4d782c5ac-lf99xycwj]
+title = "Easy Scalable Text Rendering on the GPU – Medium"
+url   = "https://medium.com/@evanwallace/easy-scalable-text-rendering-on-the-gpu-c3f4d782c5ac#.lf99xycwj"
+tags  = ["rendering","gpu","render"]
+
+[medium-evanwallace-easy-scalable-text-rendering-on-the-gpu-c3f4d782c5ac-tvz9oj10t]
+title = "Easy Scalable Text Rendering on the GPU — Medium"
+url   = "https://medium.com/@evanwallace/easy-scalable-text-rendering-on-the-gpu-c3f4d782c5ac#.tvz9oj10t"
+tags  = ["rendering","gpu","render"]
+
+[medium-evanwallace-rendering-realtime-caustics-in-webgl-2a99a29a0b2c-bdclromoi]
+title = "Rendering Realtime Caustics in WebGL – Medium"
+url   = "https://medium.com/@evanwallace/rendering-realtime-caustics-in-webgl-2a99a29a0b2c#.bdclromoi"
+tags  = ["rendering","render","opengl"]
+
+[medium-fogleman-voxel-rendering-techniques-fa8d869457ca]
+title = "Voxel Rendering Techniques. Optimal triangulation & more… | by Michael Fogleman | Medium - medium.com/"
+url   = "https://medium.com/@fogleman/voxel-rendering-techniques-fa8d869457ca"
+tags  = ["rendering","render","voxel"]
+
+[medium-williscool-vulkan-descriptor-buffers-redux-603ea2be3979]
+title = "Vulkan Descriptor Buffers (Redux) | by William Gunawan | Medium - medium.com/"
+url   = "https://medium.com/@williscool/vulkan-descriptor-buffers-redux-603ea2be3979"
+tags  = ["vulkan","rendering"]
+
+[medium-embarkstudios-homegrown-rendering-with-rust-1e39068e56a7]
+title = "Homegrown rendering with Rust. In this post, Embark software engineer… | by Tomasz Stachowiak | Embark Studios | Medium"
+url   = "https://medium.com/embarkstudios/homegrown-rendering-with-rust-1e39068e56a7"
+tags  = ["rendering","render","rust"]
+
 [mattkeeter-com-research-mpr]
 title = "Massively Parallel Rendering of Complex Closed-Form Implicit Surfaces"
 url   = "https://www.mattkeeter.com/research/mpr/"
@@ -7084,6 +7223,480 @@ url   = "https://gist.github.com/ademola-lou/8fcd19bf081ff9cafd31f6ce1781c59d"
 type  = "repository"
 tags  = ["noise","procedural-generation"]
 
+[github-matthewjberger-9da00592b472b50ec1e6b3238719264b]
+title = "Example of using glutin and opengl to draw at triangle in rust (combining the glutin window example with the triangle example from https://github.com/bwasty/learn-opengl-rs)"
+url   = "https://gist.github.com/matthewjberger/9da00592b472b50ec1e6b3238719264b"
+type  = "repository"
+tags  = ["opengl","rendering","rust"]
+
+[github-zylann-godot-voxel]
+title = "godot_voxel: Voxel module for Godot Engine"
+url   = "https://github.com/Zylann/godot_voxel/"
+type  = "repository"
+tags  = ["dualcontouring","dualmarchingcubes","meshing","programming","rendering","voxels","render","voxel","c++","godot"]
+
+[github-yaazarai-tinyvulkan-dynamic]
+title = "Yaazarai/TinyVulkan-Dynamic: Vulkan Graphics render engine using extension VK_KHR_DYNAMIC_RENDERING."
+url   = "https://github.com/Yaazarai/TinyVulkan-Dynamic"
+type  = "repository"
+tags  = ["rendering","vulkan","render","graphics"]
+
+[github-tyronx-occlusionculling]
+title = "tyronx/occlusionculling: The occlusion culling system used by Vintage Story"
+url   = "https://github.com/tyronx/occlusionculling"
+type  = "repository"
+tags  = ["culling","rendering","occlusion"]
+
+[github-ultralight-ux-ultralight]
+title = "ultralight-ux/Ultralight: Ultralight— a lightweight, pure-GPU, HTML UI renderer for native apps."
+url   = "https://github.com/ultralight-ux/ultralight"
+type  = "repository"
+tags  = ["browser","embedded","gui","library","webkit","rendering","gpu","render"]
+
+[github-trenki2-softwarerenderer]
+title = "trenki2/SoftwareRenderer: C++ Software Renderer/Rasterizer"
+url   = "https://github.com/trenki2/SoftwareRenderer"
+type  = "repository"
+tags  = ["rasterization","rendering","render"]
+
+[github-turol-smaademo]
+title = "turol/smaaDemo: Subpixel Morphological AntiAliasing OpenGL/Vulkan demo"
+url   = "https://github.com/turol/smaaDemo"
+type  = "repository"
+tags  = ["opengl","rendering","vulkan","sampling"]
+
+[github-sudoplaygames-joise]
+title = "SudoPlayGames/Joise: Joise is a 2D, 3D, 4D and 6D modular noise library written in Java."
+url   = "https://github.com/SudoPlayGames/Joise"
+type  = "repository"
+tags  = ["noise","procgen","java","jvm"]
+
+[github-sz3-libcimbar]
+title = "sz3/libcimbar: Optimized implementation for color-icon-matrix barcodes"
+url   = "https://github.com/sz3/libcimbar"
+type  = "repository"
+tags  = ["colors","colortheory"]
+
+[github-therealmjp-shadows]
+title = "TheRealMJP/Shadows: A sample app that demonstrates several techniques for rendering real-time shadow maps - github.com/"
+url   = "https://github.com/TheRealMJP/Shadows"
+type  = "repository"
+tags  = ["rendering","render"]
+
+[github-thibaulttricard-interval-shading]
+title = "ThibaultTricard/Interval-Shading: using Mesh Shaders to generate shading intervals for volume rendering"
+url   = "https://github.com/ThibaultTricard/Interval-Shading"
+type  = "repository"
+tags  = ["rendering","render"]
+
+[github-ssloy-tinyrenderer]
+title = "ssloy/tinyrenderer: Support c++ code for a short computer graphics course"
+url   = "https://github.com/ssloy/tinyrenderer"
+type  = "repository"
+tags  = ["rendering","render","graphics"]
+
+[github-scallyw4g-bonsai]
+title = "scallyw4g/bonsai: The procedural generation voxel engine"
+url   = "https://github.com/scallyw4g/bonsai"
+type  = "repository"
+tags  = ["voxel"]
+
+[github-scthe-frostbitten-hair-webgpu]
+title = "Scthe/frostbitten-hair-webgpu: Software rasterizing hair strands with analytical AA and OIT. Inspired by Frostbite's hair system: 'Every Strand Counts: Physics and Rendering Behind Frostbite's Hair'."
+url   = "https://github.com/Scthe/frostbitten-hair-webgpu"
+type  = "repository"
+tags  = ["rendering","gpu","render"]
+
+[github-scthe-nanite-webgpu]
+title = "Scthe/nanite-webgpu: UE5's Nanite implementation using WebGPU. Includes the meshlet LOD hierarchy, software rasterizer and billboard impostors. Culling on both per-instance and per-meshlet basis."
+url   = "https://github.com/Scthe/nanite-webgpu"
+type  = "repository"
+tags  = ["gpu","culling","rendering"]
+
+[github-sebh-unrealengineskyatmosphere]
+title = "sebh/UnrealEngineSkyAtmosphere: Unreal Engine Sky Atmosphere Rendering Technique"
+url   = "https://github.com/sebh/UnrealEngineSkyAtmosphere"
+type  = "repository"
+tags  = ["rendering","render","unrealengine"]
+
+[github-rust-windowing-glutin]
+title = "rust-windowing/glutin: A low-level library for OpenGL context creation, written in pure Rust."
+url   = "https://github.com/rust-windowing/glutin"
+type  = "repository"
+tags  = ["opengl","rust","rendering"]
+
+[github-rvanderlaan-svdag-compression]
+title = "RvanderLaan/SVDAG-Compression: Fork of SSVDAGs: Symmetry-aware Sparse Voxel DAGs - CRS4"
+url   = "https://github.com/RvanderLaan/SVDAG-Compression"
+type  = "repository"
+tags  = ["sparsity","voxel"]
+
+[github-robertbeckebans-rbdoom-3-bfg-tab-readme-ov-file-trenchbroom]
+title = "RobertBeckebans/RBDOOM-3-BFG: Doom 3 BFG Edition source port with updated DX12 / Vulkan renderer and modern game engine features"
+url   = "https://github.com/RobertBeckebans/RBDOOM-3-BFG"
+type  = "repository"
+tags  = ["rendering","vulkan","render"]
+
+[github-pezcode-mosaiikki]
+title = "pezcode/mosaiikki: Checkerboard rendering with Magnum and OpenGL"
+url   = "https://github.com/pezcode/mosaiikki"
+type  = "repository"
+tags  = ["rendering","opengl","render"]
+
+[github-ompuco-unity-oscilloscope-shader-kit]
+title = "ompuco/unity-oscilloscope-shader-kit: an audio oscilloscope in unity, for future projects of mine involving audio-based vector graphics - github.com/"
+url   = "https://github.com/ompuco/unity-oscilloscope-shader-kit"
+type  = "repository"
+tags  = ["graphics","rendering"]
+
+[github-nvpro-samples-gl-occlusion-culling]
+title = "nvpro-samples/gl_occlusion_culling: OpenGL sample for shader-based occlusion culling"
+url   = "https://github.com/nvpro-samples/gl_occlusion_culling"
+type  = "repository"
+tags  = ["opengl","rendering","culling","occlusion"]
+
+[github-nvpro-samples-gl-vk-simple-interop]
+title = "nvpro-samples/gl_vk_simple_interop: Display an image created by Vulkan compute shader, with OpenGL"
+url   = "https://github.com/nvpro-samples/gl_vk_simple_interop"
+type  = "repository"
+tags  = ["opengl","rendering","vulkan"]
+
+[github-nvpro-samples-vk-lod-clusters]
+title = "nvpro-samples/vk_lod_clusters: Sample for cluster-based continuous level of detail rasterization or ray tracing - github.com/"
+url   = "https://github.com/nvpro-samples/vk_lod_clusters"
+type  = "repository"
+tags  = ["rasterization","rendering"]
+
+[github-nonamecrackers2-simple-clouds]
+title = "nonamecrackers2/simple-clouds: Rendering mod that overhauls Minecraft's clouds and weather"
+url   = "https://github.com/nonamecrackers2/simple-clouds"
+type  = "repository"
+tags  = ["rendering","render","minecraft"]
+
+[github-nllvoid-cntour]
+title = "nllvoid/cntour: A Rust API for generating noise-based images. - github.com/"
+url   = "https://github.com/nllvoid/cntour"
+type  = "repository"
+tags  = ["noise","procgen","rust"]
+
+[github-nominom-bcnencoder-net]
+title = "Nominom/BCnEncoder.NET: Cross-platform texture encoding libary for .NET. With support for BC1-3/DXT, BC4-5/RGTC and BC6-7/BPTC compression. Outputs files in ktx or dds formats."
+url   = "https://github.com/nominom/bcnencoder.net"
+type  = "repository"
+tags  = ["texture","rendering"]
+
+[github-mstange-samply]
+title = "mstange/samply: Command-line sampling profiler for macOS, Linux, and Windows - github.com/"
+url   = "https://github.com/mstange/samply"
+type  = "repository"
+tags  = ["sampling","rendering"]
+
+[github-momentsingraphics-path-tracer]
+title = "MomentsInGraphics/path_tracer at jackknife - github.com/"
+url   = "https://github.com/MomentsInGraphics/path_tracer/"
+type  = "repository"
+tags  = ["graphics","rendering"]
+
+[github-mightycow-sluggish]
+title = "mightycow/Sluggish: Toy CPU and GPU implementations of the Slug rendering algorithm - github.com/"
+url   = "https://github.com/mightycow/Sluggish"
+type  = "repository"
+tags  = ["rendering","gpu","render"]
+
+[github-mellinoe-vk]
+title = "mellinoe/vk: Low-level Vulkan bindings for .NET. - github.com/"
+url   = "https://github.com/mellinoe/vk"
+type  = "repository"
+tags  = ["vulkan","rendering"]
+
+[github-memononen-fontstash]
+title = "memononen/fontstash: Light-weight online font texture atlas builder"
+url   = "https://github.com/memononen/fontstash"
+type  = "repository"
+tags  = ["texture","rendering"]
+
+[github-meodai-color-names]
+title = "meodai/color-names: Large list of handpicked color names 🌈"
+url   = "https://github.com/meodai/color-names"
+type  = "repository"
+tags  = ["colors","colortheory"]
+
+[github-microsoft-directxtex-wiki-texassemble]
+title = "Texassemble · microsoft/DirectXTex Wiki"
+url   = "https://github.com/microsoft/DirectXTex/wiki/Texassemble"
+type  = "repository"
+tags  = ["directx","rendering","windows"]
+
+[github-microsoft-directxtex-wiki-texconv]
+title = "Texconv · microsoft/DirectXTex Wiki"
+url   = "https://github.com/microsoft/DirectXTex/wiki/Texconv"
+type  = "repository"
+tags  = ["directx","rendering","windows"]
+
+[github-mcrcortex-voxy]
+title = "MCRcortex/voxy: An LoD rendering mod for minecraft"
+url   = "https://github.com/MCRcortex/voxy"
+type  = "repository"
+tags  = ["rendering","render","minecraft"]
+
+[github-maximecb-batchmarching]
+title = "maximecb/batchmarching: A recursive screen-space algorithm to render SDFs"
+url   = "https://github.com/maximecb/batchmarching"
+type  = "repository"
+tags  = ["rendering","render"]
+
+[github-m-schuetz-compute-rasterizer]
+title = "m-schuetz/compute_rasterizer: Rendering Point Clouds with Compute Shaders"
+url   = "https://github.com/m-schuetz/compute_rasterizer"
+type  = "repository"
+tags  = ["rendering","render"]
+
+[github-ldci-glfw-rebol]
+title = "ldci/glfw-rebol: OpenGL with GLFW and REBOL"
+url   = "https://github.com/ldci/glfw-rebol"
+type  = "repository"
+tags  = ["opengl","rendering"]
+
+[github-linebender-vello-tree-main]
+title = "linebender/vello: A GPU compute-centric 2D renderer. - github.com/"
+url   = "https://github.com/linebender/vello/tree/main"
+type  = "repository"
+tags  = ["rendering","gpu","render"]
+
+[github-khronosgroup-moltenvk]
+title = "KhronosGroup/MoltenVK: MoltenVK is a Vulkan Portability implementation. It layers a subset of the high-performance, industry-standard Vulkan graphics and compute API over Apples Metal graphics framework, enabling Vulkan applications to run on macOS, iOS and tvOS. - github.com/"
+url   = "https://github.com/KhronosGroup/MoltenVK"
+type  = "repository"
+tags  = ["vulkan","rendering","graphics"]
+
+[github-khronosgroup-vulkan-samples]
+title = "KhronosGroup/Vulkan-Samples: One stop solution for all Vulkan samples - github.com/"
+url   = "https://github.com/khronosGroup/Vulkan-samples"
+type  = "repository"
+tags  = ["vulkan","rendering"]
+
+[github-keijiro-noiseshader]
+title = "keijiro/NoiseShader: Noise shader library for Unity"
+url   = "https://github.com/keijiro/NoiseShader"
+type  = "repository"
+tags  = ["noise","procgen"]
+
+[github-jose-villegas-vctrenderer]
+title = "jose-villegas/VCTRenderer: A real time global illumination solution that achieves glossy surfaces, diffuse reflection, specular reflection, ambient occlusion, indirect shadows, soft shadows, emissive materials and 2-bounce GI. Published here http://ieeexplore.ieee.org/abstract/document/7833375/"
+url   = "https://github.com/jose-villegas/VCTRenderer"
+type  = "repository"
+tags  = ["rendering","render","occlusion","opengl"]
+
+[github-jam3-msdf-bmfont]
+title = "Jam3/msdf-bmfont: Generate BMFont texture and spec using msdfgen"
+url   = "https://github.com/Jam3/msdf-bmfont"
+type  = "repository"
+tags  = ["texture","rendering"]
+
+[github-jebbly-reservoir-splatting]
+title = "Jebbly/Reservoir-Splatting: Source Code for the SIGGRAPH 2025 Paper Reservoir Splatting for Temporal Path Resampling and Motion Blur. - github.com/"
+url   = "https://github.com/Jebbly/Reservoir-Splatting"
+type  = "repository"
+tags  = ["sampling","rendering"]
+
+[github-ipotrick-daxa]
+title = "Ipotrick/Daxa: Daxa is a convenient, simple and modern gpu abstraction built on vulkan"
+url   = "https://github.com/Ipotrick/Daxa"
+type  = "repository"
+tags  = ["gpu","vulkan","rendering"]
+
+[github-htmlboss-opengl-renderer]
+title = "htmlboss/OpenGL-Renderer: Modern OpenGL renderer written in C++17"
+url   = "https://github.com/htmlboss/OpenGL-Renderer"
+type  = "repository"
+tags  = ["rendering","opengl","render"]
+
+[github-greenlightning-gpu-font-rendering]
+title = "GreenLightning/gpu-font-rendering: GPU font rendering from vector outlines demonstration"
+url   = "https://github.com/GreenLightning/gpu-font-rendering"
+type  = "repository"
+tags  = ["rendering","gpu","render"]
+
+[github-gpuopen-librariesandsdks-vulkanmemoryallocator]
+title = "GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator: Easy to integrate Vulkan memory allocation library"
+url   = "https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator"
+type  = "repository"
+tags  = ["gpu","vulkan","rendering"]
+
+[github-goshido-android-vulkan-blob-2393-docs-gizmo-rendering-md]
+title = "android-vulkan/docs/gizmo-rendering.md at #93 · Goshido/android-vulkan - github.com/"
+url   = "https://github.com/Goshido/android-vulkan/blob/%2393/docs/gizmo-rendering.md"
+type  = "repository"
+tags  = ["rendering","vulkan","render"]
+
+[github-google-shaderc]
+title = "google/shaderc: A collection of tools, libraries, and tests for Vulkan shader compilation. - github.com/"
+url   = "https://github.com/google/shaderc"
+type  = "repository"
+tags  = ["vulkan","rendering","tool"]
+
+[github-google-angle]
+title = "google/angle: A conformant OpenGL ES implementation for Windows, Mac, Linux, iOS and Android. - github.com/"
+url   = "https://github.com/google/angle"
+type  = "repository"
+tags  = ["opengl","rendering"]
+
+[github-glium-glium]
+title = "glium/glium: Safe OpenGL wrapper for the Rust language."
+url   = "https://github.com/glium/glium"
+type  = "repository"
+tags  = ["opengl","rendering","rust"]
+
+[github-gametechdev-presentmon]
+title = "GameTechDev/PresentMon: Capture and analyze the high-level performance characteristics of graphics applications on Windows."
+url   = "https://github.com/GameTechDev/PresentMon"
+type  = "repository"
+tags  = ["graphics","rendering"]
+
+[github-gametechdev-xegtao]
+title = "GameTechDev/XeGTAO: An implementation of [Jimenez et al., 2016] Ground Truth Ambient Occlusion, MIT license - github.com/"
+url   = "https://github.com/gametechdev/XeGTAO"
+type  = "repository"
+tags  = ["occlusion","rendering"]
+
+[github-gametechdev-maskedocclusionculling]
+title = "GameTechDev/MaskedOcclusionCulling: Example code for the research paper 'Masked Software Occlusion Culling'; implements an efficient alternative to the hierarchical depth buffer algorithm."
+url   = "https://github.com/GameTechDev/MaskedOcclusionCulling"
+type  = "repository"
+tags  = ["occlusionculling","rasterization","rendering","render","culling","occlusion"]
+
+[github-fendevel-guide-to-modern-opengl-functions]
+title = "A Guide to Modern OpenGL Functions · fendevel/Guide-to-Modern-OpenGL-Functions"
+url   = "https://github.com/fendevel/Guide-to-Modern-OpenGL-Functions"
+type  = "repository"
+tags  = ["opengl","rendering"]
+
+[github-facebook-igl-tree-main]
+title = "facebook/igl: Intermediate Graphics Library (IGL) is a cross-platform library that commands the GPU. It provides a single low-level cross-platform interface on top of various graphics APIs (e.g. OpenGL, Metal and Vulkan)."
+url   = "https://github.com/facebook/igl"
+type  = "repository"
+tags  = ["gpu","opengl","rendering","vulkan","graphics"]
+
+[github-ellioman-indirect-rendering-with-compute-shaders]
+title = "ellioman/Indirect-Rendering-With-Compute-Shaders: An example of drawing numerous instances using Unity3D, compute shaders and Graphics.DrawMeshInstancedIndirect with Frustum & Occlusion culling and LODing. - github.com/"
+url   = "https://github.com/ellioman/Indirect-Rendering-With-Compute-Shaders"
+type  = "repository"
+tags  = ["rendering","render","graphics","culling","occlusion","rust"]
+
+[github-elias1518693-jpeg-textures]
+title = "elias1518693/jpeg_textures: Real-Time Rendering with JPEG-Compressed Textures"
+url   = "https://github.com/elias1518693/jpeg_textures"
+type  = "repository"
+tags  = ["texture","rendering"]
+
+[github-electronicarts-fastnoise-tree-main]
+title = "electronicarts/fastnoise: Filter-adapted Spatiotemporal Sampling for Real-Time Rendering"
+url   = "https://github.com/electronicarts/fastnoise/tree/main"
+type  = "repository"
+tags  = ["rendering","render","sampling","noise","procgen"]
+
+[github-electronicarts-fastnoise]
+title = "electronicarts/fastnoise: Filter-adapted Spatiotemporal Sampling for Real-Time Rendering"
+url   = "https://github.com/electronicarts/fastnoise/"
+type  = "repository"
+tags  = ["rendering","render","sampling","noise","procgen"]
+
+[github-dqlin-lghdemo]
+title = "DQLin/LGHDemo: Real-Time Rendering with Lighting Grid Hierarchy I3D 2019 Demo"
+url   = "https://github.com/DQLin/LGHDemo"
+type  = "repository"
+tags  = ["rendering","render"]
+
+[github-david-digioia-vulkan-diagrams]
+title = "David-DiGioia/vulkan-diagrams: Diagrams showing relationships between Vulkan objects and how they're used."
+url   = "https://github.com/David-DiGioia/vulkan-diagrams"
+type  = "repository"
+tags  = ["diagrams","guide","listing","vulkan","rendering"]
+
+[github-daveh355-clustered-shading]
+title = "DaveH355/clustered-shading: An OpenGL tutorial on clustered shading. A technique for efficiently rendering thousands of dynamic lights in games. - github.com/"
+url   = "https://github.com/DaveH355/clustered-shading"
+type  = "repository"
+tags  = ["rendering","opengl","render"]
+
+[github-danilw-gpu-my-list-of-bugs]
+title = "danilw/GPU-my-list-of-bugs: Vulkan and other GPU API bugs I found."
+url   = "https://github.com/danilw/GPU-my-list-of-bugs"
+type  = "repository"
+tags  = ["gpu","vulkan","rendering"]
+
+[github-czdanol-glsl-perlin-voronoi]
+title = "CZDanol/glsl-perlin-voronoi: GLSL Compute shader implementation of 2D+3D Perlin noise & Voronoi diagrams using thread cooperation"
+url   = "https://github.com/CZDanol/glsl-perlin-voronoi"
+type  = "repository"
+tags  = ["noise","procgen","opengl"]
+
+[github-ciwiel3-simplevoxeltracer]
+title = "Ciwiel3/SimpleVoxelTracer: A simple voxel ray tracer, showing a technique of DDA + distance fields."
+url   = "https://github.com/Ciwiel3/SimpleVoxelTracer"
+type  = "repository"
+tags  = ["voxel"]
+
+[github-chlumsky-msdf-atlas-gen]
+title = "Chlumsky/msdf-atlas-gen: MSDF font atlas generator"
+url   = "https://github.com/Chlumsky/msdf-atlas-gen"
+type  = "repository"
+tags  = ["drawing","font","rendering","sdf","shader","text","render"]
+
+[github-chlumsky-msdfgen]
+title = "Chlumsky/msdfgen: Multi-channel signed distance field generator"
+url   = "https://github.com/Chlumsky/msdfgen"
+type  = "repository"
+tags  = ["font","rendering","sdf","signeddistancefields","text","textures","render","texture"]
+
+[github-binaryconstruct-transvoxel-xna]
+title = "BinaryConstruct/Transvoxel-XNA: Transvoxel implementation in C# for XNA"
+url   = "https://github.com/BinaryConstruct/Transvoxel-XNA"
+type  = "repository"
+tags  = ["algorithm","source","transvoxel","voxels","voxel"]
+
+[github-bcrusco-forward-plus-renderer]
+title = "bcrusco/Forward-Plus-Renderer: GPU-based Forward+ renderer"
+url   = "https://github.com/bcrusco/Forward-Plus-Renderer"
+type  = "repository"
+tags  = ["rendering","gpu","render"]
+
+[github-auburns-fastnoise]
+title = "Auburns/FastNoise: Fast C++ Noise Library"
+url   = "https://github.com/Auburns/FastNoise"
+type  = "repository"
+tags  = ["noise","procgen"]
+
+[github-attackgoat-screen-13]
+title = "attackgoat/screen-13: Screen 13 is an easy-to-use Vulkan rendering engine in the spirit of QBasic."
+url   = "https://github.com/attackgoat/screen-13"
+type  = "repository"
+tags  = ["rendering","vulkan","render"]
+
+[github-ashima-webgl-noise]
+title = "ashima/webgl-noise: Procedural Noise Shader Routines compatible with WebGL"
+url   = "https://github.com/ashima/webgl-noise"
+type  = "repository"
+tags  = ["noise","procgen","opengl"]
+
+[github-aparis69-karst-synthesis]
+title = "aparis69/Karst-Synthesis: Source code for our Computer Graphics Forum paper: Synthesizing Geologically Coherent Cave Networks."
+url   = "https://github.com/aparis69/Karst-Synthesis"
+type  = "repository"
+tags  = ["graphics","rendering"]
+
+[github-alexheretic-glyph-brush]
+title = "alexheretic/glyph-brush: Fast GPU cached text rendering"
+url   = "https://github.com/alexheretic/glyph-brush"
+type  = "repository"
+tags  = ["rendering","gpu","render","opengl"]
+
+[github-aaron9000-c-game-resources]
+title = "aaron9000/c-game-resources: A collection of helpful resources for writing games in C and OpenGL."
+url   = "https://github.com/aaron9000/c-game-resources"
+type  = "repository"
+tags  = ["opengl","rendering"]
+
 [geeks3d-com-shader-library]
 title = "Shader Library (GLSL) | Geeks3D"
 url   = "https://www.geeks3d.com/shader-library/"
@@ -7156,6 +7769,16 @@ tags  = ["rendering","render"]
 title = "GDC Vault - Math for Game Programmers: Voxel Surfing"
 url   = "https://gdcvault.com/play/1023565/Math-for-Game-Programmers-Voxel"
 tags  = ["voxel"]
+
+[gdcvault-play-1023109-optimizing-the-graphics-pipeline-with]
+title = "GDC Vault - Optimizing the Graphics Pipeline With Compute - www.gdcvault.com/"
+url   = "https://www.gdcvault.com/play/1023109/Optimizing-the-Graphics-Pipeline-With"
+tags  = ["graphics","rendering"]
+
+[gdcvault-play-1035685-modernizing-the-rendering-of-minecraft]
+title = "GDC Vault - Modernizing the Rendering of Minecraft - gdcvault.com/"
+url   = "https://gdcvault.com/play/1035685/Modernizing-the-Rendering-of-Minecraft"
+tags  = ["rendering","render","minecraft"]
 
 [gamasutra-com-blogs-chrissimpson-20140717-221339-behavior-trees-for-ai-how-they-work-php]
 title = "Gamasutra: Chris Simpson's Blog - Behavior trees for AI: How they work"
@@ -7939,6 +8562,545 @@ title = "Clustered Forward vs Deferred Shading – Yosoygames"
 url   = "https://www.yosoygames.com.ar/wp/2016/11/clustered-forward-vs-deferred-shading/"
 tags  = ["clusteredforward","comparison","deferredrendering","depthpre-pass","forwardrendering","forward+","forward+2.5","forward3d","hybridrendering","rendering","tiledforward","render"]
 
+[inria-hal-science-hal-00920177-file-document-pdf]
+title = "A Survey of Procedural Noise Functions - document.pdf"
+url   = "https://inria.hal.science/hal-00920177/file/document.pdf"
+type  = "paper"
+tags  = ["noise","procgen"]
+
+[transvoxel-org]
+title = "The Transvoxel Algorithm for Voxel Terrain"
+url   = "http://transvoxel.org/"
+tags  = ["meshing","rendering","transvoxel","voxels","render","voxel"]
+
+[thorvg-org-]
+title = "ThorVG | Thor Vector Graphics"
+url   = "https://www.thorvg.org/"
+tags  = ["graphics","rendering"]
+
+[renderdoc-org]
+title = "RenderDoc"
+url   = "https://renderdoc.org/"
+tags  = ["rendering","render", "debugging", "debug", "tool"]
+
+[pbr-book-org-]
+title = "Physically Based Rendering: From Theory to Implementation"
+url   = "https://pbr-book.org/"
+type  = "tutorial"
+tags  = ["book","graphics","pbr","rendering","shaders","shading","tutorial","render"]
+
+[pbr-book-org-3ed-2018-contents]
+title = "Physically Based Rendering: From Theory to Implementation"
+url   = "https://pbr-book.org/3ed-2018/contents"
+tags  = ["rendering","render"]
+
+[pbr-book-org-3ed-2018-contents-html]
+title = "Physically Based Rendering: From Theory to Implementation"
+url   = "http://www.pbr-book.org/3ed-2018/contents.html"
+tags  = ["rendering","render"]
+
+[pbr-book-org-4ed-contents]
+title = "Physically Based Rendering: From Theory to Implementation"
+url   = "https://pbr-book.org/4ed/contents"
+tags  = ["rendering","render"]
+
+[pbr-book-org-4ed-monte-carlo-integration-sampling-using-the-inversion-method]
+title = "Sampling Using the Inversion Method - pbr-book.org/"
+url   = "https://pbr-book.org/4ed/Monte_Carlo_Integration/Sampling_Using_the_Inversion_Method"
+tags  = ["sampling","rendering"]
+
+[niessnerlab-org-papers-2013-4hashing-niessner2013hashing-pdf]
+title = "Real-time 3D Reconstruction at Scale using Voxel Hashing - niessner2013hashing.pdf"
+url   = "https://niessnerlab.org/papers/2013/4hashing/niessner2013hashing.pdf"
+type  = "paper"
+tags  = ["voxel"]
+
+[plenodb-jpeg-org-pc-8ilabs]
+title = "JPEG Pleno Database: 8i Voxelized Full Bodies (8iVFB v2) - A Dynamic Voxelized Point Cloud Dataset - plenodb.jpeg.org/"
+url   = "https://plenodb.jpeg.org/pc/8ilabs"
+tags  = ["voxel"]
+
+[jcgt-0006-02-02]
+title = "GPU-Centered Font Rendering Directly from Glyph Outlines (JCGT) - jcgt.org/"
+url   = "https://jcgt.org/published/0006/02/02/"
+tags  = ["rendering","gpu","render","opengl"]
+
+[jcgt-0015-01-02]
+title = "Optimizing spatiotemporal variance-guided filtering for modern GPU architectures (JCGT) - jcgt.org/"
+url   = "https://jcgt.org/published/0015/01/02/"
+tags  = ["gpu","sampling","rendering"]
+
+[diglib-eg-org-items-7b8d7c38-ee96-4415-acdd-3dd164fa8fad]
+title = "Importance Resampling for Global Illumination - diglib.eg.org/"
+url   = "https://diglib.eg.org/items/7b8d7c38-ee96-4415-acdd-3dd164fa8fad"
+tags  = ["sampling","rendering","opengl"]
+
+[fulcrum-demo-org-wp-content-uploads-2012-04-cone-marching-mandelbox-by-seven-fulcrum-longversion-pdf]
+title = "Rendering Mandelbox fractals faster with Cone Marching - Cone_Marching_Mandelbox_by_Seven_Fulcrum_LongVersion.pdf"
+url   = "https://www.fulcrum-demo.org/wp-content/uploads/2012/04/Cone_Marching_Mandelbox_by_Seven_Fulcrum_LongVersion.pdf"
+type  = "paper"
+tags  = ["rendering","render"]
+
+[arxiv-2512-08309]
+title = "[2512.08309] Terrain Diffusion: A Diffusion-Based Successor to Perlin Noise in Infinite, Real-Time Terrain Generation - arxiv.org/"
+url   = "https://arxiv.org/abs/2512.08309"
+tags  = ["noise","procgen"]
+
+[arxiv-2506-05268]
+title = "Uniform Sampling of Surfaces by Casting Rays - 2506.05268v2.pdf"
+url   = "https://arxiv.org/pdf/2506.05268"
+tags  = ["sampling","rendering"]
+
+[publications-graphics-tudelft-nl-papers-13]
+title = "Computer Graphics and Visualization • Publications - publications.graphics.tudelft.nl/"
+url   = "https://publications.graphics.tudelft.nl/papers/13"
+tags  = ["graphics","rendering"]
+
+[acm-doi-epdf-10-1145-3728301]
+title = "Transform-Aware Sparse Voxel Directed Acyclic Graphs - dl.acm.org/"
+url   = "https://dl.acm.org/doi/epdf/10.1145/3728301"
+type  = "paper"
+tags  = ["sparsity","voxel"]
+
+[stefanpijnacker-nl-article-directx12-resources-key-concepts]
+title = "DirectX 12 Resources - Key Concepts - Stefan Pijnacker"
+url   = "https://www.stefanpijnacker.nl/article/directx12-resources-key-concepts/"
+tags  = ["directx","rendering","windows"]
+
+[graphicsprogrammingconference-nl-]
+title = "Graphics Programming Conference"
+url   = "https://www.graphicsprogrammingconference.nl/"
+tags  = ["graphics","rendering"]
+
+[graphicsprogrammingconference-com-]
+title = "Graphics Programming Conference - graphicsprogrammingconference.com/"
+url   = "https://graphicsprogrammingconference.com/"
+tags  = ["graphics","rendering"]
+
+[graphicsprogrammingconference-com-archive-2025]
+title = "Graphics Programming Conference - 2025 archive - graphicsprogrammingconference.com/"
+url   = "https://graphicsprogrammingconference.com/archive/2025/"
+tags  = ["graphics","rendering"]
+
+[wickedengine-net-2017-08-voxel-based-global-illumination]
+title = "Voxel-based Global Illumination – Wicked Engine - wickedengine.net/"
+url   = "https://wickedengine.net/2017/08/voxel-based-global-illumination/"
+tags  = ["voxel","opengl"]
+
+[tom94-net-data-publications-majercik21dynamic-majercik21dynamic-pdf]
+title = "Dynamic Diffuse Global Illumination Resampling - majercik21dynamic.pdf"
+url   = "https://tom94.net/data/publications/majercik21dynamic/majercik21dynamic.pdf"
+type  = "paper"
+tags  = ["sampling","rendering","opengl"]
+
+[antongerdelan-net-opengl]
+title = "Antons OpenGL 4 Tutorials - antongerdelan.net/"
+url   = "https://antongerdelan.net/opengl/"
+type  = "tutorial"
+tags  = ["opengl","rendering"]
+
+[gpfault-net-posts-sph-html]
+title = "Introduction to Spherical Harmonics for Graphics Programmers - gpfault.net/"
+url   = "https://gpfault.net/posts/sph.html"
+tags  = ["graphics","rendering"]
+
+[blog-danielschroeder-me-blog-voxel-displacement-modernizing-retro-3d]
+title = "Voxel Displacement Renderer — Modernizing the Retro 3D Aesthetic - Daniel has a blog now - blog.danielschroeder.me/"
+url   = "https://blog.danielschroeder.me/blog/voxel-displacement-modernizing-retro-3d/"
+tags  = ["rendering","render","voxel"]
+
+[blog-danielschroeder-me-blog-voxel-displacement-where-this-goes]
+title = "Voxel Displacement Renderer — Where This Goes From Here - Daniel has a blog now - blog.danielschroeder.me/"
+url   = "https://blog.danielschroeder.me/blog/voxel-displacement-where-this-goes/"
+tags  = ["rendering","render","voxel"]
+
+[blog-frost-kiwi-glsl-noise-and-radial-gradient]
+title = "How to (and how not to) fix color banding - blog.frost.kiwi/"
+url   = "https://blog.frost.kiwi/GLSL-noise-and-radial-gradient/"
+tags  = ["gradient","rendering","colors","colortheory","noise","procgen","opengl"]
+
+[psychopath-io-post-2022-07-24-owen-scrambling-based-dithered-blue-noise-sampling]
+title = "Psychopath Renderer | Owen Scrambling Based Blue-Noise Dithered Sampling - psychopath.io/"
+url   = "https://psychopath.io/post/2022_07_24_owen_scrambling_based_dithered_blue_noise_sampling"
+tags  = ["rendering","render","sampling","noise","procgen"]
+
+[psychopath-io-post-2022-08-14-a-fast-hash-for-base-4-owen-scrambling]
+title = "Psychopath Renderer | A Fast Hash For Base-4 Owen Scrambling - psychopath.io/"
+url   = "https://psychopath.io/post/2022_08_14_a_fast_hash_for_base_4_owen_scrambling"
+tags  = ["rendering","render"]
+
+[xanderbert-2025-04-13-vulkanmemorybarriers-html]
+title = "Vulkan Memory Barriers · Xanders Notebook - xanderbert.github.io/"
+url   = "https://xanderbert.github.io/2025/04/13/VulkanMemoryBarriers.html"
+tags  = ["vulkan","rendering"]
+
+[therealmjp-posts-bindless-texturing-for-deferred-rendering-and-decals]
+title = "Bindless Texturing for Deferred Rendering and Decals - therealmjp.github.io/"
+url   = "https://therealmjp.github.io/posts/bindless-texturing-for-deferred-rendering-and-decals/"
+tags  = ["rendering","render"]
+
+[tomclabault-blog-2025-regir]
+title = "ReGIR - An advanced implementation for many-lights offline rendering | Tom Clabault - tomclabault.github.io/"
+url   = "https://tomclabault.github.io/blog/2025/regir/"
+tags  = ["rendering","render"]
+
+[krupitskas-posts-modern-culling-techniques]
+title = "Modern rendering culling techniques | krupitskas 🌦️ - krupitskas.github.io/"
+url   = "https://krupitskas.github.io/posts/modern_culling_techniques/"
+tags  = ["rendering","render","culling"]
+
+[johannesugb-gpu-programming-setting-up-a-proper-vulkan-projection-matrix]
+title = "Setting Up a Proper Projection Matrix for Vulkan - Johannes Unterguggenberger - johannesugb.github.io/"
+url   = "https://johannesugb.github.io/gpu-programming/setting-up-a-proper-vulkan-projection-matrix/"
+tags  = ["gpu","vulkan","rendering"]
+
+[johannesugb-gpu-programming-why-do-opengl-proj-matrices-fail-in-vulkan]
+title = "Why projection matrices typically used with OpenGL fail with Vulkan - Johannes Unterguggenberger - johannesugb.github.io/"
+url   = "https://johannesugb.github.io/gpu-programming/why-do-opengl-proj-matrices-fail-in-vulkan/"
+tags  = ["gpu","opengl","rendering","vulkan"]
+
+[jedjoud10-blog-depth-reproj]
+title = "Ray-Marching and Temporal Depth Reprojection - jedjoud10.github.io/"
+url   = "https://jedjoud10.github.io/blog/depth-reproj/"
+tags  = ["sampling","rendering"]
+
+[iribis-publication-2025-stratified-histogram-resampling]
+title = "Histogram Stratification for Spatio-Temporal Reservoir Sampling - Corentin Salaün - iribis.github.io/"
+url   = "https://iribis.github.io/publication/2025_Stratified_Histogram_Resampling"
+tags  = ["sampling","rendering"]
+
+[ijdykeman-graphics-simple-fog-shader]
+title = "A Simple Shader for Point Lights in Fog - ijdykeman.github.io/"
+url   = "https://ijdykeman.github.io/graphics/simple_fog_shader"
+tags  = ["graphics","rendering"]
+
+[dy-wavefont]
+title = "wavefont | Typeface for rendering waveform/data - dy.github.io/"
+url   = "https://dy.github.io/wavefont/"
+tags  = ["rendering","render"]
+
+[alelievr-modern-rendering-introduction-meshshaders]
+title = "Mesh Shaders · Introduction To Modern Rendering - alelievr.github.io/"
+url   = "https://alelievr.github.io/Modern-Rendering-Introduction/MeshShaders/"
+tags  = ["rendering","render"]
+
+[asawicki-info-news-1740-vulkan-memory-types-on-pc-and-how-to-use-them]
+title = "Vulkan Memory Types on PC and How to Use Them - asawicki.info/"
+url   = "https://asawicki.info/news_1740_vulkan_memory_types_on_pc_and_how_to_use_them"
+tags  = ["vulkan","rendering"]
+
+[open-gl]
+title = "OpenGL - Introduction"
+url   = "https://open.gl/"
+tags  = ["opengl","rendering"]
+
+[docs-gl]
+title = "docs.gl"
+url   = "http://docs.gl/"
+tags  = ["api","functions","glsl","graphics","listing","opengl","rendering","render"]
+
+[home-ttic-edu-cotter-projects-voxel-doxygen-mrf-html]
+title = "Voxel: Surface normals - home.ttic.edu/"
+url   = "https://home.ttic.edu/~cotter/projects/voxel/doxygen/mrf.html"
+tags  = ["voxel"]
+
+[softwareok-eu-page-windows-tip-opengl-3]
+title = "Spherical projection, with OpenGL and calculations! - www.softwareok.eu/"
+url   = "https://www.softwareok.eu/?page=Windows/Tip/OpenGL/3"
+tags  = ["opengl","rendering"]
+
+[h3-gd-a-deferred-material-rendering-system]
+title = "A deferred material rendering system - h3.gd/"
+url   = "https://h3.gd/a-deferred-material-rendering-system/"
+tags  = ["rendering","render"]
+
+[shlom-dev-articles-how-virtual-textures-really-work]
+title = "How Virtual Textures Really Work · shlom.dev - www.shlom.dev/"
+url   = "https://www.shlom.dev/articles/how-virtual-textures-really-work/"
+tags  = ["texture","rendering"]
+
+[henriquegois-dev-posts-bindless-resources-in-vulkan]
+title = "How to use bindless resources in Vulkan | Henrique Gois - henriquegois.dev/"
+url   = "https://henriquegois.dev/posts/bindless-resources-in-vulkan/"
+tags  = ["vulkan","rendering"]
+
+[shader-tutorial-dev-advanced-color-banding-dithering]
+title = "Shader Advanced - Color Banding and Dithering | GPU Shader Tutorial - shader-tutorial.dev/"
+url   = "https://shader-tutorial.dev/advanced/color-banding-dithering/"
+type  = "tutorial"
+tags  = ["gpu","colors","colortheory"]
+
+[momentsingraphics-de-pg2025-html]
+title = "Iterative Lightmap Updates for Scene Editing - momentsingraphics.de/"
+url   = "https://momentsingraphics.de/PG2025.html"
+tags  = ["graphics","rendering"]
+
+[momentsingraphics-de-radiometry2photometry-html]
+title = "Radiometry, part 2: Spectra and photometry - momentsingraphics.de/"
+url   = "https://momentsingraphics.de/Radiometry2Photometry.html"
+tags  = ["graphics","rendering"]
+
+[saschawillems-de-blog-2019-03-29-flipping-the-vulkan-viewport]
+title = "Flipping the Vulkan viewport - - www.saschawillems.de/"
+url   = "https://www.saschawillems.de/blog/2019/03/29/flipping-the-vulkan-viewport/"
+tags  = ["vulkan","rendering"]
+
+[haskellexists-blogspot-de-2016-06-sparse-voxel-octree-meshing-html]
+title = "Haskell Exists: Sparse voxel octree meshing"
+url   = "http://haskellexists.blogspot.de/2016/06/sparse-voxel-octree-meshing.html"
+tags  = ["sparsity","octree","voxel"]
+
+[wordpress-blackflux-2014-03-01-meshing-in-voxel-engines-part-2]
+title = "Meshing in Voxel Engines – Part 2 | Blackflux.com - blackflux.wordpress.com/"
+url   = "https://blackflux.wordpress.com/2014/03/01/meshing-in-voxel-engines-part-2/"
+tags  = ["voxel"]
+
+[wordpress-blackflux-2014-03-02-meshing-in-voxel-engines-part-3]
+title = "Meshing in Voxel Engines – Part 3 | Blackflux.com - blackflux.wordpress.com/"
+url   = "https://blackflux.wordpress.com/2014/03/02/meshing-in-voxel-engines-part-3/"
+tags  = ["voxel"]
+
+[wordpress-fgiesen-2013-02-08-triangle-rasterization-in-practice]
+title = "Triangle rasterization in practice | The ryg blog - fgiesen.wordpress.com/"
+url   = "https://fgiesen.wordpress.com/2013/02/08/triangle-rasterization-in-practice/"
+tags  = ["rasterization","rendering"]
+
+[wordpress-johanmedestrom-2016-03-30-tiled-deferred-shading-in-opengl-using-compute-shaders]
+title = "Tiled Deferred Shading in OpenGL using Compute Shaders – Make Games, Not War - johanmedestrom.wordpress.com/"
+url   = "https://johanmedestrom.wordpress.com/2016/03/30/tiled-deferred-shading-in-opengl-using-compute-shaders/"
+tags  = ["opengl","rendering"]
+
+[onlinelibrary-wiley-com-doi-full-10-1111-cgf-70413]
+title = "NAADF: Globally Illuminated Voxel Worlds Accelerated with Nested Axis‐Aligned Distance Fields - Ulschmid - Computer Graphics Forum - Wiley Online Library - onlinelibrary.wiley.com/"
+url   = "https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.70413"
+tags  = ["graphics","rendering","voxel","opengl"]
+
+[vercidium-com-blog-p-57114490-f6b8-4d8e-beec-7999398ef3b8]
+title = "Voxel World Optimisations"
+url   = "https://vercidium.com/blog/p/57114490-f6b8-4d8e-beec-7999398ef3b8/"
+tags  = ["voxel"]
+
+[forums-unrealengine-com-t-ue5-foliage-and-octahedral-imposters-247858-6]
+title = "UE5, Foliage, and Octahedral Imposters - Development / Rendering - Epic Developer Community Forums"
+url   = "https://forums.unrealengine.com/t/ue5-foliage-and-octahedral-imposters/247858/6"
+tags  = ["rendering","render"]
+
+[media-steampowered-com-apps-steamdevdays-slides-movingtoopengl-pdf]
+title = "OpenGL - movingtoopengl.pdf"
+url   = "http://media.steampowered.com/apps/steamdevdays/slides/movingtoopengl.pdf"
+type  = "paper"
+tags  = ["opengl","rendering"]
+
+[scratchapixel-index-php]
+title = "Scratchapixel"
+url   = "https://www.scratchapixel.com/index.php"
+tags  = ["compute","gpu","meshing","rendering","shader","render"]
+
+[sctheblog-com-blog-vulkan-synchronization]
+title = "Vulkan synchronization - Scthes blog - www.sctheblog.com/"
+url   = "https://www.sctheblog.com/blog/vulkan-synchronization/"
+tags  = ["vulkan","rendering"]
+
+[reedbeta-blog-conformal-texture-mapping]
+title = "Conformal Texture Mapping – Nathan Reed’s coding blog - www.reedbeta.com/"
+url   = "https://www.reedbeta.com/blog/conformal-texture-mapping/"
+tags  = ["texture","rendering"]
+
+[realtimerendering-s2021-jpatry-advances2021-index-html]
+title = "Real-Time Samurai Cinema - advances.realtimerendering.com/"
+url   = "https://advances.realtimerendering.com/s2021/jpatry_advances2021/index.html"
+tags  = ["rendering","render"]
+
+[pointersgonewild-com-2026-03-06-a-recursive-algorithm-to-render-signed-distance-fields]
+title = "A Recursive Algorithm to Render Signed Distance Fields - pointersgonewild.com/"
+url   = "https://pointersgonewild.com/2026-03-06-a-recursive-algorithm-to-render-signed-distance-fields/"
+tags  = ["rendering","render"]
+
+[pcpartsgeek-com-graphics-card-market-share-statistics]
+title = "Graphics Card Market Share Statistics (2026) - PCPartsGeek - pcpartsgeek.com/"
+url   = "https://pcpartsgeek.com/graphics-card-market-share-statistics/"
+tags  = ["graphics","rendering"]
+
+[graphics-pixar-com-library-productionvolumerendering-paper-pdf]
+title = "Production Volume Rendering - paper.pdf"
+url   = "https://graphics.pixar.com/library/ProductionVolumeRendering/paper.pdf"
+type  = "paper"
+tags  = ["rendering","render"]
+
+[paletton-com]
+title = "Paletton - The Color Scheme Designer"
+url   = "http://paletton.com/"
+tags  = ["color","colortheory","design","generator","palette","colors"]
+
+[lch-oklch-com]
+title = "LCH Color Picker & Converter"
+url   = "https://lch.oklch.com/"
+tags  = ["colors","colortheory"]
+
+[leduyquang753-com-blog-2026-4-4-rendering-arbitrary-scale-emojis-using-the-slug-algorithm]
+title = "Rendering arbitrary-scale emojis using the Slug algorithm | Lê Duy Quangs blog - leduyquang753.com/"
+url   = "https://leduyquang753.com/blog/2026/4/4/rendering-arbitrary-scale-emojis-using-the-slug-algorithm"
+tags  = ["rendering","render"]
+
+[onedrive-live-com-view-aspx-resid-ebe7deda70d06da0-115-app-powerpoint-authkey-ap-pdh4imuug6vs]
+title = "A deferred material rendering system.pptx - Microsoft PowerPoint Online"
+url   = "https://onedrive.live.com/view.aspx?resid=EBE7DEDA70D06DA0!115&app=PowerPoint&authkey=!AP-pDh4IMUug6vs"
+tags  = ["rendering","render"]
+
+[blog-maximeheckel-com-posts-on-rendering-the-sky-sunsets-and-planets]
+title = "On Rendering the Sky, Sunsets, and Planets - The Blog of Maxime Heckel - blog.maximeheckel.com/"
+url   = "https://blog.maximeheckel.com/posts/on-rendering-the-sky-sunsets-and-planets/"
+tags  = ["atmosphere","graphics","planet","rendering","shaders","sky","space","sun","render"]
+
+[mccloskeybr-com-articles-font-rendering-html]
+title = "Font Rendering from First Principles - mccloskeybr.com/"
+url   = "https://mccloskeybr.com/articles/font_rendering.html"
+tags  = ["rendering","render"]
+
+[kerbalspaceprogram-com-dev-diaries-6509]
+title = "Developer Insights #9 – Orbit Tessellation – Kerbal Space Program"
+url   = "https://www.kerbalspaceprogram.com/dev-diaries/6509/"
+tags  = ["curvatures","curves","drawing","line","meshing","orbit","rendering","screenspace","splines","tessellation","trajectories","render"]
+
+[kdab-com-projection-matrices-with-vulkan-part-1]
+title = "How transformations differ from OpenGL to Vulkan | KDAB - www.kdab.com/"
+url   = "https://www.kdab.com/projection-matrices-with-vulkan-part-1/"
+tags  = ["opengl","rendering","vulkan"]
+
+[kdab-com-projection-matrices-with-vulkan-part-2]
+title = "Projection Matrices with Vulkan - Part 2 | KDAB - www.kdab.com/"
+url   = "https://www.kdab.com/projection-matrices-with-vulkan-part-2/"
+tags  = ["vulkan","rendering"]
+
+[jeremyong-com-vulkan-graphics-rendering-2018-11-23-vulkan-synchonization-primer-part-ii]
+title = "Vulkan Synchronization Primer - Part II – Jeremys Blog - www.jeremyong.com/"
+url   = "https://www.jeremyong.com/vulkan/graphics/rendering/2018/11/23/vulkan-synchonization-primer-part-ii/"
+tags  = ["rendering","vulkan","render","graphics"]
+
+[intel-com-content-www-us-en-developer-articles-guide-real-time-ray-tracing-in-games-html-1]
+title = "Intel® Arc™ Graphics Developer Guide for Real-Time Ray Tracing in... - www.intel.com/"
+url   = "https://www.intel.com/content/www/us/en/developer/articles/guide/real-time-ray-tracing-in-games.html?1"
+type  = "tutorial"
+tags  = ["graphics","rendering"]
+
+[intel-com-content-www-us-en-developer-articles-training-api-without-secrets-introduction-to-vulkan-part-1-html]
+title = "API without Secrets: Introduction to Vulkan* Part 1: The Beginning"
+url   = "https://www.intel.com/content/www/us/en/developer/articles/training/api-without-secrets-introduction-to-vulkan-part-1.html"
+tags  = ["vulkan","rendering"]
+
+[intel-com-content-dam-develop-external-us-en-documents-merging-masked-occlusion-culling-hierarchical-buffers-faster-rendering-pdf]
+title = "Microsoft Word - MergingMaskedOcclusionCullingHierarchicalBuffersFasterRendering.docx - merging-masked-occlusion-culling-hierarchical-buffers-faster-rendering.pdf"
+url   = "https://www.intel.com/content/dam/develop/external/us/en/documents/merging-masked-occlusion-culling-hierarchical-buffers-faster-rendering.pdf"
+type  = "paper"
+tags  = ["rendering","render","culling","occlusion"]
+
+[hytale-com-news-2025-12-an-introduction-to-making-models-for-hytale]
+title = "An Introduction to Making Models for Hytale – Hytale - hytale.com/"
+url   = "https://hytale.com/news/2025/12/an-introduction-to-making-models-for-hytale"
+type  = "tutorial"
+tags  = ["blockbench","color","design","guide","guidelines","hytale","intro","model","modeling","models","shading","style","colors","colortheory"]
+
+[gpuopen-com-learn-vulkan-barriers-explained]
+title = "Vulkan® Barriers Explained - AMD GPUOpen - gpuopen.com/"
+url   = "https://gpuopen.com/learn/vulkan-barriers-explained/"
+tags  = ["gpu","vulkan","rendering"]
+
+[ea-com-technology-news-gibs-lighting-ea-sports-college-football-25-text-the-20result-20is-20a-20rendered-and-20time-consuming-20light-20baking]
+title = "GIBS Lighting Technology in EA SPORTS™ College Football 25 - www.ea.com/"
+url   = "https://www.ea.com/technology/news/gibs-lighting-ea-sports-college-football-25#:~:text=The%20result%20is%20a%20rendered,and%20time-consuming%20light%20baking"
+tags  = ["rendering","render"]
+
+[cybereality-com-screen-space-indirect-lighting-with-visibility-bitmask-improvement-to-gtao-ssao-real-time-ambient-occlusion-algorithm-glsl-shader-implementation]
+title = "Screen Space Indirect Lighting with Visibility Bitmask: Improvement to GTAO/SSAO Real-Time Ambient Occlusion Algorithm (GLSL Shader Implementation) » cybereality - cybereality.com/"
+url   = "https://cybereality.com/screen-space-indirect-lighting-with-visibility-bitmask-improvement-to-gtao-ssao-real-time-ambient-occlusion-algorithm-glsl-shader-implementation/"
+tags  = ["occlusion","rendering","opengl"]
+
+[c0de517e-com-028-dlss5-htm]
+title = "Nvidia, DLSS5 and breaking rendering. - c0de517e.com/"
+url   = "https://c0de517e.com/028_dlss5.htm"
+tags  = ["rendering","render"]
+
+[blackpawn-com-texts-splines]
+title = "Common Spline Equations for Graphics - blackpawn.com/"
+url   = "https://blackpawn.com/texts/splines/"
+tags  = ["graphics","rendering"]
+
+[blackpawn-com-texts-cellular-default-html]
+title = "Making Cellular Textures - blackpawn.com/"
+url   = "https://blackpawn.com/texts/cellular/default.html"
+tags  = ["texture","rendering"]
+
+[blackpawn-com-texts-lensflare-default-html]
+title = "Making Lens Flare Textures - blackpawn.com/"
+url   = "https://blackpawn.com/texts/lensflare/default.html"
+tags  = ["texture","rendering"]
+
+[bartwronski-com-2020-04-14-bilinear-texture-filtering-artifacts-alternatives-and-frequency-domain-analysis]
+title = "Bilinear texture filtering – artifacts, alternatives, and frequency domain analysis | Bart Wronski - bartwronski.com/"
+url   = "https://bartwronski.com/2020/04/14/bilinear-texture-filtering-artifacts-alternatives-and-frequency-domain-analysis/"
+tags  = ["texture","rendering"]
+
+[bartwronski-com-2021-02-15-bilinear-down-upsampling-pixel-grids-and-that-half-pixel-offset]
+title = "Bilinear down/upsampling, aligning pixel grids, and that infamous GPU half pixel offset | Bart Wronski - bartwronski.com/"
+url   = "https://bartwronski.com/2021/02/15/bilinear-down-upsampling-pixel-grids-and-that-half-pixel-offset/"
+tags  = ["gpu","sampling","rendering"]
+
+[bartwronski-com-2021-07-20-processing-aware-image-filtering-compensating-for-the-upsampling]
+title = "Processing aware image filtering: compensating for the upsampling | Bart Wronski - bartwronski.com/"
+url   = "https://bartwronski.com/2021/07/20/processing-aware-image-filtering-compensating-for-the-upsampling/"
+tags  = ["sampling","rendering"]
+
+[anishvabardhan-com-meshletrenderingd3d12meshshaders]
+title = "Meshlet Rendering - Anishva Bardhan - www.anishvabardhan.com/"
+url   = "https://www.anishvabardhan.com/meshletrenderingd3d12meshshaders"
+tags  = ["rendering","render"]
+
+[alexharri-com-blog-ascii-rendering]
+title = "ASCII characters are not pixels: a deep dive into ASCII rendering - alexharri.com/"
+url   = "https://alexharri.com/blog/ascii-rendering"
+tags  = ["rendering","render"]
+
+[alextardif-com-bindless-html]
+title = "Binding Bindlessly - alextardif.com/"
+url   = "https://alextardif.com/Bindless.html"
+tags  = ["graphics","rendering"]
+
+[alextardif-com-bindlessprogramming-html]
+title = "Bindless Oriented Graphics Programming - alextardif.com/"
+url   = "https://alextardif.com/BindlessProgramming.html"
+tags  = ["graphics","rendering"]
+
+[alextardif-com-dx12tutorial-html]
+title = "Using D3D12 in 2022 - alextardif.com/"
+url   = "https://alextardif.com/DX12Tutorial.html"
+type  = "tutorial"
+tags  = ["graphics","rendering"]
+
+[agraphicsguynotes-com-posts-understanding-the-math-behind-restir-di]
+title = "Understanding The Math Behind ReSTIR DI · A Graphics Guys Note - agraphicsguynotes.com/"
+url   = "https://agraphicsguynotes.com/posts/understanding_the_math_behind_restir_di/"
+tags  = ["graphics","rendering"]
+
+[3dgep-com-forward-plus-forward]
+title = "Forward vs Deferred vs Forward+ Rendering with DirectX 11 | 3D Game Engine Programming"
+url   = "https://www.3dgep.com/forward-plus/#Forward"
+tags  = ["rendering","directx","windows","render"]
+
+[abdallagafar-com-publications-zsampler]
+title = "Screen-Space Blue-Noise Diffusion of Monte Carlo Sampling Error via Hierarchical Ordering of Pixels - abdallagafar.com/"
+url   = "https://abdallagafar.com/publications/zsampler/"
+tags  = ["sampling","rendering","noise","procgen"]
+
+[matejlou-blog-2025-02-11-analytic-fog-rendering-with-volumetric-primitives]
+title = "Analytic Fog Rendering With Volumetric Primitives – matejlous blog - matejlou.blog/"
+url   = "https://matejlou.blog/2025/02/11/analytic-fog-rendering-with-volumetric-primitives/"
+tags  = ["rendering","render"]
+
+[weigert-vsos-ethz-ch-2021-04-04-high-performance-voxel-engine]
+title = "High Performance Voxel Engine: Vertex Pooling – Nick's Blog"
+url   = "https://weigert.vsos.ethz.ch/2021/04/04/high-performance-voxel-engine/"
+tags  = ["gpu","memory","meshing","opengl","rendering","verts","voxels","render","voxel"]
+
 
 
 
@@ -8244,6 +9406,11 @@ url   = "https://www.youtube.com/watch?v=ZOHNRlrd1Ak"
 type  = "video"
 tags  = ["texture","rendering"]
 
+[youtube-IM1Dr98f3xU]
+title = "Raytracing Voxels in Teardown and Beyond - Graphics Programming Conference"
+url = "https://www.youtube.com/watch?v=IM1Dr98f3xU"
+type  = "video"
+tags  = ["rendering", "render","voxel","voxels","raytracing","raytrace","tracing","game","graphics"]
 
 
 ### DEAD LINKS ###
