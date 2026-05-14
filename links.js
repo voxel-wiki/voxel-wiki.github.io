@@ -1,4 +1,5 @@
 import {URL} from 'node:url';
+import net from 'node:net';
 import fs from 'node:fs';
 import TOML from './j-toml.mjs';
 
@@ -15,10 +16,12 @@ for (const ref in references) {
 	seen_slug.add(ref);
 }
 
-let seen_size = seen_uris.size;
+let seen_uris_old = new Set(seen_uris);
+let seen_size = seen_uris_old.size;
 console.log("Currently ", seen_size, " refs.");
+if(args.length < 3) {process.exit();}
 
-let bookmarks = JSON.parse(fs.readFileSync(args[2], 'utf8'));
+let bookmarks = JSON.parse(fs.readFileSync(args[2].replace(/\\/g, '/'), 'utf8'));
 
 let results = [];
 
@@ -50,21 +53,28 @@ function slugify(input) {
 const blocklist = [
 ];
 
+let entry_count = 0;
 function visit_entry(entry_) {
 	let {children, ...entry} = entry_;
+	entry_count++;
 	
+	let cause = null;
 	check: if(entry.uri && entry.type == "text/x-moz-place") {
-		if(entry.uri.startsWith('javascript:')) {break check;}
-		if(entry.uri.startsWith('about:')) {break check;}
-		if(entry.uri.startsWith('data:')) {break check;}
-		if(entry.uri.startsWith('file:')) {break check;}
-		if(entry.uri.includes(':8080/')) {break check;}
-		if(seen_uris.has(entry.uri)) {break check;}
+		if(entry.uri.startsWith('javascript:')) {cause = 'URL_SCHEMA_JS'; break check;}
+		if(entry.uri.startsWith('about:')) {cause = 'URL_SCHEMA_ABOUT'; break check;}
+		if(entry.uri.startsWith('data:')) {cause = 'URL_SCHEMA_DATA'; break check;}
+		if(entry.uri.startsWith('file:')) {cause = 'URL_SCHEMA_FILE'; break check;}
+		if(entry.uri.includes(':8080/')) {cause = 'URL_HAS_PORT'; break check;}
+		if(entry.uri.includes(':80/')) {cause = 'URL_HAS_PORT'; break check;}
+		if(seen_uris.has(entry.uri)) {cause = 'URL_SEEN'; break check;}
 		let url = URL.parse(entry.uri);
 		
 		let HOST = url.host.toLowerCase().trimPrefix('www.').trimPrefix('en.');
 		let FQDN = HOST.toLowerCase().split('.').reverse().join('.');
 		let PATH = url.pathname + url.search + url.hash;
+		
+		if(HOST.includes(':')) {cause = 'URL_HOST_IPPORT'; break check;}
+		if(net.isIP(HOST)) {cause = 'URL_HOST_IPADDR'; break check;}
 		
 		let TITLE = entry.title.replaceAll('"',"'").replace(/[\u0000-\u001F\u007F-\u009F]/g, "");
 		let SLUG = slugify(PATH);
@@ -74,9 +84,14 @@ function visit_entry(entry_) {
 		let TYPE = "";
 		
 		for (const block of blocklist) {
-			if(HOST.includes(block)) break check;
-			if(PATH.includes(block)) break check;
-			if(INDX.includes(block)) break check;
+			if(HOST.includes(block)) {cause = `BLOCKED_HOST[${block}]`; break check;}
+			if(PATH.includes(block)) {cause = `BLOCKED_PATH[${block}]`; break check;}
+			if(INDX.includes(block)) {cause = `BLOCKED_INDX[${block}]`; break check;}
+		}
+		
+		if(HOST == 'voxel.wiki') {
+			cause = "WIKI_HOSTED";
+			break check;
 		}
 		
 		if(HOST == 'reddit.com') {
@@ -229,6 +244,7 @@ function visit_entry(entry_) {
 		}
 		
 		if(seen_slug.has(SLUG)) {
+			cause = "SLUG_SEEN";
 			break check;
 		}
 		seen_slug.add(SLUG);
@@ -308,6 +324,12 @@ function visit_entry(entry_) {
 		});
 	}
 	
+	if(cause && !cause.startsWith('BLOCKED_')) {
+		console.warn(`Skipd URI "${entry.uri}": ${cause}`);
+	} else if(entry.uri) {
+		console.info(`Found URI "${entry.uri}"`);
+	}
+	
 	if(children) {
 		for (const child of children) {
 			visit_entry(child);
@@ -332,6 +354,12 @@ results = results.sort((a, b) => {
 let out = fs.openSync('links.toml', 'w');
 let jsonl = "";
 
+fs.writeSync(out, `# Seen/known URIs:\n`);
+for (const element of seen_uris_old) {
+	fs.writeSync(out, `# url = "${element}"\n`);
+}
+fs.writeSync(out, `\n\n\n`);
+
 for (const entry of results) {
 	if(entry.tags.length > 0 || entry.type) {
 		fs.writeSync(out, `[${entry.slug}]\n`);
@@ -344,6 +372,8 @@ for (const entry of results) {
 	jsonl += JSON.stringify(entry) + '\n';
 }
 fs.writeSync(out, `\n`);
+fs.writeSync(out, `# Fetched ${seen_uris_old.size} existing URIs.\n`);
+fs.writeSync(out, `# Iterated over ${entry_count} entries.\n`);
 fs.writeSync(out, `# Found ${seen_uris.size - seen_size} new URIs.\n`);
 fs.writeSync(out, `# Found ${seen_host.size} Hosts: ${JSON.stringify([...seen_host].sort())}.\n`);
 fs.closeSync(out);
