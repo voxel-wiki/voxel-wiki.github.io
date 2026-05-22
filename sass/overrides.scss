@@ -344,8 +344,7 @@ figure {
 	margin: 0 0;
 	overflow: hidden;
 	border-radius: 3px;
-	border: 1px solid rgb(200, 204, 209);
-	background: rgb(248, 249, 250);
+	border: 1px solid #e9ecef;
 	padding: 3px;
 	
 	display: flex;
@@ -395,12 +394,11 @@ figure {
 	&.bg-chkr {background: url("data:image/gif;base64,R0lGODlhEAAQAHAAACwAAAAAEAAQAIG/v7////8AAAAAAAACH4RvoauIzNyBSyYaLMDZcv15HAaSIlWiJ5Sya/RWVgEAOw==");}
 	
 	&>:not(figcaption) {
-		border: 1px solid rgb(200, 204, 209);
+		border: 1px solid #e9ecef;
 		border-radius: 3px;
 	}
 	
 	figcaption {
-		color: black;
 		font-size: 0.75rem;
 		white-space: pre-line;
 		padding: 0.125rem;
@@ -411,6 +409,13 @@ figure {
 	&.clear-header + h2,
 	&.clear-header + h3 {
 		clear: both;
+	}
+}
+
+body.dark {
+	& figure {
+		border: 1px solid rgb(44, 46, 48);
+		&>:not(figcaption) {border: 1px solid rgb(50, 54, 56);}
 	}
 }
 

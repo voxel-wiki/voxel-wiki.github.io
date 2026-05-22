@@ -1,6 +1,6 @@
 {% set class = class | default(value='') %}
 {% if float %}{% set class = class ~ "float " %}{% endif %}
-<figure {% if id %}id="{{ id }}"{% endif %} itemscope itemtype="http://schema.org/MediaObject" class="{{ class }}">
+<figure {% if id %}id="{{ id }}"{% endif %} itemscope itemtype="http://schema.org/MediaObject" class="bg-light {{ class }}">
 {%- if body is starting_with("http") or body is starting_with("/") -%}
 <img itemprop="contentUrl" src="{{ body }}"{% if width %} style="width:{{width}}"{% endif %}>
 {% else %}{{ body | markdown }}{% endif %}
