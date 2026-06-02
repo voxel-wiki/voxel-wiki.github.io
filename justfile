@@ -24,3 +24,6 @@ link-grep:
 
 link-load *ARGS:
     node links.js {{ARGS}}
+
+link-check *ARGS:
+    node links-check.js {{ARGS}}
