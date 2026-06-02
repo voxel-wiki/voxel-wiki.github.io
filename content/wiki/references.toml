@@ -6026,7 +6026,7 @@ tags  = ["opengl","rendering"]
 
 [scratchapixel-lessons-3d-basic-rendering-global-illumination-path-tracing]
 title = "Global Illumination and Path Tracing (An Intuitive Introduction to Global Illumination and Path Tracing)"
-url   = "https://www.scratchapixel.com/lessons/3d-basic-rendering/global-illumination-path-tracing"
+url   = "https://www.scratchapixel.com/lessons/3d-basic-rendering/global-illumination-path-tracing/introduction-global-illumination-path-tracing.html"
 tags  = ["rendering","render","opengl"]
 
 [scratchapixel-lessons-3d-basic-rendering-minimal-ray-tracer-rendering-simple-shapes]
@@ -8684,7 +8684,7 @@ tags  = ["graphics","rendering"]
 
 [wickedengine-net-2017-08-voxel-based-global-illumination]
 title = "Voxel-based Global Illumination – Wicked Engine - wickedengine.net/"
-url   = "https://wickedengine.net/2017/08/voxel-based-global-illumination/"
+url   = "https://turanszkij.wordpress.com/2017/08/30/voxel-based-global-illumination/"
 tags  = ["voxel","opengl"]
 
 [tom94-net-data-publications-majercik21dynamic-majercik21dynamic-pdf]
