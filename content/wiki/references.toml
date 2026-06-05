@@ -9101,8 +9101,58 @@ title = "High Performance Voxel Engine: Vertex Pooling – Nick's Blog"
 url   = "https://weigert.vsos.ethz.ch/2021/04/04/high-performance-voxel-engine/"
 tags  = ["gpu","memory","meshing","opengl","rendering","verts","voxels","render","voxel"]
 
+[gpu-pro-5-wolfgang-engel]
+title = "GPU Pro 5 - Advanced Rendering Techniques"
+url   = "https://www.taylorfrancis.com/books/edit/10.1201/b16721/gpu-pro-5-wolfgang-engel"
+type  = "book"
+tags  = ["rendering"]
 
+[hi-screen-space-cone-traced-reflections-yasin-uludag]
+title = "GPU Pro 5 - Advanced Rendering Techniques: Hi-Z Screen-Space Cone-Traced Reﬂections"
+url   = "https://www.taylorfrancis.com/chapters/edit/10.1201/b16721-13/hi-screen-space-cone-traced-re%EF%AC%82ections-yasin-uludag"
+type  = "book"
+tags  = ["rendering", "reflections"]
 
+[anthony-paul-beug-screen-space-reflection-techniques]
+title = "Anthony Paul Beug - Screen Space Reflection Techniques"
+url   = "https://uregina.scholaris.ca/server/api/core/bitstreams/14fd32d7-de0c-4da0-9fda-98892b57469c/content"
+type  = "paper"
+tags  = ["rendering", "reflections"]
+
+[sugulee-wordpress-com]
+title = "Sugu Lee - Computer Graphics for Games"
+url   = "https://sugulee.wordpress.com/"
+type  = "blog"
+tags  = ["rendering", "graphics"]
+
+[sugulee-wordpress-com-performance-optimizations-for-screen-space-reflections-technique-part-1-linear-tracing-method]
+title = "Screen Space Reflections : Implementation and optimization – Part 1 : Linear Tracing Method"
+url   = "https://sugulee.wordpress.com/2021/01/16/performance-optimizations-for-screen-space-reflections-technique-part-1-linear-tracing-method/"
+type  = "article"
+tags  = ["rendering", "reflections"]
+
+[sugulee-wordpress-com-screen-space-reflections-implementation-and-optimization-part-2-hi-z-tracing-method]
+title = "Screen Space Reflections : Implementation and optimization – Part 2 : HI-Z Tracing Method"
+url   = "https://sugulee.wordpress.com/2021/01/19/screen-space-reflections-implementation-and-optimization-part-2-hi-z-tracing-method/"
+type  = "article"
+tags  = ["rendering", "reflections"]
+
+[a-tip-for-hiz-ssr-parametric-t-tracing]
+title = "The Hacks of Life: A Tip for HiZ SSR - Parametric 't' Tracing"
+url   = "https://web.archive.org/web/20260310191922/https://hacksoflife.blogspot.com/2020/10/a-tip-for-hiz-ssr-parametric-t-tracing.html"
+type  = "article"
+tags  = ["rendering", "reflections"]
+
+[jpgrenier-org]
+title = "jpg's blog"
+url   = "https://www.jpgrenier.org/index.html"
+type  = "blog"
+
+[jpgrenier-org-ssr]
+title = "jpg's blog: Notes On Screen Space HIZ Tracing"
+url   = "https://www.jpgrenier.org/ssr.html"
+type  = "article"
+tags  = ["rendering", "reflections"]
 
 
 
