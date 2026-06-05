@@ -791,6 +791,16 @@ url   = "https://en.wikipedia.org/wiki/APNG"
 type  = "image"
 tags  = []
 
+[wikipedia-org-wiki-rgb-color-model]
+title = "RGB color model - Wikipedia - en.wikipedia.org/"
+url   = "https://en.wikipedia.org/wiki/RGB_color_model"
+tags  = ["colors","colortheory"]
+
+[wikipedia-org-wiki-sampling-signal-processing]
+title = "Sampling (signal processing) - Wikipedia - en.wikipedia.org/"
+url   = "https://en.wikipedia.org/wiki/Sampling_(signal_processing)"
+tags  = ["sampling","rendering"]
+
 [wikibooks-org-wiki-opengl-programming-mini-portal]
 title = "OpenGL Programming/Mini-Portal - Wikibooks, open books for an open world"
 url   = "https://en.wikibooks.org/wiki/OpenGL_Programming/Mini-Portal"
@@ -1103,6 +1113,16 @@ tags  = ["noise","procgen"]
 title = "Hybrid SDF-Voxel Traversal - www.shadertoy.com/"
 url   = "https://www.shadertoy.com/view/dtVSzw"
 tags  = ["voxel"]
+
+[shadertoy-ltBGWc]
+title = "aa point sampling comparison - www.shadertoy.com/"
+url   = "https://www.shadertoy.com/view/ltBGWc"
+tags  = ["sampling","rendering"]
+
+[shadertoy-MlB3D3]
+title = "aa point sampling for pixel art - www.shadertoy.com/"
+url   = "https://www.shadertoy.com/view/MlB3D3"
+tags  = ["sampling","rendering"]
 
 
 ################################################################################
@@ -8656,9 +8676,9 @@ title = "Computer Graphics and Visualization • Publications - publications.gra
 url   = "https://publications.graphics.tudelft.nl/papers/13"
 tags  = ["graphics","rendering"]
 
-[acm-doi-epdf-10-1145-3728301]
+[acm-doi-10-1145-3728301]
 title = "Transform-Aware Sparse Voxel Directed Acyclic Graphs - dl.acm.org/"
-url   = "https://dl.acm.org/doi/epdf/10.1145/3728301"
+url   = "https://dl.acm.org/doi/10.1145/3728301"
 type  = "paper"
 tags  = ["sparsity","voxel"]
 
@@ -9154,6 +9174,310 @@ url   = "https://www.jpgrenier.org/ssr.html"
 type  = "article"
 tags  = ["rendering", "reflections"]
 
+[w3-org-tr-svg2]
+title = "Scalable Vector Graphics (SVG) 2 - www.w3.org/"
+url   = "https://www.w3.org/TR/SVG2/"
+tags  = ["graphics","rendering"]
+
+[wuffs-org-blog-windows-3x-graphics]
+title = "One Dog v. the Windows 3.1 Graphics Stack - Ninji's Website"
+url   = "https://wuffs.org/blog/windows-3x-graphics"
+tags  = ["graphics","rendering"]
+
+[dthompson-us-posts-wasm-gc-isnt-ready-for-realtime-graphics-html]
+title = "Wasm GC isn’t ready for realtime graphics — dthompson"
+url   = "https://dthompson.us/posts/wasm-gc-isnt-ready-for-realtime-graphics.html"
+tags  = ["graphics","rendering","wasm"]
+
+[lithonia-acuitybrands-com-resources-technical-downloads-photometricdownloads]
+title = "Photometric Downloads"
+url   = "https://lithonia.acuitybrands.com/resources/technical-downloads/photometricdownloads"
+tags  = ["graphics","ies","lighting","photometric","profiles","rendering","resource","render"]
+
+[berkeleygraphics-com-typefaces-berkeley-mono]
+title = "Berkeley Graphics - Berkeley Mono Typeface"
+url   = "https://berkeleygraphics.com/typefaces/berkeley-mono/"
+tags  = ["graphics","rendering"]
+
+[pro-arcgis-com-en-pro-app-latest-help-mapping-layer-properties-supported-voxel-formats-htm]
+title = "Supported voxel formats—ArcGIS Pro | Documentation - pro.arcgis.com/"
+url   = "https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/supported-voxel-formats.htm"
+tags  = ["voxel"]
+
+[color-hex-com-color-palettes]
+title = "Color Palettes"
+url   = "https://www.color-hex.com/color-palettes/"
+tags  = ["colors","colortheory"]
+
+[css-pattern-com-]
+title = "CSS Pattern: Fancy backgrounds with CSS gradients"
+url   = "https://css-pattern.com/"
+tags  = ["gradient","rendering"]
+
+[css-tricks-com-easing-linear-gradients]
+title = "Easing Linear Gradients | CSS-Tricks"
+url   = "https://css-tricks.com/easing-linear-gradients/"
+tags  = ["gradient","rendering"]
+
+[css-tricks-com-techniques-for-rendering-text-with-webgl]
+title = "Techniques for Rendering Text with WebGL | CSS-Tricks - CSS-Tricks"
+url   = "https://css-tricks.com/techniques-for-rendering-text-with-webgl/"
+tags  = ["rendering","render","opengl"]
+
+[csswizardry-com-2024-08-blocking-render-why-whould-you-do-that]
+title = "blocking=render: Why would you do that?! – CSS Wizardry - csswizardry.com/"
+url   = "https://csswizardry.com/2024/08/blocking-render-why-whould-you-do-that/"
+tags  = ["rendering","render"]
+
+[gdcvault-gdc2026-slides-fairfield-aj-modernizingtherenderingofminecraft-pdf]
+title = "Modernizing Minecraft - Evolving the Rendering Pipeline.pdf"
+url   = "https://media.gdcvault.com/gdc2026/Slides/Fairfield_AJ_ModernizingTheRenderingOfMinecraft.pdf"
+tags  = ["rendering","render","renderdragon","pipeline","minecraft"]
+type  = "presentation"
+
+[microsoft-en-us-minecraft-creator-documents-vibrantvisuals-pbroverview-view-minecraft-bedrock-stable]
+title = "Overview of Physically Based Rendering | Microsoft Learn - learn.microsoft.com/"
+url   = "https://learn.microsoft.com/en-us/minecraft/creator/documents/vibrantvisuals/pbroverview?view=minecraft-bedrock-stable"
+tags  = ["rendering","render","minecraft"]
+type  = "documentation"
+
+[google-angle-angle-main-readme-md]
+title = "ANGLE - Almost Native Graphics Layer Engine - chromium.googlesource.com/"
+url   = "https://chromium.googlesource.com/angle/angle/+/main/README.md"
+tags  = ["graphics","rendering","opengl"]
+
+[html5rocks-com-en-tutorials-internals-howbrowserswork]
+title = "How Browsers Work: Behind the scenes of modern web browsers - HTML5 Rocks"
+url   = "https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/"
+type  = "tutorial"
+tags  = ["behindthescenes","browser","model","rendering","webkit","render"]
+
+[html5rocks-com-en-tutorials-speed-css-paint-times]
+title = "CSS Paint Times and Page Render Weight - HTML5 Rocks"
+url   = "https://www.html5rocks.com/en/tutorials/speed/css-paint-times/"
+type  = "tutorial"
+tags  = ["rendering","render"]
+
+[microsoft-en-us-windows-win32-direct3dhlsl-dx-graphics-hlsl-semantics]
+title = "HLSL Language Semantics - Win32 apps | Microsoft Learn - learn.microsoft.com/"
+url   = "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-semantics"
+tags  = ["graphics","rendering"]
+type  = "documentation"
+
+[neilblevins-com-cg-education-fractal-noise-html]
+title = "Soulburn Studios - CG Education: Fractal Noise"
+url   = "http://www.neilblevins.com/art_lessons/fractal_noise/fractal_noise.html"
+tags  = ["noise","procgen"]
+type  = "article"
+
+[neilblevins-com-cg-education-turbulence-noise-html]
+title = "Soulburn Studios - CG Education: Turbulence Noise"
+url   = "http://www.neilblevins.com/art_lessons/turbulence/turbulence.htm"
+tags  = ["noise","procgen"]
+type  = "article"
+
+[neilblevins-com-cg-education-explicit-noise-html]
+title = "Soulburn Studios - CG Education: Implicit and Explicit Procedural Noise"
+url   = "http://www.neilblevins.com/art_lessons/explicit_noise/explicit_noise.htm"
+tags  = ["noise","procgen"]
+type  = "article"
+
+[neilblevins-com-cg-education-procedural-noise-html]
+title = "Soulburn Studios - CG Education: Procedural Patters And Noise"
+url   = "http://www.neilblevins.com/art_lessons/procedural_noise/procedural_noise.html"
+tags  = ["noise","procgen"]
+type  = "article"
+
+[graphics-pixar-com-usd-docs-index-html]
+title = "Introduction to USD"
+url   = "https://graphics.pixar.com/usd/docs/index.html"
+tags  = ["3d","format","model","pixar","rendering","scene","usd","render"]
+
+[radgametools-com-oodle]
+title = "RAD Game Tools: Oodle Compression"
+url   = "https://www.radgametools.com/oodle.htm"
+
+[radgametools-com-oodle-examples]
+title = "RAD Game Tools: Oodle Compression Examples"
+url   = "https://www.radgametools.com/oodletextureexamples.htm"
+
+[advances-realtimerendering-com-s2014-epic-temporalaa-pptx]
+title = "High Quality Temporal Supersampling"
+url   = "http://advances.realtimerendering.com/s2014/epic/TemporalAA.pptx"
+type  = "presentation"
+
+[jcgt-org-published-0012-02-01-paper-pdf]
+title = "Performance Comparison of Meshlet Generation Strategies"
+url   = "https://jcgt.org/published/0012/02/01/paper.pdf"
+type  = "paper"
+
+[tomforsyth1000-github-io-papers-fast_vert_cache_opt-html]
+title = "Linear-Speed Vertex Cache Optimisation"
+url = "https://tomforsyth1000.github.io/papers/fast_vert_cache_opt.html"
+type  = "paper"
+
+[cse-ust-hk-psander-docs-tipsy-pdf]
+title = "Fast Triangle Reordering for Vertex Locality and Reduced Overdraw"
+url   = "https://www.cse.ust.hk/%7Epsander/docs/tipsy.pdf"
+type  = "paper"
+
+[fgiesen-wordpress-com-2013-11-04-bink-2-2-integer-dct-design-part-1]
+title = "Bink 2.2 integer DCT design, Part 1"
+url   = "https://fgiesen.wordpress.com/2013/11/04/bink-2-2-integer-dct-design-part-1/"
+type  = "article"
+
+[fgiesen-wordpress-com-2010-11-05-planar-rotations-and-the-dct]
+title = "Planar rotations and the DCT"
+url   = "https://fgiesen.wordpress.com/2010/11/05/planar-rotations-and-the-dct/"
+
+[randomascii-wordpress-com]
+title = "Random ASCII Blog"
+url   = "https://randomascii.wordpress.com/"
+type  = "blog"
+
+[randomascii-wordpress-com-category-floating-point]
+title = "Random ASCII: Floating-Point"
+url   = "https://randomascii.wordpress.com/category/floating-point/"
+type  = "blog"
+
+[randomascii-wordpress-com-2013-07-16-floating-point-determinism]
+title = "Random ASCII: Floating-Point Determinism"
+url   = "https://randomascii.wordpress.com/2013/07/16/floating-point-determinism/"
+type  = "article"
+
+[randomascii-wordpress-com-2012-03-21-intermediate-floating-point-precision]
+title = "Random ASCII: Intermediate Floating-Point Precision"
+url   = "https://randomascii.wordpress.com/2012/03/21/intermediate-floating-point-precision/"
+type  = "article"
+
+[exploringbinary-com]
+title = "Exploring Binary Blog"
+url  = "https://www.exploringbinary.com/"
+type = "blog"
+
+[exploringbinary-com-double-rounding-errors-in-floating-point-conversions]
+title = "Exploring Binary: Double Rounding Errors in Floating-Point Conversions"
+url   = "https://www.exploringbinary.com/double-rounding-errors-in-floating-point-conversions/"
+type  = "article"
+
+[docs-oracle-com-cd-E19957-01-806-3568-ncg_goldberg-html]
+title = "Numerical Implementation Guide: Appendix D - What Every Computer Scientist Should Know About Floating-Point Arithmetic"
+url   = "https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html"
+type  = "paper"
+
+[hal-science-file-index-docid-281429-filename-floating-point-article-pdf]
+title = "The pitfalls of verifying floating-point computations"
+url   = "https://hal.science/file/index/docid/281429/filename/floating-point-article.pdf"
+type  = "paper"
+
+[web-stanford-edu-class-ee398a-handouts-lectures-07-transformcoding-pdf]
+title = "Standford University - Handouts: Transform Coding"
+url   = "https://web.stanford.edu/class/ee398a/handouts/lectures/07-TransformCoding.pdf"
+type  = "presentation"
+
+[mrelusive-com-publications-papers-software-virtual-textures-pdf]
+title = "J.M.P. van Waveren: Software Virtual Textures"
+url = "https://www.mrelusive.com/publications/papers/Software-Virtual-Textures.pdf"
+type  = "paper"
+
+[forums-tigsource-com-index-php-topic-40832-msg1363742-msg1363742]
+title = "Return of the Obra Dinn: Fullscreen [Dithering], Round 3"
+url   = "https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742"
+tags  = ["dithering","graphics","rendering","sampling","stable","render"]
+
+[momentsingraphics-de-siggraph2026-html]
+title = "Gaussian Point Splatting - momentsingraphics.de/"
+url   = "https://momentsingraphics.de/Siggraph2026.html"
+tags  = ["graphics","rendering"]
+
+[m-niemeyer-radsplat]
+title = "RadSplat: Radiance Field-Informed Gaussian Splatting for Robust Real-Time Rendering with 900+ FPS - m-niemeyer.github.io/"
+url   = "https://m-niemeyer.github.io/radsplat/"
+tags  = ["rendering","render"]
+
+[gasiulis-name-vector-graphics-on-gpu]
+title = "Vector graphics on GPU - Aurimas Gasiulis - gasiulis.name/"
+url   = "https://gasiulis.name/vector-graphics-on-gpu/"
+tags  = ["gpu","graphics","rendering"]
+
+[decarpentier-nl-scape-render]
+title = "Scape: 1. Rendering Terrain"
+url   = "https://www.decarpentier.nl/scape-render"
+tags  = ["noise","procgen","rendering","render","terrain"]
+
+[decarpentier-nl-scape-procedural-basics]
+title = "Scape: 3. Procedural Basics"
+url   = "https://www.decarpentier.nl/scape-procedural-basics"
+tags  = ["noise","procgen","terrain"]
+
+[decarpentier-nl-scape-procedural-extensions]
+title = "Scape: 3. Procedural extensions"
+url   = "https://www.decarpentier.nl/scape-procedural-extensions"
+tags  = ["noise","procgen","terrain"]
+
+[archive-web-20090803054252-http-tog-acm-org-resources-graphicsgems-gems-raybox-c]
+title = "Fast Ray-Box Intersection"
+url   = "https://web.archive.org/web/20090803054252/http://tog.acm.org/resources/GraphicsGems/gems/RayBox.c"
+tags  = ["aabb","box","intersection","ray","raycast","graphics","rendering"]
+
+[archive-web-20160316043705-http-forum-devmaster-net-t-advanced-rasterization-6145]
+title = "Advanced Rasterization - Devmaster Forum"
+url   = "https://web.archive.org/web/20160316043705/http://forum.devmaster.net/t/advanced-rasterization/6145"
+tags  = ["rasterization","rendering","render"]
+
+[archive-web-20180921225907-http-antigrain-com-research-font-rasterization-index-html-font-rasterization]
+title = "Anti-Grain Geometry - Texts Rasterization Exposures"
+url   = "https://web.archive.org/web/20180921225907/http://antigrain.com/research/font_rasterization/index.html#FONT_RASTERIZATION"
+tags  = ["font","rendering","text","rasterization","render"]
+
+[archive-web-20160611154828-http-graphics-stanford-edu-papers-rad]
+title = "A Rapid Hierarchical Radiosity Algorithm - web.archive.org/"
+url   = "https://web.archive.org/web/20160611154828/http://graphics.stanford.edu/papers/rad/"
+tags  = ["graphics","rendering"]
+
+[archive-web-20210831125334-https-ourmachinery-com-post-ui-rendering-using-primitive-buffers]
+title = "UI rendering using Primitive Buffers · Our Machinery"
+url   = "https://web.archive.org/web/20210831125334/https://ourmachinery.com/post/ui-rendering-using-primitive-buffers/"
+tags  = ["rendering","render"]
+
+[graphics-programming-org-blog-improved-reflective-shadow-maps]
+title = "Improved Reflective Shadow Maps | Graphics Programming Discord - graphics-programming.org/"
+url   = "https://graphics-programming.org/blog/improved-reflective-shadow-maps"
+tags  = ["graphics","rendering"]
+
+[graphics-programming-org-blog-uis-are-hard]
+title = "UIs Are Hard | Graphics Programming Discord - graphics-programming.org/"
+url   = "https://graphics-programming.org/blog/uis-are-hard"
+tags  = ["graphics","rendering"]
+
+[highperformancegraphics-org-2018-best-paper]
+title = "Best Paper | High-Performance Graphics 2018"
+url   = "https://www.highperformancegraphics.org/2018/best-paper/"
+tags  = ["graphics","rendering"]
+
+[jcgt-0011-03-05-paper-pdf]
+title = "Practical Real-Time Hex-Tiling - paper.pdf"
+url   = "https://jcgt.org/published/0011/03/05/paper.pdf"
+tags  = ["rendering","texturing","render"]
+type  = "paper"
+
+[khronos-assets-uploads-developers-presentations-vulkan-bof-using-slang-with-vulkan-sigg24-pdf]
+title = "Siggraph 2024: Vulkan + Slang - Using Slang with Vulkan"
+url   = "https://www.khronos.org/assets/uploads/developers/presentations/Vulkan_BOF_Using_Slang_with_Vulkan_SIGG24.pdf"
+tags  = ["vulkan","rendering"]
+type  = "presentation"
+
+[khronos-assets-uploads-developers-presentations-ensure-vulkan-synchronization-vulkanised-oct-2021-pdf]
+title = "Ensure Correct Vulkan Synchronization by Using Synchronization Validation"
+url   = "https://www.khronos.org/assets/uploads/developers/presentations/Ensure_Vulkan_Synchronization_Vulkanised_Oct_2021.pdf"
+tags  = ["vulkan","rendering"]
+
+[hacks-mozilla-org-2017-10-the-whole-web-at-maximum-fps-how-webrender-gets-rid-of-jank]
+title = "The whole web at maximum FPS: How WebRender gets rid of jank ★ Mozilla Hacks – the Web developer blog"
+url   = "https://hacks.mozilla.org/2017/10/the-whole-web-at-maximum-fps-how-webrender-gets-rid-of-jank/"
+tags  = ["rendering","render"]
+
+
 
 
 
@@ -9461,6 +9785,23 @@ title = "Raytracing Voxels in Teardown and Beyond - Graphics Programming Confere
 url = "https://www.youtube.com/watch?v=IM1Dr98f3xU"
 type  = "video"
 tags  = ["rendering", "render","voxel","voxels","raytracing","raytrace","tracing","game","graphics"]
+
+[youtube-5VozHerlOQw]
+title = "(SIGGRAPH 2020) Thats a wrap: a Manifold Garden Rendering Retrospective - YouTube - www.youtube.com/"
+url   = "https://www.youtube.com/watch?v=5VozHerlOQw"
+type  = "video"
+tags  = ["rendering","render"]
+
+[youtube-gsJHzBTPG0Y]
+title = "Better Mountain Generators That Arent Perlin Noise or Erosion - YouTube - www.youtube.com/"
+url   = "https://www.youtube.com/watch?v=gsJHzBTPG0Y"
+type  = "video"
+tags  = ["noise","procgen"]
+
+[youtube-MejJL87yNgI]
+title = "Sean Barrett: Virtual Textures (aka Megatextures) talk (2008)"
+url   = "https://www.youtube.com/watch?v=MejJL87yNgI"
+type  = "video"
 
 
 ### DEAD LINKS ###
