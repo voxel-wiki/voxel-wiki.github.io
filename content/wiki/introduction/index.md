@@ -179,7 +179,7 @@ This is an unavoidable consequence of the [square-cube law](https://en.wikipedia
 which just states that with increasing size, the volume of a shape expands faster than it's surface area.
 
 {% info_notice(summary="Fun Fact: Planet-sized Volumes") %}
-If you calculate the volume for the size of the earth (a radius of 6371km), you will get a fun number of roughly **2068 exabyte**... which is roughly seven percent of the world-wide-webs *entire* contents (in ~2024), at about **27000 exabyte**!
+If you calculate the volume for the size of the earth (a radius of 6371km), you will get a fun number of roughly **2068 exabyte**... which is about seven percent of the world-wide-webs *entire* contents (in ~2024), at about **27000 exabyte**!
 
 Luckily, most of any planets volume is unreachable, hidden under the surface,
 so it can be treated as if it didn't exist, vastly reducing the needed volume.
@@ -235,9 +235,48 @@ usually involving a mix of the following:
    just as it can ruin it.
    - Just don't heap-allocate individual voxels.
 
----
-
 {{ todo_notice(body="Something's missing here... but what?!") }}
+
+<!--
+
+---
+## Using existing code?
+
+You *might* have thought of the following, at some point:
+
+> Can't I just use an existing voxels implementation?
+
+...and proceeded to look all over the internet, for a ready-made solution,
+to all these voxel related problems; you might've even tried some out,
+perhaps even built a whole project upon one!
+
+However, eventually, you'll find that *none seem to work just right*.
+
+It ain't your fault, nor of whatever solutions author! Since the problem space is
+effectively infinite, any solution someone can imagine, develop and distribute,
+will inevitably fail for most users.
+
+As such, most voxel implementations are either totally bespoke,
+written and used solely in a single project, inextricably linked,
+or generalized to the point of being featureless, as to be utterly useless.
+
+{% info_notice(summary="**Except for tooling.**") %}
+When it comes to tooling, you'll run into the same issues:
+Voxel implementations are too specific for generic tools to be useful...
+
+But that's only if voxels are the *focus* of your project!
+
+If voxels are only there to create interesting terrain/scenery,
+one can absolutely get away with using an existing system,
+like Voxel&nbsp;Plugin for Unreal&nbsp;Engine,
+allowing you and/or your artists to get things done, now.
+{% end %}
+
+What you can, probably even *should*, do?
+
+Find voxel projects with their source available, *read and learn* from them...
+then go make your own thing.
+-->
 
 ---
 
@@ -257,7 +296,7 @@ if not, please take some time to think about it, otherwise just read on ahead! :
 {% end %}
 
 For the creation of **voxel art**,
-we highly recommend checking out [MagicaVoxel](/wiki/magicavoxel),
+we highly recommend checking out [MagicaVoxel](/wiki/magicavoxel) (and [others like it](/tags/editor)),
 which is currently considered to be *the* best voxel-editor you can get; it's completely free!
 
 Perhaps [share](/wiki/community) your creation?

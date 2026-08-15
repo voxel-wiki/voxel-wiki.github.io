@@ -66,9 +66,10 @@ which is both a colossal pain in the behind and a *massive* source of bugs.
 Some languages make it *really* easy to accidentally copy/clone things around,
 which is fine for tiny structures (i.e.: up to ~512 bytes), to the point of being zero-cost.
 
-But with voxels? Volumes occupy, by their very nature, a lot of memory;
-try to copy around volumes every frame, and your available memory bandwidth will go to zero real fast.
-Which is *very* bad.
+This poses a problem for voxel(-engine)s, since volumes occupy, by their very nature, a *lot* of memory.
+Try to copy around volumes every frame, and your available memory bandwidth will go to zero real fast...
+
+To prevent that, use Copy-on-Write or Clone-on-Share (smart)pointers/references.
 {% end %}
 
 ### Data Structures
