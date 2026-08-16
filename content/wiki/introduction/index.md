@@ -73,7 +73,8 @@ It's also *horrifically&nbsp;bad* for performance.
 <b style="color:red">Don't do this.</b>[^tempsamples]
 {% end %}
 
-On point 2 specifically, voxels can be split into two-ish families:
+On point 2 specifically, voxels can be split into
+<span id="continuous-or-discrete">two-ish families</span>:
 
 - **Continuous voxels** represent fields of quantities, intensities, densities;
   anything that is smooth or approximate.
