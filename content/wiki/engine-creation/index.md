@@ -1,12 +1,11 @@
 +++
 title = "Engine Creation"
 description = "How does one create a new game engine?"
-draft = true
 +++
 
 {% warn_notice() %} Please carefully read the [article on engines](/wiki/engines) before this one. {% end %}
 
-{{stub_notice()}}
+{{todo_notice(body="This article is a work-in-progress.")}}
 
 On the surface of things, creating an engine *appears* to be a straight forward task:
 
@@ -44,7 +43,7 @@ The core of a game engine is (similar to an operating system) an abstraction for
 Rebuilding/replacing them at a later time is considered a Very Bad Idea™, as they influence every part of the engine.
 {% end %}
 
-While the following sections will explain each concept on its own, do keep in mind that they're highly intertwined.
+While the following sections will attempt to explain each concept on its own, do keep in mind that they're highly intertwined.
 
 ---
 
@@ -81,3 +80,11 @@ While the following sections will explain each concept on its own, do keep in mi
 ### The Extension Mechanism
 
 {{stub_notice(kind="section")}}
+
+
+
+---
+
+## References
+
+- ...
