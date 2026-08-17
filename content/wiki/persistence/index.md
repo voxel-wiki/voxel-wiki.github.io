@@ -128,7 +128,7 @@ For voxel volumes, the answer depends on the kind of voxel we're working with:
 ### Continuous Voxels
 
 **Continuous** voxel volumes are the simple case;
-since their voxel samples are not "unique",
+since their voxel samples are not "unique"[^continuity],
 storing *what* they are can be done at the [chunk](/wiki/chunking) level.
 Assuming such chunks are made of several layers/channels of continuous voxels,
 it might look something like this:
@@ -162,21 +162,36 @@ has such a tiny cost that it simply *doesn't matter*, relative to everything els
 
 ### Discrete Voxels
 
-When it comes to **discrete** voxel volumes...
+**Discrete** voxel volumes are slightly more complicated, since their voxels/samples are unique
+and must be processed individually, possibly having no common properties, at all, between any two neighbouring samples.
+
+
+
 {{ todo_notice(body="Continue here...") }}
 
 ---
 
-## ???
+## Indexing & Sparsity
+
+In the simplest case, of a small non-sparse voxel volume
+(<small style="white-space:nowrap">of size `N³` where `N` up to ~`2^16`</small>),
+the whole thing could be written-to and read-from a single compressed file,
+thus not require any indexing at all...
+
+And if RAM were infinite, that'd be perfectly fine! But it isn't,
+even with page swapping (<small>which tends to *annihilate* performance</small>).
+
+To allow the volumes chunks being loaded and stored "on the fly", we've got to make it **sparse**,
+which precludes decompressing the entire file at once, so compression must happen *per chunk* instead[^mustcompress].
+
+Of course, that also means we no longer know where, exactly, chunks are located in the file,
+since their blobs can have vastly different sizes (<small>from a few dozen bytes, to multiple kilobytes</small>).
+
+Accessing the file as if it were a plain linear array, won't work anymore... so we've got to ask:
+
+> How is the chunked voxel volume **indexed**?
 
 <!--
-## Indexing And Blobs
-
-No matter the method of persistence you end up choosing,
-there will always be some kind of **index**,
-that resolves a given 2D/3D position into a reference to some **blob**,
-which then contains the serialized volume at that position.
-
 ##### Filenames as Index
 
 **For example**, one could use the local filesystem itself as index,
@@ -197,5 +212,19 @@ keeping a sub-index of which blobs are where, all in the same (region)file.
 
 ---
 
-[^blenddna]: A `.blend` files DNA chunk contains reflection information, of all in-memory types/structures defined and used by the version of blender that wrote the file; it's what allows these files to stay compatible across many versions, even with changes to the layout/structure of data.
-  See the [blender manual](https://developer.blender.org/docs/features/core/dna/), <https://fossies.org/linux/blender/doc/blender_file_format/mystery_of_the_blend.html> and <https://www.atmind.nl/blender/blender-sdna-256.html> for more info.
+[^blenddna]: A `.blend` files DNA chunk contains reflection information,
+  of all in-memory types/structures defined and used by the version of blender that wrote the file;
+  it's what allows these files to stay compatible across many versions,
+  even with changes to the layout/structure of data.
+  See the [blender manual](https://developer.blender.org/docs/features/core/dna/),
+  ["mystery of the blend"](https://fossies.org/linux/blender/doc/blender_file_format/mystery_of_the_blend.html)
+  and <https://www.atmind.nl/blender/blender-sdna-256.html> for more info.
+
+[^continuity]: That is, they have some kind of [partial](https://en.wikipedia.org/wiki/Partially_ordered_set)
+  or [total](https://en.wikipedia.org/wiki/Total_order) order
+  and can be [up/down-sampled](https://en.wikipedia.org/wiki/Sample-rate_conversion),
+  without having to be transformed/converted.
+
+[^mustcompress]: The largest performance bottleneck of modern SSDs, CPUs and GPUs
+  is **memory-capacity** and **-bandwidth**, both of which can only be meaningfully reduced by compressing data;
+  so forgoing or forgetting to compress volumetric data, is a *really bad idea*.
