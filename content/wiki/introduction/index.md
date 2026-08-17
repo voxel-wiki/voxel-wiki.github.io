@@ -192,7 +192,7 @@ Now, computers these days are pretty darn powerful, but they still have limits,
 and thanks to the aforementioned law, working with voxels will get you there *very* quickly...
 
 - Your RAM may be large (many gigabytes, usually ~4-16 GB),
-  but the bits'n'bytes still need to go to/fro the CPU and back.
+  but the bits'n'bytes still need to go to/from the CPU and back.
 
 - Your CPU may be fast, capable of *billions* of operations per second,
   but even the fastest processors will weep at `O(n³)`.
