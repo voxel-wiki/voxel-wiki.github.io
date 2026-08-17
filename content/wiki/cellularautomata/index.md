@@ -28,7 +28,7 @@ Since there are entirely too many ways to implement and make use of cellular aut
 - Falling sand, gravel, grain, etc.
 - Simulation of fluids like water, lava and gas.
 - Growth and spread of plants, like grass and trees.
-- Electricity and digital logic, like [redstone](https://minecraft.wiki/w/Redstone_mechanics).
+- Electricity and digital logic, like [Minecraft's redstone](https://minecraft.wiki/w/Redstone_mechanics).
 - ...
 
 {% todo_notice() %} Articles for each of the above? {% end %}
