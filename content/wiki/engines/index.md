@@ -20,9 +20,9 @@ If you want to make a game and get something playable & distributable within a..
 
 The most commonly used game engines are as follows:
 
-- [Unity Engine](https://unity.com/) (C#)
-- [Unreal Engine](https://www.unrealengine.com/) (C++, Blueprints)
-- [Godot Engine](https://godotengine.org/) (C, C++, C#, VisualScript, GDScript)
+- [Unity Engine](https://unity.com/) (C++, C#, Shader Graph)
+- [Unreal Engine](https://www.unrealengine.com/) (C++, Blueprints, Material Editor)
+- [Godot Engine](https://godotengine.org/) (C++, C#, GDScript, VisualShader)
 
 {% todo_notice() %} Create one article for each engine. {% end %}
 
