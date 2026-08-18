@@ -165,9 +165,7 @@ has such a tiny cost that it simply *doesn't matter*, relative to everything els
 **Discrete** voxel volumes are slightly more complicated, since their voxels/samples are unique
 and must be processed individually, possibly having no common properties, at all, between any two neighbouring samples.
 
-
-
-{{ todo_notice(body="Continue here...") }}
+{{ todo_notice(body="Explain depth of discrete voxel persistence.") }}
 
 ---
 
@@ -191,24 +189,115 @@ Accessing the file as if it were a plain linear array, won't work anymore... so 
 
 > How is the chunked voxel volume **indexed**?
 
+##### Index Chunks by Filenames
+
+Having a world split into chunks, or larger chunks-of-chunks (regions),
+presents us with a rather simple indexing method: filenames.
+
+By defining a fixed pattern that can convert chunk locations into filenames and back,
+like `±X_±Y_±Z.chunk`, chunks can just be persisted as files in some directory.
+
+A directory layout for a "world" using that method, may then look something like this:
+
+```
+<world>/
+├── world-info.json
+├── player-data.json
+┆
+└── chunks/
+    ├── 0_0_0.chunk
+    ├── 1_0_0.chunk
+    ├── 0_1_0.chunk
+    ├── 1_1_0.chunk
+    ┆
+```
+
+Loading chunks is then a matter of trying to read their respective files,
+as named after the position:
+
+```cs
+class World {
+	...
+	DirectoryInfo ChunksDir = /* "/<WORLD>/chunks/" */;
+	...
+	
+	private Chunk? TryLoadChunk(ChunkPosition chunk_pos) {
+		string chunk_pos_str // position to string
+			= $"{chunk_pos.x}_{chunk_pos.y}_{chunk_pos.z}.chunk";
+		
+		string chunk_path // string to path
+			= Path.Combine(ChunksDir.FullName, chunk_pos_str);
+		
+		// Reading may fail for *many* reasons,
+		// we've got to use a try-block here:
+		try {
+			byte[] chunk_bytes = File.ReadAllBytes(chunk_path);
+			return Chunk.DeserializeFromBytes(chunk_bytes);
+		} catch {
+			// Couldn't read the chunk for whatever reason...
+			// Generate it?
+			return null;
+		}
+	}
+	
+	...
+}
+```
+
+And that works mostly fine. For a while.
+
+Unfortunately, especially on operating systems of the Windows family,
+this method performs *really* badly as more files are created (starting, roughly, at a few thousand),
+while consuming a surprising amount of disk-space due to how filesystems work[^fsindexing].
+
+To get around this issue, we're forced to group chunks into larger chunks-of-chunks (regions),
+storing and indexing *these* instead, leading us to...
+
+##### Index Regions by Filenames
+
 <!--
-##### Filenames as Index
-
-**For example**, one could use the local filesystem itself as index,
-with blobs stored as individual files, named after their position,
-like `chunks/x10y20z30.blob`...
-unfortunately, this performs *really* badly as more blobs are created,
-and tends to waste an obscene amount of disk-space on top of that.
-
 This issue can be worked around, by storing larger "regions" of blobs in archive-like files,
 keeping a sub-index of which blobs are where, all in the same (region)file.
 -->
 
 {{ stub_notice(kind="section") }}
 
+##### Use An Existing Solution
+Instead of doing all the work yourself, why not make use of **Free Open Source Software**?
+
+{{ stub_notice(kind="section") }}
+
+## Databases
+Wouldn't it be nice if someone already figured out all the nitty-gritty details,
+of correctly and safely writing and reading indexed data,
+and made it work across effectively every platform known to man?
+
+...
+
+Oh look, it's [databases](https://en.wikipedia.org/wiki/Database)!
+
+Or, more specifically: *embedded* databases.
+
+{{ todo_notice(body="Explain why databases.") }}
+
+##### SQLite
+> [SQLite](https://www.sqlite.org/)... ***the*** most commonly used embeddable database software in the world,
+> bar none, by several magnitudes.
+
+{{ stub_notice(kind="section") }}
+
+##### Key/Value Stores
+{{ stub_notice(kind="section") }}
+
+---
+
 ## References
 
-{% todo_notice() %} References {% end %}
+- [Wikipedia: File System](https://en.wikipedia.org/wiki/File_system)
+- [Seed Of Andromeda: Creating A Region File System](https://web.archive.org/web/20150910104522/https://www.seedofandromeda.com/blogs/1-creating-a-region-file-system-for-a-voxel-game)
+- [Minecraft Wiki: Anvil File Format](https://minecraft.wiki/w/Anvil_file_format)
+- [Minecraft Wiki: Region File Format](https://minecraft.wiki/w/Region_file_format)
+- ...
 
 ---
 
@@ -223,8 +312,14 @@ keeping a sub-index of which blobs are where, all in the same (region)file.
 [^continuity]: That is, they have some kind of [partial](https://en.wikipedia.org/wiki/Partially_ordered_set)
   or [total](https://en.wikipedia.org/wiki/Total_order) order
   and can be [up/down-sampled](https://en.wikipedia.org/wiki/Sample-rate_conversion),
-  without having to be transformed/converted.
+  without having to be transformed/converted. Sample types like colors and normal-vectors, among many others, belong to this group.
 
 [^mustcompress]: The largest performance bottleneck of modern SSDs, CPUs and GPUs
   is **memory-capacity** and **-bandwidth**, both of which can only be meaningfully reduced by compressing data;
   so forgoing or forgetting to compress volumetric data, is a *really bad idea*.
+
+[^fsindexing]: Filesystems also have to keep an index around,
+  to know which files exist in a given directory.
+  As more files are added to a given directory,
+  reading and modifying that index will slow down more and more.
+  Add a systems antivirus live protection to that mix, and it get's oh-so-much worse.
