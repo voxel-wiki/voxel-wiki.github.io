@@ -3,9 +3,8 @@ title = "Persistence"
 description = "Serializing voxels to disk, to keep them safe and sound."
 #path = "/"
 aliases = ["/serialization"]
-draft = true
 [taxonomies]
-#categories = []
+categories = ["persistence"]
 tags = ["serialization", "persistence", "storage"]
 +++
 
