@@ -243,14 +243,14 @@ class World {
 }
 ```
 
-And that works mostly fine. For a while.
+And for a while, that works mostly fine.
 
 Unfortunately, especially on operating systems of the Windows family,
 this method performs *really* badly as more files are created (starting, roughly, at a few thousand),
 while consuming a surprising amount of disk-space due to how filesystems work[^fsindexing].
 
 To get around this issue, we're forced to group chunks into larger chunks-of-chunks (regions),
-storing and indexing *these* instead, leading us to...
+then storing and indexing *these* instead, leading us to...
 
 ##### Index Regions by Filenames
 
