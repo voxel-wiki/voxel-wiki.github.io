@@ -238,6 +238,12 @@ name = "StarMade"
 url = "https://www.star-made.org/"
 state = "Early Access"
 
+[[projects]]
+name = "Allumeria"
+url = "https://allumeria.com"
+state = "Early Access"
+language = ["C#"]
+
 ###########################################################
 ########################### Beta ##########################
 ###########################################################
@@ -565,8 +571,3 @@ name = "Hexane"
 url = "https://voxelphile.com"
 source = "https://github.com/voxelphile/hexane"
 language = ["Rust", "Glsl"]
-
-[[projects]]
-name = "Allumeria"
-url = "https://allumeria.com"
-language = ["C#"]
