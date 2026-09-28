@@ -565,3 +565,8 @@ name = "Hexane"
 url = "https://voxelphile.com"
 source = "https://github.com/voxelphile/hexane"
 language = ["Rust", "Glsl"]
+
+[[projects]]
+name = "Allumeria"
+url = "https://allumeria.com"
+language = ["C#"]
