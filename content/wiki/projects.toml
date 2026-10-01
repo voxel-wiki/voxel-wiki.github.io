@@ -60,6 +60,8 @@ state = "Released"
 name = "Space Engineers"
 url = "https://www.spaceengineersgame.com/"
 state = "Released"
+language = "C#"
+engine = "VRAGE2"
 
 [[projects]]
 name = "Trove"
@@ -103,8 +105,13 @@ language = ["Java"]
 engine = "jMonkeyEngine"
 
 [[projects]]
+name = "Block Fortress 2"
+url = "https://www.foursakenmedia.com/#games/bf2"
+state = "Released"
+
+[[projects]]
 name = "Block Fortress: Empires"
-url = "https://play.google.com/store/apps/details?id=com.foursakenmedia.blockfortressempires"
+url = "https://www.foursakenmedia.com/#games/bfe"
 state = "Released"
 
 [[projects]]
@@ -169,6 +176,125 @@ languages = ["Lua", "C", "C++"]
 name = "7 Days To Die"
 url = "https://7daystodie.com/"
 state = "Released"
+
+[[projects]]
+name = "Enshrouded"
+url = "https://enshrouded.com/"
+state = "Released"
+engine = "Holistic Engine"
+
+[[projects]]
+name = "Lay of the Land"
+url = "https://store.steampowered.com/app/2776090/Lay_of_the_Land/"
+state = "Released"
+language = "C++ & Blueprints Visual Scripting"
+engine = "Unreal Engine 5"
+
+[[projects]]
+name = "Dragon Quest Builders"
+url = "https://store.steampowered.com/app/2436570/DRAGON_QUEST_BUILDERS/"
+state = "Released"
+engine = "Unity 2021 & PhyreEngine"
+
+[[projects]]
+name = "Dragon Quest Builders 2"
+url = "https://store.steampowered.com/app/1072420/DRAGON_QUEST_BUILDERS_2/"
+state = "Released"
+engine = "Katana Engine"
+
+[[projects]]
+name = "Pokémon Pokopia"
+url = "https://pokopia.pokemon.com/en-us/"
+state = "Released"
+engine = "Katana Engine"
+
+[[projects]]
+name = "PixARK"
+url = "https://store.steampowered.com/app/593600/PixARK/"
+state = "Released"
+engine = "Unreal Engine 4"
+
+[[projects]]
+name = "Earth Defense Force: World Brothers"
+url = "https://store.steampowered.com/app/1497950/EARTH_DEFENSE_FORCE_WORLD_BROTHERS/"
+state = "Released"
+engine = "Unreal Engine 4"
+
+[[projects]]
+name = "Earth Defense Force: World Brothers 2"
+url = "https://store.steampowered.com/app/2370170/EARTH_DEFENSE_FORCE_WORLD_BROTHERS_2/"
+state = "Released"
+engine = "Unreal Engine 4"
+
+[[projects]]
+name = "CastleMiner Z"
+url = "https://www.digitaldnagames.com/#castleminer-z"
+state = "Released"
+language = "C#"
+engine = "XNA"
+
+[[projects]]
+name = "CastleMiner Warfare"
+url = "https://store.steampowered.com/app/675210/CastleMiner_Warfare/"
+state = "Released"
+language = "C#"
+engine = "XNA"
+
+[[projects]]
+name = "Fractal Block World"
+url = "http://danthemanhathaway.com/ComputerGames/FractalBlockWorld/ReleaseMisc/index.html"
+state = "Released"
+language = "C++ & Lua"
+
+[[projects]]
+name = "Portal Knights"
+url = "https://store.steampowered.com/app/374040/Portal_Knights/"
+state = "Released"
+language = "C++"
+
+[[projects]]
+name = "Cube World"
+url = "https://cubeworld.com/"
+state = "Released"
+language = "C++"
+
+[[projects]]
+name = "Barony"
+url = "https://www.baronygame.com/"
+state = "Released"
+language = "C++ & C"
+source = "https://github.com/TurningWheel/Barony"
+
+[[projects]]
+name = "Severed Steel"
+url = "https://store.steampowered.com/app/1227690/Severed_Steel/"
+state = "Released"
+engine = "Unreal Engine 4"
+
+[[projects]]
+name = "Echo Point Nova"
+url = "https://store.steampowered.com/app/1836730/Echo_Point_Nova/"
+state = "Released"
+engine = "Unreal Engine 4"
+
+[[projects]]
+name = "Timberborn"
+url = "https://mechanistry.com/"
+state = "Released"
+language = "C#"
+engine = "Unity 6"
+
+[[projects]]
+name = "yni^"
+url = "https://store.steampowered.com/app/2278390/yni/"
+state = "Released"
+
+[[projects]]
+name = "Crystal Project"
+url = "https://store.steampowered.com/app/1637730/Crystal_Project/"
+state = "Released"
+language = "C#"
+engine = "FNA"
 
 ###########################################################
 ###################### Early Access #######################
@@ -243,6 +369,45 @@ name = "Allumeria"
 url = "https://allumeria.com"
 state = "Early Access"
 language = ["C#"]
+
+[[projects]]
+name = "Hytale"
+url = "https://hytale.com/"
+state = "Early Access"
+language = "Java & C#"
+
+[[projects]]
+name = "cyubeVR"
+url = "https://www.stonebrickstudios.com/cyubevr/"
+state = "Early Access"
+engine = "Unreal Engine 5"
+
+[[projects]]
+name = "Voima"
+url = "https://voima.gg/"
+state = "Early Access"
+language = "C#"
+engine = "Unity"
+
+[[projects]]
+name = "Everwind"
+url = "https://everwind.net/"
+state = "Early Access"
+engine = "Unreal Engine 5"
+
+[[projects]]
+name = "Space Engineers 2"
+url = "https://2.spaceengineersgame.com/"
+state = "Early Access"
+language = "C#"
+engine = "VRAGE3"
+
+[[projects]]
+name = "Foundry"
+url = "https://www.paradoxinteractive.com/games/foundry/about"
+state = "Early Access"
+language = "C# & C++"
+engine = "Unity"
 
 ###########################################################
 ########################### Beta ##########################
@@ -377,6 +542,31 @@ name = "BlockGame-OpenTK"
 url = "https://github.com/Pale-Gray/BlockGame-OpenTK"
 state = "Active Dev."
 language = ["C#", "OpenTK"]
+
+[[projects]]
+name = "4D Miner"
+url = "https://store.steampowered.com/app/1941640/4D_Miner/"
+state = "Active Dev."
+language = "C++"
+
+[[projects]]
+name = "PlanetSmith"
+url = "https://store.steampowered.com/app/2539340/PlanetSmith/"
+state = "Active Dev."
+engine = "Unity"
+
+[[projects]]
+name = "CastleMiner Z : Resurrection"
+url = "https://www.castleminerz.com/"
+state = "Active Dev."
+language = "C#"
+engine = "Unreal Engine 5"
+
+[[projects]]
+name = "Grimorium"
+url = "https://store.steampowered.com/app/4415850/Grimorium/"
+state = "Active Dev."
+language = "C++"
 
 ###########################################################
 #################### Unknown Status #######################
