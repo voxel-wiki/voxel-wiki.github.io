@@ -60,7 +60,7 @@ state = "Released"
 name = "Space Engineers"
 url = "https://www.spaceengineersgame.com/"
 state = "Released"
-language = "C#"
+language = ["C#"]
 engine = "VRAGE2"
 
 [[projects]]
@@ -187,7 +187,7 @@ engine = "Holistic Engine"
 name = "Lay of the Land"
 url = "https://store.steampowered.com/app/2776090/Lay_of_the_Land/"
 state = "Released"
-language = "C++ & Blueprints Visual Scripting"
+language = ["C++", "Blueprints Visual Scripting"]
 engine = "Unreal Engine 5"
 
 [[projects]]
@@ -230,39 +230,39 @@ engine = "Unreal Engine 4"
 name = "CastleMiner Z"
 url = "https://www.digitaldnagames.com/#castleminer-z"
 state = "Released"
-language = "C#"
+language = ["C#"]
 engine = "XNA"
 
 [[projects]]
 name = "CastleMiner Warfare"
 url = "https://store.steampowered.com/app/675210/CastleMiner_Warfare/"
 state = "Released"
-language = "C#"
+language = ["C#"]
 engine = "XNA"
 
 [[projects]]
 name = "Fractal Block World"
 url = "http://danthemanhathaway.com/ComputerGames/FractalBlockWorld/ReleaseMisc/index.html"
 state = "Released"
-language = "C++ & Lua"
+language = ["C++", "Lua"]
 
 [[projects]]
 name = "Portal Knights"
 url = "https://store.steampowered.com/app/374040/Portal_Knights/"
 state = "Released"
-language = "C++"
+language = ["C++"]
 
 [[projects]]
 name = "Cube World"
 url = "https://cubeworld.com/"
 state = "Released"
-language = "C++"
+language = ["C++"]
 
 [[projects]]
 name = "Barony"
 url = "https://www.baronygame.com/"
 state = "Released"
-language = "C++ & C"
+language = ["C++", "C"]
 source = "https://github.com/TurningWheel/Barony"
 
 [[projects]]
@@ -281,7 +281,7 @@ engine = "Unreal Engine 4"
 name = "Timberborn"
 url = "https://mechanistry.com/"
 state = "Released"
-language = "C#"
+language = ["C#"]
 engine = "Unity 6"
 
 [[projects]]
@@ -293,7 +293,7 @@ state = "Released"
 name = "Crystal Project"
 url = "https://store.steampowered.com/app/1637730/Crystal_Project/"
 state = "Released"
-language = "C#"
+language = ["C#"]
 engine = "FNA"
 
 ###########################################################
@@ -374,7 +374,7 @@ language = ["C#"]
 name = "Hytale"
 url = "https://hytale.com/"
 state = "Early Access"
-language = "Java & C#"
+language = ["Java", "C#"]
 
 [[projects]]
 name = "cyubeVR"
@@ -386,7 +386,7 @@ engine = "Unreal Engine 5"
 name = "Voima"
 url = "https://voima.gg/"
 state = "Early Access"
-language = "C#"
+language = ["C#"]
 engine = "Unity"
 
 [[projects]]
@@ -399,14 +399,14 @@ engine = "Unreal Engine 5"
 name = "Space Engineers 2"
 url = "https://2.spaceengineersgame.com/"
 state = "Early Access"
-language = "C#"
+language = ["C#"]
 engine = "VRAGE3"
 
 [[projects]]
 name = "Foundry"
 url = "https://www.paradoxinteractive.com/games/foundry/about"
 state = "Early Access"
-language = "C# & C++"
+language = ["C#", "C++"]
 engine = "Unity"
 
 ###########################################################
@@ -547,7 +547,7 @@ language = ["C#", "OpenTK"]
 name = "4D Miner"
 url = "https://store.steampowered.com/app/1941640/4D_Miner/"
 state = "Active Dev."
-language = "C++"
+language = ["C++"]
 
 [[projects]]
 name = "PlanetSmith"
@@ -559,14 +559,14 @@ engine = "Unity"
 name = "CastleMiner Z : Resurrection"
 url = "https://www.castleminerz.com/"
 state = "Active Dev."
-language = "C#"
+language = ["C#"]
 engine = "Unreal Engine 5"
 
 [[projects]]
 name = "Grimorium"
 url = "https://store.steampowered.com/app/4415850/Grimorium/"
 state = "Active Dev."
-language = "C++"
+language = ["C++"]
 
 ###########################################################
 #################### Unknown Status #######################
