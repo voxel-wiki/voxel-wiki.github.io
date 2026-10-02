@@ -79,12 +79,41 @@ That'd make all our voxels take up **twice** the memory as before... do we *real
 
 ### Prior Art
 
-- [Physical color palettes](https://en.wikipedia.org/wiki/Palette_(painting)) and [paint-by-number kits](https://en.wikipedia.org/wiki/Paint_by_number).
-- [Indexed color](https://en.wikipedia.org/wiki/Indexed_color) [image file formats](https://en.wikipedia.org/wiki/Image_file_format), such as [GIF](https://en.wikipedia.org/wiki/GIF).
-- [Minecraft 1.13](https://minecraft.wiki/w/Java_Edition_1.13)
-	<small>("Update Aquatic", released July&nbsp;2018)</small>:  
-	By changing how voxel types are [referenced internally](https://minecraft.wiki/w/Java_Edition_Flattening),
-	Mojang was able to [losslessly compress](https://en.wikipedia.org/wiki/Lossless_compression) voxel volumes at runtime.
+{% info_notice() %}This section is optional reading, only here for histories sake.{% end %}
+
+Originally, while these days more so for [artistic reasons](https://en.wikipedia.org/wiki/Pixel_art),
+[indexed&nbsp;color](https://en.wikipedia.org/wiki/Indexed_color) methods were often used
+to improve digital image quality in the presence of hardware and/or software constraints.
+
+This led to, among other things, the creation of the [GIF](https://en.wikipedia.org/wiki/GIF) image file format,
+whose pronunciation keeps being debated to this day&nbsp;<small>(lol)</small>,
+which, though slowly replaced by video formats with better compression (like AVIF),
+still sees widespread usage across the internet.
+
+{% figure(caption="GIF image of a parrot and its resulting color palette, represented as rotating cube of RGB samples.", author="**Image Source:** [https://en.wikipedia.org/wiki/Palette_(computing)](https://en.wikipedia.org/wiki/Palette_(computing))<br/>**Image Credits:** [Ricardo Cancho Niemietz](https://en.wikipedia.org/wiki/User:Ricardo_Cancho_Niemietz) & [Kjerisch](https://commons.wikimedia.org/wiki/User:Kjerish)") %}
+<table>
+	<tbody><tr>
+		<td><img title="Image of a Parrot" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/RGB_24bits_palette_sample_image.jpg"></td>
+		<td><img title="Palette of the Image (as animated rotating RGB-space cube)" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Sample_Image_RGB_Cube.gif"></td>
+		<td></td>
+	</tr></tbody>
+</table>
+{% end %}
+
+<br>
+
+At some point during the development of [Minecraft 1.13](https://minecraft.wiki/w/Java_Edition_1.13)
+<small>("Update Aquatic", released July&nbsp;2018)</small>, after changing how their voxel types are
+[referenced internally](https://minecraft.wiki/w/Java_Edition_Flattening) in the previous update,
+Mojang was able to implement [lossless compression](https://en.wikipedia.org/wiki/Lossless_compression)
+of voxel volumes at runtime: the first publicly known usage of palette compression for voxels.
+
+{% info_notice() %}
+Physically, color palettes are both
+used in [free-form painting](https://en.wikipedia.org/wiki/Palette_(painting))
+and via [paint-by-number kits](https://en.wikipedia.org/wiki/Paint_by_number);
+the latter being surprisingly fitting!
+{% end %}
 
 ## Theory
 
@@ -122,9 +151,9 @@ How many unique voxel variants does any common chunk contain?
 
 - What about a grassy field? Some plants, grass, dirt/soil...
 
-The honest answer is that, for the *vast majority* of chunks, there's maybe two,
-sometimes four, and *very* rarely eight, unique voxel variants;
-things are just... mostly all the same stuff.
+For the *vast majority* of chunks, there's maybe two, sometimes four,
+and *very* rarely eight, unique voxel variants; things are just...
+mostly all the same stuff.
 
 It's only on the surface where all the plants and structures live,
 which is a *way* smaller volume than the sky and underground,
@@ -145,7 +174,8 @@ Variants = {Air, Grass, Dirt, Flower}
 Indices = [0, 0, 0, 0, ..., 2, 2, 2]
 ```
 
-...we get... a chunk that is [painted by numbers](https://en.wikipedia.org/wiki/Paint_by_number), consisting of numbers (the indices) and a **palette** of variants.
+...we get... a chunk that is [painted by numbers](https://en.wikipedia.org/wiki/Paint_by_number),
+consisting of numbers (the indices) and a **palette** of variants.
 
 Now you *might* think-
 
@@ -155,7 +185,7 @@ But the important detail here is that we're **not holding the global palette**:
 this one is *local* to its chunk with it's own "colors", the chunks voxels pointing into it,
 indirectly using the global palette.
 
-And this local palette holds *only* the unique variants, of the voxels currently stored in the chunk...
+And this local palette holds *only* the unique variants, of all voxels currently stored in the chunk...
 so any index pointing into that palette, only's gotta be *just* big enough to do that *and no larger*.
 
 How big exactly? Well, here's the math:
@@ -164,7 +194,8 @@ How big exactly? Well, here's the math:
 <center class="m-2"><code>index<sub>bits</sub> = ceil( log2 ( palette<sub>size</sub> ) )</code></center>
 {% end %}
 
-This formula may not mean much to you, so let's look at a table that solves it for some palette sizes...
+This formula may not mean much to you (or ya don't like math! IDK),
+so let's look at a table that solves it for some palette sizes...
 
 | Palette Size<br><small>(local unique variants)</small> | Index Bits<br><small>`ceil(log2(palette-size))`</small> |
 |------------:|-----|
@@ -178,7 +209,9 @@ This formula may not mean much to you, so let's look at a table that solves it f
 |  `65 - 128` | `7` |
 | `129 - 256` | `8` |
 
-Well, would you look at that: Even with reasonably high numbers of variants, the indices don't need many bits at all... or *any* at all, if the palette contains exactly *one* variant!
+Well, would you look at that: Even with reasonably high numbers of variants,
+the indices don't need many bits at all... or *any* at all,
+if the volume &amp; palette happens to contain exactly *one* variant!
 
 {% figure(class="mb-3", id="palette-local-minbits") %}
 > With per-chunk palettes, voxels need *mere bits* of storage.
@@ -186,9 +219,9 @@ Well, would you look at that: Even with reasonably high numbers of variants, the
 
 Since voxels, by their very nature, exist in *stupidly large*[^squarecubelaw] amounts,
 this results in a pretty ludicrous reduction in memory consumption,
-often halving or even quartering RAM usage.
+often more than halving RAM usage, at almost zero performance cost.
 
-Let's redefine our chunk structure, to use an array of integers whose size is variably defined by the formula:
+Let's redefine our chunk structure, to use an array of integers whose size is variably defined by the previous formula:
 
 ```pseudocode
 class Chunk:
@@ -201,44 +234,58 @@ All that really changed, is that the chunks volume is now made of *indices*,
 whose bit-size depends on the palettes size,
 with the palette they point at as a new field above it...
 
-...and that's it, theory-wise: **palette compressed** voxel storage.
+...and theory-wise, that's it: **palette compressed** voxel storage.
 
 ### Pro & Contra
 
 Using this technique, we gain many advantages, like...
 
 - **Massively reduced memory footprint:**  
-  Since common environments only need a few voxel variants, even if arranged in impossibly many [pseudo-randomly generated](/wiki/procgen) patterns, large volumes of voxels will take up *way* less memory.
+  Since common environments only need a few voxel variants,
+  even if arranged in impossibly many [pseudo-randomly generated](/wiki/procgen) patterns,
+  large volumes of voxels will take up *way* less memory.
 
 - **Smaller (pre-)serialized size:**  
-  The technique is also great for persistent storage, as a chunks volume of indices can still be dumped straight to disk, with the serialized palette taking barely any additional space.
+  The technique is also great for persistent storage,
+  as a chunks volume of indices can still be dumped straight to disk,
+  with the serialized palette taking barely any additional space.
 
 - **Effectively unlimited voxel types:**  
-  With the indirection of the palette, the pointer into the global palette can safely use a 32-bit integer,
-  ensuring you'll run out of ideas for voxel types, before ever overflowing said pointer.
+  With the indirection of the palette, the pointer into the global palette can safely be a proper pointer/reference,
+  ensuring you'll sooner run out of ideas for voxel types, rather than available working memory.
 
 - **Almost zero-cost state permutations:**  
-  Entries in the local palette can hold additional data, not just a reference into the global palette,
-  with even a single extra 32-bit integer allowing for ludicrously many state permutations.
+  Expanding on the previous point, entries in the local palette can also hold additional metadata,
+  instead of just a reference into the global palette.
+  Even a single extra 32-bit integer of metadata, allows for ludicrously many state permutations,
+  at almost no additional cost.
 
 - **Multilayer voxel data:**  
-  By splitting voxel types up into layers, like 'solid' and 'fluid', each layer having its own palette,
-  multiple voxel types can be overlaid and potentially simulated in parallel.
+  By splitting voxel types across multiple layers, like 'solid' and 'fluid', each layer having its own palette,
+  voxels can be 'overlaid' (or 'logged') and potentially simulated in parallel.
 
 ...but, of course, this comes with trade-offs:
 
 - **Access overhead:**  
   All voxel accesses will be a <small>tiny</small> bit slower on average.
-  Given some old micro-benchmarks, one can expect up to ~14% slowdown,
-  with reads less affected than writes. For bulk access,
+  Given some old micro-benchmarks, one can expect (at worst) an up to ~14% slowdown,
+  with reads significantly less affected than writes. For bulk read/write access,
   temporary decompression of the volume may be needed.
 
 - **Pointer chasing:**  
-  The palette entries *must* be stored as contiguous array that, except for the global palette, shouldn't contain any additional pointers/references, to keep the palettes uniqueness constraint intact. This *can* be worked around, if necessary, with tagged value pointers and/or atomically shared objects.
+  The palette entries *must* be stored as contiguous array that,
+  except for the global palette pointed at by the voxel type,
+  shouldn't contain any additional pointers/references,
+  as to keep palette operations in local registers and L1 cache,
+  avoiding spilling into L2 (or worse: L3) cache as much possible.
+  This can be partially worked around, if necessary, with tagged value pointers and/or atomically shared objects.
 
 - **Dynamic allocations:**  
   Both the volume of indices and its associated palette can change in size as they're edited,
   which can be quite the issue in memory- or allocation-constrained environments (like the GPU!).
+  Using the system allocator here, especially on Windows, will cost *way* too much time/latency.
+
+<br/>With all that said, these trade-offs are *absolutely worth it*.
 
 ---
 
@@ -251,35 +298,36 @@ For simplicities/familiarities sake, we'll be using
 here.
 
 Let's start with a basic chunk implementation,
-using `byte` for `VoxelTypeId`, as one often does:
+using `ushort` for `VoxelTypeId`, for examples sake:
 
 ```c#
 public class Chunk {
 	public const int EDGE_SIZE = 32;
 	public const int VOLUME_SIZE = EDGE_SIZE * EDGE_SIZE * EDGE_SIZE;
-	byte[] voxels = new byte[VOLUME_SIZE];
+	ushort[] voxels = new ushort[VOLUME_SIZE];
 	
 	public int index(int x, int y, int z) {
 		// out-of-bounds handling omitted for brevity
 		return x*EDGE_SIZE*EDGE_SIZE + z*EDGE_SIZE +  y;
 	}
 	
-	public byte get_voxel(int x, int y, int z) {
+	public ushort get_voxel(int x, int y, int z) {
 		return voxels[index(x,y,z)];
 	}
 	
-	public void set_voxel(int x, int y, int z, byte voxel) {
+	public void set_voxel(int x, int y, int z, ushort voxel) {
 		voxels[index(x,y,z)] = voxel;
 	}
 }
 ```
 
-To store our unique voxel variants in a palette, we turn the volume into indices and create a plain-ol' array of palette entries... let's rewrite our chunk class:
+To store our unique voxel variants in a palette, we turn the volume into indices
+and create a plain-ol' array of palette entries... let's rewrite our chunk class:
 
 ```c#
 // This MUST be a struct.
 struct PaletteEntry {
-	short voxel_type_id;
+	ushort voxel_type_id;
 }
 
 class Chunk {
@@ -294,13 +342,13 @@ class Chunk {
 		return x*EDGE_SIZE*EDGE_SIZE + z*EDGE_SIZE +  y;
 	}
 	
-	public short get_voxel(int x, int y, int z) {
+	public ushort get_voxel(int x, int y, int z) {
 		var index = index(x,y,z);
 		var palette_id = volume[index];
 		return palette[palette_id];
 	}
 	
-	public void set_voxel(int x, int y, int z, short voxel_type_id) {
+	public void set_voxel(int x, int y, int z, ushort voxel_type_id) {
 		/* ??? */
 	}
 }
@@ -308,10 +356,11 @@ class Chunk {
 
 So far, easy! Except... hold on... how do we *set* a voxel now?
 
-First off, to ensure the uniqueness of variants in the palette, we now have to *scan* the palette for the type we want to set our voxel to:
+First off, to ensure the uniqueness of variants in the palette,
+we now have to *scan* the palette for the type we want to set our voxel to:
 
 ```c#
-	public void set_voxel(int x, int y, int z, short voxel_type_id) {
+	public void set_voxel(int x, int y, int z, ushort voxel_type_id) {
 		var index = index(x,y,z);
 		var old_palette_id = volume[index]; // we'll need this
 		
@@ -330,7 +379,16 @@ First off, to ensure the uniqueness of variants in the palette, we now have to *
 		/* --- snip --- */
 ```
 
-If we cant find our voxel type, we expand the palette:
+{% info_notice() %}
+**Note:**
+This scan is why the palette **must** be an array of tightly packed struct entries:
+iterating over such a consecutive (~1kB) range of memory, is up to ***14x faster than using a hashmap***.
+
+If entries were to be fragmented across memory, due to being heap-allocated,
+that single pseudo-random(-ish) entry pointer-dereference alone would ruin performance.
+{% end %}
+
+If we cant find our voxel type, we've got to expand the palette:
 
 ```c#
 		/* --- snip --- */
@@ -344,39 +402,46 @@ If we cant find our voxel type, we expand the palette:
 	}
 ```
 
-But now there's a new problem: since our volume of indices is currently using bytes (we'll fix that later!), if we keep changing voxels (adding more variants to the palette), we will eventually overflow our index after ~256 changes... which is bad.
+But now there's a new problem:
+Since our volume of indices is currently using bytes (we'll fix that later!),
+if we keep changing voxels (adding more variants to the palette),
+our index will eventually overflow after ~256 changes... which is bad.
 
 How do we eliminate old/unused entries from the palette?
 
-We *could* scan our volume of indices, counting how many point at which palette entry, but that'd be *quite* the opposite of efficient.
+We *could* scan our volume of indices,
+counting how many point at which palette entry and, using that,
+periodically (or on overflow) remove unused entries.
+But that'd be quite inefficient.
 
 Let's instead add a *reference counter* to our palette entries.
 
 ```c#
 struct PaletteEntry {
-	short voxel_type_id;
+	ushort voxel_type_id;
 	int refcount = 0;
 }
 ```
 
-Of course, we now have to correctly keep track of these `refcount`-ers, so...
+Of course, we now have to correctly keep track of these `refcount`-ers,
+so let's adjust what we've written before...
 
 ```c#
-	public void set_voxel(int x, int y, int z, short voxel_type_id) {
+	public void set_voxel(int x, int y, int z, ushort voxel_type_id) {
 		var index = index(x,y,z);
 		var old_palette_id = volume[index];
 		
-	    // Reduce the refcount for the *current* palette entry...
-	    palette[old_palette_id].refcount -= 1;
+		// Reduce the refcount for the *current* palette entry...
+		palette[old_palette_id].refcount -= 1;
 		
 		// Check if the voxel type is already in the palette,
 		// and if so, use it!
-		int replace = Array.FindIndex(palette
-			, (entry) => entry.voxel_type_id == voxel_type_id
+		int replace = Array.FindIndex(palette,
+			(entry) => entry.voxel_type_id == voxel_type_id
 		);
 		
 		if (replace != -1) {
-			// the type is already in the palette
+			// Type is already in the palette;
 			volume[index] = replace;
 			palette[replace].refcount += 1; // use it!
 			return;
@@ -385,7 +450,9 @@ Of course, we now have to correctly keep track of these `refcount`-ers, so...
 		/* --- snip A --- */
 ```
 
-Since we know whether any given palette entry is used at all, we can also check if our 'old' entry has no remaining references, and reuse it instead:
+Since we know whether any given palette entry is used at all,
+we can also check if our 'old' entry has no remaining references,
+and immediately reuse it instead:
 
 ```c#
 		/* --- snip A --- */
@@ -431,23 +498,28 @@ Except we forgot to compress the indices; *oooops!*
 **Note:** Compressing the indices isn't *strictly* necessary.  
 
 If one can ensure the palette stays below 256 variants, using plain bytes as indices is viable,
-and will still save memory, compared to using a volume of shorts as voxels.
+and will still save lot's of memory, compared to using a volume of shorts as voxels.
 
 It's also perfectly fine to stop right here and come back later,
 as the compression of indices is a self-contained implementation detail.
 {% end %}
 
+Let's cover that in [the next chapter](/wiki/palettes/indices-bit-compression), shall we?
+
+<!--
 {{ todo_notice(body="???") }}
-
-
-
+{{ todo_notice(body="Arena Allocation?") }}
+{{ todo_notice(body="Run-Length Encoding?") }}
+{{ todo_notice(body="Tagged Value Pointers?") }}
+-->
 
 ## References
 
 - [Wikipedia on Palettes in Computing](https://en.wikipedia.org/wiki/Palette_(computing))
 - [Minecraft JE 1.13: The Flattening](https://minecraft.wiki/w/Java_Edition_1.13/Flattening)
-- [Original Article](https://www.longor.net/articles/voxel-palette-compression-reddit)
+- [Original article on longor.net](https://www.longor.net/articles/voxel-palette-compression-reddit)
 
 ---
 
-[^squarecubelaw]: **The square cube law:** With every meter/unit that the viewing distance (a diameter `d`) is increased, the overall surface area will grow by a *square* factor (`d²`), while the volume will grow by a *cubic* (`d³`) factor!
+[^squarecubelaw]: **The square cube law:** With every meter/unit that the viewing distance (a diameter `d`) is increased,
+the overall surface area will grow by a *square* factor (`d²`), while the volume will grow by a *cubic* (`d³`) factor!
