@@ -90,9 +90,24 @@ So... how do we get rid of it?
 
 With **bit-packing!**
 
-Assuming that our app only runs on 64-bit systems,
-an unsigned 64-bit integer is the ideal type to pack bits into,
-so just... try to bit-pack our indices?
+Assuming our app is intended for 64-bit systems,
+we can use machine-word-sized (64-bit) unsigned integers as **cells**,
+packing as many of our bit-indices per integer cell as we can.
+
+Given a palette of four entries, our bit-size will be `2`,
+letting us visualize the layout of cells as bit-patterns...
+
+```bits
+[ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ]
+----------------------------------------------------------------
+aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzaabbccddeeff
+gghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzaabbccddeeffgghhiijjkkll
+mmnnooppqqrrssttuuvvwwxxyyzz...                    ...and so on!
+```
+
+Changing our chunk structure to use 64-bit integers
+<small>(not using `usize` for clarity)</small> as cells,
+and writing out the indices in the new scheme, we get this:
 
 ```rust
 struct Chunk_BitPacked {
@@ -120,11 +135,21 @@ let my_pretend_chunk = Chunk_BitPacked {
 };
 ```
 
-Were as before we had 4³ indices stored across 128 nibbles, now they're using 64,
-with each index being a nibble which is the smallest possible bit-size to store them as.
+Wereas before 4³ indices got stored across 64 bytes, now they're using 32,
+with each index taking only a quarter of a byte, the smallest possible bit-size to store them as.
 
-Now check out what happens if we remove the 'dirt' and 'flowers',
-replacing them with 'air' and 'grass', cutting the palette in half:
+Now removing the 'dirt' and 'flowers', replacing them with 'air' and 'grass',
+once again cutting the palette in half, we get this layout per cell...
+
+```bits
+[ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ]
+----------------------------------------------------------------
+abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijkl
+mnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwx
+yzabcdefghijklmnopqrstuvwxyz...                    ...and so on!
+```
+
+...and also re-applying that to the code:
 
 ```rust
 let my_pretend_chunk_2 = Chunk_BitPacked {
@@ -141,9 +166,10 @@ let my_pretend_chunk_2 = Chunk_BitPacked {
 };
 ```
 
-Now we're using only 16 nibbles of memory!
+We're using only 64 bits of memory, exactly one cell,
+one pit per index, matching our 4³ volume. Perfect!
 
-Finally, if we went and removed all the 'dirt' now, leaving only air...
+Finally, removing all the 'dirt' now, leaving only air...
 
 ```rust
 let my_pretend_chunk_3 = Chunk_BitPacked {
@@ -156,14 +182,18 @@ let my_pretend_chunk_3 = Chunk_BitPacked {
 };
 ```
 
-...has us at **zero bits** per voxel, letting us omit the storage, and heap-allocation, of indices entirely.
+...has us at **zero bits** per voxel, letting us entirely omit the storage, and heap-allocation, of our indices.
 
 {% info_notice() %}
 For a typical scene in a voxel game, unless there's floating islands,
 all chunks above the general terrain and built structures will be like that.
 {% end %}
 
-Hopefully this makes sense so far, because... what if the bit-size doesn't fit perfectly?
+Hopefully this makes sense so far, because...
+
+### Bit-Sizes that aren't a Power-Of-Two
+
+...what if the bit-size does **not** fit perfectly?
 
 ```rust
 let my_pretend_chunk_4 = Chunk_BitPacked {
@@ -185,17 +215,148 @@ let my_pretend_chunk_4 = Chunk_BitPacked {
 ```
 
 Given a palette with 8 entries, we'd get a bit-size of 3,
-meaning the indices just don't perfectly fit-and-fill a single 64-bit integer.
+a number that 64 is, unfortunately, not cleanly divisible by.
 
-Here there are three options to deal with this, in order of complexity:
+So if we try to lay out the bits...
 
-1. **Don't:** Round bit-size up to the nearest power of two.
-2. **Aligned:** Waste a bit or two in every 64-bit integer.
-3. **Unaligned:** Pack indices as tightly as possible, complexity be damned.
+```bits
+[ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ]
+----------------------------------------------------------------
+aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnnooopppqqqrrrssstttuuuv
+#                                                              ▲
+#                                         woops, it's cut off! ┛
+```
 
-For sake of simplicity (and my sanity),
-the implementation section will be using the first option,
-but we'll still go over them.
+...we clearly see the impossibility of perfectly filling a single 64-bit integer.
+But that doesn't mean we can't try!
+
+There's three options here to deal with this, by rising complexity:
+
+#### **Option 1:** Don't bother, just round up.
+
+The simplest method is to just not let it happen in the first place!
+So we take whatever the bit-size is, round it up to the nearest power-of-two,
+and use that instead.
+
+Writing that out for all palette sizes up to 256, we get this:
+
+| Palette Size | Bit Size |
+|---:|:---|
+| `1` | `0` |
+| `2` | `1` |
+| `3 .. 4` | `2` |
+| `5 .. 16` | `4` |
+| `17 .. 256` | `8` |
+| `257 .. 65535` | `16` |
+
+But what does that actually look like?
+
+Given a palette size of 8, whose ideal bit-size is 3,
+the table says we should use 4 instead, so that's what we use:
+
+```bits
+[ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ]
+----------------------------------------------------------------
+aaa0bbb0ccc0ddd0eee0fff0ggg0hhh0iii0jjj0kkk0lll0mmm0nnn0ooo0ppp0
+qqq0rrr0sss0ttt0uuu0vvv0www0xxx0yyy0zzz0aaa0bbb0ccc0ddd0eee0fff0
+ggg0hhh0iii0jjj0kkk0lll0mmm0nnn0ooo0ppp0qqq0rrr0sss0ttt0uuu0vvv0
+# ...and so on
+```
+
+That doesn't look too bad; only fifteen wasted bits! Now let's try a bit-size of 5...
+
+```bits
+[ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ]
+----------------------------------------------------------------
+aaaaa000bbbbb000ccccc000ddddd000eeeee000fffff000ggggg000hhhhh000
+iiiii000jjjjj000kkkkk000lllll000mmmmm000nnnnn000ooooo000ppppp000
+# ...and so on
+```
+
+**Twenty-four** wasted bits per cell... that's not great.
+
+So while this option sure makes things simple, it'll also waste *a lot* of bits.
+
+*Next!*
+
+#### **Option 2:** Aligned storage via cell-buffer.  
+
+Using this method,
+we treat the 64-bit integers that serve as the underlying indices storage as 'cells',
+packing as many indices as can actually fit in each cell,
+leaving only the remaining highest/most-significant bits zeroed.
+
+Once again, writing that out for the palette sizes up to 256...
+
+| Palette Size | Bit Size |
+|:---:|:---|
+| `1` | `0` |
+| `2` | `1` |
+| `3 .. 4` | `2` |
+| `5 .. 8` | `3` |
+| `9 .. 16` | `4` |
+| `17 .. 32` | `5` |
+| `33 .. 64` | `6` |
+| `65 .. 128` | `7` |
+| `129 .. 256` | `8` |
+
+...and, of course, visualizing it for a bit-size of 3:
+
+```bits
+[ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ]
+----------------------------------------------------------------
+aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnnooopppqqqrrrssstttuuu0
+vvvwwwxxxyyyzzzaaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnnoooppp0
+qqqrrrssstttuuuvvvwwwxxxyyyzzzaaabbbcccdddeeefffggghhhiiijjjkkk0
+# ...and so on
+```
+
+Only a single wasted bit, hooray! What about a bit-size of 5?
+
+```bits
+[ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ]
+----------------------------------------------------------------
+aaaaabbbbbcccccdddddeeeeefffffggggghhhhhiiiiijjjjjkkkkklllll0000
+mmmmmnnnnnooooopppppqqqqqrrrrrssssstttttuuuuuvvvvvwwwwwxxxxx0000
+yyyyyzzzzzaaaaabbbbbcccccdddddeeeeefffffggggghhhhhiiiiijjjjj0000
+# ...and so on
+```
+
+Five bits; compared to the 
+
+
+*In theory*, this is the optimal method, trade-offs wise, as it:
+(A) wastes barely any bits,
+(B) isn't much work to implement and
+(C) has no performance penalty.
+
+...?
+
+#### **Option 3:** Unaligned storage via bit-buffer.  
+
+Here we pack the bits of the indices as tightly as possible,
+without any gaps/padding in between, by doing a bunch of extra bit-twiddling.
+
+Given a bit-size of 3, indices would then be packed like this:
+
+```bits
+[ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ][ BYTE ]
+----------------------------------------------------------------
+aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnnooopppqqqrrrssstttuuuv
+vvwwwxxxyyyzzzaaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnnooopppqq
+qrrrssstttuuuvvvwwwxxxyyyzzzaaabbbcccdddeeefffggghhhiiijjjkkklll
+# ...and so on
+```
+
+Packing indices this way leaves not a single bit wasted...
+except now we've got to touch *two* integers,
+for which determining the bit-offsets and -masks is quite involved,
+costing us a surprising amount of precious clock cycles.
+
+---
+
+For sake of simplicity (and the authors sanity),
+the implementation section will be using the second option.
 
 
 
@@ -276,4 +437,11 @@ class VarIntBuffer<CAPACITY>:
 
 
 
+## References
 
+- Rust implementations of variable-integer buffers:
+  - [compactvec](https://crates.io/crates/compactvec) (rounds up to bytes)
+  - [packedvec](https://crates.io/crates/packedvec) (unaligned)
+  - [unthbuf](https://crates.io/crates/unthbuf) (aligned & unaligned)
+  - [compvec](https://crates.io/crates/compvec) (multiple methods)
+  - [compressed-intvec](https://crates.io/crates/compressed-intvec) (multiple methods)
