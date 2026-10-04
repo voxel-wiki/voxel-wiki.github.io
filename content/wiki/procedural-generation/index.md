@@ -45,9 +45,18 @@ Some common algorithms used for procedural generation are:
 - Mersenne Twister
 - XORShift
 
-{{ todo_notice(body="Create articles for the above?") }}
+---
 
+{{ todo_notice(body="Create articles for the above?") }}
 {{ todo_notice(body="Add more explainers? Guides?") }}
+
+---
+
+{{ todo_notice(body="Procedural Generation, small & large") }}
+{{ todo_notice(body="Infinity Is Boring / Signal-To-Noise") }}
+{{ todo_notice(body="World Scale: Seeing far into the distance, or not?") }}
+
+---
 
 ## References
 
