@@ -139,7 +139,7 @@ impl VoxelGrid {
 }
 ```
 
-{% info_notice() %}
+{% info_notice(id="spatial-indexing-scheme") %}
 The line marked with `SCHEME` declares a (spatial) **indexing scheme** for us, which defines the *order* and *importance* of the `x,y,z` axes, but also how to turn coordinates into a usable index. Neat!
 {% end %}
 
