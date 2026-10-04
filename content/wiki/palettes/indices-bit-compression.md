@@ -24,7 +24,7 @@ by replacing the indices storage with a variable-length-integer buffer.
 
 As explained in the [previous chapter](/wiki/palettes##theory),
 the *maximum* bit-size of any given chunks indices,
-is *exactly equal* the palette entry counts *ceiled base-2 logarithm*.
+is *exactly equal* to the palette entry counts *ceiled base-2 logarithm*.
 
 {% figure(class="m-2", id="palette-size-equation", caption="Relation between a palettes size and the bit-size of any index/indices pointing into it.") %}
 <center class="m-2"><code>index<sub>bits</sub> = ceil( log2 ( palette<sub>size</sub> ) )</code></center>
@@ -94,7 +94,7 @@ Assuming our app is intended for 64-bit systems,
 we can use machine-word-sized (64-bit) unsigned integers as **cells**,
 packing as many of our bit-indices per integer cell as we can.
 
-Given a palette of four entries, our bit-size will be `2`,
+Given the previous palette of 4 entries, our bit-size will be `2`,
 letting us visualize the layout of cells as bit-patterns...
 
 ```bits
@@ -126,17 +126,18 @@ let my_pretend_chunk = Chunk_BitPacked {
 		/*0x3*/PaletteEntry{voxel_type_id: FLOWER, refcount: 2},
 	]),
 	indices: Box::new([
-		// OMG SO TINY!1!!
-		0x2100210021302100,
-		0x2100210021002100,
-		0x2130210021002100,
-		0x2100100010001000,
+		// Using base-2 now, instead of base-16:
+		// Each pair of bits is one index.
+		0b10_01_00_00_10_01_00_00_10_01_11_00_10_01_00_00_10_01_00_00_10_01_00_00_10_01_00_00_10_01_00_00,
+		0b10_01_11_00_10_01_00_00_10_01_00_00_10_01_00_00_10_01_00_00_01_00_00_00_01_00_00_00_01_00_00_00,
 	])
 };
 ```
 
-Wereas before 4³ indices got stored across 64 bytes, now they're using 32,
-with each index taking only a quarter of a byte, the smallest possible bit-size to store them as.
+Wereas before 4³ indices got stored across 64 bytes (512 bits),
+now they're using just 16 bytes (128 bits), four times less,
+with each index taking only a quarter of a byte,
+the smallest possible bit-size to store them as.
 
 Now removing the 'dirt' and 'flowers', replacing them with 'air' and 'grass',
 once again cutting the palette in half, we get this layout per cell...
@@ -159,7 +160,7 @@ let my_pretend_chunk_2 = Chunk_BitPacked {
 	]),
 	indices: Box::new([
 		// Using base-2 now, instead of base-16:
-		// Each four-bit group is now one column of voxels,
+		// Each four-bit group is now an entire column of voxels,
 		// all packed together into a single unsigned 64-bit integer.
 		0b1100_1100_1110_1100_1100_1100_1100_1100_1110_1100_1100_1100_1100_1000_1000_1000
 	])
@@ -185,7 +186,7 @@ let my_pretend_chunk_3 = Chunk_BitPacked {
 ...has us at **zero bits** per voxel, letting us entirely omit the storage, and heap-allocation, of our indices.
 
 {% info_notice() %}
-For a typical scene in a voxel game, unless there's floating islands,
+For a typical "earth-like" scene in a voxel game, unless there's floating islands,
 all chunks above the general terrain and built structures will be like that.
 {% end %}
 
@@ -279,7 +280,7 @@ So while this option sure makes things simple, it'll also waste *a lot* of bits.
 
 *Next!*
 
-#### **Option 2:** Aligned storage via cell-buffer.  
+#### **Option 2:** Aligned Per-Cell Storage
 
 Using this method,
 we treat the 64-bit integers that serve as the underlying indices storage as 'cells',
@@ -322,17 +323,12 @@ yyyyyzzzzzaaaaabbbbbcccccdddddeeeeefffffggggghhhhhiiiiijjjjj0000
 # ...and so on
 ```
 
-Five bits; compared to the 
+Five bits wasted... though compared to the first options twenty-four,
+this is clearly better.
 
+But is it the *best*?
 
-*In theory*, this is the optimal method, trade-offs wise, as it:
-(A) wastes barely any bits,
-(B) isn't much work to implement and
-(C) has no performance penalty.
-
-...?
-
-#### **Option 3:** Unaligned storage via bit-buffer.  
+#### **Option 3:** Unaligned Cross-Cell Storage
 
 Here we pack the bits of the indices as tightly as possible,
 without any gaps/padding in between, by doing a bunch of extra bit-twiddling.
@@ -348,28 +344,58 @@ qrrrssstttuuuvvvwwwxxxyyyzzzaaabbbcccdddeeefffggghhhiiijjjkkklll
 # ...and so on
 ```
 
-Packing indices this way leaves not a single bit wasted...
-except now we've got to touch *two* integers,
-for which determining the bit-offsets and -masks is quite involved,
-costing us a surprising amount of precious clock cycles.
+Packing indices this way leaves not a single bit wasted,
+making it the best method. *In theory.*
+
+In practice, we've now got to touch *two* integers per read/write access,
+for which determining the bit-offsets and -masks is... quite involved.
+
+This ends up costing us a surprising amount of precious clock cycles,
+making this very much *not* the best method.
+
+Though using it for persistence and transmission will be just fine,
+as there the bit-masks and -offsets are incrementally walked/visited during (de)serialization.
 
 ---
 
-For sake of simplicity (and the authors sanity),
-the implementation section will be using the second option.
+So...
 
+For sake of simplicity (and this authors sanity),
+the implementation section will be using the second option,
+which turns out to be the optimal method, trade-offs wise, as it:
+(A) wastes barely any bits,
+(B) isn't much work to implement and
+(C) has no performance penalty.
 
-
+Let's begin!
 
 ---
 
-{% todo_notice() %} "dimensionality does not matter" hint {% end %}
+## Implementation
 
----
+First off, let's remind ourselves of what, exactly, we ended up with as data structures,
+at the previous chapters implementation section...
 
-### Implementation
+```c#
+class Chunk {
+	public const int EDGE_SIZE = 32;
+	public const int VOLUME_SIZE = EDGE_SIZE * EDGE_SIZE * EDGE_SIZE;
+	
+	PaletteEntry[] palette;
+	byte[] indices; // <-- TARGET ACQUIRED!
+}
 
-{% todo_notice() %} implement {% end %}
+struct PaletteEntry {
+	ushort voxel_type_id;
+	int refcount = 0;
+}
+```
+
+
+
+
+
+{% todo_notice() %} implement varint buffer {% end %}
 
 ```c#
 class VarIntArray {
@@ -436,6 +462,7 @@ class VarIntBuffer<CAPACITY>:
 
 
 
+---
 
 ## References
 
