@@ -398,8 +398,8 @@ struct PaletteEntry {
 {% todo_notice() %} implement varint buffer {% end %}
 
 ```c#
-class VarIntArray {
-	enum Varlen {
+public class VarIntBuffer {
+	public enum Varlen {
 		ZERO = 0, // A palette of 1.
 		ONE  = 1, // A palette of 2.
 		TWO  = 2, // A palette of 4.
@@ -408,51 +408,37 @@ class VarIntArray {
 		SIXTEEN = 16 // A palette of 65536.
 	} // TODO: Ext-class for enum (mask/shift/etc)
 	
-	readonly int capacity; // How many elements this array holds.
-	Varlen  length; // The current bit-length of the elements.
-	uint[]? data;   // The compressed elements: capacity*length/32
+	// How many elements this buffer holds.
+	public readonly uint capacity;
+	
+	// The current bit-size of the elements.
+	Varlen bit_size;
+	public ulong bit_mask => ((ulong)1 << (int)this.bit_size) - 1;
+	
+	// The cells holding the compressed elements.
+	// Array size is: `capacity * bit_size_uint / 64`
+	ulong[] cells; // = Array.Empty<ulong>();
+	
+	VarIntBuffer(uint capacity, Varlen bit_size) {
+		this.capacity = capacity;
+		this.bit_size = bit_size;
+		var length = capacity * (uint)bit_size / 64;
+		this.cells = length == 0 ? Array.Empty<ulong>() : new ulong[length];
+	}
 	
 	// TODO: Setter
 	// TODO: Getter
+	// TODO: Expand
+	// TODO: Shrink
 	// TODO: Resize
-	// TODO: ForEach
 	// TODO: SetAll
+	// TODO: ForEach
+	// TODO: Enumerator
 }
 ```
 
 
-```pseudocode
-// A fixed-size flat/linear storage
-// for deduplicated bloxel states.
-class BloxelStorage<const CAPACITY>:
-	struct BloxelEntry:
-		refcount: int
-		instance: BloxelState
-	
-	palette: Array<BloxelEntry> = [
-		BloxelEntry {refcount=CAPACITY, instance=AIR}
-	]
-	
-	logsize: VarIntSize = log2(palette.length)
-	
-	indices: VarIntBuffer<CAPACITY> = new(logsize)
-	
-```
 
-```pseudocode
-enum VarIntSize:
-	ZERO = 0 // A palette of 1.
-	ONE  = 1 // A palette of 2.
-	TWO  = 2 // A palette of 4.
-	FOUR = 4 // A palette of 16.
-	EIGHT = 8  // A palette of 256.
-	SIXTEEN = 16 // A palette of 65536.
-
-class VarIntBuffer<CAPACITY>:
-	final vsize: VarIntSize = ZERO
-	cells: Array<u64> = [_; CAPACITY * vsize / 64]
-
-```
 
 
 
