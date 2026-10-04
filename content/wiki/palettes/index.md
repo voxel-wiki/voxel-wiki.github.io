@@ -306,6 +306,8 @@ public class Chunk {
 	public const int VOLUME_SIZE = EDGE_SIZE * EDGE_SIZE * EDGE_SIZE;
 	ushort[] voxels = new ushort[VOLUME_SIZE];
 	
+	// --- Internal Spatial Indexing Scheme
+	// See: voxel.wiki/wiki/introduction/storage#spatial-indexing-scheme
 	public int index(int x, int y, int z) {
 		// out-of-bounds handling omitted for brevity
 		return x*EDGE_SIZE*EDGE_SIZE + z*EDGE_SIZE +  y;
@@ -334,8 +336,8 @@ class Chunk {
 	public const int EDGE_SIZE = 32;
 	public const int VOLUME_SIZE = EDGE_SIZE * EDGE_SIZE * EDGE_SIZE;
 	
-	byte[] volume = new byte[VOLUME_SIZE]; // renamed!
-	PaletteEntry[] palette = /* init omitted for now */;
+	PaletteEntry[] palette;
+	byte[] indices = new byte[VOLUME_SIZE]; // renamed!
 	
 	public int index(int x, int y, int z) {
 		// out-of-bounds handling omitted for brevity
@@ -344,7 +346,7 @@ class Chunk {
 	
 	public ushort get_voxel(int x, int y, int z) {
 		var index = index(x,y,z);
-		var palette_id = volume[index];
+		var palette_id = indices[index];
 		return palette[palette_id];
 	}
 	
@@ -362,7 +364,7 @@ we now have to *scan* the palette for the type we want to set our voxel to:
 ```c#
 	public void set_voxel(int x, int y, int z, ushort voxel_type_id) {
 		var index = index(x,y,z);
-		var old_palette_id = volume[index]; // we'll need this
+		var old_palette_id = indices[index]; // we'll need this
 		
 		// Check if the voxel type is already in the palette,
 		// and if so, use it!
@@ -372,7 +374,7 @@ we now have to *scan* the palette for the type we want to set our voxel to:
 		
 		if (replace != -1) {
 			// the type is already in the palette, use it!
-			volume[index] = replace;
+			indices[index] = replace;
 			return;
 		}
 		
@@ -397,13 +399,13 @@ If we cant find our voxel type, we've got to expand the palette:
 		
 		var last = palette.Length - 1;
 		palette[last] = new PaletteEntry() {voxel_type_id};
-		volume[index] = last;
+		indices[index] = last;
 		// all done!... right?
 	}
 ```
 
 But now there's a new problem:
-Since our volume of indices is currently using bytes (we'll fix that later!),
+Since our volume of indices is currently using bytes (we'll fix that next chapter!),
 if we keep changing voxels (adding more variants to the palette),
 our index will eventually overflow after ~256 changes... which is bad.
 
@@ -429,7 +431,7 @@ so let's adjust what we've written before...
 ```c#
 	public void set_voxel(int x, int y, int z, ushort voxel_type_id) {
 		var index = index(x,y,z);
-		var old_palette_id = volume[index];
+		var old_palette_id = indices[index];
 		
 		// Reduce the refcount for the *current* palette entry...
 		palette[old_palette_id].refcount -= 1;
@@ -442,7 +444,7 @@ so let's adjust what we've written before...
 		
 		if (replace != -1) {
 			// Type is already in the palette;
-			volume[index] = replace;
+			indices[index] = replace;
 			palette[replace].refcount += 1; // use it!
 			return;
 		}
@@ -479,12 +481,12 @@ And finally, we fix up the part where we grow the palette...
 ```c#
 		/* --- snip B --- */
 		
-		Array.Resize(palette, palette.Length * 2);
+		Array.Resize(palette, Math.max(palette.Length,2) * 2);
 		// ^This (ab)uses zero-initialization of structs.
 		
 		var last = palette.Length - 1;
 		palette[last] = new PaletteEntry() {voxel_type_id, refcount = 1};
-		volume[index] = last;
+		indices[index] = last;
 		
 		// There, all done now... right?
 	}
@@ -506,12 +508,72 @@ as the compression of indices is a self-contained implementation detail.
 
 Let's cover that in [the next chapter](/wiki/palettes/indices-bit-compression), shall we?
 
-<!--
-{{ todo_notice(body="???") }}
+## Packed Storage Interface
+
+But wait, there is one more (optional!) thing we can do here!
+
+Since the palette and indices are flat structures,
+with the definition of "position" and "location" separately declared
+by the [spatial indexing scheme](/wiki/introduction/storage#spatial-indexing-scheme),
+we can split out the palette storages implementation.
+
+Why, you ask?
+
+By abstracting palette storage to be generic over any type of equatable struct elements
+<small>(in C# terms: `where T: struct, IEquatable<T>`)</small>, it can be reused for a variety of things,
+the best examples being additional layers/channels of data, overlaid atop the base voxel volumes.
+
+These additional layers can contain stuff like separately simulated liquids,
+cellular-automata based lighting, per-voxel color tints/paints, logic-circuit simulation, etc. etc.
+
+{{ todo_notice(body="Storage Implementation Separation") }}
+
+```c#
+// THIS CODE IS NOT COMPLETE / USABLE
+// THIS CODE IS NOT COMPLETE / USABLE
+// THIS CODE IS NOT COMPLETE / USABLE
+
+class Chunk {
+	public const int EDGE_SIZE = 32;
+	public const int VOLUME_SIZE = EDGE_SIZE * EDGE_SIZE * EDGE_SIZE;
+	
+	readonly IPackedStorage<MyVoxelType> storage = new PaletteStorage(VOLUME_SIZE);
+	// todo: ...?
+}
+
+interface IPackedStorage<T> where T: struct, IEquatable<T> {
+	uint getCapacity();
+	T getElement(uint position);
+	T setElement(uint position, T element);
+}
+
+class ArrayStorage<T> : IPackedStorage<T> where T: struct, IEquatable<T> {
+	readonly T[] elements;
+	// todo: ...?
+}
+
+struct PaletteEntry<T> where T: struct, IEquatable<T> {
+	T element;
+	int refcount = 0;
+	// todo: ...?
+}
+
+class PaletteStorage<T> : IPackedStorage<T> where T: struct, IEquatable<T> {
+	PaletteEntry<T> palette;
+	byte[] indices;
+	// todo: ...?
+}
+
+// THIS CODE IS NOT COMPLETE / USABLE
+// THIS CODE IS NOT COMPLETE / USABLE
+// THIS CODE IS NOT COMPLETE / USABLE
+```
+
+---
+
 {{ todo_notice(body="Arena Allocation?") }}
 {{ todo_notice(body="Run-Length Encoding?") }}
 {{ todo_notice(body="Tagged Value Pointers?") }}
--->
 
 ## References
 
