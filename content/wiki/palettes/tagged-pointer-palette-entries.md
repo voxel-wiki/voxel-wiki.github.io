@@ -7,7 +7,7 @@ categories = ["datastructures", "compression"]
 tags = ["datastructures", "compression", "optimization", "instancing", "flyweight"]
 [extra]
 chapters = true
-chapter_prev = {text = "Single-Variant Volume Omission", link = "/wiki/palettes/single-variant-volume-omission"}
+chapter_prev = {text = "Indices Bit-Compression", link = "/wiki/palettes/indices-bit-compression"}
 chapter_next = false
 +++
 

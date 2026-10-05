@@ -8,7 +8,7 @@ tags = ["datastructures", "compression", "optimization", "instancing", "flyweigh
 [extra]
 chapters = true
 chapter_prev = {text = "Palette Storage", link = "/wiki/palettes"}
-chapter_next = {text = "Single-Variant Volume Omission", link = "/wiki/palettes/single-variant-volume-omission"}
+chapter_next = {text = "Tagged-Pointer Palette Entries", link = "/wiki/palettes/tagged-pointer-palette-entries"}
 +++
 
 With the storage of our voxel volume chunks neatly palettized,
