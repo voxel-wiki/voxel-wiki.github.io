@@ -29,10 +29,9 @@ with most falling into one of roughly two-ish families...
 - [The Transvoxel Algorithm](https://transvoxel.org/)
 
 **Discrete Voxels: Bloxels**
-- Basic Method
-- Baked Meshlets
-- [Greedy Meshing](https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/)
-- [Binary Greedy Meshing](https://github.com/cgerikj/binary-greedy-meshing)
+- [Basic Method](/wiki/meshing-naive)
+- [Baked Meshlets](/wiki/meshing-baked)
+- [Greedy Meshing](/wiki/meshing-greedy)
 
 ## Performance Considerations
 
