@@ -15,8 +15,8 @@ allowing for complex resolution of references, while still providing efficient a
 
 <!-- more -->
 
-They are conceptually related to **Entity-Component-Systems**
-<small>(both deriving from relational databases)</small>,
+They are conceptually related to [**Entity-Component-Systems**](/wiki/entitycomponentsystem)
+<small>(since both derive from relational databases)</small>,
 being a sort-of *mirror* of them for (semi-)static data,
 and may serve as the basis for, or just an extension to, their implementation.
 
