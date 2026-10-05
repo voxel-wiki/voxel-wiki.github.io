@@ -31,7 +31,29 @@ Procedural generation isn't limited to just games; far from it!
 It's used anywhere anyone needs to create **chaos**, **repetition** and **large-scale patterns** without spending days (if not weeks or months!) being bored out of their mind[^boredom], even if paid to do so.
 {% end %}
 
-Some common algorithms used for procedural generation are:
+## Signal-To-Noise Ratio
+
+{{ todo_notice(body="Signal-To-Noise Ratio: Infinity Is Boring") }}
+{{ todo_notice(body="Bounded infinite generation") }}
+{{ todo_notice(body="Ways to break up infinite play-space") }}
+{{ todo_notice(body="Correlation with Apparent Relative Scale") }}
+
+## Apparent Relative Scale
+
+{{ todo_notice(body="Apparent scale of terrain is relative to its features") }}
+{{ todo_notice(body="World Scale: Seeing far into the distance, or not?") }}
+{{ todo_notice(body="Correlation with Signal-To-Noise Ratio") }}
+
+## Layers & Phases
+
+{{ todo_notice(body="Distinction of layers and phases ") }}
+{{ todo_notice(body="Reference to [/wiki/phased-generation] ") }}
+
+## Algorithms
+
+Similar to the sheer number of use-cases,
+the space of algorithms for procedural generation is also quite vast,
+if not endless, so we'll only list some of the common ones here:
 
 - Coherent [Noise](/wiki/noise)
 - [Cellular Automata](/wiki/cellular-automata)
@@ -44,17 +66,7 @@ Some common algorithms used for procedural generation are:
 - Random Walks
 - Mersenne Twister
 - XORShift
-
----
-
-{{ todo_notice(body="Create articles for the above?") }}
-{{ todo_notice(body="Add more explainers? Guides?") }}
-
----
-
-{{ todo_notice(body="Procedural Generation, small & large") }}
-{{ todo_notice(body="Infinity Is Boring / Signal-To-Noise") }}
-{{ todo_notice(body="World Scale: Seeing far into the distance, or not?") }}
+- ...?
 
 ---
 
