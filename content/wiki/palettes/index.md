@@ -1,7 +1,7 @@
 +++
 title = "Palette Storage"
 description = "Storing voxels via painting by numbers."
-draft = true
+aliases = ["/wiki/palette-compression"]
 [taxonomies]
 categories = ["datastructures", "compression"]
 tags = ["datastructures", "compression", "optimization", "instancing", "flyweight"]

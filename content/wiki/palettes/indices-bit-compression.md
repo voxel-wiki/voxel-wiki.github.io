@@ -1,14 +1,14 @@
 +++
 title = "Palette Storage: Indices Bit-Compression"
 description = "Compressing voxels below one byte."
-draft = true
 [taxonomies]
 categories = ["datastructures", "compression"]
 tags = ["datastructures", "compression", "optimization", "instancing", "flyweight"]
 [extra]
 chapters = true
 chapter_prev = {text = "Palette Storage", link = "/wiki/palettes"}
-chapter_next = {text = "Tagged-Pointer Palette Entries", link = "/wiki/palettes/tagged-pointer-palette-entries"}
+chapter_next = false
+#{text = "Tagged-Pointer Palette Entries", link = "/wiki/palettes/tagged-pointer-palette-entries"}
 +++
 
 With the storage of our voxel volume chunks neatly palettized,
@@ -391,15 +391,22 @@ struct PaletteEntry {
 }
 ```
 
-{{ todo_notice(body="Writeup of implementation using `./alignedcells.cs`") }}
+{% todo_notice() %}
+Writeup of implementation using [`./alignedcells.cs`](./alignedcells.cs).
+{% end %}
 
 ---
 
 ## References
 
+- [Bit-Twiddling](https://graphics.stanford.edu/~seander/bithacks.html)
 - Rust implementations of variable-integer buffers:
   - [compactvec](https://crates.io/crates/compactvec) (rounds up to bytes)
   - [packedvec](https://crates.io/crates/packedvec) (unaligned)
   - [unthbuf](https://crates.io/crates/unthbuf) (aligned & unaligned)
   - [compvec](https://crates.io/crates/compvec) (multiple methods)
   - [compressed-intvec](https://crates.io/crates/compressed-intvec) (multiple methods)
+- ...
+
+{{ todo_notice(body="Add more references; guides, tutorials, videos, etc.") }}
+{{ todo_notice(body="Add implementations in other languages, when found.") }}
