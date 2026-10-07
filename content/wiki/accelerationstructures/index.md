@@ -72,6 +72,7 @@ For yet more fun, consider that it is possible for both the TLAS and BLAS to be 
 
 {% todo_notice() %} Add references to non-wikipedia sources. {% end %}
 
+- [Game Programming Patterns: Spatial Partition(s)](https://gameprogrammingpatterns.com/spatial-partition.html)
 - **Wikipedia Articles:**
   - [Bounding Volume](https://en.wikipedia.org/wiki/Bounding_volume)
   - [Intersection (geometry)](https://en.wikipedia.org/wiki/Intersection_(geometry))
