@@ -16,3 +16,5 @@ chapter_next = false
 
 - [A guide to fast voxel ray tracing using sparse 64-trees](https://dubiousconst282.github.io/2024/10/03/voxel-ray-tracing/)
 - [Tetahexacontree 4x4x4 Occupancy Bitmasks Lookup Table](https://teknologicus.itch.io/vorxel/devlog/839586/tetahexacontree-4x4x4-occupancy-bitmasks-lookup-table)
+- [github.com/whackashoe/hckt-tree](https://github.com/whackashoe/hckt-tree)
+- [github.com/expenses/tree64](https://github.com/expenses/tree64)
