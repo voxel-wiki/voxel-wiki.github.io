@@ -12,25 +12,30 @@ Unfortunately, GPUs/rasterizers generally only deal with triangles,
 so we'll have to split each one of our quads into two triangles...
 resulting in two of the vertices being duplicated.
 
-Since we don't like pointless duplication, we ought to use an **element/index-buffer**,
+Because we don't like pointless duplication, we ought to use an **element/index-buffer**,
 which tells the GPU how to assemble two triangles from four vertices each.
 
-But how do we assign/number/order the four vertices?
+{% info_notice() %}
+This also let's the rasterization pipelines **input assembly stage**
+reuse vertices a bit better, cutting down on vertex shader invocations, ideally performing only 4 (instead of 6)...
+quite important when trying to draw a bajillion-or-so quadliterals!
+{% end %}
+
+So, how do we assign/number/order the four vertices?
 
 ## Winding Orders
 
 As triangles only have three vertices,
-they've got exactly one winding order and it's inverse: **Clockwise** and **Counter-Clockwise**.
+they've got exactly one **Winding Order** and it's inverse: **Clockwise** and **Counter-Clockwise**.
 
-With quadliterals there's an extra pair: **Z-Order** and **N-Order**.
+But with quadliterals there's an extra pair: **Z-Order** and **N-Order**.
 
-Pictures can say more than a thousand words, so let's visualize all four winding orders...
+Since pictures say more than a thousand words, let's visualize all four winding orders...
 
 {% figure(caption="**Diagram of Winding Orders:** Clockwise, Counter-Clockwise, Z-Order, N-Order",author="Lars Longor K",license="CC0",class="full") %}/wiki/quad-indices/windings.svg{% end %}<br/>
 
-We can also represent the windings as a table,
-by writing out which corners map to which vertices,
-always starting with the Top-Left:
+...or if that wasn't understandable, we can represent the possibly windings as a table,
+by writing out which corners map to which vertices, always starting with the Top-Left:
 
 | Vertices → <br/> Windings ↓ | `0` | `1` | `2` | `3` |
 |---|---|---|---|---|
@@ -43,10 +48,12 @@ Each of these orders is perfectly valid and, depending on use-case, may be more-
 
 ## Index Sequences
 
-The great thing about indexing vertices of quadliterals,
-is that the sequence of indices can be precomputed ahead of time and stored in a buffer.
+Because a piecewise / not-welded mesh made of quadliterals has, regardless of its actual vertices,
+the same repeating pattern of element indices,
+it's sequence of indices can be precomputed ahead of time and stored in a buffer.
 
-For example, for the clockwise winding order, the sequence of triangle indices is as follows:
+For example, using the clockwise winding order,
+the sequence of triangle indices is as follows:
 
 ```pseudocode
 for n in range(0...):
@@ -67,15 +74,15 @@ Which, if expanded, gives us:
 ...
 ```
 
-Every line of triangle indices is just a copy of the last, with every index increased by 4.
+Every line of triangle indices is just a copy of the last, with each vertex index increased by 4.
 
-Because of that, we can fill a rather large element/index-buffer with this pattern, upload it to the GPU,
-then reuse it for *every single mesh* consisting solely of quadliterals.
+As such, we can fill a rather large element/index-buffer consisting entirely of this pattern,
+upload it to the GPU, then proceed to reuse it for *every single mesh* consisting solely of quadliterals.
 
-So on start-up, we generate and upload the buffer:
+So when our app starts, we generate and upload the buffer:
 
 ```pseudocode
-let elements_limit = 2**16;
+let elements_limit = Math.pow(2, 16); // Exponent up to ~24.
 let triangle_verts = 3
 let quadlitr_verts = 2 * triangle_verts
 let elements_buffer = Vec::new_with_capacity(elements_limit)
@@ -91,7 +98,7 @@ for n in 0..elements_limit {
 elements_buffer_id = GPU.CreateElementBufferFrom(elements_buffer);
 ```
 
-Then, during rendering, reuse it for every single mesh of quadliterals:
+Then, during rendering, use it over and over:
 
 ```pseudocode
 GPU.BindIndexBuffer(elements_buffer_id)
@@ -101,9 +108,11 @@ for current_mesh in chunk_meshes {
 }
 ```
 
-On some graphics cards,
-combining this approach with [vertex pulling](/wiki/vertex-pulling)
-may yield a few extra percent of performance.
+Doing so saves us from creating an element buffer for every chunks mesh,
+cutting down on wasted GPU memory, reducing memory bandwidth pressure, improving performance a good bit.
+
+On some graphics cards, combining this approach with [vertex pulling](/wiki/vertex-pulling)
+may improve things even further!
 
 ## See Also
 
