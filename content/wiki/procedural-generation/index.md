@@ -31,24 +31,6 @@ Procedural generation isn't limited to just games; far from it!
 It's used anywhere anyone needs to create **chaos**, **repetition** and **large-scale patterns** without spending days (if not weeks or months!) being bored out of their mind[^boredom], even if paid to do so.
 {% end %}
 
-## Signal-To-Noise Ratio
-
-{{ todo_notice(body="Signal-To-Noise Ratio: Infinity Is Boring") }}
-{{ todo_notice(body="Bounded infinite generation") }}
-{{ todo_notice(body="Ways to break up infinite play-space") }}
-{{ todo_notice(body="Correlation with Apparent Relative Scale") }}
-
-## Apparent Relative Scale
-
-{{ todo_notice(body="Apparent scale of terrain is relative to its features") }}
-{{ todo_notice(body="World Scale: Seeing far into the distance, or not?") }}
-{{ todo_notice(body="Correlation with Signal-To-Noise Ratio") }}
-
-## Layers & Phases
-
-{{ todo_notice(body="Distinction of layers and phases ") }}
-{{ todo_notice(body="Reference to [/wiki/phased-generation] ") }}
-
 ## Algorithms
 
 Similar to the sheer number of use-cases,
@@ -68,7 +50,88 @@ if not endless, so we'll only list some of the common ones here:
 - XORShift
 - ...?
 
+## Procedural **Terrain**
+
+{{ stub_notice(kind="section") }}
+{{ todo_notice(body="Make world generation it's own article?") }}
+
+### Signal-To-Noise Ratio
+
+{{ stub_notice(kind="section") }}
+{{ todo_notice(body="Signal-To-Noise Ratio: Infinity Is Boring") }}
+{{ todo_notice(body="Bounded infinite generation") }}
+{{ todo_notice(body="Ways to break up infinite play-space") }}
+{{ todo_notice(body="Correlation with Apparent Relative Scale") }}
+
+### Apparent Relative Scale
+
+{{ stub_notice(kind="section") }}
+{{ todo_notice(body="Apparent scale of terrain is relative to its features") }}
+{{ todo_notice(body="World Scale: Seeing far into the distance, or not?") }}
+{{ todo_notice(body="Correlation with Signal-To-Noise Ratio") }}
+
+### Layers & Phases
+
+{{ stub_notice(kind="section") }}
+{{ todo_notice(body="Distinction of layers and phases ") }}
+{{ todo_notice(body="Reference to [phased generation](/wiki/phased-generation) ") }}
+
+## Procedural **Structures**
+
+> Anything larger than a single chunk needs some special handling...
+
+{{ stub_notice(kind="section") }}
+
+## Procedural **Megaflora**
+
+> Trees, Vines, Mushrooms, Coral Reefs, ...
+
+{{ stub_notice(kind="section") }}
+
+## Procedural **Dungeons**
+
+> Either embedded within the world or as separate subspaces...
+
+{{ stub_notice(kind="section") }}
+
+## Procedural **Cities**
+
+> Random ruins and dungeons just aren't enough sometimes...
+
+{{ stub_notice(kind="section") }}
+
+## Procedural **Quests**
+
+> Main questline too small? Why not give players some random quests...
+
+{{ stub_notice(kind="section") }}
+{{ todo_notice(body="Relation to random events?") }}
+
+## Procedural **Items**
+
+> If Borderlands can do it, we can, too...
+
+{{ stub_notice(kind="section") }}
+
+## Procedural **Textures**
+
+> Why draw textures, when you can write entirely too much code to generate them...
+
+{{ stub_notice(kind="section") }}
+
+## Procedural **Sounds**
+
+> Let's make some noise!
+
+{{ stub_notice(kind="section") }}
+
 ---
+
+## See Also
+
+- [Noise](/wiki/noise)
+- [Phased Generation](/wiki/phased-generation)
+- [Persistence](/wiki/persistence)
 
 ## References
 
