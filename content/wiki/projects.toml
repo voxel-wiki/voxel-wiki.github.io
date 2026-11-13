@@ -428,6 +428,15 @@ name = "UpvoidMiner"
 url = "https://upvoid.com/miner/about/"
 state = "Beta"
 
+[[projects]]
+name = "ThingsPool"
+url = "https://app.thingspool.net/?ref=voxel-wiki"
+state = "Beta"
+language = ["TypeScript"]
+engine = "Custom, on Three.js"
+source = "https://github.com/architsch/youngjin"
+license = "Apache-2.0"
+
 ###########################################################
 ################### Active Development ####################
 ###########################################################
