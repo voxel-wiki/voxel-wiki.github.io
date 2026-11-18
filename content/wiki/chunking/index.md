@@ -13,7 +13,14 @@ The first and possibly most important step when dealing with voxels, is to divid
 
 ## Motivation
 
-{% todo_notice() %} Explain the reasoning behind chunking. {% end %}
+The main purpose of splitting up a world into *chunks*, is to be able to incrementally generate, load, and save the world to disk, especially in the case of infinite worlds.
+
+Chunking naturally lends itself to spatially mapping *entities* in the world that are not attached to the *voxel* grid. 
+This makes filtering for nearby *entities* (collision detection and other interactions) faster.
+You can also group *chunks* into *regions*, and then tie the generation of large structures to these *regions*, to prevent them from generating on top of one another.
+
+<!-- I hope youtube links are fine -->
+Some engines also compress their *chunk* data at runtime, reducing memory usage. For example, the youtuber [tantan](https://youtu.be/ru_oz09Zo-s?t=654) has *chunks* that are 32 by 256 by 32, and their engine uses run-length encoding to compress the *voxels*. Compression like this is a tradeoff between memory usage and computation, because you essentially have to decompress a *chunk* every time you want to modify something.
 
 ## Code Example
 
@@ -99,7 +106,7 @@ chunk.set_from_world(x, y, z, voxel);
 var voxel = chunk.get_from_world(x, y, z);
 ```
 
-In all of the above code, you might have noticed that nearly all coordinate variables have prefixes: There is a [good reason for that](/wiki/coordinate-systems).
+In all of the above code, you might have noticed that nearly all coordinate variables have prefixes: There is a [good reason for this](/wiki/coordinate-systems).
 
 ## References
 
